@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Payment confirmed. Complete the No-Show Guard setup intake for Northbeam Builds — your answers are the exact settings we build from." />
+<link rel="icon" href="data:," />
+<link rel="canonical" href="https://northbeambuilds.com/intake/no-show-guard/" />
+<meta property="og:title" content="No-Show Guard — Setup Intake | Northbeam Builds" />
+<meta property="og:description" content="Payment confirmed — thank you. This short form is how we configure your No-Show Guard." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://northbeambuilds.com/intake/no-show-guard/" />
+<title>No-Show Guard — Setup Intake | Northbeam Builds</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --surface-2:#eef1f4;
+    --ink:#14232e; --ink-soft:#47586a;
+    --navy:#0e2233; --navy-2:#16334a;
+    --amber:#c77d12; --amber-strong:#a96a08; --amber-soft:#fdf3e0;
+    --line:#d9dfe6; --line-strong:#b9c4cf; --focus:#b36e05;
+    --ok-bg:#eef6ec; --ok-line:#bcd6b6; --ok-ink:#2c5a24;
+    --radius:10px; --shadow:0 10px 30px rgba(14,34,51,.14);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0c1620; --surface:#12222f; --surface-2:#182b3c;
+      --ink:#e8edf1; --ink-soft:#a9b8c4;
+      --navy:#0a1a28; --navy-2:#12293e;
+      --amber:#e8a33d; --amber-strong:#f0b45c; --amber-soft:#2a2113;
+      --line:#26394a; --line-strong:#3a546c; --focus:#f0b45c;
+      --ok-bg:#16281a; --ok-line:#33502f; --ok-ink:#a9d69e;
+      --shadow:0 10px 30px rgba(0,0,0,.5);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--amber-strong)}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  /* Header — simple, per page spec */
+  .site-header{background:var(--navy);border-bottom:3px solid var(--amber)}
+  .site-header .wrap{display:flex;align-items:center;min-height:64px}
+  .brand{color:#fff;text-decoration:none;font-weight:700;font-size:1.15rem;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
+  .brand .mark{width:12px;height:12px;background:var(--amber);flex:none;clip-path:polygon(50% 0,100% 100%,0 100%)}
+  .brand small{display:block;font-weight:400;font-size:.72rem;color:#b9c9d6;letter-spacing:.04em}
+  main{padding:48px 0 64px}
+  .eyebrow{margin:0 0 10px;font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-strong)}
+  h1{font-family:Georgia,"Times New Roman",serif;font-size:2.4rem;line-height:1.15;margin:0 0 14px;font-weight:700}
+  h2{font-size:1.3rem;line-height:1.3;margin:0 0 12px}
+  @media (max-width:560px){ h1{font-size:1.95rem} main{padding:36px 0 52px} }
+  .lede{font-size:1.1rem;color:var(--ink-soft);margin:0 0 16px}
+  .lede strong{color:var(--ink)}
+  .honest{background:var(--amber-soft);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin:0 0 28px}
+  .honest p{margin:0}
+  .honest p + p{margin-top:10px}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px;box-shadow:var(--shadow)}
+  @media (max-width:560px){ .panel{padding:22px 18px} }
+  form .field{margin-bottom:20px}
+  form .field:last-of-type{margin-bottom:8px}
+  form label{display:block;font-weight:700;font-size:.98rem;margin-bottom:6px}
+  form label .hint{display:block;font-weight:400;color:var(--ink-soft);font-size:.88rem;margin-top:2px}
+  form input[type="text"],form input[type="email"],form input[type="tel"],form select,form textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line-strong);border-radius:8px;padding:11px 13px}
+  form textarea{min-height:110px;resize:vertical}
+  .subfield{margin-top:10px}
+  .check{display:flex;gap:12px;align-items:flex-start;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:16px;margin:22px 0}
+  .check input{width:22px;height:22px;flex:none;margin-top:3px;accent-color:var(--amber-strong)}
+  .check label{font-weight:600;font-size:.98rem;margin:0}
+  .btn{display:inline-block;background:var(--amber);color:#1c1405;border:none;font:inherit;font-weight:700;font-size:1rem;padding:13px 22px;border-radius:8px;cursor:pointer;text-decoration:none;text-align:center}
+  .btn:hover{background:var(--amber-strong);color:#fff}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-2);color:#fff}
+  .btn-ghost{background:transparent;color:var(--amber-strong);border:1px solid var(--line-strong)}
+  .btn-ghost:hover{background:var(--surface-2);color:var(--ink)}
+  .form-note{margin:14px 0 0;font-size:.9rem;color:var(--ink-soft)}
+  /* Confirmation / received state */
+  .received{display:none;border:1px solid var(--ok-line);background:var(--ok-bg);border-radius:var(--radius);padding:26px 28px}
+  .received.show{display:block}
+  .received .status{display:inline-block;font-weight:700;color:var(--ok-ink);border:1px solid var(--ok-line);background:var(--surface);padding:4px 12px;border-radius:999px;font-size:.88rem;margin-bottom:14px}
+  .received h2{margin-bottom:10px}
+  .received p{margin:0 0 14px}
+  .summary{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:0 0 18px;font-size:.95rem;white-space:pre-wrap;word-break:break-word;font-family:inherit}
+  .received .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .received .again{margin:16px 0 0;font-size:.92rem}
+  .received .again button{background:none;border:none;color:var(--amber-strong);font:inherit;font-size:.92rem;text-decoration:underline;cursor:pointer;padding:0}
+  .copy-note{font-size:.9rem;color:var(--ink-soft);margin:12px 0 0}
+  /* Footer */
+  .site-footer{background:var(--navy);color:#c8d4de;padding:34px 0 38px}
+  .site-footer a{color:#c8d4de}
+  .site-footer a:hover{color:#fff}
+  .foot-brand{color:#fff;font-weight:700;font-size:1.05rem;margin:0 0 8px}
+  .foot-brand .mark{display:inline-block;width:11px;height:11px;background:var(--amber);margin-right:8px;clip-path:polygon(50% 0,100% 100%,0 100%)}
+  .site-footer p{margin:0 0 6px;font-size:.95rem}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="https://northbeambuilds.com/" aria-label="Northbeam Builds — home">
+      <span class="mark" aria-hidden="true"></span>
+      <span>Northbeam Builds<small>AUSTIN, TX</small></span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="eyebrow">No-Show Guard — setup intake</p>
+    <h1>Payment confirmed — thank you.</h1>
+    <p class="lede">This short form is how we configure your <strong>No-Show Guard</strong> — the booking page with a deposit gate and reminders that make booked jobs show up. Your answers below are the exact settings we build from, so please answer them as you want them used.</p>
+
+    <div class="honest" role="note">
+      <p><strong>How timing works, plainly:</strong> your delivery clock starts when payment, your answers on this form, and your Stripe link are all in — whichever comes last starts the clock. Live by the date we agree, or your setup fee comes back in full — guaranteed.</p>
+      <p>The setup form takes about five minutes. You fill it in yourself — nothing is pre-filled.</p>
+      <p><strong>Your money stays yours:</strong> deposits are collected through your own Stripe account, on the link you paste below. Deposit money never touches Northbeam.</p>
+      <p><strong>One honest limit:</strong> reminder texts are built but stay off until carrier (A2P) registration is approved and a live delivery test is on record — email reminders run from day one. We&rsquo;ll tell you in writing exactly which channels are live.</p>
+    </div>
+
+    <section class="panel" aria-labelledby="formHeading">
+      <h2 id="formHeading">Your setup details</h2>
+      <form id="intakeForm" novalidate>
+        <div class="field">
+          <label for="fBusinessName">Business name <span class="hint">As your customers know it</span></label>
+          <input id="fBusinessName" name="businessName" type="text" autocomplete="organization" required />
+        </div>
+
+        <div class="field">
+          <label for="fContactEmail">Contact email <span class="hint">Where setup updates and your approval requests should go</span></label>
+          <input id="fContactEmail" name="contactEmail" type="email" autocomplete="email" required />
+        </div>
+
+        <div class="field">
+          <label for="fBookingToday">How do customers book with you today?</label>
+          <select id="fBookingToday" name="bookingWorkflow" required>
+            <option value="">Choose one…</option>
+            <option>An online booking tool</option>
+            <option>By phone, text, or message</option>
+            <option>Walk-ins / first come, first served</option>
+            <option>I don&rsquo;t take bookings yet</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="fServices">Your services <span class="hint">One per line: name — price — how long it takes</span></label>
+          <textarea id="fServices" name="services" placeholder="Standard clean — $150 — 2 hours" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="fHours">Your hours / availability <span class="hint">For example: Mon–Sat 9–6, closed Sundays</span></label>
+          <input id="fHours" name="hoursAvailability" type="text" placeholder="Mon–Sat 9–6" required />
+        </div>
+
+        <div class="field">
+          <label for="fDepositAmount">Deposit amount <span class="hint">Flat amount or a percentage of the booking — for example: $50, or 25%</span></label>
+          <input id="fDepositAmount" name="depositAmount" type="text" required />
+        </div>
+
+        <div class="field">
+          <label for="fDepositPolicy">Your deposit policy <span class="hint">When the deposit is charged, the cancellation window, and when it is returned or credited</span></label>
+          <textarea id="fDepositPolicy" name="depositPolicy" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="fStripeLink">Your own Stripe payment link <span class="hint">Deposits are collected through your Stripe account — the money never touches Northbeam. Paste the payment link customers will use to pay the deposit.</span></label>
+          <input id="fStripeLink" name="buyerStripeLink" type="text" required />
+        </div>
+
+        <div class="field">
+          <label for="fWordingNotes">Anything your reminder and deposit-policy wording must say — or never say</label>
+          <textarea id="fWordingNotes" name="wordingNotes"></textarea>
+        </div>
+
+        <div class="check">
+          <input id="fGoAhead" name="goAhead" type="checkbox" required />
+          <label for="fGoAhead">Yes — build my No-Show Guard from these answers. I&rsquo;ll approve the reminder and deposit-policy wording before anything goes live.</label>
+        </div>
+
+        <button class="btn" type="submit">Submit my setup details</button>
+        <p class="form-note">This page can&rsquo;t send anything by itself — submitting prepares a ready-to-send email with your answers, explained on the next step. Nothing is sent until you tap that button.</p>
+      </form>
+
+      <div class="received" id="receivedBox" role="status" aria-live="polite">
+        <span class="status">Received — one last step</span>
+        <h2 id="receivedHeading" tabindex="-1">Received — one last step</h2>
+        <p>This page can&rsquo;t send by itself, so we&rsquo;ve prepared an email with your answers — tap the button below to send it to <strong>northbeambuilds@gmail.com</strong> from your own mail app, and we configure your system from exactly what you wrote.</p>
+        <p class="summary" id="answersSummary"></p>
+        <div class="actions">
+          <a class="btn btn-navy" id="sendMailto" href="mailto:northbeambuilds@gmail.com">Send my answers by email</a>
+          <button class="btn btn-ghost" type="button" id="copyAnswers">Copy my answers</button>
+        </div>
+        <p class="copy-note" id="copyNote">If your mail app doesn&rsquo;t open, copy your answers above and email them to <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a> with the subject &ldquo;No-Show Guard intake&rdquo;.</p>
+        <p class="again">Need to change something? <button type="button" id="editAnswers">Edit my answers</button></p>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="foot-brand"><span class="mark" aria-hidden="true"></span>Northbeam Builds</p>
+    <p>Northbeam Builds — Austin, TX</p>
+    <p>Contact: <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var EMAIL = "northbeambuilds@gmail.com";
+  var form = document.getElementById("intakeForm");
+  var receivedBox = document.getElementById("receivedBox");
+  var answersSummary = document.getElementById("answersSummary");
+  var sendMailto = document.getElementById("sendMailto");
+  var copyNote = document.getElementById("copyNote");
+
+  function val(id){ return document.getElementById(id).value.trim(); }
+  function orBlank(v){ return v ? v : "(not provided)"; }
+
+  function collect(){
+    return [
+      ["Business name (as your customers know it)", val("fBusinessName")],
+      ["Contact email", val("fContactEmail")],
+      ["How do customers book with you today?", val("fBookingToday")],
+      ["Services (name — price — duration)", val("fServices")],
+      ["Hours / availability", val("fHours")],
+      ["Deposit amount", val("fDepositAmount")],
+      ["Deposit policy (when charged, cancellation window, when returned or credited)", val("fDepositPolicy")],
+      ["Buyer's own Stripe payment link", val("fStripeLink")],
+      ["Reminder / deposit-policy wording must-say / never-say notes", orBlank(val("fWordingNotes"))],
+      ["Go-ahead: build my No-Show Guard from these answers; I approve the wording before go-live.", document.getElementById("fGoAhead").checked ? "Yes — confirmed" : "No"]
+    ];
+  }
+  function summaryText(rows){
+    return rows.map(function(r){ return r[0] + ": " + r[1]; }).join("\n");
+  }
+  function buildMailto(businessName, bodyText){
+    var subject = "No-Show Guard intake — " + businessName;
+    return "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(bodyText);
+  }
+  // Exposed for verification/testing of the assembled mailto.
+  window.__intake = { collect: collect, summaryText: summaryText, buildMailto: buildMailto };
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    if (!form.checkValidity()){ form.reportValidity(); return; }
+    var rows = collect();
+    var text = summaryText(rows);
+    answersSummary.textContent = text;
+    sendMailto.setAttribute("href", buildMailto(val("fBusinessName"), text));
+    form.style.display = "none";
+    receivedBox.classList.add("show");
+    document.getElementById("receivedHeading").focus();
+    receivedBox.scrollIntoView({ block: "start" });
+  });
+
+  document.getElementById("editAnswers").addEventListener("click", function(){
+    receivedBox.classList.remove("show");
+    form.style.display = "";
+    document.getElementById("fBusinessName").focus();
+  });
+
+  document.getElementById("copyAnswers").addEventListener("click", function(){
+    var text = answersSummary.textContent;
+    function done(){ copyNote.textContent = "Copied. You can paste your answers into an email to " + EMAIL + " if your mail app doesn\u2019t open."; }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, function(){ window.prompt("Copy your answers:", text); });
+    } else { window.prompt("Copy your answers:", text); }
+  });
+})();
+</script>
+</body>
+</html>
