@@ -4,15 +4,15 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
-<meta name="description" content="Northbeam Builds — lead-recovery automation for home-service businesses. Never-Miss-a-Lead System: $497 setup + $297/month. Fixed prices, month-to-month." />
+<meta name="description" content="Northbeam Builds replies to your customers instantly, day or night, so no inquiry ever goes unanswered. Never-Miss-a-Lead System: $199 setup + $99/month ($298 first month total), month-to-month." />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Northbeam Builds" />
 <meta property="og:url" content="https://northbeambuilds.com/" />
 <meta property="og:title" content="Northbeam Builds — Never Miss Another Lead" />
-<meta property="og:description" content="Lead-recovery automation for home-service businesses. The Never-Miss-a-Lead System answers every missed call and web inquiry in under a minute — $497 setup + $297/month, month-to-month." />
+<meta property="og:description" content="We reply to your customers instantly, day or night, so no inquiry ever goes unanswered. Every missed call and website inquiry gets an answer in under a minute — $199 setup + $99/month ($298 first month total), month-to-month." />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Northbeam Builds — Never Miss Another Lead" />
-<meta name="twitter:description" content="Lead-recovery automation for home-service businesses. The Never-Miss-a-Lead System answers every missed call and web inquiry in under a minute — $497 setup + $297/month, month-to-month." />
+<meta name="twitter:description" content="We reply to your customers instantly, day or night, so no inquiry ever goes unanswered. Every missed call and website inquiry gets an answer in under a minute — $199 setup + $99/month ($298 first month total), month-to-month." />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxMjIzM2YiLz4KICA8dGV4dCB4PSIzMiIgeT0iNDMiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiIGZvbnQtc2l6ZT0iMjciIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNlMGFhNTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk5CPC90ZXh0Pgo8L3N2Zz4K" />
 <title>Northbeam Builds — Never Miss Another Lead | Austin, TX</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,7 +124,13 @@
   .btn-light{background:#fff; color:var(--navy); border-color:#fff}
   .btn-light:hover{background:#eef1f7}
   .btn-sm{padding:10px 16px; font-size:14px}
-  @media (max-width:760px){ .nav-links a.link{display:none} }
+  section[id]{scroll-margin-top:88px}
+  @media (max-width:760px){
+    section[id]{scroll-margin-top:138px}
+    .nav{flex-wrap:wrap; padding:10px 0 12px; row-gap:10px; min-height:0}
+    .nav-links{order:3; width:100%; flex-wrap:wrap; gap:6px 20px; align-items:center}
+    .nav-links a.link{font-size:14px; padding:4px 0}
+  }
   /* ---------- hero ---------- */
   .hero{padding:72px 0 56px}
   .hero-grid{display:grid; grid-template-columns:1.25fr .85fr; gap:48px; align-items:start}
@@ -134,7 +140,7 @@
     font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-strong);
   }
   .eyebrow::before{content:""; width:22px; height:2px; background:var(--accent); border-radius:2px}
-  .hero h1{font-size:clamp(40px, 5.4vw, 62px); font-weight:700; margin:16px 0 20px; max-width:12ch}
+  .hero h1{font-size:clamp(36px, 4.8vw, 54px); font-weight:700; margin:16px 0 20px; max-width:21ch}
   .hero h1 em{font-style:normal; color:var(--accent-strong)}
   .hero .lede{font-size:19px; line-height:1.65; color:var(--ink-2); max-width:56ch}
   .hero .lede strong{color:var(--ink); font-weight:600}
@@ -175,6 +181,14 @@
   .problem{background:var(--bg-elev); border:1px solid var(--line); border-radius:var(--radius); padding:24px}
   .problem h3{font-size:19px; margin-bottom:8px}
   .problem p{font-size:15px; color:var(--ink-2)}
+  /* stat block */
+  .stats{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px}
+  @media (max-width:860px){ .stats{grid-template-columns:1fr} }
+  .stat{background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--radius); padding:24px}
+  .stat .stat-num{font-family:"IBM Plex Serif",serif; font-size:40px; font-weight:700; line-height:1.05; color:var(--accent-strong)}
+  .stat p{font-size:15px; color:var(--ink-2); margin-top:8px}
+  .stat p strong{color:var(--ink)}
+  .stat-caveat{font-size:13px; color:var(--ink-3); margin-top:14px; max-width:78ch; line-height:1.55}
   /* offer */
   .offer{
     background:var(--navy); color:var(--navy-ink); border-radius:20px; overflow:hidden;
@@ -245,17 +259,20 @@
   .bubble.out{background:var(--navy); color:#fff; margin-left:auto}
   .bubble small{display:block; font-size:11.5px; opacity:.65; margin-top:4px; font-weight:600; letter-spacing:.02em}
   /* services */
-  .services{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
-  @media (max-width:900px){ .services{grid-template-columns:1fr} }
+  .services{display:grid; grid-template-columns:repeat(2,1fr); gap:18px}
+  @media (max-width:700px){ .services{grid-template-columns:1fr} }
   .svc{background:var(--bg-elev); border:1px solid var(--line); border-radius:var(--radius); padding:26px; display:flex; flex-direction:column}
   .svc h3{font-size:20px; margin-bottom:8px}
   .svc p{font-size:15px; color:var(--ink-2); flex:1}
+  .svc p.svc-note{flex:0 0 auto; font-size:13.5px; color:var(--ink-3); margin-top:14px}
+  .svc p.svc-note strong{color:var(--ink-2)}
   .svc .svc-price{margin-top:20px; padding-top:16px; border-top:1px solid var(--line)}
   .svc .svc-price strong{font-size:19px}
   .svc .svc-price span{display:block; font-size:13px; color:var(--ink-3); font-weight:500}
   /* how it works */
-  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; counter-reset:step}
-  @media (max-width:860px){ .steps{grid-template-columns:1fr} }
+  .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; counter-reset:step}
+  @media (max-width:1020px){ .steps{grid-template-columns:1fr 1fr} }
+  @media (max-width:600px){ .steps{grid-template-columns:1fr} }
   .how-step{padding:6px 4px 0}
   .how-num{
     width:44px; height:44px; border-radius:50%; border:2px solid var(--accent); color:var(--accent-strong);
@@ -301,6 +318,45 @@
   .final .btn-row{display:flex; flex-wrap:wrap; gap:12px; justify-content:center}
   .final .fine{font-size:13.5px; color:var(--navy-muted); margin-top:18px}
   .final .fine a{color:#fff; font-weight:600}
+  /* price anchor (hero) */
+  .price-anchor{font-size:16.5px; color:var(--ink-2); margin-top:24px}
+  .price-anchor strong{color:var(--ink); font-size:19px; font-weight:700}
+  /* pricing list */
+  .price-list{border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-elev); box-shadow:var(--shadow); overflow:hidden}
+  .price-row{display:flex; gap:16px 28px; align-items:baseline; justify-content:space-between; padding:22px 26px}
+  .price-row + .price-row{border-top:1px solid var(--line)}
+  .price-row h3{font-size:19px; margin-bottom:5px}
+  .price-row p{font-size:15px; color:var(--ink-2); max-width:56ch}
+  .price-row .pr{flex:0 0 auto; text-align:right}
+  .price-row .pr strong{display:block; font-size:20px; line-height:1.25}
+  .price-row .pr span{display:block; font-size:13px; color:var(--ink-3); font-weight:500}
+  .price-row.hl{background:var(--accent-soft)}
+  .price-row .pr s{color:var(--ink-3); font-weight:500; font-size:16px}
+  @media (max-width:640px){
+    .price-row{flex-direction:column; padding:20px 22px}
+    .price-row .pr{text-align:left}
+  }
+  .pricing-note{font-size:14.5px; color:var(--ink-3); margin-top:16px}
+  /* demo cards */
+  .demo-cards{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:22px}
+  @media (max-width:900px){ .demo-cards{grid-template-columns:1fr 1fr} }
+  @media (max-width:600px){ .demo-cards{grid-template-columns:1fr} }
+  .demo-card{
+    background:var(--bg-elev); border:1px solid var(--line); border-radius:var(--radius);
+    padding:24px; display:flex; flex-direction:column; text-decoration:none;
+    transition:border-color .15s ease;
+  }
+  .demo-card:hover{border-color:var(--ink-3)}
+  .dc-tag{
+    align-self:flex-start; font-size:11.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+    color:var(--accent-strong); background:var(--accent-soft); border:1px solid var(--accent-line);
+    padding:3px 10px; border-radius:999px; margin-bottom:14px;
+  }
+  .demo-card h3{font-size:20px; margin-bottom:7px}
+  .demo-card p{font-size:14.5px; color:var(--ink-2)}
+  .demo-card .dc-fine{font-size:12.5px; color:var(--ink-3); margin-top:10px}
+  .demo-card .dc-link{margin-top:auto; padding-top:16px; font-weight:600; font-size:15px; color:var(--accent-strong)}
+  .demos-note{font-size:14.5px; color:var(--ink-3); margin-top:18px; max-width:72ch}
   /* footer */
   footer{border-top:1px solid var(--line); padding:30px 0 42px}
   .foot{display:flex; flex-wrap:wrap; gap:14px 28px; align-items:center; justify-content:space-between}
@@ -325,11 +381,12 @@
       <span class="brand-text"><strong>Northbeam Builds</strong><span>AUSTIN, TEXAS</span></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a class="link" href="#system">The System</a>
-      <a class="link" href="#demo">Live Demo</a>
-      <a class="link" href="#services">Services</a>
+      <a class="link" href="#what">What It Does</a>
+      <a class="link" href="#pricing">Pricing</a>
+      <a class="link" href="#demo">See a Demo</a>
       <a class="link" href="#how">How It Works</a>
-      <a class="btn btn-primary btn-sm" href="mailto:northbeambuilds@gmail.com?subject=Never-Miss-a-Lead%20%E2%80%94%20Getting%20Started">Get Started</a>
+      <a class="link" href="#questions">Questions</a>
+      <a class="btn btn-primary btn-sm" href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -340,18 +397,18 @@
   <div class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow">Lead recovery for home services</span>
-        <h1>Never miss another <em>lead.</em></h1>
-        <p class="lede">When a call goes unanswered or a form sits overnight, the customer doesn't wait — <strong>they call the next company.</strong> Northbeam Builds sets up automatic follow-up that acknowledges every missed call and web inquiry in under a minute, routes it straight to you, and keeps the conversation alive until you take over.</p>
-        <p class="deal-pill"><strong>Starter deal — first 3 clients:</strong> the Website FAQ &amp; Lead Capture Agent for $99 (regular $149).</p>
+        <span class="eyebrow">For plumbers, HVAC, roofers &amp; other home-service pros</span>
+        <h1>We reply to your customers <em>instantly,</em> day or night.</h1>
+        <p class="lede">So no inquiry ever goes unanswered. Every missed call and website form gets a reply in under a minute — and the details land on your phone, ready for you to take over.</p>
+        <p class="price-anchor"><strong>$199 setup + $99/month.</strong> First month total: $298. Month-to-month — cancel anytime. No long contract.</p>
         <div class="hero-ctas">
-          <a class="btn btn-accent" href="mailto:northbeambuilds@gmail.com?subject=Never-Miss-a-Lead%20%E2%80%94%20Getting%20Started">Get Started — $497 setup</a>
-          <a class="btn btn-ghost" href="https://muse.ai/s/plumber-dallas-never-miss-a-lead-eu62xk8axxvww" target="_blank" rel="noopener">See the live demo</a>
+          <a class="btn btn-accent" href="mailto:northbeambuilds@gmail.com?subject=Never-Miss-a-Lead%20%E2%80%94%20Getting%20Started">Get Started — $199 setup</a>
         </div>
+        <p class="deal-pill"><strong>Start smaller:</strong> the Website FAQ &amp; Lead Capture Agent is $49 flat right now (regular $149).</p>
         <div class="hero-facts">
-          <span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Fixed prices, published below</span>
-          <span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Scope in writing before you pay</span>
-          <span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Month-to-month — cancel anytime</span>
+          <span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Fixed prices, listed under Pricing below</span>
+          <span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Everything in writing before you pay</span>
+          <span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Live within days</span>
         </div>
       </div>
 
@@ -387,51 +444,62 @@
   <section aria-labelledby="problem-h" style="padding-top:8px">
     <div class="wrap">
       <div class="sec-head">
-        <span class="kicker">The problem, plainly</span>
-        <h2 id="problem-h">Most lost jobs aren't lost on price. They're lost on silence.</h2>
+        <h2 id="problem-h">Sound familiar?</h2>
+        <p>Most lost jobs aren't lost on price. They're lost because nobody answered in time.</p>
       </div>
       <div class="problems">
         <article class="problem">
-          <h3>The missed call</h3>
-          <p>You're under a house, on a roof, or driving between jobs. The phone rings, nobody can answer, and there's no second chance — the caller moves down the list.</p>
+          <h3>The after-hours call you missed</h3>
+          <p>It's 6:40 pm, you're still on a job, and the phone rings out. Most callers don't leave a voicemail — they just call the next company on the list.</p>
         </article>
         <article class="problem">
-          <h3>The overnight form</h3>
-          <p>A website inquiry sent at 9 pm gets answered at 9 am — if it's noticed at all. By then the customer has usually already booked someone who replied first.</p>
+          <h3>The form nobody answered fast</h3>
+          <p>Someone fills out your website form at 9 pm. It gets answered at 9 am — if anyone notices it at all. By then they've usually booked whoever replied first.</p>
         </article>
         <article class="problem">
-          <h3>The follow-up gap</h3>
-          <p>Even a good first reply dies without a nudge. One unanswered text and the conversation — and the job — quietly ends. Consistency is the hard part, not effort.</p>
+          <h3>The weekend inquiry that went cold</h3>
+          <p>A good inquiry comes in Saturday and sits until Monday. Two days of silence is all it takes — the job went to whoever answered over the weekend.</p>
         </article>
       </div>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-num">8× higher</div>
+          <p><strong>Conversion was 8× higher</strong> when the first call to a lead came within 5 minutes instead of 6 minutes or more. (XANT lead-response study, 2021 — 5.7 million leads.)</p>
+        </div>
+        <div class="stat">
+          <div class="stat-num">42 hours</div>
+          <p><strong>The average reply to a web lead took 42 hours</strong> in an audit of 2,241 companies — and 23% never replied at all. (Harvard Business Review, 2011.)</p>
+        </div>
+      </div>
+      <p class="stat-caveat">Read these honestly: both studies are older (2011 and 2021), they measured sales leads rather than Austin home services, and most measured a phone call — an instant text-back is not the same thing. What every study agrees on is the direction: the shop that answers first does better.</p>
     </div>
   </section>
 
   <!-- MAIN OFFER -->
-  <section id="system" aria-labelledby="offer-h">
+  <section id="what" aria-labelledby="offer-h">
     <div class="wrap">
       <div class="offer">
         <div class="offer-main">
-          <span class="kicker">Main offer</span>
+          <span class="kicker">What it does</span>
           <h2 id="offer-h">The Never-Miss-a-Lead System</h2>
-          <p>One focused system that catches the leads you're already paying to generate — and makes sure every single one gets a fast, professional first response.</p>
+          <p>For shops that miss calls while they're on jobs and after hours: it texts back every missed call and website form in under a minute and sends every lead to your phone, so callers book with you instead of the next shop.</p>
           <ul class="incl">
-            <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>One intake flow, set up for you</strong> — missed-call text-back <em>or</em> website form follow-up. You pick the one losing you the most work.</span></li>
-            <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Instant acknowledgment</strong> — every missed call or inquiry gets a reply in under a minute, in your business's name and tone.</span></li>
-            <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Lead routing to the owner</strong> — the lead and the conversation go straight to your phone. No dashboard you have to remember to check.</span></li>
-            <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Failure alerts</strong> — if a message doesn't deliver, you're told about it. Silence from the system is never mistaken for “no leads.”</span></li>
-            <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Simple monthly report</strong> — how many leads came in, how fast they were answered, and what happened to them. One page, plain English.</span></li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Pick one way customers reach you to start</strong> — we text back missed calls, <em>or</em> we reply to website forms right away. Whichever one is costing you more jobs.</span></li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>A reply in under a minute</strong> — every missed call or inquiry gets answered fast, in your business's name and your words.</span></li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Everything goes straight to your phone</strong> — the customer's details and the whole conversation. No dashboard you have to remember to check.</span></li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>If a message doesn't go through, we tell you</strong> — so a quiet phone never gets mistaken for “no customers.”</span></li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>A simple report every month</strong> — how many people reached out, how fast each one was answered, and what came of it. One page, plain English.</span></li>
           </ul>
-          <div class="scope-note"><strong>Honest scope:</strong> this covers one intake flow for one business location. Need both flows, a second location, or booking built in? We'll quote it in writing before any work starts — no surprises mid-project.</div>
+          <div class="scope-note"><strong>Honest scope:</strong> this price covers one way customers reach you, at one location. Want both, a second location, or online booking added? We'll give you the price in writing before any work starts — no surprises later.</div>
         </div>
         <div class="offer-side">
           <span class="price-label">Fixed price — no quote games</span>
-          <div class="price-big">$497 <small>setup</small></div>
-          <p class="price-plus">then <strong>$297/month</strong> for hosting, messaging, monitoring &amp; the monthly report</p>
+          <div class="price-big">$199 <small>setup</small></div>
+          <p class="price-plus">then <strong>$99/month</strong> for hosting, messaging, monitoring &amp; the monthly report<br><strong>First month total: $298.</strong> No hidden fees on top.</p>
           <div class="starter-deal">
-            <span class="sd-tag">Starter deal — first 3 clients</span>
-            <div class="sd-price">$99 <s>$149</s></div>
-            <p>A separate starter offer: the Website FAQ &amp; Lead Capture Agent — an assistant on your website that answers common questions and captures visitor details — for $99 (regular $149). The Never-Miss-a-Lead pricing above stays as shown.</p>
+            <span class="sd-tag">Or start with the $49 one</span>
+            <div class="sd-price">$49 <s>$149</s></div>
+            <p>The Website FAQ &amp; Lead Capture Agent — a chat box on your website that answers common questions from your own prices and hours, and takes a name and number when it can't. Flat price, no monthly fee. Details under Pricing below.</p>
           </div>
           <a class="btn btn-accent" href="mailto:northbeambuilds@gmail.com?subject=Never-Miss-a-Lead%20%E2%80%94%20Getting%20Started">Get Started by Email</a>
           <p class="under-btn">A short email is enough to start.<br>No sales call required.</p>
@@ -445,16 +513,68 @@
     </div>
   </section>
 
+  <!-- PRICING -->
+  <section id="pricing" aria-labelledby="pricing-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="pricing-h">Pricing — everything up front</h2>
+        <p>Fixed prices, no quote games. Every price is confirmed in writing before you pay anything.</p>
+      </div>
+      <div class="price-list">
+        <div class="price-row">
+          <div>
+            <h3>Never-Miss-a-Lead System</h3>
+            <p>For shops that miss calls on jobs and after hours: every missed call and website form gets a text back in under a minute, and every lead lands on your phone.</p>
+          </div>
+          <div class="pr"><strong>$199 setup + $99/mo</strong><span>First month total: $298 · month-to-month</span></div>
+        </div>
+        <div class="price-row hl">
+          <div>
+            <h3>Website FAQ &amp; Lead Capture Agent</h3>
+            <p>For shops whose website can't answer questions: a chat box on your site that answers from your own prices, hours, and services — and takes a name and number when it can't.</p>
+          </div>
+          <div class="pr"><strong>$49 <s>$149</s></strong><span>Flat price · no monthly fee</span></div>
+        </div>
+        <div class="price-row">
+          <div>
+            <h3>Website + Online Booking</h3>
+            <p>For shops with an old site or no site: a clear website where customers can see your services and book a time online, so the phone isn't the only way to get a job.</p>
+          </div>
+          <div class="pr"><strong>From $249</strong><span>One-time · exact price quoted in writing first</span></div>
+        </div>
+        <div class="price-row">
+          <div>
+            <h3>AI Chatbot</h3>
+            <p>For shops that get the same questions in messages all day: chat on Facebook, Google, and your site that answers the repeat questions instantly and hands real jobs to you. Website-only chat is the $49 FAQ Agent above.</p>
+          </div>
+          <div class="pr"><strong>$149 setup + $49/mo</strong><span>Month-to-month · cancel anytime</span></div>
+        </div>
+        <div class="price-row">
+          <div>
+            <h3>AI Phone Receptionist</h3>
+            <p>For shops that can't answer while working: a voice that picks up your calls, answers basic questions, and books or takes a message. Different from Never-Miss-a-Lead, which follows up by text after a missed call — this one answers the call live.</p>
+          </div>
+          <div class="pr"><strong>$399 setup + $199/mo</strong><span>Month-to-month · cancel anytime</span></div>
+        </div>
+      </div>
+      <p class="pricing-note">Where a monthly price applies, service is month-to-month — if it stops earning its keep, you cancel. That's the whole cancellation policy. Why publish prices at all? In buyer research, 81% of buyers said they want to find pricing on their own, and 71% said published pricing makes them more likely to buy (TrustRadius, 2022 — a survey of tech buyers, so read it as direction, not a promise).</p>
+    </div>
+  </section>
+
   <!-- DEMO -->
   <section id="demo" aria-labelledby="demo-h">
     <div class="wrap">
+      <div class="sec-head">
+        <h2 id="demo-h">See a demo</h2>
+        <p>Demos, honestly labeled. These are concepts we built from a shop's public website to show what we'd build for them — not client sites, no fake results, no fake reviews. Judge the work itself: a customer reaches out, gets an answer in under a minute, and the owner gets the details.</p>
+      </div>
       <div class="demo-band">
         <div>
-          <span class="kicker">See it working</span>
-          <h2 id="demo-h">A live concept demo, built for a Dallas plumbing company</h2>
-          <p>No slide deck and no mock screenshots. This is a working demo of the Never-Miss-a-Lead flow — a missed call comes in, the customer gets an instant reply, and the owner is routed the conversation. Try it yourself.</p>
+          <span class="kicker">Start here</span>
+          <h2>A Dallas plumbing company, start to finish</h2>
+          <p>No slide deck and no fake screenshots. In this demo a call is missed, the customer gets a text back right away, and the owner picks up the conversation. Try it yourself.</p>
           <div class="hero-ctas" style="margin-bottom:0">
-            <a class="btn btn-primary" href="https://muse.ai/s/plumber-dallas-never-miss-a-lead-eu62xk8axxvww" target="_blank" rel="noopener">Open the live demo →</a>
+            <a class="btn btn-primary" href="/demos/plumber-dallas/">Open the demo →</a>
           </div>
         </div>
         <div class="demo-preview" aria-hidden="true">
@@ -462,9 +582,54 @@
           <div class="bubble in">Hi, our water heater is leaking — can someone come today?<small>Customer · after missed call</small></div>
           <div class="bubble out">Sorry we missed your call — this is the office texting back. We can help today. What's your address?<small>Automatic reply · under 1 minute</small></div>
           <div class="bubble in">Yes please — we're in Oak Cliff.<small>Customer</small></div>
-          <div class="bubble out">Got it. The owner has your details and will confirm a time shortly.<small>Routed to owner</small></div>
+          <div class="bubble out">Got it. The owner has your details and will confirm a time shortly.<small>Sent to the owner</small></div>
         </div>
       </div>
+      <div class="demo-cards">
+        <a class="demo-card" href="/demos/plumber-dallas/">
+          <span class="dc-tag">Concept demo</span>
+          <h3>Plumber — Dallas, TX</h3>
+          <p><strong>Purpose:</strong> show what happens when a plumbing customer calls after hours — a text back in under a minute, and the job details sent to the owner.</p>
+          <p class="dc-fine">Built from public info — not a client site.</p>
+          <span class="dc-link">View demo →</span>
+        </a>
+        <a class="demo-card" href="/demos/roof-squad/">
+          <span class="dc-tag">Concept demo</span>
+          <h3>Roof Squad</h3>
+          <p><strong>Purpose:</strong> show a roofing inquiry answered on the spot instead of sitting unanswered until Monday morning.</p>
+          <p class="dc-fine">Built from public info — not a client site.</p>
+          <span class="dc-link">View demo →</span>
+        </a>
+        <a class="demo-card" href="/demos/ecogen/">
+          <span class="dc-tag">Concept demo</span>
+          <h3>EcoGen</h3>
+          <p><strong>Purpose:</strong> show a pest control inquiry getting a fast, helpful reply, with the customer's details sent to the owner.</p>
+          <p class="dc-fine">Built from public info — not a client site.</p>
+          <span class="dc-link">View demo →</span>
+        </a>
+        <a class="demo-card" href="/demos/edsels/">
+          <span class="dc-tag">Concept demo</span>
+          <h3>Edsel's</h3>
+          <p><strong>Purpose:</strong> show the instant-reply flow in action — a customer's message answered in under a minute, details sent straight to the owner.</p>
+          <p class="dc-fine">Built from public info — not a client site.</p>
+          <span class="dc-link">View demo →</span>
+        </a>
+        <a class="demo-card" href="/demos/texas-pro-build/">
+          <span class="dc-tag">Concept demo</span>
+          <h3>Texas Pro Build</h3>
+          <p><strong>Purpose:</strong> show how a new inquiry gets answered right away, even after hours, and handed to the owner to follow up.</p>
+          <p class="dc-fine">Built from public info — not a client site.</p>
+          <span class="dc-link">View demo →</span>
+        </a>
+        <a class="demo-card" href="/demos/brooks/">
+          <span class="dc-tag">Concept demo</span>
+          <h3>Brooks</h3>
+          <p><strong>Purpose:</strong> show a website inquiry answered in under a minute instead of waiting until the next business day.</p>
+          <p class="dc-fine">Built from public info — not a client site.</p>
+          <span class="dc-link">View demo →</span>
+        </a>
+      </div>
+      <p class="demos-note">Honest note: every demo above is a concept we built from public information to show how the system works. The businesses shown aren't Northbeam clients, and these aren't their real websites.</p>
     </div>
   </section>
 
@@ -478,19 +643,28 @@
       </div>
       <div class="services">
         <article class="svc">
-          <h3>Website + Online Booking</h3>
-          <p>A clean, fast website for your business with online booking built in — so customers can schedule without calling at all. Built, tested with you, and handed over with everything documented.</p>
-          <div class="svc-price"><strong>From $499</strong><span>One-off project price · quoted exactly before work starts</span></div>
+          <h3>Website FAQ &amp; Lead Capture Agent — $49</h3>
+          <p>For shops whose website can't answer questions: a chat box on your site that answers from your own prices, hours, and services — and takes a name and number when it can't, so visitors become leads instead of leaving. The cheapest way to start.</p>
+          <p class="svc-note"><strong>This is not</strong> the full chatbot below — this one lives on your website only.</p>
+          <div class="svc-price"><strong>$49 flat <s style="color:var(--ink-3); font-weight:500; font-size:16px">$149</s></strong><span>One-time · no monthly fee</span></div>
         </article>
         <article class="svc">
-          <h3>AI Website Chatbot</h3>
-          <p>A chat assistant on your website, trained only on your own business's content — your services, prices, and policies. It answers from what you've approved, and hands off to you when it shouldn't guess.</p>
-          <div class="svc-price"><strong>$349 setup + $99/month</strong><span>Month-to-month · cancel anytime</span></div>
+          <h3>Website + Online Booking</h3>
+          <p>For shops with an old site or no site: a clear website where customers can see your services, trust you, and book a time online, so the phone isn't the only way to get a job. Built, tested with you, and handed over with everything documented.</p>
+          <p class="svc-note"><strong>What moves the price:</strong> page count and whether you need online payments — you get the exact figure in writing before work starts.</p>
+          <div class="svc-price"><strong>From $249</strong><span>One-time project price · quoted exactly before work starts</span></div>
+        </article>
+        <article class="svc">
+          <h3>AI Chatbot</h3>
+          <p>For shops that get the same questions in messages all day: chat for Facebook, Google, and your site that answers the repeat questions instantly, using only your own services, prices, and policies — and hands real jobs to you, so no message sits unanswered.</p>
+          <p class="svc-note"><strong>Need chat only on your website?</strong> That's the $49 FAQ Agent above. This one covers more places than your website.</p>
+          <div class="svc-price"><strong>$149 setup + $49/month</strong><span>Month-to-month · cancel anytime</span></div>
         </article>
         <article class="svc">
           <h3>AI Phone Receptionist</h3>
-          <p>Answers your calls when you can't, answers common questions, and books appointments directly. The premium tier for businesses losing calls after hours, on weekends, or during the morning rush.</p>
-          <div class="svc-price"><strong>$999 setup + $499/month</strong><span>Month-to-month · cancel anytime</span></div>
+          <p>For shops that can't answer while working: a voice that picks up your calls, answers basic questions, and books the job or takes a message, so callers reach help instead of voicemail. It does not dispatch your techs — booking and messages are its job.</p>
+          <p class="svc-note"><strong>How it's different:</strong> Never-Miss-a-Lead follows up <em>after</em> a missed call, by text. The Phone Receptionist answers the call <em>live</em>, by voice. Many shops start with Never-Miss-a-Lead.</p>
+          <div class="svc-price"><strong>$399 setup + $199/month</strong><span>Month-to-month · cancel anytime</span></div>
         </article>
       </div>
     </div>
@@ -506,18 +680,23 @@
       <div class="steps">
         <div class="how-step">
           <div class="how-num">1</div>
-          <h3>Tell us about your business</h3>
-          <p>Send a short email to <a href="mailto:northbeambuilds@gmail.com?subject=Never-Miss-a-Lead%20%E2%80%94%20Getting%20Started">northbeambuilds@gmail.com</a> — what trade you're in, how leads reach you today, and which flow to start with. A few sentences is enough.</p>
+          <h3>Day 1 — You send one email</h3>
+          <p>Email <a href="mailto:northbeambuilds@gmail.com?subject=Never-Miss-a-Lead%20%E2%80%94%20Getting%20Started">northbeambuilds@gmail.com</a> with your trade, your prices and hours, and whether missed calls or website forms cost you more jobs. A few sentences is enough — that's your whole job at this step.</p>
         </div>
         <div class="how-step">
           <div class="how-num">2</div>
-          <h3>Same-day agreement &amp; invoice</h3>
-          <p>You get the scope, the price, and the live date in writing, plus the invoice — the same day in most cases. No sales call required unless you'd like one.</p>
+          <h3>Day 1 — Scope &amp; price in writing</h3>
+          <p>You get the scope, the exact price, and the live date in writing, plus the invoice — the same day in most cases. No sales call required unless you'd like one.</p>
         </div>
         <div class="how-step">
           <div class="how-num">3</div>
-          <h3>Live within days</h3>
-          <p>We build it, test it with you on real calls and forms, and switch it on. From then on, every lead gets answered in under a minute — including the ones that come in at 9 pm.</p>
+          <h3>Days 2–4 — We build, you test</h3>
+          <p>We build it and test it with you on your own phone — real calls, real forms. You see exactly what your customers will see before anything goes live.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-num">4</div>
+          <h3>Day 5 — Live</h3>
+          <p>We switch it on. From then on, every inquiry gets answered in under a minute — including the ones that come in at 9 pm — and every lead lands on your phone.</p>
         </div>
       </div>
     </div>
@@ -568,7 +747,7 @@
   </section>
 
   <!-- FAQ -->
-  <section aria-labelledby="faq-h">
+  <section id="questions" aria-labelledby="faq-h">
     <div class="wrap">
       <div class="sec-head">
         <span class="kicker">Common questions</span>
@@ -576,20 +755,32 @@
       </div>
       <div class="faq">
         <details>
-          <summary>Which intake flow should I start with?</summary>
-          <div class="faq-body">Whichever is losing you more work. If most leads call and you're often unable to answer, start with missed-call text-back. If your website form regularly sits unanswered overnight, start there. You can add the second flow later — quoted in writing first.</div>
+          <summary>Should I start with missed calls or website forms?</summary>
+          <div class="faq-body">Whichever is costing you more jobs. If customers mostly call and you're often too busy to answer, start with missed-call text-back. If your website form regularly sits unanswered overnight, start there. You can add the other one later — priced in writing first.</div>
         </details>
         <details>
           <summary>Does this replace my phone system or website?</summary>
           <div class="faq-body">No. The system works alongside what you already have — it watches for the missed call or the new form submission and responds. Nothing about how your customers reach you has to change.</div>
         </details>
         <details>
-          <summary>How does the $99 starter deal work?</summary>
-          <div class="faq-body">The starter deal is a separate offer for a different product: the first three clients get the Website FAQ &amp; Lead Capture Agent — an assistant on your website that answers common questions and captures visitor details — for $99 instead of the regular $149. It doesn't change the Never-Miss-a-Lead System, which stays at its standard $497 setup + $297/month.</div>
+          <summary>What does Never-Miss-a-Lead cost in total?</summary>
+          <div class="faq-body">$199 to set it up, then $99 a month. Your first month is $298 total, and every month after that is $99. There are no other fees from us — no per-message bill, no exit fee.</div>
         </details>
         <details>
-          <summary>What does the $297/month actually cover?</summary>
+          <summary>How does the $49 FAQ Agent work?</summary>
+          <div class="faq-body">It's a separate, smaller offer: the Website FAQ &amp; Lead Capture Agent — a chat box on your website that answers common questions from your own prices, hours, and services, and takes a name and number when it can't answer. It's $49 flat right now (regular price $149), with no monthly fee. It doesn't change the Never-Miss-a-Lead System, which is $199 setup + $99/month.</div>
+        </details>
+        <details>
+          <summary>What does the $99/month actually cover?</summary>
           <div class="faq-body">Hosting and messaging costs, monitoring (including the failure alerts), upkeep of your flow, and your one-page monthly report. It's the full running cost of the system — there is no separate per-message bill from us.</div>
+        </details>
+        <details>
+          <summary>What happens when it can't answer a question?</summary>
+          <div class="faq-body">It doesn't guess. It takes the customer's name and number, tells them you'll follow up, and sends the whole conversation to your phone. You stay in control of anything it isn't sure about.</div>
+        </details>
+        <details>
+          <summary>Who owns my website and my customer details?</summary>
+          <div class="faq-body">You do. Your website, your content, and your customer details stay yours. If you cancel, the system switches off — nothing of yours is held hostage.</div>
         </details>
         <details>
           <summary>How fast can it be live?</summary>
@@ -604,16 +795,16 @@
   </section>
 
   <!-- FINAL CTA -->
-  <section aria-labelledby="cta-h" style="border-top:none; padding-top:8px">
+  <section id="contact" aria-labelledby="cta-h" style="border-top:none; padding-top:8px">
     <div class="wrap">
       <div class="final">
-        <h2 id="cta-h">The next missed call is already scheduled. The reply can be, too.</h2>
-        <p>Tell us your trade and which flow to start with. You'll have scope, price, and a live date in writing — the same day in most cases.</p>
+        <h2 id="cta-h">The next inquiry could come tonight. Make sure it gets answered.</h2>
+        <p>Email us your trade and whether missed calls or website forms cost you more jobs. You'll have the scope, the price, and a live date in writing — the same day in most cases.</p>
         <div class="btn-row">
           <a class="btn btn-accent" href="mailto:northbeambuilds@gmail.com?subject=Never-Miss-a-Lead%20%E2%80%94%20Getting%20Started">Get Started — Email Us</a>
-          <a class="btn btn-light" href="https://muse.ai/s/plumber-dallas-never-miss-a-lead-eu62xk8axxvww" target="_blank" rel="noopener">Try the Live Demo First</a>
+          <a class="btn btn-light" href="/demos/plumber-dallas/">Try a Demo First</a>
         </div>
-        <p class="fine">Prefer to write directly? <a href="mailto:northbeambuilds@gmail.com?subject=Never-Miss-a-Lead%20%E2%80%94%20Getting%20Started">northbeambuilds@gmail.com</a> · Never-Miss-a-Lead System: $497 setup + $297/month, month-to-month. Starter deal — first 3 clients: the Website FAQ &amp; Lead Capture Agent for $99 (regular $149).</p>
+        <p class="fine">Prefer to write directly? <a href="mailto:northbeambuilds@gmail.com?subject=Never-Miss-a-Lead%20%E2%80%94%20Getting%20Started">northbeambuilds@gmail.com</a> · Never-Miss-a-Lead System: $199 setup + $99/month ($298 first month total), month-to-month. Website FAQ &amp; Lead Capture Agent: $49 flat (regular $149).</p>
       </div>
     </div>
   </section>
@@ -624,16 +815,18 @@
   <div class="wrap foot">
     <p><span class="f-brand">Northbeam Builds</span> · Austin, TX · <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
     <nav aria-label="Footer">
-      <a href="#system">The System</a>
-      <a href="#demo">Live Demo</a>
-      <a href="#services">Services</a>
+      <a href="#what">What It Does</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#demo">See a Demo</a>
       <a href="#how">How It Works</a>
+      <a href="#questions">Questions</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </footer>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Northbeam Builds","address":{"@type":"PostalAddress","addressLocality":"Austin","addressRegion":"TX","addressCountry":"US"},"email":"northbeambuilds@gmail.com","areaServed":"US","description":"Lead-recovery automation for home-service businesses. Never-Miss-a-Lead System: $497 setup + $297/month."}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Northbeam Builds","address":{"@type":"PostalAddress","addressLocality":"Austin","addressRegion":"TX","addressCountry":"US"},"email":"northbeambuilds@gmail.com","areaServed":"US","description":"We reply to your customers instantly, day or night, so no inquiry ever goes unanswered. Never-Miss-a-Lead System: $199 setup + $99/month ($298 first month total)."}
 </script>
 </body>
 </html>
