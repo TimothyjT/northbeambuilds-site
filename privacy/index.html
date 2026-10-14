@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="The Northbeam Builds privacy policy in plain language: what we collect from customers and their customers, what we never do with it, and how to reach us about your information." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Northbeam Builds" />
+<meta property="og:url" content="https://northbeambuilds.com/privacy/" />
+<meta property="og:title" content="Privacy Policy — Northbeam Builds" />
+<meta property="og:description" content="The Northbeam Builds privacy policy in plain language: what we collect from customers and their customers, what we never do with it, and how to reach us about your information." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Privacy Policy — Northbeam Builds" />
+<meta name="twitter:description" content="The Northbeam Builds privacy policy in plain language: what we collect from customers and their customers, what we never do with it, and how to reach us about your information." />
+<link rel="icon" href="data:," />
+<link rel="canonical" href="https://northbeambuilds.com/privacy/" />
+<title>Privacy Policy — Northbeam Builds | Austin, TX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f7f4;
+    --bg-elev:#ffffff;
+    --bg-soft:#eef0ec;
+    --ink:#14213a;
+    --ink-2:#3d4a63;
+    --ink-3:#5a6579;
+    --line:#dde0d8;
+    --line-strong:#c9cec2;
+    --navy:#12233f;
+    --navy-2:#1a3358;
+    --navy-ink:#ffffff;
+    --navy-muted:#b9c4d8;
+    --accent:#9a641f;
+    --accent-strong:#855518;
+    --accent-soft:#fbf3e3;
+    --accent-line:#e8d5ae;
+    --ok:#1f6b4a;
+    --radius:14px;
+    --radius-sm:10px;
+    --shadow:0 1px 2px rgba(18,35,63,.05), 0 10px 30px rgba(18,35,63,.06);
+    --max:1120px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0e1626;
+      --bg-elev:#16233c;
+      --bg-soft:#131f35;
+      --ink:#eef1f7;
+      --ink-2:#c2cbdd;
+      --ink-3:#8f9bb3;
+      --line:#26344f;
+      --line-strong:#33456a;
+      --navy:#0a1424;
+      --navy-2:#12233f;
+      --navy-ink:#f2f5fa;
+      --navy-muted:#9fb0ca;
+      --accent:#d99a3d;
+      --accent-strong:#e8ad52;
+      --accent-soft:#2a2213;
+      --accent-line:#4a3a1c;
+      --ok:#5ec49a;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 32px rgba(0,0,0,.28);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none!important} }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, sans-serif;
+    font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .skip-link{
+    position:fixed; left:16px; top:-64px; z-index:50;
+    background:var(--navy); color:#fff; padding:11px 18px; border-radius:999px;
+    font-size:14.5px; font-weight:600; line-height:1; text-decoration:none;
+    transition:top .15s ease;
+  }
+  .skip-link:focus{top:12px}
+  main:focus{outline:none}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
+  h1,h2,h3{font-family:"IBM Plex Serif", Georgia, serif; line-height:1.12; letter-spacing:-.01em; margin:0}
+  p{margin:0}
+  .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter:saturate(1.2) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:68px; position:relative}
+  .brand{display:flex; align-items:center; gap:11px; text-decoration:none}
+  .brand-mark{
+    width:36px; height:36px; border-radius:9px; background:var(--navy); color:#fff;
+    display:grid; place-items:center; flex:0 0 auto;
+  }
+  .brand-mark svg{width:20px; height:20px}
+  .brand-text{line-height:1.1}
+  .brand-text strong{display:block; font-size:17px; font-weight:700; letter-spacing:-.01em}
+  .brand-text span{display:block; font-size:12px; color:var(--ink-3); font-weight:500; letter-spacing:.02em}
+  .nav-links{display:flex; align-items:center; gap:28px}
+  .nav-links a.link{font-size:14.5px; font-weight:500; color:var(--ink-2); text-decoration:none}
+  .nav-links a.link:hover{color:var(--ink); text-decoration:underline; text-underline-offset:4px}
+  .nav-links a.link[aria-current="page"]{color:var(--ink); font-weight:700}
+  .nav-toggle{
+    display:none; align-items:center; justify-content:center; width:44px; height:44px;
+    background:transparent; border:1px solid var(--line-strong); border-radius:10px; color:var(--ink); cursor:pointer; flex:0 0 auto;
+  }
+  .nav-toggle svg{width:22px; height:22px}
+  .nav-toggle:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    font-weight:600; font-size:15px; line-height:1; text-decoration:none;
+    padding:13px 20px; border-radius:999px; border:1px solid transparent;
+    transition:background .15s ease, border-color .15s ease, color .15s ease;
+    white-space:nowrap; cursor:pointer;
+  }
+  .btn-primary{background:var(--navy); color:#fff; border-color:var(--navy)}
+  .btn-primary:hover{background:var(--navy-2)}
+  .btn-accent{background:var(--accent); color:#fff; border-color:var(--accent)}
+  .btn-accent:hover{background:var(--accent-strong); border-color:var(--accent-strong)}
+  @media (prefers-color-scheme: dark){
+    .btn-accent{background:#9a641f; border-color:#9a641f}
+    .btn-accent:hover{background:#855518; border-color:#855518}
+  }
+  .btn-sm{padding:10px 16px; font-size:14px}
+  .btn:focus-visible, a:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  @media (max-width:760px){
+    .nav{min-height:64px; flex-wrap:nowrap}
+    .nav-toggle{display:inline-flex}
+    .nav-links{
+      display:none; position:absolute; top:calc(100% + 1px); left:0; right:0;
+      background:var(--bg-elev); border-bottom:1px solid var(--line); box-shadow:var(--shadow);
+      flex-direction:column; align-items:stretch; gap:0; padding:10px 24px 16px;
+    }
+    .nav-links.open{display:flex}
+    .nav-links a.link{font-size:16px; padding:12px 0; border-bottom:1px solid var(--line); display:block}
+    .nav-links a.link:last-of-type{border-bottom:none}
+    .nav-links .btn{margin-top:10px; width:100%}
+  }
+
+  /* ---------- page head ---------- */
+  .page-head{padding:64px 0 8px}
+  .page-head h1{font-size:clamp(34px, 4.6vw, 50px); font-weight:700; margin:0 0 16px}
+  .page-head .lede{font-size:19px; line-height:1.65; color:var(--ink-2); max-width:58ch}
+  .page-head .lede strong{color:var(--ink); font-weight:600}
+
+  /* ---------- pricing cards ---------- */
+  .price-grid{
+    display:grid; grid-template-columns:1fr; gap:18px;
+    padding:36px 0 8px;
+  }
+  @media (min-width:700px){ .price-grid{grid-template-columns:1fr 1fr} }
+  @media (min-width:1020px){ .price-grid{grid-template-columns:repeat(3, 1fr)} }
+  .price-card{
+    background:var(--bg-elev); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:26px 24px; display:flex; flex-direction:column;
+  }
+  .price-card h2{font-size:22px; font-weight:600; margin-bottom:10px}
+  .price-card .purpose{font-size:15.5px; line-height:1.6; color:var(--ink-2)}
+  .price-block{
+    margin-top:20px; padding-top:18px; border-top:1px solid var(--line);
+  }
+  .price-main{font-size:26px; font-weight:700; line-height:1.25; letter-spacing:-.01em}
+  .price-main .unit{font-size:15px; font-weight:500; color:var(--ink-2)}
+  .price-total{margin-top:8px; font-size:14.5px; color:var(--ink-2); line-height:1.55}
+  .price-total strong{color:var(--ink)}
+  .price-card .svc-link{
+    margin-top:auto; padding-top:20px; font-weight:600; font-size:15px;
+    color:var(--accent-strong); text-decoration:none; display:inline-flex; align-items:center; gap:6px;
+  }
+  .price-card .svc-link:hover{text-decoration:underline; text-underline-offset:3px}
+
+  /* ---------- terms ---------- */
+  .terms{padding:48px 0 8px}
+  .terms-box{
+    background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--radius);
+    padding:30px 28px;
+  }
+  .terms-box h2{font-size:26px; font-weight:600; margin-bottom:16px}
+  .terms-box p{font-size:16.5px; line-height:1.65; color:var(--ink-2); max-width:62ch}
+  .terms-box p + p{margin-top:12px}
+  .terms-box p strong{color:var(--ink)}
+  .terms-cta{display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:24px}
+  .terms-cta .direct{font-size:15px; color:var(--ink-2)}
+  .terms-cta .direct a{color:var(--accent-strong); font-weight:600}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line); padding:40px 0 42px; background:var(--bg-elev); margin-top:64px}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1.3fr; gap:28px}
+  @media (max-width:820px){ .foot-grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:520px){ .foot-grid{grid-template-columns:1fr} }
+  .foot .f-brand{font-weight:700; font-size:16px; color:var(--ink)}
+  .foot p{font-size:14px; color:var(--ink-3); line-height:1.6}
+  .foot p + p{margin-top:6px}
+  .foot a{color:var(--ink-2); font-weight:500; text-decoration:none}
+  .foot a:hover{text-decoration:underline; text-underline-offset:3px}
+  .foot h3{font-family:"IBM Plex Sans",sans-serif; font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); margin:0 0 12px}
+  .foot ul{list-style:none; margin:0; padding:0; display:grid; gap:9px}
+  .foot ul a{font-size:14.5px}
+  .foot-bottom{margin-top:32px; padding-top:18px; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; gap:8px 20px; justify-content:space-between; font-size:13.5px; color:var(--ink-3)}
+
+  /* ---------- chatbot widget ---------- */
+  .nb-chat-fab{
+    position:fixed; right:20px; bottom:20px; z-index:60; width:60px; height:60px; border-radius:50%;
+    background:var(--navy); color:#fff; border:2px solid #fff; box-shadow:0 8px 28px rgba(18,35,63,.28);
+    display:grid; place-items:center; cursor:pointer;
+  }
+  .nb-chat-fab svg{width:26px; height:26px}
+  .nb-chat-fab:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+  .nb-chat-panel{
+    position:fixed; right:20px; bottom:92px; z-index:61; width:min(380px, calc(100vw - 32px)); max-height:min(620px, calc(100dvh - 120px));
+    background:var(--bg-elev); color:var(--ink); border:1px solid var(--line-strong); border-radius:16px; box-shadow:0 18px 50px rgba(18,35,63,.22);
+    display:none; flex-direction:column; overflow:hidden;
+  }
+  .nb-chat-panel.open{display:flex}
+  .nb-chat-head{background:var(--navy); color:#fff; padding:16px 18px; display:flex; align-items:flex-start; justify-content:space-between; gap:12px}
+  .nb-chat-head strong{display:block; font-size:15.5px; line-height:1.3}
+  .nb-chat-head span{display:block; font-size:13px; color:var(--navy-muted); margin-top:2px; line-height:1.4}
+  .nb-chat-close{background:transparent; border:1px solid rgba(255,255,255,.35); color:#fff; width:36px; height:36px; border-radius:50%; cursor:pointer; font-size:18px; line-height:1; flex:0 0 auto}
+  .nb-chat-close:focus-visible{outline:2px solid #fff; outline-offset:2px}
+  .nb-chat-body{padding:16px; overflow-y:auto; display:flex; flex-direction:column; gap:10px; flex:1; background:var(--bg)}
+  .nb-msg{max-width:88%; padding:11px 13px; border-radius:12px; font-size:14.5px; line-height:1.55; white-space:pre-wrap; word-wrap:break-word}
+  .nb-msg.bot{background:var(--bg-elev); border:1px solid var(--line); align-self:flex-start; border-bottom-left-radius:4px}
+  .nb-msg.user{background:var(--navy); color:#fff; align-self:flex-end; border-bottom-right-radius:4px}
+  .nb-msg a{color:var(--accent-strong); font-weight:600}
+  .nb-msg.user a{color:#fff}
+  .nb-chips{display:flex; flex-wrap:wrap; gap:8px; padding:0 16px 10px; background:var(--bg)}
+  .nb-chip{border:1px solid var(--accent-line); background:var(--accent-soft); color:var(--ink); font-size:13.5px; font-weight:600; padding:8px 12px; border-radius:999px; cursor:pointer}
+  .nb-chip:hover{border-color:var(--accent)}
+  .nb-chip:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .nb-chat-form{display:flex; gap:8px; padding:12px; border-top:1px solid var(--line); background:var(--bg-elev)}
+  .nb-chat-form input{flex:1; min-width:0; border:1px solid var(--line-strong); border-radius:999px; padding:11px 14px; font:inherit; font-size:14.5px; background:var(--bg); color:var(--ink)}
+  .nb-chat-form input:focus{outline:2px solid var(--accent); outline-offset:1px}
+  .nb-chat-form button{background:var(--navy); color:#fff; border:1px solid var(--navy); border-radius:999px; padding:11px 16px; font-weight:600; font-size:14.5px; cursor:pointer; white-space:nowrap}
+  .nb-mailto-btn{display:inline-flex; margin-top:10px; background:var(--accent); color:#fff !important; text-decoration:none; padding:10px 14px; border-radius:999px; font-weight:600; font-size:14px}
+  @media (prefers-color-scheme: dark){ .nb-mailto-btn{background:#9a641f} }
+  @media (max-width:640px){
+    .nb-chat-panel{right:8px; left:8px; bottom:8px; width:auto; max-height:calc(100dvh - 16px); height:calc(100dvh - 16px); border-radius:16px}
+    .nb-chat-fab{right:16px; bottom:16px}
+  }
+
+  /* ---------- legal pages ---------- */
+  .legal{max-width:760px; padding:8px 0 24px}
+  .legal section{margin:0 0 36px}
+  .legal h2{font-size:24px; font-weight:600; margin:0 0 12px}
+  .legal p{font-size:16.5px; line-height:1.7; color:var(--ink-2); max-width:68ch}
+  .legal p + p{margin-top:10px}
+  .legal p strong{color:var(--ink)}
+  .legal ul{margin:10px 0 0; padding-left:22px; color:var(--ink-2); font-size:16.5px; line-height:1.7; max-width:68ch}
+  .legal li + li{margin-top:8px}
+  .legal li strong{color:var(--ink)}
+  .legal a{color:var(--accent-strong); font-weight:600; text-decoration:none}
+  .legal a:hover{text-decoration:underline; text-underline-offset:3px}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#top">Skip to content</a>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Northbeam Builds — home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M5.6 5.6l2.8 2.8"/><path d="M18.4 5.6l-2.8 2.8"/><path d="M4 20h16"/><path d="M7 20v-6a5 5 0 0 1 10 0v6"/></svg>
+      </span>
+      <span class="brand-text"><strong>Northbeam Builds</strong><span>AUSTIN, TEXAS</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav" id="navToggle">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav-links" id="primary-nav" aria-label="Primary">
+      <a class="link" href="/">Home</a>
+      <a class="link" href="/services/">Services</a>
+      <a class="link" href="/work/">Work</a>
+      <a class="link" href="/pricing/">Pricing</a>
+      <a class="link" href="/about/">About</a>
+      <a class="btn btn-primary btn-sm" href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top" tabindex="-1">
+  <div class="wrap">
+
+    <div class="page-head">
+      <h1>Privacy Policy</h1>
+      <p class="lede">What we collect, what we do with it, and what we never do. Short version: we take in the information our tools need to answer your customers, we use it for that and nothing else, and we don't sell it. <strong>Last updated October 14, 2026.</strong></p>
+    </div>
+
+    <div class="legal">
+
+      <section>
+        <h2>Information from businesses that buy from us</h2>
+        <p>When you fill in a setup form, we get your name, your business name, your email, your phone number, your business hours, your services and prices, and where you want lead alerts sent. We use it to build and run your product, and to reach you about it.</p>
+        <p>When you pay, Stripe processes the payment. Stripe collects your card details directly. We receive confirmation that you paid, never your full card number.</p>
+      </section>
+
+      <section>
+        <h2>Information from your customers</h2>
+        <p>Our tools answer people on your behalf, so they keep records of that work. A chat tool saves the conversation. The phone receptionist keeps a record of each call and what was booked. When a visitor asks to be contacted, the tool saves the name and the number or email they give it.</p>
+        <p>Those logs belong to your business. You can read them in your admin at any time, and export them for 30 days after you cancel.</p>
+        <p>We don't use your customers' information for our own marketing. We never contact them on our own behalf. The tools reach a customer only in the moment they're dealing with your business: a text back to someone who just called you, a reply inside a chat they started.</p>
+        <p>We don't train models on your business data, and we don't train them on your customers' conversations.</p>
+      </section>
+
+      <section>
+        <h2>Information from visitors to this site</h2>
+        <p>This site doesn't run advertising trackers, and we don't build profiles of the people who visit it.</p>
+        <p>If you email us, we keep your address and your message so we can reply and keep track of the conversation.</p>
+      </section>
+
+      <section>
+        <h2>Who else handles the information</h2>
+        <p>Running the tools takes a few outside services: Stripe for payments, the phone carriers for calls and texts, and AI providers that process a question so the tool can answer it. Each of them gets the information needed to do its part, and nothing beyond that.</p>
+        <p>We don't sell personal information. We don't rent it, trade it, or share it with advertisers.</p>
+      </section>
+
+      <section>
+        <h2>Your choices</h2>
+        <p>Email <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a> to see, correct, or delete information we hold about you. If the information sits in one of our customers' logs (say, a chat you had with a business that uses our chat box), write to us anyway and we'll coordinate with that business to sort it out.</p>
+        <p>On security, honestly: we limit access to customer information to the work of running the service. No system is perfectly secure. If we ever learn of a breach that affects your information, we'll tell you.</p>
+      </section>
+
+      <section>
+        <h2>Changes and contact</h2>
+        <p>If we change this policy in a way that matters, we'll update this page and email current customers before the change takes effect.</p>
+        <p>Northbeam Builds, Austin, Texas. Contact: <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a>. If you need our mailing address, ask by email and we'll send it.</p>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="foot-grid">
+      <div>
+        <p class="f-brand">Northbeam Builds — Austin, TX</p>
+        <p>A small Austin studio building websites and AI tools for local service companies.</p>
+        <p>Questions about a price? Email <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a> — a person replies within one business day.</p>
+      </div>
+      <nav aria-label="Pages">
+        <h3>Pages</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/work/">Work</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/demos/">Demos</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Tools">
+        <h3>Tools</h3>
+        <ul>
+          <li><a href="/tools/never-miss-a-lead/">Never-Miss-a-Lead</a></li>
+          <li><a href="/tools/website-lead-capture-agent/">Website FAQ &amp; Lead Capture Agent</a></li>
+          <li><a href="/tools/website-online-booking/">Website + Online Booking</a></li>
+          <li><a href="/tools/ai-chatbot/">AI Chatbot</a></li>
+          <li><a href="/tools/ai-phone-receptionist/">AI Phone Receptionist</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>Month-to-month. No long-term contract.</span>
+      <span>Northbeam Builds · Austin, TX</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Northbeam automated assistant (same widget on every page) -->
+<button class="nb-chat-fab" id="nbChatFab" type="button" aria-label="Open chat with Northbeam's automated assistant" aria-expanded="false" aria-controls="nbChatPanel">
+  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+</button>
+
+<div class="nb-chat-panel" id="nbChatPanel" role="dialog" aria-modal="false" aria-label="Chat with Northbeam's automated assistant">
+  <div class="nb-chat-head">
+    <div>
+      <strong>Northbeam Builds assistant</strong>
+      <span>Automated assistant — not a person. Answers from Northbeam's own site info.</span>
+    </div>
+    <button class="nb-chat-close" id="nbChatClose" type="button" aria-label="Close chat">×</button>
+  </div>
+  <div class="nb-chat-body" id="nbChatBody" aria-live="polite"></div>
+  <div class="nb-chips" id="nbChips">
+    <button class="nb-chip" type="button" data-q="Prices">Prices</button>
+    <button class="nb-chip" type="button" data-q="What do the tools do?">What do the tools do?</button>
+    <button class="nb-chip" type="button" data-q="How it works">How it works</button>
+    <button class="nb-chip" type="button" data-q="Get started">Get started</button>
+  </div>
+  <form class="nb-chat-form" id="nbChatForm">
+    <label class="sr-only" for="nbChatInput">Type your message</label>
+    <input id="nbChatInput" type="text" autocomplete="off" placeholder="Ask about prices or tools…" />
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- Mobile nav toggle ---------- */
+  var navToggle = document.getElementById("navToggle");
+  var navLinks = document.getElementById("primary-nav");
+  function closeNav() {
+    navLinks.classList.remove("open");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Open menu");
+  }
+  navToggle.addEventListener("click", function () {
+    var open = navLinks.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  });
+  navLinks.addEventListener("click", function (e) {
+    if (e.target.closest("a")) closeNav();
+  });
+
+  /* ---------- Chat widget ---------- */
+  var fab = document.getElementById("nbChatFab");
+  var panel = document.getElementById("nbChatPanel");
+  var closeBtn = document.getElementById("nbChatClose");
+  var body = document.getElementById("nbChatBody");
+  var form = document.getElementById("nbChatForm");
+  var input = document.getElementById("nbChatInput");
+  var chips = document.getElementById("nbChips");
+  var greeted = false;
+  var captureStep = -1; /* -1 = not capturing; 0,1,2 = awaiting name, contact, need */
+  var lead = { name: "", contact: "", need: "" };
+
+  var KB = {
+    greeting: "Hi! I'm Northbeam's automated assistant — not a person. I answer questions from Northbeam's own site info, and if you'd like to get started I can take your details for a follow-up.",
+    prices: "Here are the full prices:\n• Never-Miss-a-Lead — $199 setup + $99/month ($298 the first month, then $99/month)\n• Website FAQ & Lead Capture Agent — $49 flat, one-time\n• Website + Online Booking — from $249, one-time\n• AI Chatbot — $149 setup + $49/month ($198 the first month)\n• AI Phone Receptionist — $399 setup + $199/month ($598 the first month)\nThe full table is on our Pricing page.",
+    tools: "What the tools do:\n• Never-Miss-a-Lead catches every inquiry — missed calls, form fills, after-hours messages — replies instantly, and routes every lead to one inbox.\n• The Website FAQ & Lead Capture Agent is a chat agent on your own website (this chat is one) that answers from your own content and captures leads.\n• Website + Online Booking is a small-business website with online booking built in.\n• The AI Chatbot answers customer questions around the clock, on your site and in your messages.\n• The AI Phone Receptionist answers your calls by voice, answers questions, and books appointments — with humans as escalation.",
+    how: "How it works:\n1) A short intake about your business.\n2) We build and configure it — most tools are live in 24–48 hours; the phone receptionist takes 3–7 days, including a test call you approve.\n3) You test it and approve it.\n4) It goes live — month-to-month, cancel anytime.",
+    terms: "Terms: month-to-month, no long-term contract, cancel anytime. And if we miss what we promised, we fix it.",
+    contact: "You can email us at northbeambuilds@gmail.com — a person replies within one business day. We're a studio in Austin, TX. Our demos at /demos/ are concepts built from public info, not real client sites.",
+    fallback: "I don't have that in Northbeam's information yet — I only answer from our own site content. You can email northbeambuilds@gmail.com, or leave your name and contact here and we'll reply within one business day.",
+    discount: "I can't confirm that — the prices I have are the ones on our Pricing page."
+  };
+
+  function scrollBody() { body.scrollTop = body.scrollHeight; }
+
+  function addMsg(text, who, link) {
+    var div = document.createElement("div");
+    div.className = "nb-msg " + who;
+    div.textContent = text;
+    if (link) {
+      div.appendChild(document.createTextNode(" "));
+      var a = document.createElement("a");
+      a.href = link.href;
+      a.textContent = link.label;
+      div.appendChild(a);
+    }
+    body.appendChild(div);
+    scrollBody();
+    return div;
+  }
+
+  function openPanel() {
+    panel.classList.add("open");
+    fab.setAttribute("aria-expanded", "true");
+    fab.setAttribute("aria-label", "Close chat with Northbeam's automated assistant");
+    if (!greeted) {
+      greeted = true;
+      addMsg(KB.greeting, "bot");
+    }
+    input.focus();
+  }
+  function closePanel() {
+    panel.classList.remove("open");
+    fab.setAttribute("aria-expanded", "false");
+    fab.setAttribute("aria-label", "Open chat with Northbeam's automated assistant");
+    fab.focus();
+  }
+  fab.addEventListener("click", function () {
+    if (panel.classList.contains("open")) closePanel(); else openPanel();
+  });
+  closeBtn.addEventListener("click", closePanel);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && panel.classList.contains("open")) closePanel();
+  });
+
+  function startCapture() {
+    captureStep = 0;
+    lead = { name: "", contact: "", need: "" };
+    addMsg("Happy to help you get started — three quick questions.", "bot");
+    addMsg("What's your name?", "bot");
+  }
+
+  function finishCapture() {
+    captureStep = -1;
+    var summary = "Thanks, " + lead.name + ". Here's what I have:\nName: " + lead.name + "\nBest contact: " + lead.contact + "\nInterested in: " + lead.need + "\n\nRequested — we'll reply within one business day.";
+    var div = addMsg(summary, "bot");
+    var mailBody = "Name: " + lead.name + "\nBest email or phone: " + lead.contact + "\nInterested in / need: " + lead.need;
+    var a = document.createElement("a");
+    a.className = "nb-mailto-btn";
+    a.href = "mailto:northbeambuilds@gmail.com?subject=" + encodeURIComponent("New request from the website") + "&body=" + encodeURIComponent(mailBody);
+    a.textContent = "Send this by email";
+    div.appendChild(document.createElement("br"));
+    div.appendChild(a);
+    addMsg("or email us any time at northbeambuilds@gmail.com.", "bot");
+    scrollBody();
+  }
+
+  function handleCapture(text) {
+    if (captureStep === 0) {
+      lead.name = text;
+      captureStep = 1;
+      addMsg("What's the best email or phone to reach you?", "bot");
+    } else if (captureStep === 1) {
+      lead.contact = text;
+      captureStep = 2;
+      addMsg("Which tool are you interested in, or what do you need?", "bot");
+    } else if (captureStep === 2) {
+      lead.need = text;
+      finishCapture();
+    }
+  }
+
+  function answer(raw) {
+    var t = raw.toLowerCase();
+
+    if (captureStep >= 0) { handleCapture(raw); return; }
+
+    /* Offers/discounts the bot cannot verify */
+    if (/\b(discount|coupon|promo|promotion|% off|percent off|sale price|cheaper|deal)\b/.test(t) || t.indexOf("off") !== -1 && t.indexOf("%") !== -1) {
+      addMsg(KB.discount, "bot", { href: "/pricing/", label: "See Pricing" });
+      return;
+    }
+
+    /* Get started → capture flow */
+    if (/\b(get started|sign up|sign me up|get going)\b/.test(t) || t === "start") {
+      startCapture();
+      return;
+    }
+
+    /* Prices */
+    if (/price|pricing|cost|how much|fee|\$/.test(t)) {
+      addMsg(KB.prices, "bot", { href: "/pricing/", label: "See the full pricing table" });
+      return;
+    }
+
+    /* How it works */
+    if (/how it works|how does|process|steps|how long|timeline|set ?up|get it live|go live/.test(t)) {
+      addMsg(KB.how, "bot");
+      return;
+    }
+
+    /* Terms */
+    if (/contract|cancel|terms|guarantee|commit|refund/.test(t)) {
+      addMsg(KB.terms, "bot");
+      return;
+    }
+
+    /* Contact / demos / location */
+    if (/contact|email|human|person|talk to|austin|demo|where are you|located|phone number/.test(t)) {
+      addMsg(KB.contact, "bot", { href: "/demos/", label: "See the demos" });
+      return;
+    }
+
+    /* What the tools do */
+    if (/tool|service|what do|what is|what's|offer|never.?miss|chatbot|receptionist|faq|booking|lead/.test(t)) {
+      addMsg(KB.tools, "bot");
+      return;
+    }
+
+    /* Greeting */
+    if (/^(hi|hello|hey|howdy)\b/.test(t)) {
+      addMsg("Hello! Ask me about prices, what the tools do, or how it works — or tap Get started and I'll take your details for a follow-up.", "bot");
+      return;
+    }
+
+    /* Anything else: do not guess */
+    addMsg(KB.fallback, "bot");
+    addMsg("Want me to take your details? Tap “Get started” below and I'll ask three quick questions.", "bot");
+  }
+
+  function send(text) {
+    var clean = text.replace(/\s+/g, " ").trim();
+    if (!clean) return;
+    addMsg(clean, "user");
+    answer(clean);
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    send(input.value);
+    input.value = "";
+    input.focus();
+  });
+  chips.addEventListener("click", function (e) {
+    var chip = e.target.closest(".nb-chip");
+    if (!chip) return;
+    send(chip.getAttribute("data-q"));
+  });
+})();
+</script>
+</body>
+</html>
