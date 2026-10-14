@@ -9,12 +9,12 @@ Northbeam Builds is run by its founder. Customers deal directly with the person 
 Three kinds of work:
 
 1. Websites & booking — a clear website where customers can see services and book a time online, from $249 one-time.
-2. Lead response — missed calls and website forms get a reply in under a minute, day or night, and every lead lands on the owner's phone.
+2. Lead response — one intake channel to start: missed calls or website forms get a reply in under a minute, day or night, and every lead lands on the owner's phone.
 3. AI tools for shops — a website chat box that answers from the business's own info, a custom chat agent for the business's website, and a voice receptionist that answers calls live.
 
 ## Products and prices
 
-- Never-Miss-a-Lead — replies to missed calls and website forms by text in under a minute. $199 setup + $99/month. First month total: $298. Month-to-month.
+- Never-Miss-a-Lead — replies in under a minute on one intake channel to start: missed calls, website forms, or after-hours messages — whichever costs you more jobs. $199 setup + $99/month. First month total: $298. Month-to-month.
   Product site: https://nevermiss.northbeambuilds.com/ · Details: https://northbeambuilds.com/tools/never-miss-a-lead/
 - Website FAQ & Lead Capture Agent — a chat box on the business's own website that answers questions from its own hours, prices, and services, and takes a name and number when it cannot answer. $49 flat (regular price $149). No monthly fee.
   Product site: https://faqagent.northbeambuilds.com/ · Details: https://northbeambuilds.com/tools/website-lead-capture-agent/
@@ -39,7 +39,7 @@ Full price table: https://northbeambuilds.com/pricing/
 - Q: What does Never-Miss-a-Lead cost in total?
   A: $199 to set it up, then $99 a month. The first month is $298 total. There is no per-message bill and no exit fee.
 - Q: How fast is the reply?
-  A: Under a minute, day or night, for a missed call or a website form.
+  A: Under a minute, day or night, on the channel you start with — a missed call or a website form.
 - Q: What is the difference between Never-Miss-a-Lead and the AI Phone Receptionist?
   A: Never-Miss-a-Lead follows up by text after a call is missed. The Phone Receptionist answers the call live, by voice.
 - Q: What is the difference between the $49 FAQ Agent and the AI Chatbot?
