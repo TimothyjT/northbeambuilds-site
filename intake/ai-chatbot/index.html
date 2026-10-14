@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Setup intake for Northbeam Builds' AI Chatbot — a managed website chatbot that answers only from your own content and captures leads. Payment confirmed; this short form configures your chatbot." />
+<meta name="robots" content="noindex" />
+<link rel="canonical" href="https://northbeambuilds.com/intake/ai-chatbot/" />
+<link rel="icon" href="data:," />
+<title>AI Chatbot — Setup Intake — Northbeam Builds</title>
+<style>
+  :root{
+    --bg:#f6f7f9;
+    --surface:#ffffff;
+    --surface-2:#eef1f4;
+    --ink:#14232e;
+    --ink-soft:#47586a;
+    --navy:#0e2233;
+    --navy-2:#16334a;
+    --amber:#c77d12;
+    --amber-strong:#a96a08;
+    --amber-soft:#fdf3e0;
+    --line:#d9dfe6;
+    --line-strong:#b9c4cf;
+    --focus:#b36e05;
+    --ok-bg:#eef6ec;
+    --ok-line:#bcd6b6;
+    --ok-ink:#2c5a24;
+    --err:#9c2b1b;
+    --radius:10px;
+    --shadow:0 10px 30px rgba(14,34,51,.14);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0c1620;
+      --surface:#12222f;
+      --surface-2:#182b3c;
+      --ink:#e8edf1;
+      --ink-soft:#a9b8c4;
+      --navy:#0a1a28;
+      --navy-2:#12293e;
+      --amber:#e8a33d;
+      --amber-strong:#f0b45c;
+      --amber-soft:#2a2113;
+      --line:#26394a;
+      --line-strong:#3a546c;
+      --focus:#f0b45c;
+      --ok-bg:#16281a;
+      --ok-line:#33502f;
+      --ok-ink:#a9d69e;
+      --err:#f0a294;
+      --shadow:0 10px 30px rgba(0,0,0,.5);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--amber-strong)}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:3px solid var(--focus);
+    outline-offset:2px;
+  }
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Header (simple) ---------- */
+  .site-header{
+    background:var(--navy);
+    border-bottom:3px solid var(--amber);
+  }
+  .site-header .wrap{
+    display:flex;align-items:center;
+    min-height:64px;gap:16px;
+  }
+  .brand{
+    color:#fff;text-decoration:none;font-weight:700;font-size:1.15rem;letter-spacing:.01em;
+    display:flex;align-items:center;gap:10px;white-space:nowrap;
+  }
+  .brand .mark{
+    width:12px;height:12px;background:var(--amber);flex:none;
+    clip-path:polygon(50% 0,100% 100%,0 100%);
+  }
+  .brand small{display:block;font-weight:400;font-size:.72rem;color:#b9c9d6;letter-spacing:.04em}
+
+  /* ---------- Main ---------- */
+  main{padding:52px 0 72px}
+  .narrow{max-width:760px}
+  .eyebrow{
+    margin:0 0 10px;font-size:.82rem;font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--amber-strong);
+  }
+  h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:2.5rem;line-height:1.15;margin:0 0 14px;font-weight:700;color:var(--ink);
+  }
+  @media (max-width:560px){ h1{font-size:2rem} main{padding:38px 0 56px} }
+  .lede{font-size:1.13rem;color:var(--ink-soft);margin:0 0 16px}
+  .lede strong{color:var(--ink)}
+  .product-line{
+    display:inline-block;margin:0 0 30px;padding:6px 14px;border-radius:999px;
+    background:var(--amber-soft);border:1px solid var(--line);
+    font-size:.95rem;font-weight:700;color:var(--ink);
+  }
+
+  .panel{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 28px;
+  }
+  @media (max-width:560px){ .panel{padding:22px 18px} }
+  .panel h2{font-size:1.22rem;margin:0 0 6px;line-height:1.3}
+  .panel .intro{margin:0 0 22px;color:var(--ink-soft);font-size:.98rem}
+
+  /* ---------- Form ---------- */
+  form .field{margin-bottom:20px}
+  form label, form legend{display:block;font-weight:700;font-size:.95rem;margin-bottom:6px;padding:0}
+  form label .hint, form legend .hint{font-weight:400;color:var(--ink-soft);font-size:.88rem}
+  form fieldset{border:none;margin:0 0 20px;padding:0}
+  form input[type="text"], form input[type="url"], form input[type="email"], form input[type="tel"],
+  form textarea, form select{
+    width:100%;font:inherit;color:var(--ink);
+    background:var(--bg);border:1px solid var(--line-strong);border-radius:8px;
+    padding:11px 13px;
+  }
+  form textarea{min-height:96px;resize:vertical}
+  form textarea.tall{min-height:120px}
+  .check, .radio{
+    display:flex;gap:10px;align-items:flex-start;
+    font-weight:400;font-size:.98rem;margin-top:10px;cursor:pointer;
+  }
+  .radio{margin-top:8px}
+  .check input, .radio input{width:20px;height:20px;flex:none;margin-top:3px;accent-color:var(--amber-strong)}
+  .check span, .radio span{flex:1}
+  .field-note{margin:8px 0 0 30px;font-size:.9rem;color:var(--ink-soft)}
+  .error-msg{display:none;margin:8px 0 0;font-size:.92rem;font-weight:600;color:var(--err)}
+  .error-msg.show{display:block}
+  .btn{
+    display:inline-block;background:var(--amber);color:#1c1405;border:none;
+    font:inherit;font-weight:700;font-size:1rem;padding:13px 22px;border-radius:8px;
+    cursor:pointer;text-decoration:none;text-align:center;
+  }
+  .btn:hover{background:var(--amber-strong);color:#fff}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-2);color:#fff}
+  .form-note{margin:14px 0 0;font-size:.9rem;color:var(--ink-soft)}
+
+  /* ---------- Received state ---------- */
+  .reserve{
+    display:none;border:1px solid var(--ok-line);background:var(--ok-bg);
+    border-radius:var(--radius);padding:22px 24px;
+  }
+  .reserve.show{display:block}
+  .reserve h2{font-size:1.3rem;margin:0 0 10px}
+  .reserve .status{
+    display:inline-block;font-weight:700;color:var(--ok-ink);
+    border:1px solid var(--ok-line);background:var(--surface);
+    padding:4px 12px;border-radius:999px;font-size:.88rem;margin-bottom:12px;
+  }
+  .reserve p{margin:0 0 16px}
+  .reserve .summary{
+    background:var(--surface);border:1px solid var(--line);border-radius:8px;
+    padding:14px 16px;margin:0 0 18px;font-size:.95rem;white-space:pre-line;word-break:break-word;
+  }
+  .reserve .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .reserve .again{margin:14px 0 0;font-size:.92rem}
+  .reserve .again button{
+    background:none;border:none;color:var(--amber-strong);font:inherit;font-size:.92rem;
+    text-decoration:underline;cursor:pointer;padding:0;
+  }
+  .copy-note{font-size:.9rem;color:var(--ok-ink);font-weight:600}
+
+  /* ---------- Footer (simple) ---------- */
+  .site-footer{background:var(--navy);color:#c8d4de}
+  .site-footer .wrap{padding-top:36px;padding-bottom:30px}
+  .foot-brand{color:#fff;font-weight:700;font-size:1.1rem;margin:0 0 8px}
+  .foot-brand .mark{
+    display:inline-block;width:11px;height:11px;background:var(--amber);margin-right:8px;
+    clip-path:polygon(50% 0,100% 100%,0 100%);
+  }
+  .site-footer p{margin:0 0 6px}
+  .site-footer a{color:#c8d4de}
+  .site-footer a:hover{color:#fff}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Northbeam Builds — home">
+      <span class="mark" aria-hidden="true"></span>
+      <span>Northbeam Builds<small>AUSTIN, TX</small></span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap narrow">
+    <p class="eyebrow">Setup intake</p>
+    <h1>AI Chatbot — Setup Intake</h1>
+    <p class="lede"><strong>Payment confirmed — thank you.</strong> This short form configures your chatbot: it answers only from your own content — your site and anything you link here — and when a question isn&rsquo;t covered it says so honestly and captures the visitor as a lead instead of guessing.</p>
+    <p class="lede">Live within 24&ndash;48 hours of a completed intake. You&rsquo;ll approve the wording on a preview link before it goes live on your site.</p>
+    <p class="product-line">AI Chatbot — $149 setup + $49/month</p>
+
+    <section class="panel" aria-labelledby="formHeading">
+      <h2 id="formHeading">Tell us about your business</h2>
+      <p class="intro">Answer in your own words. The chatbot is built from these answers and the content you point it to — nothing else.</p>
+
+      <form id="intakeForm" novalidate>
+        <div class="field">
+          <label for="fBusiness">Business name <span class="hint">— as your customers know it</span></label>
+          <input id="fBusiness" name="business" type="text" autocomplete="organization" required />
+        </div>
+
+        <div class="field">
+          <label for="fWebsite">Your website URL <span class="hint">— the chatbot&rsquo;s main knowledge source</span></label>
+          <input id="fWebsite" name="website" type="url" inputmode="url" autocomplete="url" placeholder="https://…" required />
+          <label class="check" for="fPermission">
+            <input id="fPermission" name="permission" type="checkbox" required />
+            <span>You have my permission to use my site&rsquo;s content for the chatbot</span>
+          </label>
+        </div>
+
+        <div class="field">
+          <label for="fLinks">Links to anything not on your site that it must know <span class="hint">— price lists, policy documents, service menus, FAQs. One per line.</span></label>
+          <textarea id="fLinks" name="links" class="tall" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="fPlatform">Your website platform</label>
+          <select id="fPlatform" name="platform" required>
+            <option value="">Choose one…</option>
+            <option>WordPress</option>
+            <option>Squarespace</option>
+            <option>Wix</option>
+            <option>Custom-built</option>
+            <option>Not sure</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="fInstall">Install route</label>
+          <select id="fInstall" name="install" required>
+            <option value="">Choose one…</option>
+            <option>I&rsquo;ll give you embed access</option>
+            <option>I&rsquo;ll invite you as a site admin</option>
+            <option>My web person will install it</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="fLeadEmail">Email address for instant lead alerts</label>
+          <input id="fLeadEmail" name="leadEmail" type="email" autocomplete="email" required />
+        </div>
+
+        <div class="field">
+          <label for="fLeadMobile">Mobile number for lead alerts <span class="hint">— optional; leave blank for email only</span></label>
+          <input id="fLeadMobile" name="leadMobile" type="tel" autocomplete="tel" />
+        </div>
+
+        <fieldset class="field">
+          <legend>Where should captured leads land?</legend>
+          <label class="radio">
+            <input type="radio" name="leadDestination" value="My email inbox" required />
+            <span>My email inbox</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="leadDestination" value="A Google Sheet" />
+            <span>A Google Sheet</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="leadDestination" value="A CRM" />
+            <span>A CRM</span>
+          </label>
+          <p class="field-note">CRM delivery is part of the Booking + CRM package; if you pick this and it&rsquo;s not on your order, we&rsquo;ll confirm the options before go-live.</p>
+        </fieldset>
+
+        <div class="field">
+          <label for="fHours">Your business hours</label>
+          <input id="fHours" name="hours" type="text" required />
+        </div>
+
+        <div class="field">
+          <label for="fArea">Your service area</label>
+          <input id="fArea" name="area" type="text" required />
+        </div>
+
+        <div class="field">
+          <label for="fBooking">Booking or phone instructions the chatbot should give visitors <span class="hint">— e.g. &ldquo;tell them to book at this link&rdquo; + the link, or &ldquo;give them this number&rdquo;</span></label>
+          <textarea id="fBooking" name="booking" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="fGreeting">A greeting you&rsquo;d like <span class="hint">— optional</span></label>
+          <input id="fGreeting" name="greeting" type="text" />
+        </div>
+
+        <div class="field">
+          <label for="fNever">Anything the chatbot must NEVER say <span class="hint">— write &ldquo;Nothing&rdquo; if there isn&rsquo;t anything</span></label>
+          <textarea id="fNever" name="never" required></textarea>
+        </div>
+
+        <p class="error-msg" id="formError" role="alert"></p>
+        <button class="btn" type="submit">Submit intake</button>
+        <p class="form-note">This page can&rsquo;t send anything by itself — submitting prepares an email with your answers in it, ready for you to send from your own mail app. Nothing is sent until you tap that button.</p>
+      </form>
+
+      <div class="reserve" id="receivedBox" role="status" aria-live="polite">
+        <span class="status">Received — one last step</span>
+        <h2>Your answers are ready to send</h2>
+        <p>This page can&rsquo;t send by itself, so we&rsquo;ve prepared an email with your answers — tap the button below to send it to <strong>northbeambuilds@gmail.com</strong> from your own mail app. Your chatbot setup starts from that email.</p>
+        <p>Here are your answers, exactly as they&rsquo;ll appear in the email. If your mail app doesn&rsquo;t open, copy them and email them to northbeambuilds@gmail.com yourself:</p>
+        <p class="summary" id="answersSummary"></p>
+        <div class="actions">
+          <a class="btn btn-navy" id="mailtoLink" href="mailto:northbeambuilds@gmail.com">Send it by email</a>
+          <button class="btn" type="button" id="copyBtn">Copy your answers</button>
+          <span class="copy-note" id="copyNote" aria-live="polite"></span>
+        </div>
+        <p class="again">Need to change something? <button type="button" id="editBtn">Edit your answers</button></p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="foot-brand"><span class="mark" aria-hidden="true"></span>Northbeam Builds</p>
+    <p>Northbeam Builds — Austin, TX</p>
+    <p>Contact: <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var EMAIL = 'northbeambuilds@gmail.com';
+  var form = document.getElementById('intakeForm');
+  var receivedBox = document.getElementById('receivedBox');
+  var summaryEl = document.getElementById('answersSummary');
+  var mailtoLink = document.getElementById('mailtoLink');
+  var errorEl = document.getElementById('formError');
+  var copyNote = document.getElementById('copyNote');
+  var lastBody = '';
+
+  function val(id){ return document.getElementById(id).value.trim(); }
+  function checkedRadio(name){
+    var nodes = form.querySelectorAll('input[name="' + name + '"]');
+    for (var i = 0; i < nodes.length; i++){ if (nodes[i].checked) return nodes[i].value; }
+    return '';
+  }
+  function showError(msg, el){
+    errorEl.textContent = msg;
+    errorEl.classList.add('show');
+    if (el && el.focus) el.focus();
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errorEl.classList.remove('show');
+    errorEl.textContent = '';
+
+    var business = val('fBusiness');
+    var website = val('fWebsite');
+    var permission = document.getElementById('fPermission').checked;
+    var links = val('fLinks');
+    var platform = val('fPlatform');
+    var installSelect = document.getElementById('fInstall');
+    var install = installSelect.options[installSelect.selectedIndex].text.trim();
+    if (installSelect.value === '') install = '';
+    var leadEmail = val('fLeadEmail');
+    var leadMobile = val('fLeadMobile');
+    var leadDestination = checkedRadio('leadDestination');
+    var hours = val('fHours');
+    var area = val('fArea');
+    var booking = val('fBooking');
+    var greeting = val('fGreeting');
+    var never = val('fNever');
+
+    /* Required-field check — every field except mobile and greeting is required. */
+    var missing = [];
+    if (!business) missing.push(['Business name', document.getElementById('fBusiness')]);
+    if (!website) missing.push(['Your website URL', document.getElementById('fWebsite')]);
+    if (!permission) missing.push(['Permission to use your site\u2019s content', document.getElementById('fPermission')]);
+    if (!links) missing.push(['Links to anything not on your site that it must know', document.getElementById('fLinks')]);
+    if (!platform) missing.push(['Your website platform', document.getElementById('fPlatform')]);
+    if (!install) missing.push(['Install route', document.getElementById('fInstall')]);
+    if (!leadEmail) missing.push(['Email address for instant lead alerts', document.getElementById('fLeadEmail')]);
+    if (!leadDestination) missing.push(['Where should captured leads land?', form.querySelector('input[name="leadDestination"]')]);
+    if (!hours) missing.push(['Your business hours', document.getElementById('fHours')]);
+    if (!area) missing.push(['Your service area', document.getElementById('fArea')]);
+    if (!booking) missing.push(['Booking or phone instructions', document.getElementById('fBooking')]);
+    if (!never) missing.push(['Anything the chatbot must NEVER say', document.getElementById('fNever')]);
+    if (missing.length){
+      showError('Please fill in: ' + missing.map(function(m){ return m[0]; }).join('; ') + '.', missing[0][1]);
+      return;
+    }
+
+    function shown(v){ return v ? v : '(left blank)'; }
+    var rows = [
+      ['Business name (as your customers know it)', business],
+      ['Your website URL', website],
+      ['Permission to use my site\u2019s content for the chatbot', 'Yes'],
+      ['Links to anything not on your site that it must know', links],
+      ['Your website platform', platform],
+      ['Install route', install],
+      ['Email address for instant lead alerts', leadEmail],
+      ['Mobile number for lead alerts', shown(leadMobile)],
+      ['Where should captured leads land?', leadDestination],
+      ['Your business hours', hours],
+      ['Your service area', area],
+      ['Booking or phone instructions the chatbot should give visitors', booking],
+      ['A greeting you\u2019d like', shown(greeting)],
+      ['Anything the chatbot must NEVER say', never]
+    ];
+    var body = rows.map(function(r){ return r[0] + ': ' + r[1]; }).join('\n');
+    lastBody = body;
+    summaryEl.textContent = body;
+
+    var subject = 'AI Chatbot intake \u2014 ' + business;
+    mailtoLink.setAttribute('href',
+      'mailto:' + EMAIL +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body));
+
+    copyNote.textContent = '';
+    form.style.display = 'none';
+    receivedBox.classList.add('show');
+    receivedBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    mailtoLink.focus();
+  });
+
+  document.getElementById('editBtn').addEventListener('click', function(){
+    receivedBox.classList.remove('show');
+    form.style.display = '';
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    function done(){ copyNote.textContent = 'Copied — paste it into an email to ' + EMAIL + '.'; }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(lastBody).then(done, function(){ copyNote.textContent = 'Copy didn\u2019t work in this browser — select the answers above and copy them manually.'; });
+    } else {
+      copyNote.textContent = 'Select the answers above and copy them manually.';
+    }
+  });
+})();
+</script>
+</body>
+</html>

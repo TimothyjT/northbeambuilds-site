@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Setup intake for Northbeam Builds' Website + Online Booking: tell us your services, hours, prices, and service area — the actual settings customers will see and book against." />
+<link rel="icon" href="data:," />
+<link rel="canonical" href="https://northbeambuilds.com/intake/website-booking/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Northbeam Builds" />
+<meta property="og:url" content="https://northbeambuilds.com/intake/website-booking/" />
+<meta property="og:title" content="Website + Online Booking — Setup Intake | Northbeam Builds" />
+<meta property="og:description" content="Payment confirmed — thank you. This form is how we build your website and booking calendar." />
+<title>Website + Online Booking — Setup Intake | Northbeam Builds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f7f4; --bg-elev:#ffffff; --bg-soft:#eef0ec;
+    --ink:#14213a; --ink-2:#3d4a63; --ink-3:#5a6579;
+    --line:#dde0d8; --line-strong:#c9cec2;
+    --navy:#12233f; --navy-2:#1a3358; --navy-muted:#b9c4d8;
+    --accent:#9a641f; --accent-strong:#855518; --accent-soft:#fbf3e3; --accent-line:#e8d5ae;
+    --ok:#1f6b4a; --ok-bg:#eef6ec; --ok-line:#bcd6b6;
+    --radius:14px; --radius-sm:10px;
+    --shadow:0 1px 2px rgba(18,35,63,.05), 0 10px 30px rgba(18,35,63,.06);
+    --max:820px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0e1626; --bg-elev:#16233c; --bg-soft:#131f35;
+      --ink:#eef1f7; --ink-2:#c2cbdd; --ink-3:#8f9bb3;
+      --line:#26344f; --line-strong:#33456a;
+      --navy:#0a1424; --navy-2:#12233f; --navy-muted:#9fb0ca;
+      --accent:#d99a3d; --accent-strong:#e8ad52; --accent-soft:#2a2213; --accent-line:#4a3a1c;
+      --ok:#5ec49a; --ok-bg:#16281a; --ok-line:#33502f;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 32px rgba(0,0,0,.28);
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent-strong)}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  h1,h2{font-family:"IBM Plex Serif",Georgia,serif;line-height:1.15;letter-spacing:-.01em;margin:0}
+  p{margin:0}
+  /* header */
+  header{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit}
+  .brand-mark{width:36px;height:36px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;flex:0 0 auto;font-family:"IBM Plex Serif",Georgia,serif;font-weight:700;font-size:15px}
+  .brand-text{line-height:1.1}
+  .brand-text strong{display:block;font-size:17px;font-weight:700;letter-spacing:-.01em}
+  .brand-text span{display:block;font-size:12px;color:var(--ink-3);font-weight:500;letter-spacing:.02em}
+  .nav a.home-link{font-size:14.5px;font-weight:500;color:var(--ink-2);text-decoration:none}
+  .nav a.home-link:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+  /* main */
+  main{padding:52px 0 72px}
+  @media (max-width:560px){ main{padding:36px 0 56px} }
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-strong)}
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--accent);border-radius:2px}
+  h1{font-size:clamp(32px,4.6vw,44px);font-weight:700;margin:14px 0 16px}
+  .lede{font-size:18px;line-height:1.65;color:var(--ink-2);max-width:62ch}
+  .lede strong{color:var(--ink)}
+  .paid-pill{display:inline-flex;align-items:center;gap:8px;margin-bottom:6px;background:var(--ok-bg);border:1px solid var(--ok-line);color:var(--ink);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:600}
+  .paid-pill .dot{width:9px;height:9px;border-radius:50%;background:var(--ok);flex:0 0 auto}
+  /* form */
+  form{margin-top:34px;background:var(--bg-elev);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px 30px 26px}
+  @media (max-width:560px){ form{padding:24px 20px 22px} }
+  fieldset{border:none;margin:0 0 26px;padding:0 0 24px;border-bottom:1px solid var(--line)}
+  fieldset:last-of-type{border-bottom:none;margin-bottom:8px;padding-bottom:4px}
+  legend{font-family:"IBM Plex Serif",Georgia,serif;font-size:20px;font-weight:600;padding:0;margin-bottom:6px}
+  .sec-note{font-size:14.5px;color:var(--ink-3);margin-bottom:16px;max-width:58ch}
+  .field{margin-bottom:18px}
+  .field:last-child{margin-bottom:0}
+  label,.group-label{display:block;font-weight:600;font-size:15.5px;margin-bottom:6px}
+  label .hint,.group-label .hint{font-weight:400;color:var(--ink-3);font-size:14px}
+  input[type="text"],input[type="email"],input[type="tel"],input[type="url"],textarea{
+    width:100%;font:inherit;font-size:16px;color:var(--ink);
+    background:var(--bg);border:1px solid var(--line-strong);border-radius:var(--radius-sm);
+    padding:11px 13px;
+  }
+  textarea{min-height:96px;resize:vertical}
+  textarea.tall{min-height:132px}
+  .radio-row{display:flex;flex-direction:column;gap:9px;margin:4px 0 14px}
+  .radio-row label{display:flex;align-items:flex-start;gap:10px;font-weight:500;font-size:16px;margin:0;cursor:pointer}
+  .radio-row input[type="radio"]{width:19px;height:19px;margin:3px 0 0;accent-color:var(--navy);flex:0 0 auto}
+  @media (prefers-color-scheme: dark){ .radio-row input[type="radio"]{accent-color:var(--accent)} }
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-weight:600;font-size:16px;line-height:1;text-decoration:none;padding:14px 24px;border-radius:999px;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+  .btn-primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .btn-primary:hover{background:var(--navy-2)}
+  .btn-accent{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .btn-accent:hover{background:var(--accent-strong);border-color:var(--accent-strong)}
+  @media (prefers-color-scheme: dark){ .btn-accent{background:#9a641f;border-color:#9a641f} .btn-accent:hover{background:#855518;border-color:#855518} }
+  .form-note{margin:14px 0 0;font-size:14px;color:var(--ink-3);max-width:58ch}
+  /* received state */
+  .received{display:none;margin-top:34px;background:var(--bg-elev);border:1px solid var(--ok-line);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px}
+  @media (max-width:560px){ .received{padding:24px 20px} }
+  .received.show{display:block}
+  .received .status{display:inline-block;font-weight:700;color:var(--ok);border:1px solid var(--ok-line);background:var(--ok-bg);padding:5px 13px;border-radius:999px;font-size:14px;margin-bottom:14px}
+  .received h2{font-size:26px;margin-bottom:10px}
+  .received p{color:var(--ink-2);margin-bottom:16px;max-width:58ch}
+  .received p strong{color:var(--ink)}
+  .answers{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-sm);padding:16px 18px;margin:0 0 18px;font-size:14.5px;line-height:1.55;white-space:pre-wrap;word-break:break-word;max-height:420px;overflow:auto}
+  .received .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .received .again{margin:16px 0 0;font-size:14.5px;color:var(--ink-3)}
+  .received .again button{background:none;border:none;color:var(--accent-strong);font:inherit;font-size:14.5px;font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:0}
+  .copy-note{font-size:13.5px;color:var(--ink-3);margin-top:12px}
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:34px 0 38px;background:var(--bg-elev)}
+  .foot{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;align-items:baseline}
+  .foot .f-brand{font-weight:700;font-size:16px}
+  .foot p{font-size:14px;color:var(--ink-3)}
+  .foot a{color:var(--ink-2);font-weight:600;text-decoration:none}
+  .foot a:hover{text-decoration:underline;text-underline-offset:3px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="https://northbeambuilds.com/" aria-label="Northbeam Builds — home">
+      <span class="brand-mark" aria-hidden="true">NB</span>
+      <span class="brand-text"><strong>Northbeam Builds</strong><span>AUSTIN, TEXAS</span></span>
+    </a>
+    <a class="home-link" href="https://northbeambuilds.com/">northbeambuilds.com</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <span class="paid-pill"><span class="dot" aria-hidden="true"></span>Payment confirmed — thank you</span>
+    <h1>Website + Online Booking — setup intake</h1>
+    <p class="lede">This form is how we build your website and booking calendar: <strong>services, hours, prices, and service area are the actual settings customers will see and book against.</strong> Most simple sites land at the $249 starting price; if your answers need a bigger build (more pages, a long service list, extra booking rules), you get a firm quote in writing before we start — the quote is the price, never a surprise. You approve the site before it goes live, and it&rsquo;s yours: your site, your words, your photos.</p>
+
+    <form id="intakeForm" novalidate>
+      <!-- About you -->
+      <fieldset>
+        <legend>About you and your business</legend>
+        <p class="sec-note">Who the site is for, and where booking notices and our messages should reach you.</p>
+        <div class="field">
+          <label for="fBusiness">Business name</label>
+          <input id="fBusiness" name="business_name" type="text" autocomplete="organization" required />
+        </div>
+        <div class="field">
+          <label for="fName">Your name</label>
+          <input id="fName" name="your_name" type="text" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="fEmail">Email for booking notices and our messages</label>
+          <input id="fEmail" name="email" type="email" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="fPhone">Phone number</label>
+          <input id="fPhone" name="phone" type="tel" autocomplete="tel" required />
+        </div>
+      </fieldset>
+
+      <!-- Your site today -->
+      <fieldset>
+        <legend>Your site today</legend>
+        <div class="field">
+          <span class="group-label" id="situationLabel">Your situation</span>
+          <div class="radio-row" role="radiogroup" aria-labelledby="situationLabel">
+            <label><input type="radio" name="situation" value="I have no website yet" required /> I have no website yet</label>
+            <label><input type="radio" name="situation" value="Rebuild my existing site" /> Rebuild my existing site</label>
+            <label><input type="radio" name="situation" value="Replace my existing site" /> Replace my existing site</label>
+          </div>
+          <label for="fCurrentUrl">Current website URL <span class="hint">— if you have one</span></label>
+          <input id="fCurrentUrl" name="current_website_url" type="url" inputmode="url" placeholder="https://" />
+        </div>
+        <div class="field">
+          <span class="group-label" id="domainLabel">Do you own a domain name?</span>
+          <div class="radio-row" role="radiogroup" aria-labelledby="domainLabel">
+            <label><input type="radio" name="owns_domain" value="Yes — it is in the next field" required /> Yes — it&rsquo;s in the next field</label>
+            <label><input type="radio" name="owns_domain" value="No — help me get one" /> No — help me get one</label>
+          </div>
+          <label for="fDomain">Your domain name <span class="hint">— if you have one</span></label>
+          <input id="fDomain" name="domain" type="text" inputmode="url" placeholder="yourbusiness.com" />
+        </div>
+      </fieldset>
+
+      <!-- Services, hours, area -->
+      <fieldset>
+        <legend>Services, hours, and service area</legend>
+        <p class="sec-note">This is what customers will see on the site and book against, so use the real names, prices, and times.</p>
+        <div class="field">
+          <label for="fServices">Your services <span class="hint">— one per line, in this shape: Service name — price — how long it takes</span></label>
+          <textarea id="fServices" name="services" class="tall" required placeholder="Example: Deep clean — $189 — 2 hours"></textarea>
+        </div>
+        <div class="field">
+          <label for="fHours">Business hours for each day</label>
+          <textarea id="fHours" name="business_hours" required placeholder="Mon–Fri 8–5, Sat 9–2, Sun closed"></textarea>
+        </div>
+        <div class="field">
+          <label for="fClosed">Days you&rsquo;re always closed <span class="hint">— holidays, Sundays, etc.</span></label>
+          <textarea id="fClosed" name="days_closed" placeholder="Sundays, Thanksgiving, Christmas Day"></textarea>
+        </div>
+        <div class="field">
+          <label for="fArea">Your service area <span class="hint">— cities, or a radius from your base</span></label>
+          <input id="fArea" name="service_area" type="text" required placeholder="Austin and Round Rock, or within 25 miles of Austin" />
+        </div>
+      </fieldset>
+
+      <!-- Booking rules -->
+      <fieldset>
+        <legend>Booking rules</legend>
+        <p class="sec-note">These become the rules your booking calendar follows.</p>
+        <div class="field">
+          <label for="fFarAhead">How far ahead can customers book? <span class="hint">— e.g. up to 30 days out</span></label>
+          <input id="fFarAhead" name="book_how_far_ahead" type="text" required />
+        </div>
+        <div class="field">
+          <label for="fHowSoon">How soon can they book? <span class="hint">— e.g. no bookings less than 24 hours ahead</span></label>
+          <input id="fHowSoon" name="book_how_soon" type="text" required />
+        </div>
+        <div class="field">
+          <label for="fGap">Do you need a gap between jobs? <span class="hint">— e.g. 30 minutes (optional)</span></label>
+          <input id="fGap" name="gap_between_jobs" type="text" />
+        </div>
+        <div class="field">
+          <span class="group-label" id="noticesLabel">Where should booking notices land?</span>
+          <div class="radio-row" role="radiogroup" aria-labelledby="noticesLabel">
+            <label><input type="radio" name="notice_channel" value="Email" required /> Email</label>
+            <label><input type="radio" name="notice_channel" value="Text to my mobile" /> Text to my mobile</label>
+            <label><input type="radio" name="notice_channel" value="Both email and text" /> Both</label>
+          </div>
+          <label for="fMobile">Mobile number for texts <span class="hint">— if you picked text or both</span></label>
+          <input id="fMobile" name="mobile_for_texts" type="tel" autocomplete="tel" />
+        </div>
+        <div class="field">
+          <label for="fBeforeBook">Anything customers must know before they book <span class="hint">— deposits, cancellation policy, prep instructions</span></label>
+          <textarea id="fBeforeBook" name="before_they_book" class="tall"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- Logo and photos -->
+      <fieldset>
+        <legend>Logo and photos</legend>
+        <div class="field">
+          <span class="group-label" id="assetsLabel">Logo and photos</span>
+          <div class="radio-row" role="radiogroup" aria-labelledby="assetsLabel">
+            <label><input type="radio" name="logo_photos" value="I have them — links are in the next field" required /> I have them — links in the next field</label>
+            <label><input type="radio" name="logo_photos" value="I don&rsquo;t have any yet" /> I don&rsquo;t have any yet</label>
+          </div>
+          <label for="fAssetLinks">Links to your logo and photos <span class="hint">— a Drive, Dropbox, or photo link is fine</span></label>
+          <textarea id="fAssetLinks" name="logo_photo_links" placeholder="Paste one link per line"></textarea>
+        </div>
+      </fieldset>
+
+      <button class="btn btn-primary" type="submit">Send my answers</button>
+      <p class="form-note">This page can&rsquo;t send anything by itself. Submitting prepares an email with your answers, ready to send to northbeambuilds@gmail.com from your own mail app — nothing reaches us until you send that email.</p>
+    </form>
+
+    <div class="received" id="receivedBox" role="status" aria-live="polite">
+      <span class="status">Received — one last step</span>
+      <h2>Your answers are ready to send</h2>
+      <p><strong>This page can&rsquo;t send by itself</strong>, so we&rsquo;ve prepared an email with your answers. Tap the button below to send it to <strong>northbeambuilds@gmail.com</strong> from your own mail app — that&rsquo;s what actually gets your intake to us.</p>
+      <p>Your answers are shown here in full, so if your mail app doesn&rsquo;t open, you can copy them and paste them into an email to northbeambuilds@gmail.com yourself.</p>
+      <div class="answers" id="answersBox" tabindex="0" aria-label="Your answers — copy these if your mail app does not open"></div>
+      <div class="actions">
+        <a class="btn btn-accent" id="mailtoBtn" href="mailto:northbeambuilds@gmail.com">Send it by email</a>
+        <button class="btn btn-primary" type="button" id="copyBtn">Copy your answers</button>
+      </div>
+      <p class="copy-note" id="copyNote" aria-live="polite"></p>
+      <p class="again">Need to change something? <button type="button" id="editBtn">Edit your answers</button></p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <p><span class="f-brand">Northbeam Builds</span> — Austin, TX</p>
+    <p>Questions? Email <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var EMAIL = "northbeambuilds@gmail.com";
+  var form = document.getElementById("intakeForm");
+  var receivedBox = document.getElementById("receivedBox");
+  var answersBox = document.getElementById("answersBox");
+  var mailtoBtn = document.getElementById("mailtoBtn");
+  var copyBtn = document.getElementById("copyBtn");
+  var copyNote = document.getElementById("copyNote");
+
+  function val(id){ return document.getElementById(id).value.trim(); }
+  function radio(name){
+    var el = form.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : "";
+  }
+  function line(label, answer){ return label + ": " + (answer ? answer : "(not provided)"); }
+
+  function collect(){
+    return [
+      ["Business name", val("fBusiness")],
+      ["Your name", val("fName")],
+      ["Email for booking notices and our messages", val("fEmail")],
+      ["Phone number", val("fPhone")],
+      ["Your situation", radio("situation")],
+      ["Current website URL", val("fCurrentUrl")],
+      ["Do you own a domain name?", radio("owns_domain")],
+      ["Domain name", val("fDomain")],
+      ["Your services", val("fServices")],
+      ["Business hours for each day", val("fHours")],
+      ["Days you're always closed", val("fClosed")],
+      ["Your service area", val("fArea")],
+      ["Booking rules — how far ahead can customers book?", val("fFarAhead")],
+      ["Booking rules — how soon can they book?", val("fHowSoon")],
+      ["Gap between jobs", val("fGap")],
+      ["Where should booking notices land?", radio("notice_channel")],
+      ["Mobile number for texts", val("fMobile")],
+      ["Anything customers must know before they book", val("fBeforeBook")],
+      ["Logo and photos", radio("logo_photos")],
+      ["Links to logo and photos", val("fAssetLinks")]
+    ];
+  }
+
+  function buildBody(pairs){
+    var out = "Website + Online Booking — Setup Intake\n";
+    for (var i = 0; i < pairs.length; i++){ out += "\n" + line(pairs[i][0], pairs[i][1]); }
+    return out;
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    if (typeof form.reportValidity === "function" && !form.reportValidity()){ return; }
+    var pairs = collect();
+    var body = buildBody(pairs);
+    var subject = "Website + Booking intake — " + (val("fBusiness") || "New business");
+    answersBox.textContent = body;
+    mailtoBtn.setAttribute("href",
+      "mailto:" + EMAIL +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body));
+    copyNote.textContent = "";
+    form.style.display = "none";
+    receivedBox.classList.add("show");
+    receivedBox.scrollIntoView({ block: "start" });
+    mailtoBtn.focus();
+  });
+
+  copyBtn.addEventListener("click", function(){
+    var text = answersBox.textContent;
+    function done(){ copyNote.textContent = "Copied — you can paste these into an email to " + EMAIL + "."; }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, function(){
+        copyNote.textContent = "Copy didn’t work in this browser — select the answers above and copy them manually.";
+      });
+    } else {
+      var range = document.createRange();
+      range.selectNodeContents(answersBox);
+      var sel = window.getSelection();
+      sel.removeAllRanges(); sel.addRange(range);
+      copyNote.textContent = "Your answers are selected — copy them, then paste into an email to " + EMAIL + ".";
+    }
+  });
+
+  document.getElementById("editBtn").addEventListener("click", function(){
+    receivedBox.classList.remove("show");
+    form.style.display = "";
+    document.getElementById("fBusiness").focus();
+  });
+})();
+</script>
+</body>
+</html>

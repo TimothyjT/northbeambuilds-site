@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Setup intake for Northbeam Builds' Website FAQ &amp; Lead Capture Agent ($49 flat, no monthly fee). Your answers configure your agent; FAQs are drafted from your own content and approved by you before anything goes live." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="data:," />
+<link rel="canonical" href="https://northbeambuilds.com/intake/faq-agent/" />
+<title>Website FAQ Agent — Setup Intake — Northbeam Builds</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --ink:#14232e; --ink-soft:#47586a;
+    --navy:#0e2233; --navy-2:#16334a; --amber:#c77d12; --amber-strong:#a96a08;
+    --amber-soft:#fdf3e0; --line:#d9dfe6; --line-strong:#b9c4cf; --focus:#b36e05;
+    --ok-bg:#eef6ec; --ok-line:#bcd6b6; --ok-ink:#2c5a24;
+    --radius:10px; --shadow:0 10px 30px rgba(14,34,51,.14);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0c1620; --surface:#12222f; --ink:#e8edf1; --ink-soft:#a9b8c4;
+      --navy:#0a1a28; --navy-2:#12293e; --amber:#e8a33d; --amber-strong:#f0b45c;
+      --amber-soft:#2a2113; --line:#26394a; --line-strong:#3a546c; --focus:#f0b45c;
+      --ok-bg:#16281a; --ok-line:#33502f; --ok-ink:#a9d69e; --shadow:0 10px 30px rgba(0,0,0,.5);
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--amber-strong)}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
+    outline:3px solid var(--focus);outline-offset:2px}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+  .narrow{max-width:780px}
+
+  /* Header — simple */
+  .site-header{background:var(--navy);border-bottom:3px solid var(--amber)}
+  .site-header .wrap{display:flex;align-items:center;min-height:64px}
+  .brand{color:#fff;text-decoration:none;font-weight:700;font-size:1.15rem;
+    display:flex;align-items:center;gap:10px}
+  .brand .mark{width:12px;height:12px;background:var(--amber);flex:none;
+    clip-path:polygon(50% 0,100% 100%,0 100%)}
+  .brand small{display:block;font-weight:400;font-size:.72rem;color:#b9c9d6;letter-spacing:.04em}
+
+  main{padding:52px 0 72px}
+  .eyebrow{margin:0 0 10px;font-size:.82rem;font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--amber-strong)}
+  h1{font-family:Georgia,"Times New Roman",serif;font-size:2.4rem;line-height:1.15;
+    margin:0 0 14px;font-weight:700}
+  .lede{font-size:1.1rem;color:var(--ink-soft);margin:0 0 18px}
+  .lede strong{color:var(--ink)}
+  .price-line{display:inline-block;background:var(--amber-soft);border:1px solid var(--line);
+    border-radius:999px;padding:6px 16px;font-weight:700;font-size:.95rem;margin:0 0 30px}
+  @media (max-width:560px){h1{font-size:1.9rem}main{padding:38px 0 56px}}
+
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 30px;box-shadow:var(--shadow)}
+  @media (max-width:560px){.panel{padding:22px 18px}}
+  .panel h2{font-size:1.25rem;margin:0 0 6px;line-height:1.3}
+  .panel .sub{margin:0 0 24px;color:var(--ink-soft);font-size:.97rem}
+
+  form .field{margin-bottom:20px}
+  form label, form legend{display:block;font-weight:700;font-size:.97rem;margin-bottom:6px;padding:0}
+  form label .hint, form legend .hint{font-weight:400;color:var(--ink-soft);font-size:.88rem}
+  form fieldset{border:1px solid var(--line);border-radius:8px;padding:16px 18px 8px;margin:0 0 20px}
+  form input[type="text"],form input[type="email"],form input[type="tel"],form input[type="url"],
+  form textarea,form select{
+    width:100%;font:inherit;color:var(--ink);background:var(--bg);
+    border:1px solid var(--line-strong);border-radius:8px;padding:11px 13px}
+  form textarea{min-height:96px;resize:vertical}
+  .radio-row{display:flex;gap:10px;align-items:flex-start;padding:8px 0}
+  .radio-row input{margin-top:6px;width:20px;height:20px;flex:none;accent-color:var(--amber-strong)}
+  .radio-row label{font-weight:400;margin:0}
+  .radio-row label strong{font-weight:700}
+  .color-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .color-row input[type="color"]{width:56px;height:44px;padding:4px;border:1px solid var(--line-strong);
+    border-radius:8px;background:var(--bg);cursor:pointer}
+  .color-row input[type="text"]{width:140px}
+  .btn{display:inline-block;background:var(--amber);color:#1c1405;border:none;font:inherit;
+    font-weight:700;font-size:1rem;padding:13px 22px;border-radius:8px;cursor:pointer;
+    text-decoration:none;text-align:center}
+  .btn:hover{background:var(--amber-strong);color:#fff}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-2);color:#fff}
+  .btn-ghost{background:transparent;border:1px solid var(--line-strong);color:var(--ink)}
+  .btn-ghost:hover{background:var(--bg);color:var(--ink)}
+  .form-note{margin:14px 0 0;font-size:.9rem;color:var(--ink-soft)}
+
+  .reserve{display:none;border:1px solid var(--ok-line);background:var(--ok-bg);
+    border-radius:var(--radius);padding:24px 26px;margin-top:4px}
+  .reserve.show{display:block}
+  .reserve .status{display:inline-block;font-weight:700;color:var(--ok-ink);
+    border:1px solid var(--ok-line);background:var(--surface);padding:4px 12px;
+    border-radius:999px;font-size:.88rem;margin-bottom:12px}
+  .reserve h2{margin-top:0}
+  .reserve p{margin:0 0 16px}
+  .reserve .summary{background:var(--surface);border:1px solid var(--line);border-radius:8px;
+    padding:14px 16px;margin:0 0 18px;font-size:.93rem;white-space:pre-wrap;word-break:break-word;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;max-height:420px;overflow:auto}
+  .reserve .actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .reserve .again{margin:16px 0 0;font-size:.92rem}
+  .reserve .again button{background:none;border:none;color:var(--amber-strong);font:inherit;
+    font-size:.92rem;text-decoration:underline;cursor:pointer;padding:0}
+  .copy-note{font-size:.88rem;color:var(--ok-ink);margin:10px 0 0;min-height:1.2em}
+
+  /* Footer — simple */
+  .site-footer{background:var(--navy);color:#c8d4de}
+  .site-footer .wrap{padding-top:36px;padding-bottom:30px}
+  .foot-brand{color:#fff;font-weight:700;font-size:1.1rem;margin:0 0 8px}
+  .foot-brand .mark{display:inline-block;width:11px;height:11px;background:var(--amber);
+    margin-right:8px;clip-path:polygon(50% 0,100% 100%,0 100%)}
+  .site-footer a{color:#c8d4de}
+  .site-footer a:hover{color:#fff}
+  .site-footer p{margin:0 0 8px}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="https://northbeambuilds.com/" aria-label="Northbeam Builds — home">
+      <span class="mark" aria-hidden="true"></span>
+      <span>Northbeam Builds<small>AUSTIN, TX</small></span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap narrow">
+    <p class="eyebrow">Website FAQ &amp; Lead Capture Agent — setup intake</p>
+    <h1>Website FAQ Agent — Setup Intake</h1>
+
+    <p class="lede"><strong>Payment confirmed — thank you.</strong> This short form configures your FAQ Agent: your answers become its settings, and the FAQs are drafted from your own content and approved by you before anything goes live.</p>
+    <p class="lede">Your agent goes live 1 business day after payment, your content, and site access are all in — whichever comes last starts the clock. It answers only from what you approved; anything else, it politely takes a message.</p>
+    <p class="price-line">Website FAQ &amp; Lead Capture Agent — $49 flat, no monthly fee · Answers up to 20 FAQs from your own approved content, with lead capture</p>
+
+    <section class="panel" aria-labelledby="formHeading">
+      <h2 id="formHeading">Tell us about your business</h2>
+      <p class="sub">Fields marked “optional” can be left blank. Everything else is a real setting for your agent, so please answer it as you want visitors to experience it.</p>
+
+      <form id="intakeForm">
+        <div class="field">
+          <label for="fBusinessName">1. Business name</label>
+          <input id="fBusinessName" name="businessName" type="text" autocomplete="organization" required />
+        </div>
+
+        <div class="field">
+          <label for="fBusinessEmail">2. Business email <span class="hint">— shown to visitors in the fallback message</span></label>
+          <input id="fBusinessEmail" name="businessEmail" type="email" autocomplete="email" required />
+        </div>
+
+        <div class="field">
+          <label for="fPhone">3. Real-person phone number <span class="hint">— for the “talk to a human” fallback</span></label>
+          <input id="fPhone" name="phone" type="tel" autocomplete="tel" required />
+        </div>
+
+        <div class="field">
+          <label for="fWebsite">4. Your website URL <span class="hint">— the main source for your FAQs</span></label>
+          <input id="fWebsite" name="website" type="url" placeholder="https://…" required />
+        </div>
+
+        <div class="field">
+          <label for="fExtraLinks">5. Links to anything else it should know <span class="hint">— price lists, policies, service menus, existing FAQ pages. One per line.</span></label>
+          <textarea id="fExtraLinks" name="extraLinks" placeholder="One link per line"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="fPlatform">6. Your website platform</label>
+          <select id="fPlatform" name="platform" required>
+            <option value="">Choose one…</option>
+            <option>WordPress</option>
+            <option>Squarespace</option>
+            <option>Wix</option>
+            <option>Custom-built</option>
+            <option>Not sure</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="fInstall">7. How should we install it?</label>
+          <select id="fInstall" name="install" required>
+            <option value="">Choose one…</option>
+            <option>I’ll give you embed access</option>
+            <option>I’ll invite you as a site admin</option>
+            <option>My web person will install it</option>
+            <option>Just give me a hosted chat page linked from my site</option>
+          </select>
+        </div>
+
+        <fieldset>
+          <legend>8. Where should captured leads go? <span class="hint">Pick exactly one.</span></legend>
+          <div class="radio-row">
+            <input type="radio" id="leadEmail" name="leadDest" value="My email inbox" required />
+            <label for="leadEmail"><strong>My email inbox</strong></label>
+          </div>
+          <div class="radio-row">
+            <input type="radio" id="leadSheet" name="leadDest" value="A Google Sheet" />
+            <label for="leadSheet"><strong>A Google Sheet</strong></label>
+          </div>
+          <div class="radio-row">
+            <input type="radio" id="leadView" name="leadDest" value="The agent’s own lead view" />
+            <label for="leadView"><strong>The agent’s own lead view</strong></label>
+          </div>
+          <div class="field" style="margin:12px 0 8px">
+            <label for="fLeadDetail">Email address or sheet link <span class="hint" id="leadDetailHint">— matching the choice above; leave blank if you picked the agent’s own lead view</span></label>
+            <input id="fLeadDetail" name="leadDetail" type="text" placeholder="Email address or Google Sheet link" />
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="fBooking">9. Your existing booking page link <span class="hint">— optional. We place it in the chat.</span></label>
+          <input id="fBooking" name="booking" type="url" placeholder="https://…" />
+        </div>
+
+        <div class="field">
+          <label for="fHours">10. Your business hours</label>
+          <input id="fHours" name="hours" type="text" placeholder="e.g. Mon–Fri 8–5, closed Sundays" required />
+        </div>
+
+        <div class="field">
+          <label for="fServiceArea">11. Your service area</label>
+          <input id="fServiceArea" name="serviceArea" type="text" required />
+        </div>
+
+        <div class="field">
+          <label for="fCallback">12. How fast should the fallback promise a callback?</label>
+          <input id="fCallback" name="callback" type="text" placeholder="e.g. within one business day" required />
+        </div>
+
+        <div class="field">
+          <label for="fDiscounts">13. Do you run percentage discounts visitors might ask about? <span class="hint">List the real ones (e.g. “10% off recurring plans”) — or write NONE. This stops the agent being tricked by invented offers.</span></label>
+          <textarea id="fDiscounts" name="discounts" style="min-height:64px" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="fGreeting">14. A greeting you’d like <span class="hint">— optional</span></label>
+          <input id="fGreeting" name="greeting" type="text" placeholder="e.g. Hi! Ask me about prices, hours, or what’s included" />
+        </div>
+
+        <div class="field">
+          <label for="fColorHex">15. Widget accent color <span class="hint">— optional. Pick a color or type a hex code.</span></label>
+          <div class="color-row">
+            <input type="color" id="fColor" name="colorPicker" value="#c77d12" aria-label="Pick a widget accent color" />
+            <input type="text" id="fColorHex" name="colorHex" value="#c77d12" pattern="^#?[0-9a-fA-F]{6}$" placeholder="#c77d12" aria-label="Widget accent color, hex code" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="fNeverSay">16. Anything the agent must NEVER say</label>
+          <textarea id="fNeverSay" name="neverSay"></textarea>
+        </div>
+
+        <button class="btn" type="submit">Submit my answers</button>
+        <p class="form-note">This page can’t send anything by itself — submitting prepares an email with your answers that you send from your own mail app in the next step.</p>
+      </form>
+
+      <div class="reserve" id="reserveBox" role="status" aria-live="polite">
+        <span class="status">Received — one last step</span>
+        <h2>Your answers are ready to send</h2>
+        <p>This page can’t send by itself, so we’ve prepared an email with your answers. Tap the button below to send it to <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a> from your own mail app — nothing reaches us until you send that email.</p>
+        <p>Your answers are also shown here in full, so you can copy them if your mail app doesn’t open:</p>
+        <p class="summary" id="reserveSummary"></p>
+        <div class="actions">
+          <a class="btn btn-navy" id="reserveMailto" href="mailto:northbeambuilds@gmail.com">Send your answers by email</a>
+          <button class="btn btn-ghost" type="button" id="copyBtn">Copy your answers</button>
+        </div>
+        <p class="copy-note" id="copyNote"></p>
+        <p class="again">Need to change something? <button type="button" id="reserveReset">Edit your answers</button></p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap narrow">
+    <p class="foot-brand"><span class="mark" aria-hidden="true"></span>Northbeam Builds</p>
+    <p>Northbeam Builds — Austin, TX</p>
+    <p>Contact: <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var EMAIL = "northbeambuilds@gmail.com";
+
+  /* Accent color: keep picker and hex field in sync */
+  var colorPicker = document.getElementById('fColor');
+  var colorHex = document.getElementById('fColorHex');
+  colorPicker.addEventListener('input', function(){ colorHex.value = colorPicker.value; });
+  colorHex.addEventListener('input', function(){
+    var v = colorHex.value.trim();
+    if (/^#[0-9a-fA-F]{6}$/.test(v)) colorPicker.value = v;
+    else if (/^[0-9a-fA-F]{6}$/.test(v)) colorPicker.value = '#' + v;
+  });
+
+  /* Lead destination: adjust the matching detail field */
+  var leadDetail = document.getElementById('fLeadDetail');
+  var leadHint = document.getElementById('leadDetailHint');
+  function leadChoice(){
+    var checked = document.querySelector('input[name="leadDest"]:checked');
+    return checked ? checked.value : '';
+  }
+  function syncLeadDetail(){
+    var c = leadChoice();
+    if (c === 'My email inbox'){
+      leadDetail.placeholder = 'Email address for captured leads';
+      leadDetail.required = true;
+      leadHint.textContent = '— the email address leads should go to';
+    } else if (c === 'A Google Sheet'){
+      leadDetail.placeholder = 'Google Sheet link';
+      leadDetail.required = true;
+      leadHint.textContent = '— paste the link to your Google Sheet';
+    } else if (c === 'The agent’s own lead view'){
+      leadDetail.placeholder = 'No email or link needed for this choice';
+      leadDetail.required = false;
+      leadHint.textContent = '— leave blank; leads stay in the agent’s own lead view';
+    } else {
+      leadDetail.placeholder = 'Email address or Google Sheet link';
+      leadDetail.required = false;
+      leadHint.textContent = '— matching the choice above; leave blank if you picked the agent’s own lead view';
+    }
+  }
+  var radios = document.querySelectorAll('input[name="leadDest"]');
+  for (var i = 0; i < radios.length; i++) radios[i].addEventListener('change', syncLeadDetail);
+
+  /* Submit: assemble summary + prefilled mailto. No server is contacted. */
+  var form = document.getElementById('intakeForm');
+  var reserveBox = document.getElementById('reserveBox');
+  var reserveSummary = document.getElementById('reserveSummary');
+  var reserveMailto = document.getElementById('reserveMailto');
+  var copyNote = document.getElementById('copyNote');
+  var lastSummary = '';
+
+  function val(id){ return document.getElementById(id).value.trim(); }
+  function orBlank(v){ return v ? v : '(blank)'; }
+
+  function collect(){
+    var dest = leadChoice();
+    var detail = val('fLeadDetail');
+    var destLine = dest;
+    if (dest === 'My email inbox' || dest === 'A Google Sheet') destLine = dest + ' — ' + orBlank(detail);
+    else if (dest === 'The agent’s own lead view') destLine = dest + (detail ? ' — note: ' + detail : '');
+    var color = val('fColorHex') || colorPicker.value;
+    return [
+      ['Business name', val('fBusinessName')],
+      ['Business email (shown to visitors in the fallback message)', val('fBusinessEmail')],
+      ['Real-person phone number (for the “talk to a human” fallback)', val('fPhone')],
+      ['Your website URL (the main source for your FAQs)', val('fWebsite')],
+      ['Links to anything else it should know (price lists, policies, service menus, existing FAQ pages)', orBlank(val('fExtraLinks'))],
+      ['Your website platform', val('fPlatform')],
+      ['How should we install it?', val('fInstall')],
+      ['Where should captured leads go?', destLine],
+      ['Your existing booking page link (optional)', orBlank(val('fBooking'))],
+      ['Your business hours', val('fHours')],
+      ['Your service area', val('fServiceArea')],
+      ['How fast should the fallback promise a callback?', val('fCallback')],
+      ['Percentage discounts visitors might ask about (real ones, or NONE)', val('fDiscounts')],
+      ['A greeting you’d like (optional)', orBlank(val('fGreeting'))],
+      ['Widget accent color (optional)', color],
+      ['Anything the agent must NEVER say', orBlank(val('fNeverSay'))]
+    ];
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (typeof form.checkValidity === 'function' && !form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+    var rows = collect();
+    var lines = [];
+    for (var j = 0; j < rows.length; j++) lines.push(rows[j][0] + ': ' + rows[j][1]);
+    lastSummary = lines.join('\n');
+    reserveSummary.textContent = lastSummary;
+
+    var subject = 'FAQ Agent intake — ' + val('fBusinessName');
+    var body = 'Website FAQ Agent — Setup Intake\n\n' + lastSummary;
+    reserveMailto.setAttribute('href',
+      'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body));
+
+    copyNote.textContent = '';
+    form.style.display = 'none';
+    reserveBox.classList.add('show');
+    reserveBox.scrollIntoView({behavior:'smooth', block:'start'});
+    reserveMailto.focus();
+  });
+
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    function done(){ copyNote.textContent = 'Copied — you can paste your answers into an email to ' + EMAIL + '.'; }
+    function fallback(){
+      var range = document.createRange();
+      range.selectNodeContents(reserveSummary);
+      var sel = window.getSelection();
+      sel.removeAllRanges(); sel.addRange(range);
+      copyNote.textContent = 'Your answers are selected above — copy them and email them to ' + EMAIL + '.';
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(lastSummary).then(done, fallback);
+    } else { fallback(); }
+  });
+
+  document.getElementById('reserveReset').addEventListener('click', function(){
+    reserveBox.classList.remove('show');
+    form.style.display = '';
+    document.getElementById('fBusinessName').focus();
+  });
+})();
+</script>
+</body>
+</html>
