@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Edsel's Heating and Air — Never-Miss-a-Lead Concept Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #edf0ee;
+        --surface: #ffffff;
+        --surface-2: #f5f7f6;
+        --ink: #16222c;
+        --ink-soft: #46565f;
+        --ink-faint: #71828a;
+        --line: #d7dedb;
+        --navy: #0d3a5c;
+        --navy-deep: #092a44;
+        --navy-ink: #ffffff;
+        --accent: #b4550a;
+        --accent-bg: #fdf0e4;
+        --emergency: #b3261e;
+        --emergency-bg: #fdecea;
+        --ok: #14663f;
+        --ok-bg: #e6f4ec;
+        --phone-bg: #101c26;
+        --phone-ink: #eef4f7;
+        --phone-bubble: #1d3247;
+        --shadow: 0 1px 2px rgba(16, 34, 44, .06), 0 8px 24px rgba(16, 34, 44, .07);
+        --radius: 14px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0b1218;
+          --surface: #141f29;
+          --surface-2: #182634;
+          --ink: #e9eff3;
+          --ink-soft: #aebec8;
+          --ink-faint: #7e929e;
+          --line: #2a3c4a;
+          --navy: #123f63;
+          --navy-deep: #0d2f4b;
+          --accent: #f0a35e;
+          --accent-bg: #2c2115;
+          --emergency: #ff9d94;
+          --emergency-bg: #3a1d1a;
+          --ok: #7fd6a4;
+          --ok-bg: #16301f;
+          --phone-bg: #0a141d;
+          --phone-ink: #eef4f7;
+          --phone-bubble: #1d3247;
+          --shadow: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px rgba(0,0,0,.3);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Public Sans", system-ui, -apple-system, sans-serif;
+        font-size: 16px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1, h2, h3 { font-family: "Archivo", "Public Sans", sans-serif; line-height: 1.12; margin: 0; }
+      p { margin: 0; }
+      .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+      /* ---------- honesty bar ---------- */
+      .honesty {
+        background: var(--navy-deep);
+        color: #dbe7ef;
+        font-size: 13.5px;
+      }
+      .honesty .wrap { padding-top: 10px; padding-bottom: 10px; display: flex; flex-wrap: wrap; gap: 4px 22px; }
+      .honesty strong { color: #fff; font-weight: 700; }
+
+      /* ---------- business header ---------- */
+      .bizhead { background: var(--navy); color: var(--navy-ink); }
+      .bizhead .wrap { padding-top: 26px; padding-bottom: 24px; }
+      .bizname { font-size: clamp(28px, 5vw, 40px); font-weight: 800; letter-spacing: -.01em; }
+      .bizname span { color: #f2b25c; }
+      .bizmeta { display: flex; flex-wrap: wrap; gap: 8px 10px; margin-top: 14px; }
+      .chip {
+        display: inline-flex; align-items: center; gap: 7px;
+        background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22);
+        border-radius: 999px; padding: 6px 13px; font-size: 13.5px; font-weight: 600;
+      }
+      .chip svg { flex: none; }
+      .chip.hot { background: #f2b25c; border-color: #f2b25c; color: #231303; }
+      .bizhead a { color: inherit; text-decoration: none; }
+
+      /* ---------- scenario ---------- */
+      .scenario { padding: 34px 0 6px; }
+      .scenario .clock {
+        font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 13px;
+        letter-spacing: .14em; text-transform: uppercase; color: var(--accent);
+        display: inline-flex; align-items: center; gap: 8px;
+      }
+      .scenario h2 { font-size: clamp(26px, 4.4vw, 38px); font-weight: 800; letter-spacing: -.015em; max-width: 20ch; margin-top: 10px; }
+      .scenario .lede { color: var(--ink-soft); max-width: 62ch; margin-top: 12px; font-size: 17px; }
+      .scenario .lede strong { color: var(--ink); }
+
+      /* ---------- main grid ---------- */
+      .grid {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
+        padding: 26px 0 8px; align-items: start;
+      }
+      @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+
+      .card {
+        background: var(--surface); border: 1px solid var(--line);
+        border-radius: var(--radius); box-shadow: var(--shadow);
+      }
+      .card-head { padding: 20px 22px 0; }
+      .card-head h3 { font-size: 20px; font-weight: 700; }
+      .card-head p { color: var(--ink-soft); font-size: 14.5px; margin-top: 5px; }
+      .card-body { padding: 18px 22px 22px; }
+
+      /* form */
+      label.field { display: block; margin-bottom: 16px; }
+      label.field .lbl { display: block; font-weight: 600; font-size: 14.5px; margin-bottom: 6px; }
+      input[type="text"], input[type="tel"], textarea {
+        width: 100%; font: inherit; font-size: 16px; color: var(--ink);
+        background: var(--surface-2); border: 1.5px solid var(--line);
+        border-radius: 10px; padding: 11px 13px; appearance: none;
+      }
+      input:focus, textarea:focus { outline: 2px solid var(--navy); outline-offset: 1px; border-color: var(--navy); }
+      textarea { resize: vertical; min-height: 92px; }
+      .err { display: none; color: var(--emergency); font-size: 13.5px; font-weight: 600; margin-top: 5px; }
+      .field.invalid input, .field.invalid textarea { border-color: var(--emergency); }
+      .field.invalid .err { display: block; }
+      .submit-btn {
+        width: 100%; border: 0; cursor: pointer; font: inherit; font-weight: 700; font-size: 16.5px;
+        background: var(--navy); color: #fff; border-radius: 10px; padding: 14px 18px;
+      }
+      .submit-btn:hover { background: var(--navy-deep); }
+      .form-note { font-size: 13px; color: var(--ink-faint); margin-top: 12px; text-align: center; }
+
+      /* instant response */
+      .response {
+        display: none; margin-top: 18px; border: 1.5px solid var(--ok);
+        background: var(--ok-bg); border-radius: 12px; padding: 16px 18px;
+      }
+      .response.show { display: block; }
+      .response .r-head { display: flex; align-items: center; gap: 9px; font-family: "Archivo", sans-serif; font-weight: 700; font-size: 17px; color: var(--ok); }
+      .response p { margin-top: 7px; font-size: 14.5px; }
+      .response .r-meta { margin-top: 10px; font-family: "IBM Plex Mono", monospace; font-size: 12.5px; font-weight: 600; letter-spacing: .04em; color: var(--ok); }
+
+      /* inbox */
+      .inbox-tools { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+      .count-badge {
+        font-family: "IBM Plex Mono", monospace; font-size: 12.5px; font-weight: 600;
+        background: var(--surface-2); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px;
+      }
+      .reset-btn {
+        font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+        background: none; border: 1px solid var(--line); color: var(--ink-soft);
+        border-radius: 8px; padding: 6px 11px;
+      }
+      .reset-btn:hover { color: var(--ink); border-color: var(--ink-faint); }
+      .lead { border: 1px solid var(--line); border-radius: 12px; padding: 15px 16px; margin-top: 14px; background: var(--surface); }
+      .lead.new { border-color: var(--ok); }
+      .lead-top { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
+      .flag {
+        font-size: 12px; font-weight: 700; letter-spacing: .03em; border-radius: 999px; padding: 3px 10px;
+      }
+      .flag.emergency { background: var(--emergency-bg); color: var(--emergency); }
+      .flag.routine { background: var(--surface-2); color: var(--ink-soft); border: 1px solid var(--line); }
+      .flag.sample { background: var(--accent-bg); color: var(--accent); }
+      .lead-name { font-weight: 700; font-size: 16px; margin-top: 9px; }
+      .lead-msg { color: var(--ink-soft); font-size: 14.5px; margin-top: 3px; }
+      .lead-meta { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--ink-faint); margin-top: 9px; display: flex; flex-wrap: wrap; gap: 4px 16px; }
+      .empty-note { display: none; color: var(--ink-faint); font-size: 14px; margin-top: 14px; }
+
+      /* ---------- text preview ---------- */
+      .preview-section { padding: 14px 0 4px; }
+      .phone {
+        background: var(--phone-bg); color: var(--phone-ink); border-radius: 22px;
+        padding: 22px; max-width: 560px;
+      }
+      .phone .p-label { font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #9fc3dd; }
+      .bubble {
+        background: var(--phone-bubble); border-radius: 16px 16px 16px 4px;
+        padding: 13px 15px; margin-top: 13px; font-size: 15px; line-height: 1.5;
+      }
+      .bubble .b-from { font-size: 12px; color: #9fc3dd; font-weight: 700; margin-bottom: 5px; letter-spacing: .03em; }
+      .phone .p-note { font-size: 12.5px; color: #7e97a9; margin-top: 12px; }
+      .preview-grid { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center; }
+      @media (max-width: 760px) { .preview-grid { grid-template-columns: 1fr; } }
+      .preview-copy h3 { font-size: 21px; font-weight: 700; }
+      .preview-copy p { color: var(--ink-soft); margin-top: 8px; max-width: 46ch; }
+
+      /* ---------- purchase ---------- */
+      .purchase { padding: 28px 0 10px; }
+      .purchase-card { overflow: hidden; }
+      .purchase-top { display: grid; grid-template-columns: 1.2fr .8fr; }
+      @media (max-width: 760px) { .purchase-top { grid-template-columns: 1fr; } }
+      .purchase-info { padding: 24px 26px; }
+      .purchase-info h3 { font-size: 24px; font-weight: 800; }
+      .purchase-info .sub { color: var(--ink-soft); margin-top: 6px; font-size: 15px; }
+      .includes { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 9px; }
+      .includes li { display: flex; gap: 9px; align-items: flex-start; font-size: 15px; }
+      .includes svg { flex: none; margin-top: 3px; }
+      .price-box { background: var(--navy); color: #fff; padding: 24px 26px; display: flex; flex-direction: column; justify-content: center; }
+      .price-row { display: flex; align-items: baseline; gap: 10px; }
+      .price-big { font-family: "Archivo", sans-serif; font-size: 40px; font-weight: 800; line-height: 1; }
+      .price-per { color: #c3d6e4; font-size: 14.5px; font-weight: 600; }
+      .price-setup { margin-top: 8px; font-size: 15.5px; }
+      .price-setup strong { font-size: 19px; }
+      .price-terms { margin-top: 10px; font-size: 13.5px; color: #c3d6e4; }
+      .status-pill {
+        display: inline-flex; align-items: center; gap: 7px; margin-top: 16px; align-self: flex-start;
+        background: rgba(242,178,92,.16); border: 1px solid #f2b25c; color: #f2b25c;
+        font-size: 13px; font-weight: 700; border-radius: 999px; padding: 5px 12px;
+      }
+      .status-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: #f2b25c; }
+      .states { border-top: 1px solid var(--line); padding: 20px 26px 8px; }
+      .states h4 { font-family: "Archivo", sans-serif; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; margin: 0 0 14px; color: var(--ink-soft); }
+      .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; list-style: none; margin: 0; padding: 0; }
+      @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+      .step { border: 1px solid var(--line); border-radius: 10px; padding: 12px 13px; background: var(--surface-2); }
+      .step .n { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; font-weight: 600; color: var(--ink-faint); letter-spacing: .08em; }
+      .step .t { font-weight: 700; font-size: 14.5px; margin-top: 2px; }
+      .step .d { font-size: 12.5px; color: var(--ink-soft); margin-top: 3px; line-height: 1.4; }
+      .step.active { border-color: var(--accent); background: var(--accent-bg); }
+      .step.active .n { color: var(--accent); }
+      .reserve-note {
+        margin: 16px 26px 24px; border: 1px dashed var(--line); border-radius: 10px;
+        padding: 13px 16px; font-size: 14px; color: var(--ink-soft); background: var(--surface);
+      }
+      .reserve-note strong { color: var(--ink); }
+
+      /* ---------- footer ---------- */
+      footer { margin-top: 34px; border-top: 1px solid var(--line); background: var(--surface); }
+      footer .wrap { padding-top: 22px; padding-bottom: 30px; font-size: 13.5px; color: var(--ink-soft); display: grid; gap: 6px; }
+      footer .bizline { font-weight: 700; color: var(--ink); font-size: 14.5px; }
+    </style>
+  </head>
+  <body>
+
+    <!-- Honest labeling -->
+    <div class="honesty">
+      <div class="wrap">
+        <span><strong>Concept demo</strong> built from public information — not affiliated with Edsel's Heating and Air.</span>
+        <span>Interactive concept demo — entries are simulated in your browser only; nothing is sent or stored.</span>
+      </div>
+    </div>
+
+    <!-- Business header (concept) -->
+    <header class="bizhead">
+      <div class="wrap">
+        <h1 class="bizname">Edsel's <span>Heating and Air</span></h1>
+        <div class="bizmeta">
+          <span class="chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Cedar Park, TX
+          </span>
+          <a class="chip" href="tel:+15127629665">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (512) 762-9665
+          </a>
+          <span class="chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Mon–Fri 8:00 AM–5:00 PM
+          </span>
+          <span class="chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Sat–Sun 7:00 AM–11:00 PM
+          </span>
+          <span class="chip hot">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            24/7 Emergency HVAC Service Available
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+
+      <!-- The moment -->
+      <section class="scenario">
+        <span class="clock">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          2:00 AM — Cedar Park
+        </span>
+        <h2>The AC quits at 2 AM. The request form doesn't answer.</h2>
+        <p class="lede">A homeowner whose air conditioning stops in the middle of the night can request an appointment on the website — but when they send it, <strong>nothing responds</strong>. No acknowledgment, no confirmation, no sign anyone saw it. They start calling the next company on the list. Try the form below the way that homeowner would — and watch what changes when every request gets an instant answer.</p>
+      </section>
+
+      <div class="grid">
+        <!-- Request form + instant response -->
+        <section class="card" aria-labelledby="form-title">
+          <div class="card-head">
+            <h3 id="form-title">Request an appointment</h3>
+            <p>The website's request form, as a customer sees it. Fill it in and submit — the response and the owner's inbox update on this page.</p>
+          </div>
+          <div class="card-body">
+            <form id="lead-form" novalidate>
+              <label class="field" id="field-name">
+                <span class="lbl">Your Name</span>
+                <input type="text" id="input-name" name="name" autocomplete="name" placeholder="e.g., Jordan Miller" />
+                <span class="err">Please enter your name.</span>
+              </label>
+              <label class="field" id="field-phone">
+                <span class="lbl">Phone Number</span>
+                <input type="tel" id="input-phone" name="phone" autocomplete="tel" placeholder="e.g., (512) 555-0147" />
+                <span class="err">Please enter a valid phone number (10 digits, area code included).</span>
+              </label>
+              <label class="field" id="field-message">
+                <span class="lbl">What do you need help with?</span>
+                <textarea id="input-message" name="message" placeholder="e.g., Our AC stopped cooling and the house is getting hot"></textarea>
+                <span class="err">Please tell us what you need help with.</span>
+              </label>
+              <button type="submit" class="submit-btn">Send request</button>
+              <p class="form-note">Demo form — submitting simulates the request on this page only.</p>
+            </form>
+
+            <div class="response" id="response-panel" role="status" aria-live="polite">
+              <div class="r-head">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <span>We've got it<span id="response-name"></span>.</span>
+              </div>
+              <p id="response-text">Your request is in and flagged for the team. Edsel's Heating and Air offers 24/7 emergency HVAC service, so an after-hours emergency doesn't sit unanswered until morning — you'll hear back at the number you gave.</p>
+              <div class="r-meta" id="response-meta">FIRST RESPONSE: UNDER A MINUTE</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Owner Lead Inbox -->
+        <section class="card" aria-labelledby="inbox-title">
+          <div class="card-head">
+            <div class="inbox-tools">
+              <h3 id="inbox-title">Owner Lead Inbox</h3>
+              <span class="count-badge" id="inbox-count">1 lead</span>
+            </div>
+            <p>What the owner sees. Every request lands here instantly, flagged by urgency — emergencies first, nothing buried until office hours.</p>
+          </div>
+          <div class="card-body">
+            <div id="lead-list">
+              <article class="lead" data-sample="true">
+                <div class="lead-top">
+                  <span class="flag emergency">Emergency — no cooling</span>
+                  <span class="flag sample">Sample data</span>
+                </div>
+                <div class="lead-name">Sample lead — Cedar Park homeowner</div>
+                <p class="lead-msg">"Our AC stopped cooling around 2 AM and the house keeps getting hotter. Need someone as soon as possible."</p>
+                <div class="lead-meta">
+                  <span>Received 2:00 AM</span>
+                  <span>Source: Website request form</span>
+                  <span>Acknowledged instantly</span>
+                </div>
+              </article>
+            </div>
+            <p class="empty-note" id="empty-note">The sample lead was cleared. Submit the form to add a lead.</p>
+            <div style="margin-top:16px; text-align:right;">
+              <button type="button" class="reset-btn" id="reset-btn">Reset demo</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Simulated text acknowledgment -->
+      <section class="preview-section" aria-labelledby="preview-title">
+        <div class="preview-grid">
+          <div class="phone">
+            <div class="p-label">Customer's phone — seconds later</div>
+            <div class="bubble">
+              <div class="b-from">TEXT MESSAGE · EDSEL'S HEATING AND AIR</div>
+              <span id="bubble-text">Hi — thanks for reaching out to Edsel's Heating and Air. We've got your request and it's with our team now. We offer 24/7 emergency HVAC service, so if this is urgent, stay by your phone — we'll be in touch shortly at this number.</span>
+            </div>
+            <p class="p-note">Simulated instant acknowledgment (demo only, nothing was emailed or texted).</p>
+          </div>
+          <div class="preview-copy">
+            <h3 id="preview-title">The customer hears back before they start shopping around</h3>
+            <p>The moment a request is sent, the customer gets an acknowledgment like the one shown — in under a minute, even at 2 AM. Submit the form above and this preview updates with your entry, exactly as the customer would see it.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Purchase -->
+      <section class="purchase" aria-labelledby="purchase-title">
+        <div class="card purchase-card">
+          <div class="purchase-top">
+            <div class="purchase-info">
+              <h3 id="purchase-title">Never-Miss-a-Lead</h3>
+              <p class="sub">Every website request answered instantly and routed to the owner — day, night, and weekends.</p>
+              <ul class="includes">
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> One intake flow for website requests</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Instant acknowledgment to every customer, in under a minute</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Routing to the owner, flagged by urgency</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Failure alerts if a request ever fails to deliver</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Monthly report of requests received and answered</li>
+              </ul>
+            </div>
+            <div class="price-box">
+              <div class="price-row">
+                <span class="price-big">$297</span>
+                <span class="price-per">/ month</span>
+              </div>
+              <p class="price-setup">+ <strong>$497</strong> one-time setup</p>
+              <p class="price-terms">Month-to-month. No long-term contract.</p>
+              <span class="status-pill"><span class="dot"></span> Pending acceptance</span>
+            </div>
+          </div>
+          <div class="states">
+            <h4>How buying works</h4>
+            <ol class="steps">
+              <li class="step active"><div class="n">STEP 1 · CURRENT</div><div class="t">Acceptance</div><div class="d">Your order is reviewed and accepted. Status: pending acceptance.</div></li>
+              <li class="step"><div class="n">STEP 2</div><div class="t">Funding</div><div class="d">Setup and first month are funded after acceptance.</div></li>
+              <li class="step"><div class="n">STEP 3</div><div class="t">Access</div><div class="d">Access to the website request flow is arranged.</div></li>
+              <li class="step"><div class="n">STEP 4</div><div class="t">Verification</div><div class="d">The flow is tested end-to-end — request, acknowledgment, routing.</div></li>
+              <li class="step"><div class="n">STEP 5</div><div class="t">Activation</div><div class="d">The system goes live once verification passes.</div></li>
+            </ol>
+          </div>
+          <p class="reserve-note"><strong>Reserve mode:</strong> Buying starts with acceptance and funding; activation follows verification — no payment is taken on this demo page.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <span class="bizline">Edsel's Heating and Air — Cedar Park, TX · (512) 762-9665</span>
+        <span>Concept demo built from public information — not affiliated with Edsel's Heating and Air.</span>
+        <span>Interactive concept demo — entries are simulated in your browser only; nothing is sent or stored.</span>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var form = document.getElementById('lead-form');
+        var nameInput = document.getElementById('input-name');
+        var phoneInput = document.getElementById('input-phone');
+        var msgInput = document.getElementById('input-message');
+        var responsePanel = document.getElementById('response-panel');
+        var responseName = document.getElementById('response-name');
+        var responseMeta = document.getElementById('response-meta');
+        var leadList = document.getElementById('lead-list');
+        var inboxCount = document.getElementById('inbox-count');
+        var emptyNote = document.getElementById('empty-note');
+        var bubbleText = document.getElementById('bubble-text');
+        var defaultBubble = bubbleText.textContent;
+        var userLeadCount = 0;
+
+        function setInvalid(fieldId, bad) {
+          document.getElementById(fieldId).classList.toggle('invalid', bad);
+          return !bad;
+        }
+
+        function validPhone(raw) {
+          var digits = raw.replace(/\D/g, '');
+          if (digits.length === 11 && digits.charAt(0) === '1') digits = digits.slice(1);
+          return digits.length === 10;
+        }
+
+        function formatPhone(raw) {
+          var digits = raw.replace(/\D/g, '');
+          if (digits.length === 11 && digits.charAt(0) === '1') digits = digits.slice(1);
+          if (digits.length === 10) {
+            return '(' + digits.slice(0, 3) + ') ' + digits.slice(3, 6) + '-' + digits.slice(6);
+          }
+          return raw.trim();
+        }
+
+        function classify(message) {
+          var m = message.toLowerCase();
+          var emergencyWords = ['emergency', 'no cooling', 'not cooling', 'stopped cooling', 'no ac', 'a/c out', 'ac out', 'no air', 'not working', 'quit', 'broke', 'broken', 'leak', 'smoke', 'burning', 'sparking', 'flood', 'no heat', 'freezing', 'hot house', 'getting hot', 'getting hotter'];
+          for (var i = 0; i < emergencyWords.length; i++) {
+            if (m.indexOf(emergencyWords[i]) !== -1) {
+              if (m.indexOf('cool') !== -1 || m.indexOf('ac') !== -1 || m.indexOf('a/c') !== -1 || m.indexOf('air') !== -1) {
+                return { label: 'Emergency — no cooling', emergency: true };
+              }
+              return { label: 'Emergency — urgent request', emergency: true };
+            }
+          }
+          return { label: 'New request', emergency: false };
+        }
+
+        function updateCount() {
+          var n = leadList.querySelectorAll('.lead').length;
+          inboxCount.textContent = n + (n === 1 ? ' lead' : ' leads');
+          emptyNote.style.display = n === 0 ? 'block' : 'none';
+        }
+
+        function escapeHtml(s) {
+          return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var name = nameInput.value.trim();
+          var phone = phoneInput.value.trim();
+          var message = msgInput.value.trim();
+
+          var okName = setInvalid('field-name', name.length < 2);
+          var okPhone = setInvalid('field-phone', !validPhone(phone));
+          var okMsg = setInvalid('field-message', message.length < 3);
+          if (!(okName && okPhone && okMsg)) {
+            var firstBad = document.querySelector('.field.invalid input, .field.invalid textarea');
+            if (firstBad) firstBad.focus();
+            return;
+          }
+
+          var firstName = name.split(/\s+/)[0];
+          var cls = classify(message);
+          userLeadCount++;
+
+          // Instant response panel
+          responseName.textContent = ', ' + firstName;
+          var seconds = 8 + Math.floor(Math.random() * 20);
+          responseMeta.textContent = 'FIRST RESPONSE: UNDER A MINUTE · ACKNOWLEDGED IN ~' + seconds + ' SECONDS (SIMULATED)';
+          responsePanel.classList.add('show');
+
+          // Text preview
+          bubbleText.textContent = 'Hi ' + firstName + ' — thanks for reaching out to Edsel\'s Heating and Air. We\'ve got your request ("' + (message.length > 90 ? message.slice(0, 90) + '…' : message) + '") and it\'s with our team now. We offer 24/7 emergency HVAC service, so if this is urgent, stay by your phone — we\'ll be in touch shortly at ' + formatPhone(phone) + '.';
+
+          // Owner inbox lead
+          var now = new Date();
+          var timeStr = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+          var article = document.createElement('article');
+          article.className = 'lead new';
+          article.innerHTML =
+            '<div class="lead-top">' +
+              '<span class="flag ' + (cls.emergency ? 'emergency' : 'routine') + '">' + escapeHtml(cls.label) + '</span>' +
+              '<span class="flag routine">Just now · via demo</span>' +
+            '</div>' +
+            '<div class="lead-name">' + escapeHtml(name) + '</div>' +
+            '<p class="lead-msg">&ldquo;' + escapeHtml(message) + '&rdquo;</p>' +
+            '<div class="lead-meta">' +
+              '<span>Received ' + escapeHtml(timeStr) + '</span>' +
+              '<span>Phone: ' + escapeHtml(formatPhone(phone)) + '</span>' +
+              '<span>Acknowledged instantly</span>' +
+            '</div>';
+          leadList.insertBefore(article, leadList.firstChild);
+          updateCount();
+
+          responsePanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+
+        ['input-name', 'input-phone', 'input-message'].forEach(function (id) {
+          document.getElementById(id).addEventListener('input', function () {
+            this.closest('.field').classList.remove('invalid');
+          });
+        });
+
+        document.getElementById('reset-btn').addEventListener('click', function () {
+          var leads = leadList.querySelectorAll('.lead');
+          leads.forEach(function (l) { l.remove(); });
+          // restore the sample lead
+          var sample = document.createElement('article');
+          sample.className = 'lead';
+          sample.setAttribute('data-sample', 'true');
+          sample.innerHTML =
+            '<div class="lead-top">' +
+              '<span class="flag emergency">Emergency — no cooling</span>' +
+              '<span class="flag sample">Sample data</span>' +
+            '</div>' +
+            '<div class="lead-name">Sample lead — Cedar Park homeowner</div>' +
+            '<p class="lead-msg">&ldquo;Our AC stopped cooling around 2 AM and the house keeps getting hotter. Need someone as soon as possible.&rdquo;</p>' +
+            '<div class="lead-meta">' +
+              '<span>Received 2:00 AM</span>' +
+              '<span>Source: Website request form</span>' +
+              '<span>Acknowledged instantly</span>' +
+            '</div>';
+          leadList.appendChild(sample);
+          form.reset();
+          responsePanel.classList.remove('show');
+          bubbleText.textContent = defaultBubble;
+          userLeadCount = 0;
+          updateCount();
+          form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        updateCount();
+      })();
+    </script>
+  </body>
+</html>

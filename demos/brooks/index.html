@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Brooks Garage Doors — Never-Miss-a-Lead Concept Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #f4f2ee;
+        --surface: #ffffff;
+        --surface-2: #eceae4;
+        --ink: #1c1a17;
+        --ink-2: #55504a;
+        --line: #d8d3c9;
+        --accent: #b45309;
+        --accent-strong: #92400e;
+        --accent-soft: #fdf3e3;
+        --header-bg: #211d19;
+        --header-ink: #f5f1ea;
+        --header-ink-2: #c9c0b2;
+        --good: #166534;
+        --good-soft: #e7f4ea;
+        --warn: #9a3412;
+        --warn-soft: #fdeee4;
+        --danger: #b91c1c;
+        --shadow: 0 1px 2px rgba(28, 26, 23, .06), 0 8px 24px rgba(28, 26, 23, .07);
+        --radius: 10px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #16140f;
+          --surface: #211e19;
+          --surface-2: #2a2721;
+          --ink: #f0ebe2;
+          --ink-2: #b3aa9c;
+          --line: #3d382f;
+          --accent: #f0a13c;
+          --accent-strong: #f5b45c;
+          --accent-soft: #33270f;
+          --header-bg: #100e0b;
+          --header-ink: #f5f1ea;
+          --header-ink-2: #b3aa9c;
+          --good: #7fce96;
+          --good-soft: #17301e;
+          --warn: #f2a183;
+          --warn-soft: #3a2013;
+          --danger: #f28b8b;
+          --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-size: 16.5px;
+        line-height: 1.5;
+      }
+      h1, h2, h3 { font-family: "Barlow Condensed", "Barlow", system-ui, sans-serif; letter-spacing: .01em; margin: 0; }
+      p { margin: 0; }
+      a { color: var(--accent-strong); }
+
+      /* ---------- Disclosure strip ---------- */
+      .disclosure {
+        background: var(--accent-soft);
+        border-bottom: 1px solid var(--line);
+        color: var(--ink);
+        font-size: 14px;
+      }
+      .disclosure .wrap { display: flex; flex-direction: column; gap: 2px; padding-top: 10px; padding-bottom: 10px; }
+      .disclosure strong { font-weight: 700; }
+
+      .wrap { max-width: 1060px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
+
+      /* ---------- Header ---------- */
+      header.site {
+        background: var(--header-bg);
+        color: var(--header-ink);
+      }
+      .header-main {
+        display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px;
+        padding-top: 22px; padding-bottom: 18px;
+      }
+      .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+      .brand-mark {
+        flex: 0 0 auto; width: 46px; height: 46px; border-radius: 8px;
+        background: var(--accent); color: #fff;
+        display: flex; align-items: center; justify-content: center;
+      }
+      .brand-name { font-family: "Barlow Condensed", sans-serif; font-size: 30px; font-weight: 700; line-height: 1.05; text-transform: uppercase; letter-spacing: .02em; }
+      .brand-sub { color: var(--header-ink-2); font-size: 14.5px; }
+      .header-call { margin-left: auto; text-align: right; }
+      .header-call .label { font-size: 13px; color: var(--header-ink-2); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+      .header-call .phone { font-family: "Barlow Condensed", sans-serif; font-size: 30px; font-weight: 700; color: var(--header-ink); text-decoration: none; white-space: nowrap; }
+      .header-call .phone:hover { color: var(--accent); }
+      .fact-bar {
+        border-top: 1px solid rgba(255,255,255,.12);
+        display: flex; flex-wrap: wrap; gap: 8px 26px;
+        padding-top: 12px; padding-bottom: 14px;
+        font-size: 15px; color: var(--header-ink);
+      }
+      .fact-bar span { display: inline-flex; align-items: center; gap: 8px; }
+      .fact-bar svg { color: var(--accent); flex: 0 0 auto; }
+
+      /* ---------- Layout ---------- */
+      main { padding: 26px 0 8px; }
+      .moment {
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        box-shadow: var(--shadow); padding: 20px 22px; margin-bottom: 22px;
+      }
+      .moment h2 { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+      .moment p { color: var(--ink-2); max-width: 68ch; }
+      .moment p + p { margin-top: 8px; }
+      .moment .callout { color: var(--ink); }
+      .moment strong { color: var(--ink); }
+
+      .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+      @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+
+      .card {
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        box-shadow: var(--shadow); padding: 22px;
+      }
+      .card-head { margin-bottom: 16px; }
+      .card-head h2 { font-size: 26px; font-weight: 700; }
+      .card-head .sub { color: var(--ink-2); font-size: 15px; margin-top: 4px; }
+
+      /* ---------- Form ---------- */
+      form { display: flex; flex-direction: column; gap: 14px; }
+      .field label { display: block; font-weight: 600; font-size: 15px; margin-bottom: 5px; }
+      .field input, .field textarea {
+        width: 100%; font: inherit; color: var(--ink);
+        background: var(--surface); border: 1.5px solid var(--line); border-radius: 8px;
+        padding: 11px 12px;
+      }
+      .field textarea { min-height: 92px; resize: vertical; }
+      .field input:focus, .field textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+      .field .hint { font-size: 13.5px; color: var(--ink-2); margin-top: 4px; }
+      .field .error { font-size: 14px; color: var(--danger); margin-top: 4px; font-weight: 600; display: none; }
+      .field.invalid input, .field.invalid textarea { border-color: var(--danger); }
+      .field.invalid .error { display: block; }
+      .submit-btn {
+        font: inherit; font-weight: 700; font-size: 17px;
+        background: var(--accent); color: #fff; border: none; border-radius: 8px;
+        padding: 14px 18px; cursor: pointer; width: 100%;
+      }
+      .submit-btn:hover { background: var(--accent-strong); }
+      .form-note { font-size: 13.5px; color: var(--ink-2); text-align: center; }
+
+      /* ---------- Ack panel ---------- */
+      .ack {
+        display: none; margin-top: 18px;
+        border: 1.5px solid var(--good); background: var(--good-soft);
+        border-radius: var(--radius); padding: 18px;
+      }
+      .ack.show { display: block; }
+      .ack h3 { font-size: 24px; color: var(--good); display: flex; align-items: center; gap: 9px; }
+      .ack p { margin-top: 6px; font-size: 15.5px; }
+      .ack .sim-label {
+        display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 700;
+        background: var(--surface); border: 1px solid var(--good); color: var(--good);
+        border-radius: 999px; padding: 3px 10px;
+      }
+
+      /* ---------- Inbox ---------- */
+      .inbox-list { display: flex; flex-direction: column; gap: 12px; }
+      .lead {
+        border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px;
+        background: var(--surface);
+      }
+      .lead.fresh { border-color: var(--accent); background: var(--accent-soft); }
+      .lead-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+      .lead-name { font-weight: 700; font-size: 17px; }
+      .lead-meta { color: var(--ink-2); font-size: 14px; }
+      .lead-msg { margin-top: 6px; font-size: 15.5px; }
+      .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+      .badge {
+        font-size: 12.5px; font-weight: 700; border-radius: 999px; padding: 3px 10px;
+        border: 1px solid var(--line); color: var(--ink-2); background: var(--surface-2);
+      }
+      .badge.urgent { background: var(--warn-soft); border-color: var(--warn); color: var(--warn); }
+      .badge.sample { background: var(--surface-2); border-style: dashed; }
+      .badge.new { background: var(--accent); border-color: var(--accent); color: #fff; }
+      .inbox-empty-note { font-size: 14px; color: var(--ink-2); margin-top: 12px; }
+
+      /* ---------- Purchase panel ---------- */
+      .buy { margin-top: 22px; }
+      .buy-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 26px; }
+      @media (max-width: 860px) { .buy-grid { grid-template-columns: 1fr; } }
+      .price { font-family: "Barlow Condensed", sans-serif; font-size: 40px; font-weight: 700; line-height: 1.1; }
+      .price small { font-size: 20px; color: var(--ink-2); font-weight: 600; }
+      .buy ul { margin: 14px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+      .buy li { display: flex; gap: 9px; align-items: flex-start; font-size: 15.5px; }
+      .buy li svg { color: var(--good); flex: 0 0 auto; margin-top: 3px; }
+      .states { display: flex; flex-direction: column; gap: 0; margin-top: 4px; }
+      .state { display: flex; gap: 12px; }
+      .state-rail { display: flex; flex-direction: column; align-items: center; }
+      .state-dot {
+        width: 26px; height: 26px; border-radius: 50%; flex: 0 0 auto;
+        border: 2px solid var(--line); background: var(--surface);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 13px; font-weight: 700; color: var(--ink-2);
+      }
+      .state.current .state-dot { border-color: var(--accent); background: var(--accent); color: #fff; }
+      .state-line { width: 2px; flex: 1; background: var(--line); min-height: 14px; }
+      .state:last-child .state-line { display: none; }
+      .state-body { padding-bottom: 16px; }
+      .state-name { font-weight: 700; font-size: 16.5px; }
+      .state-desc { color: var(--ink-2); font-size: 14.5px; }
+      .state-status { font-size: 13px; font-weight: 700; color: var(--accent-strong); text-transform: uppercase; letter-spacing: .06em; }
+      .reserve-note {
+        margin-top: 6px; background: var(--accent-soft); border: 1px solid var(--line);
+        border-radius: 8px; padding: 12px 14px; font-size: 14.5px;
+      }
+
+      footer.site {
+        margin-top: 30px; border-top: 1px solid var(--line);
+        padding: 20px 0 34px; color: var(--ink-2); font-size: 14px;
+      }
+      footer.site p + p { margin-top: 6px; }
+      footer.site .foot-brand { font-weight: 700; color: var(--ink); font-size: 15px; }
+    </style>
+  </head>
+  <body>
+
+    <div class="disclosure">
+      <div class="wrap">
+        <p><strong>Concept demo built from public information — not affiliated with Brooks Garage Doors.</strong></p>
+        <p>Interactive concept demo — entries are simulated in your browser only; nothing is sent or stored.</p>
+      </div>
+    </div>
+
+    <header class="site">
+      <div class="wrap">
+        <div class="header-main">
+          <div class="brand">
+            <div class="brand-mark" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-6 9 6v12"/><path d="M7 21v-8h10v8"/><path d="M7 16.5h10"/><path d="M7 19.5h10"/></svg>
+            </div>
+            <div>
+              <div class="brand-name">Brooks Garage Doors</div>
+              <div class="brand-sub">Garage door repair &amp; service — Nashville, TN</div>
+            </div>
+          </div>
+          <div class="header-call">
+            <div class="label">24/7 emergency line</div>
+            <a class="phone" href="tel:+16155511241">(615) 551-1241</a>
+          </div>
+        </div>
+        <div class="fact-bar">
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Same-day service</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Two-hour arrival windows</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free on-site estimates</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Phones answered 24/7 by a local dispatcher</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+
+      <section class="moment">
+        <h2>The moment this demo shows</h2>
+        <p>It&rsquo;s a weekday morning in Nashville. A homeowner&rsquo;s garage door spring has snapped, the door won&rsquo;t budge, and their car is trapped inside. They&rsquo;d rather type than call, so they land on the Brooks homepage and find the <strong>&ldquo;Request A Free Inspection&rdquo;</strong> heading — which on the real site today has nothing behind it. No form, no button, nowhere for the request to go.</p>
+        <p class="callout">Below is the working request flow that could sit behind that heading. It takes under a minute, acknowledges the customer instantly, and lands in the owner&rsquo;s inbox already flagged as a same-day job. <strong>The phones keep working exactly as they do now</strong> — a local dispatcher answers 24/7 at (615) 551-1241. This flow is simply there for the customers who don&rsquo;t want to make a call.</p>
+      </section>
+
+      <div class="grid">
+
+        <!-- Request flow -->
+        <section class="card" aria-labelledby="form-title">
+          <div class="card-head">
+            <h2 id="form-title">Request A Free Inspection</h2>
+            <p class="sub">The customer&rsquo;s view. Fill it in like the homeowner above — try the broken-spring scenario — and watch what happens on the right.</p>
+          </div>
+          <form id="lead-form" novalidate>
+            <div class="field" id="f-name">
+              <label for="in-name">Your Name</label>
+              <input id="in-name" name="name" type="text" autocomplete="name" placeholder="e.g. Dana Whitfield" />
+              <p class="error">Please enter your name.</p>
+            </div>
+            <div class="field" id="f-phone">
+              <label for="in-phone">Phone Number</label>
+              <input id="in-phone" name="phone" type="tel" autocomplete="tel" placeholder="e.g. (615) 555-0142" />
+              <p class="hint">So the shop can text or call back to confirm your two-hour window.</p>
+              <p class="error">Please enter a valid 10-digit phone number.</p>
+            </div>
+            <div class="field" id="f-city">
+              <label for="in-city">City / ZIP</label>
+              <input id="in-city" name="city" type="text" autocomplete="address-level2" placeholder="e.g. Nashville, 37209" />
+              <p class="error">Please enter your city or ZIP.</p>
+            </div>
+            <div class="field" id="f-msg">
+              <label for="in-msg">What&rsquo;s going on with the door?</label>
+              <textarea id="in-msg" name="message" placeholder="e.g. Broken spring — the door won't open and my car is trapped in the garage."></textarea>
+              <p class="error">A sentence about the problem helps the crew bring the right parts.</p>
+            </div>
+            <button class="submit-btn" type="submit">Send My Request</button>
+            <p class="form-note">Demo form — submitting simulates the request in this page only.</p>
+          </form>
+
+          <div class="ack" id="ack" role="status" aria-live="polite">
+            <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="ack-title">We&rsquo;ve got it.</span></h3>
+            <p id="ack-body">Your request is in. The shop has it in hand and will confirm your two-hour arrival window shortly — no phone call needed.</p>
+            <p id="ack-time"></p>
+            <span class="sim-label">Simulated instant acknowledgment (demo only, nothing was emailed or texted)</span>
+          </div>
+        </section>
+
+        <!-- Owner inbox -->
+        <section class="card" aria-labelledby="inbox-title">
+          <div class="card-head">
+            <h2 id="inbox-title">Owner Lead Inbox</h2>
+            <p class="sub">The shop&rsquo;s view. Every request lands here the second it&rsquo;s sent, flagged by urgency so a trapped car never waits behind a tune-up.</p>
+          </div>
+          <div class="inbox-list" id="inbox-list">
+            <article class="lead" id="sample-lead">
+              <div class="lead-top">
+                <span class="lead-name">Sample Customer</span>
+                <span class="lead-meta">(615) 555-0100 · Nashville, 37209</span>
+              </div>
+              <p class="lead-msg">Broken spring — the door won&rsquo;t open and my car is trapped in the garage. Need it fixed today if possible.</p>
+              <div class="badges">
+                <span class="badge urgent">Same-day candidate — car trapped</span>
+                <span class="badge sample">Sample lead — sample data</span>
+              </div>
+            </article>
+          </div>
+          <p class="inbox-empty-note">The sample lead above shows the format. Requests you submit in the form appear here instantly, in this browser only.</p>
+        </section>
+      </div>
+
+      <!-- Purchase panel -->
+      <section class="card buy" aria-labelledby="buy-title">
+        <div class="card-head">
+          <h2 id="buy-title">Never-Miss-a-Lead</h2>
+          <p class="sub">The system behind this page, set up for Brooks Garage Doors.</p>
+        </div>
+        <div class="buy-grid">
+          <div>
+            <div class="price">$497 <small>setup</small> + $297<small>/month</small></div>
+            <p style="color: var(--ink-2); font-size: 15px; margin-top: 4px;">Month-to-month. No long-term contract.</p>
+            <ul>
+              <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>One intake flow</strong> — the working request form behind &ldquo;Request A Free Inspection.&rdquo;</span></li>
+              <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Instant acknowledgment</strong> — every customer hears back the second they submit.</span></li>
+              <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Routing</strong> — requests land in one owner inbox, flagged by urgency.</span></li>
+              <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Failure alerts</strong> — if a request ever fails to deliver, the shop is told right away.</span></li>
+              <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Monthly report</strong> — a plain count of requests received and answered.</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="font-size: 20px; margin-bottom: 10px;">How buying works</h3>
+            <div class="states">
+              <div class="state current">
+                <div class="state-rail"><div class="state-dot">1</div><div class="state-line"></div></div>
+                <div class="state-body">
+                  <div class="state-name">Acceptance</div>
+                  <div class="state-desc">The shop confirms it wants the system and the scope above.</div>
+                  <div class="state-status">Pending acceptance</div>
+                </div>
+              </div>
+              <div class="state">
+                <div class="state-rail"><div class="state-dot">2</div><div class="state-line"></div></div>
+                <div class="state-body">
+                  <div class="state-name">Funding</div>
+                  <div class="state-desc">Setup and first month are paid once acceptance is confirmed.</div>
+                  <div class="state-status">Not started</div>
+                </div>
+              </div>
+              <div class="state">
+                <div class="state-rail"><div class="state-dot">3</div><div class="state-line"></div></div>
+                <div class="state-body">
+                  <div class="state-name">Access</div>
+                  <div class="state-desc">The shop provides access to the website so the intake flow can be connected.</div>
+                  <div class="state-status">Not started</div>
+                </div>
+              </div>
+              <div class="state">
+                <div class="state-rail"><div class="state-dot">4</div><div class="state-line"></div></div>
+                <div class="state-body">
+                  <div class="state-name">Verification</div>
+                  <div class="state-desc">A live test request is run end-to-end and confirmed received before launch.</div>
+                  <div class="state-status">Not started</div>
+                </div>
+              </div>
+              <div class="state">
+                <div class="state-rail"><div class="state-dot">5</div></div>
+                <div class="state-body">
+                  <div class="state-name">Activation</div>
+                  <div class="state-desc">The flow goes live behind &ldquo;Request A Free Inspection&rdquo; once verification passes.</div>
+                  <div class="state-status">Not started</div>
+                </div>
+              </div>
+            </div>
+            <div class="reserve-note"><strong>Reserve mode:</strong> Buying starts with acceptance and funding; activation follows verification — no payment is taken on this demo page.</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site">
+      <div class="wrap">
+        <p class="foot-brand">Brooks Garage Doors — Nashville, TN · (615) 551-1241</p>
+        <p>Concept demo built from public information — not affiliated with Brooks Garage Doors.</p>
+        <p>Interactive concept demo — entries are simulated in your browser only; nothing is sent or stored.</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var form = document.getElementById('lead-form');
+        var ack = document.getElementById('ack');
+        var ackTitle = document.getElementById('ack-title');
+        var ackTime = document.getElementById('ack-time');
+        var inbox = document.getElementById('inbox-list');
+        var startedAt = null;
+
+        var fields = {
+          name:  { wrap: document.getElementById('f-name'),  input: document.getElementById('in-name') },
+          phone: { wrap: document.getElementById('f-phone'), input: document.getElementById('in-phone') },
+          city:  { wrap: document.getElementById('f-city'),  input: document.getElementById('in-city') },
+          msg:   { wrap: document.getElementById('f-msg'),   input: document.getElementById('in-msg') }
+        };
+
+        Object.keys(fields).forEach(function (k) {
+          fields[k].input.addEventListener('input', function () {
+            fields[k].wrap.classList.remove('invalid');
+            if (!startedAt) startedAt = Date.now();
+          });
+        });
+
+        function digits(s) { return (s || '').replace(/\D/g, ''); }
+
+        function validPhone(s) {
+          var d = digits(s);
+          if (d.length === 11 && d.charAt(0) === '1') d = d.slice(1);
+          return d.length === 10;
+        }
+
+        function formatPhone(s) {
+          var d = digits(s);
+          if (d.length === 11 && d.charAt(0) === '1') d = d.slice(1);
+          if (d.length !== 10) return s;
+          return '(' + d.slice(0, 3) + ') ' + d.slice(3, 6) + '-' + d.slice(6);
+        }
+
+        function esc(s) {
+          return String(s).replace(/[&<>"']/g, function (c) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+          });
+        }
+
+        function classify(msg) {
+          var m = (msg || '').toLowerCase();
+          var trapped = /trapped|stuck|can'?t get (out|in)|cannot get|won'?t open|will not open|car (is )?in/.test(m);
+          var spring = /spring|snapped|broke/.test(m);
+          if (trapped) return 'Same-day candidate — car trapped';
+          if (spring) return 'Same-day candidate — broken spring';
+          if (/emergency|urgent|today/.test(m)) return 'Same-day candidate — requested today';
+          return 'New request — review today';
+        }
+
+        form.addEventListener('submit', function (ev) {
+          ev.preventDefault();
+          var name = fields.name.input.value.trim();
+          var phoneRaw = fields.phone.input.value.trim();
+          var city = fields.city.input.value.trim();
+          var msg = fields.msg.input.value.trim();
+
+          var ok = true;
+          if (!name) { fields.name.wrap.classList.add('invalid'); ok = false; }
+          if (!validPhone(phoneRaw)) { fields.phone.wrap.classList.add('invalid'); ok = false; }
+          if (!city) { fields.city.wrap.classList.add('invalid'); ok = false; }
+          if (!msg) { fields.msg.wrap.classList.add('invalid'); ok = false; }
+          if (!ok) {
+            var firstBad = form.querySelector('.field.invalid input, .field.invalid textarea');
+            if (firstBad) firstBad.focus();
+            return;
+          }
+
+          var phone = formatPhone(phoneRaw);
+          var flag = classify(msg);
+          var urgent = flag.indexOf('Same-day') === 0;
+
+          // Owner inbox entry
+          var lead = document.createElement('article');
+          lead.className = 'lead fresh';
+          lead.innerHTML =
+            '<div class="lead-top"><span class="lead-name">' + esc(name) + '</span>' +
+            '<span class="lead-meta">' + esc(phone) + ' · ' + esc(city) + '</span></div>' +
+            '<p class="lead-msg">' + esc(msg) + '</p>' +
+            '<div class="badges"><span class="badge ' + (urgent ? 'urgent' : '') + '">' + esc(flag) + '</span>' +
+            '<span class="badge new">New — just submitted in this demo</span></div>';
+          inbox.insertBefore(lead, inbox.firstChild);
+
+          // Instant acknowledgment
+          var firstName = name.split(/\s+/)[0];
+          ackTitle.textContent = 'We\u2019ve got it, ' + firstName + '.';
+          if (startedAt) {
+            var secs = Math.max(1, Math.round((Date.now() - startedAt) / 1000));
+            ackTime.textContent = secs < 60
+              ? 'Start to sent: ' + secs + ' seconds — the whole request took under a minute.'
+              : 'Request sent and acknowledged instantly.';
+          } else {
+            ackTime.textContent = 'Request sent and acknowledged instantly.';
+          }
+          ack.classList.add('show');
+          ack.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+          form.reset();
+          startedAt = null;
+        });
+      })();
+    </script>
+  </body>
+</html>
