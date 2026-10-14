@@ -190,22 +190,22 @@
         </div>
 
         <fieldset>
-          <legend>8. Where should captured leads go? <span class="hint">Pick exactly one.</span></legend>
+          <legend>8. Where should captured leads go? <span class="hint">Every lead lands in your agent’s private lead view — that’s always included, and we send you its sign-in link at handover. Use this question only to add one push destination on top, if you want one.</span></legend>
           <div class="radio-row">
-            <input type="radio" id="leadEmail" name="leadDest" value="My email inbox" required />
-            <label for="leadEmail"><strong>My email inbox</strong></label>
+            <input type="radio" id="leadView" name="leadDest" value="The agent’s own lead view" required />
+            <label for="leadView"><strong>Just the lead view</strong> — nothing else to set up.</label>
           </div>
           <div class="radio-row">
-            <input type="radio" id="leadSheet" name="leadDest" value="A Google Sheet" />
-            <label for="leadSheet"><strong>A Google Sheet</strong></label>
+            <input type="radio" id="leadWebhook" name="leadDest" value="A webhook I control" />
+            <label for="leadWebhook"><strong>A webhook I control</strong> — we send each lead as it arrives to a web address your tools already listen to (a CRM or automation endpoint). Paste the address below.</label>
           </div>
           <div class="radio-row">
-            <input type="radio" id="leadView" name="leadDest" value="The agent’s own lead view" />
-            <label for="leadView"><strong>The agent’s own lead view</strong></label>
+            <input type="radio" id="leadEmail" name="leadDest" value="My email inbox, through my own mail relay" />
+            <label for="leadEmail"><strong>My email inbox — through my own mail relay</strong> — email delivery runs through a mail relay you provide (your own SMTP or relay account). We collect the relay details securely during setup — never by email — and send a test lead you confirm in your inbox before go-live. Paste the inbox address below.</label>
           </div>
           <div class="field" style="margin:12px 0 8px">
-            <label for="fLeadDetail">Email address or sheet link <span class="hint" id="leadDetailHint">— matching the choice above; leave blank if you picked the agent’s own lead view</span></label>
-            <input id="fLeadDetail" name="leadDetail" type="text" placeholder="Email address or Google Sheet link" />
+            <label for="fLeadDetail">Webhook address or inbox email <span class="hint" id="leadDetailHint">— matching the choice above; leave blank if you picked just the lead view</span></label>
+            <input id="fLeadDetail" name="leadDetail" type="text" placeholder="Webhook address or inbox email" />
           </div>
         </fieldset>
 
@@ -305,22 +305,22 @@
   }
   function syncLeadDetail(){
     var c = leadChoice();
-    if (c === 'My email inbox'){
-      leadDetail.placeholder = 'Email address for captured leads';
+    if (c === 'A webhook I control'){
+      leadDetail.placeholder = 'https://… — the address your tools listen to';
       leadDetail.required = true;
-      leadHint.textContent = '— the email address leads should go to';
-    } else if (c === 'A Google Sheet'){
-      leadDetail.placeholder = 'Google Sheet link';
+      leadHint.textContent = '— the webhook address each lead should be sent to as it arrives';
+    } else if (c === 'My email inbox, through my own mail relay'){
+      leadDetail.placeholder = 'Inbox address for captured leads';
       leadDetail.required = true;
-      leadHint.textContent = '— paste the link to your Google Sheet';
+      leadHint.textContent = '— the inbox leads should land in; relay details are collected securely at setup, never by email';
     } else if (c === 'The agent’s own lead view'){
-      leadDetail.placeholder = 'No email or link needed for this choice';
+      leadDetail.placeholder = 'No address needed for this choice';
       leadDetail.required = false;
-      leadHint.textContent = '— leave blank; leads stay in the agent’s own lead view';
+      leadHint.textContent = '— leave blank; leads stay in your agent’s private lead view';
     } else {
-      leadDetail.placeholder = 'Email address or Google Sheet link';
+      leadDetail.placeholder = 'Webhook address or inbox email';
       leadDetail.required = false;
-      leadHint.textContent = '— matching the choice above; leave blank if you picked the agent’s own lead view';
+      leadHint.textContent = '— matching the choice above; leave blank if you picked just the lead view';
     }
   }
   var radios = document.querySelectorAll('input[name="leadDest"]');
@@ -341,7 +341,7 @@
     var dest = leadChoice();
     var detail = val('fLeadDetail');
     var destLine = dest;
-    if (dest === 'My email inbox' || dest === 'A Google Sheet') destLine = dest + ' — ' + orBlank(detail);
+    if (dest === 'A webhook I control' || dest === 'My email inbox, through my own mail relay') destLine = dest + ' — ' + orBlank(detail);
     else if (dest === 'The agent’s own lead view') destLine = dest + (detail ? ' — note: ' + detail : '');
     var color = val('fColorHex') || colorPicker.value;
     return [
