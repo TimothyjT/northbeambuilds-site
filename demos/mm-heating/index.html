@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:,">
+<title>MM Heating &amp; Plumbing Ltd — SiteSays Configured Sample (Northbeam Builds)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --surface2:#eef2f5; --ink:#16222e; --muted:#5b6b7a; --line:#dde3e8;
+  --navy:#0f2a44; --accent:#d95d14; --accent-soft:#fff1e6; --green:#137a4a; --green-soft:#e6f4ec;
+  --bubble-in:#e9eef2; --bubble-out:#0f2a44; --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0d151d; --surface:#16222e; --surface2:#1c2e3f; --ink:#eef3f7; --muted:#a8b8c6; --line:#2a3f52; --accent-soft:#2d1f14; --green-soft:#132a1e; --bubble-in:#243747; --bubble-out:#1f4a75; }
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Barlow",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.disclaimer-bar{background:#111827;color:#fde68a;font-size:13.5px;line-height:1.45;padding:10px 0;text-align:center}
+.disclaimer-bar strong{color:#fff}
+.topbar{background:var(--navy);color:#fff;padding:18px 0 16px}
+.topbar-inner{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:14px}
+.mark{width:48px;height:48px;background:var(--accent);display:grid;place-items:center;border-radius:10px;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:24px;letter-spacing:.02em;flex-shrink:0;color:#fff}
+.brand h1{font-family:"Barlow Condensed",sans-serif;font-size:32px;line-height:1;margin:0;letter-spacing:.02em;text-transform:uppercase}
+.brand p{margin:2px 0 0;font-size:13px;color:#cbd8e6;letter-spacing:.06em;text-transform:uppercase}
+.contact-strip{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:14px;color:#dbe6f0}
+.contact-strip b{color:#fff}
+.hero{padding:34px 0 8px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.hero h2{font-family:"Barlow Condensed",sans-serif;font-size:48px;line-height:.98;margin:8px 0 12px;letter-spacing:.01em;text-transform:uppercase}
+@media(max-width:600px){.hero h2{font-size:38px}}
+.hero h2 span{color:var(--accent)}
+.hero p.lead{font-size:18px;color:var(--muted);max-width:62ch;margin:0}
+.sample-note{margin-top:20px;background:var(--accent-soft);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;font-size:15px}
+.sample-note b{color:var(--ink)}
+.section{padding:28px 0}
+.section-head{margin-bottom:16px}
+.section-head h3{font-family:"Barlow Condensed",sans-serif;font-size:30px;line-height:1;margin:0;text-transform:uppercase}
+.section-head p{margin:4px 0 0;color:var(--muted);max-width:66ch}
+.thread{display:grid;gap:18px;max-width:760px}
+.exchange{display:grid;gap:8px}
+.msg{max-width:88%;padding:11px 14px;border-radius:16px;font-size:15px;line-height:1.5}
+.msg small.sim{display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.65;margin-bottom:4px}
+.msg.visitor{background:var(--surface);border:1px solid var(--line);justify-self:start;border-bottom-left-radius:4px;font-weight:600}
+.msg.agent{background:var(--bubble-out);color:#fff;justify-self:end;border-bottom-right-radius:4px}
+.msg.agent.greeting{justify-self:start;max-width:100%}
+.cat{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.fallback{background:var(--surface);border:1px dashed var(--line);border-radius:var(--radius);padding:18px;max-width:760px}
+.fallback h4{margin:0 0 6px;font-size:16px}
+.fallback p{margin:0;color:var(--muted);font-size:15px}
+.fallback .quote{margin-top:10px;background:var(--bubble-in);border-radius:12px;padding:11px 14px;color:var(--ink);font-size:15px}
+.purchase{background:var(--navy);color:#fff;border-radius:18px;padding:28px}
+.purchase h3{font-family:"Barlow Condensed",sans-serif;font-size:34px;margin:0;line-height:1;text-transform:uppercase}
+.price{font-size:42px;font-weight:700;line-height:1;margin:14px 0 4px}
+.price span{font-size:16px;font-weight:500;color:#cbd8e6}
+.purchase p{color:#dbe6f0;font-size:15px}
+.disclosure{margin-top:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:12px 14px;border-radius:9px;font-size:14px;color:#e2e8f0}
+footer{border-top:1px solid var(--line);padding:28px 0 36px;margin-top:12px;color:var(--muted);font-size:14px}
+footer p{margin:6px 0}
+</style>
+</head>
+<body>
+<div class="disclaimer-bar"><div class="wrap"><strong>Configured sample built from public information — not affiliated with MM Heating &amp; Plumbing Ltd.</strong><br>This page shows drafted questions and answers only. It is not a live chat, and nothing here is sent or stored.</div></div>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand"><div class="mark">M</div><div><h1>MM Heating &amp; Plumbing Ltd</h1><p>Thornton Heath, Croydon, London, UK &nbsp;&bull;&nbsp; SiteSays configured sample</p></div></div>
+    <div class="contact-strip">
+      <span>Phone (theirs): <b>020 8684 0333</b></span>
+      <span>Hours (theirs): <b>Mon–Fri 7 AM–5 PM, Sat 9 AM–3 PM; 24/7 emergency line</b></span>
+      <span>Sample built by <b>Northbeam Builds</b></span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">A free sample we built for MM Heating &amp; Plumbing Ltd</div>
+    <h2>Their questions.<br><span>Answered instantly.</span></h2>
+    <p class="lead">MM Heating&#x27;s site answers its common questions well, but the answers sit in static text — a visitor asking anything else, at any hour, has to ring the phone line or fill in a form and wait for office hours. Below is the question set we drafted from their own pages and published prices, with the exact answers the agent would give.</p>
+    <div class="sample-note"><b>What this page is:</b> a configured sample, built from MM Heating &amp; Plumbing Ltd's own public pages. The answers below are drafted from their site — the live version runs on their site once hosting is stood up. This page is a static sample: there is no live chat here, and the agent is not running on it.</div>
+  </section>
+
+  <section class="section" aria-labelledby="walk-h">
+    <div class="section-head">
+      <div><h3 id="walk-h">The sample walkthrough</h3><p>This is how the assistant would open, and the exact questions and answers we configured for MM Heating &amp; Plumbing Ltd — word for word from the draft. The agent only ever says what is in this content; it cannot invent prices, treatments, or policies.</p></div>
+    </div>
+    <div class="thread">
+      <div class="exchange">
+        <div class="msg agent greeting"><small class="sim">Sample &bull; How the assistant opens</small>Hi — I&#x27;m the MM Heating website assistant. Ask me about boiler prices, emergency call-outs, certificates, or the areas we cover, or leave your number and the team will get back to you.</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>What services do you provide?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>We provide boiler installation, central heating repairs, plumbing installation and repairs, electrical certificates (EICR), gas safety certificates (CP12), drain blockage solutions, and general home maintenance.</div>
+        <div class="cat">Services</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>Do you offer emergency services, and what do they cost?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>Yes — we offer 24/7 emergency call-out services for plumbing, heating, and boiler problems. Emergency call-outs start from £60, depending on the issue and the work required.</div>
+        <div class="cat">Emergency</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>How much is a new boiler, and how fast can you fit it?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>Next-day boiler installation starts from £1,699 + VAT. In many cases we offer next-day installation once the booking and payment are confirmed; installation time varies depending on the property and system requirements. You can pay upfront, or from £10.97/month with our finance option.</div>
+        <div class="cat">Pricing</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>Do you provide gas safety certificates?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>Yes. We provide Gas Safety Certificates (CP12) for landlords and homeowners — a qualified registered engineer carries out the checks, and copies of the safety record form are given to both landlord and tenant. Certificates start from £75 + VAT. An annual boiler service costs £85 and includes a free Gas Safety Certificate.</div>
+        <div class="cat">Certificates</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>Are your engineers qualified and certified?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>Yes. All our engineers are highly trained professionals and Gas Safe registered, ensuring all heating and gas work is carried out safely and according to UK regulations. We&#x27;re also NICEIC approved electrical contractors.</div>
+        <div class="cat">Qualifications</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>What areas do you serve?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>We&#x27;re based in Thornton Heath, Croydon, and serve London and the surrounding South-East — including Croydon, Streatham, Brixton, Mitcham, Sutton, Wimbledon, Tooting, Clapham, Lambeth, Wandsworth, Westminster, Norwood, Bromley, and Greenwich.</div>
+        <div class="cat">Service Area</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>Do you handle plumbing installations as well as repairs?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>Yes — we provide both new plumbing installations and repairs, including pipework, bathroom fittings, leak detection, and drainage solutions.</div>
+        <div class="cat">Services</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>Is your work guaranteed?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>All our work comes with a one-year workmanship warranty. If anything goes wrong with our work, we&#x27;ll fix it at no extra cost to you.</div>
+        <div class="cat">Policies</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>What are your hours, and how do I book?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>Working hours are Monday to Friday 7 AM to 5 PM and Saturday 9 AM to 3 PM, with a 24/7 emergency line. To book or get a free quote, ring the team or fill in the quote form on this website.</div>
+        <div class="cat">Hours &amp; Booking</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>Do you have any offers or discounts?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>There is no percent-off offer or discount listed on MM Heating&#x27;s website. Published prices are on the site — emergency call-outs from £60, gas safety certificates from £75 + VAT, boiler service £85, boiler installation from £1,699 + VAT — and the team confirms every cost before work begins.</div>
+        <div class="cat">Pricing</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>What if I need to cancel or reschedule?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>Cancellation terms aren&#x27;t listed on MM Heating&#x27;s website. The team can confirm them when you book — call 020 8684 0333.</div>
+        <div class="cat">Policies</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="fb-h">
+    <div class="section-head"><div><h3 id="fb-h">And when it doesn't know</h3><p>The agent is not allowed to guess. A question outside the configured content gets this answer instead — and the visitor's details are captured as a lead for the business.</p></div></div>
+    <div class="fallback">
+      <h4>The fallback answer, as configured</h4>
+      <div class="quote">I don&#x27;t have that in MM Heating &amp; Plumbing Ltd&#x27;s information yet — I only answer from the business&#x27;s own help content, so I won&#x27;t guess. A real person can help: call 020 8684 0333 (Mon–Fri 7 AM–5 PM, Sat 9 AM–3 PM; 24/7 emergency line), or leave your number below and we&#x27;ll pass it along for a callback within one business day.</div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="buy-h">
+    <div class="purchase">
+      <div class="eyebrow" style="color:#fdaa74">For the business owner</div>
+      <h3 id="buy-h">SiteSays — Website FAQ &amp; Lead Capture Agent</h3>
+      <div class="price">$49 <span>flat</span></div>
+      <p style="margin:0">One flat price to put this agent on your site, configured from your own content. It is live 1 business day after payment, content, and site access are all in — whichever comes last starts the clock.</p>
+      <div class="disclosure"><strong style="color:#fff">Before you pay:</strong> this agent runs on hosting we are still standing up, so it cannot go live yet and the go-live clock has not started. Once the hosting is in place, the clock runs exactly as stated above.</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong style="color:var(--ink)">Configured sample built from public information — not affiliated with MM Heating &amp; Plumbing Ltd.</strong></p>
+    <p>Static sample page by Northbeam Builds, Austin TX. Every question and answer above was drafted from MM Heating &amp; Plumbing Ltd's own public website on 2026-10-14; no prices, offers, or policies were invented — where the business publishes none, the answers say so.</p>
+    <p>MM Heating &amp; Plumbing Ltd &bull; Thornton Heath, Croydon, London, UK &bull; 020 8684 0333 &bull; Mon–Fri 7 AM–5 PM, Sat 9 AM–3 PM; 24/7 emergency line</p>
+  </div>
+</footer>
+</body>
+</html>
