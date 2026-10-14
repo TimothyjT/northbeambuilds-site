@@ -1,0 +1,69 @@
+# Northbeam Builds
+
+> Northbeam Builds is a small studio in Austin, TX that builds websites and AI tools for local service businesses — plumbers, HVAC, roofers, pest control, electricians, cleaning companies, and similar shops. Fixed prices published up front, scope in writing before payment, monthly services month-to-month.
+
+Northbeam Builds is run by its founder. Customers deal directly with the person who builds their system. There are no testimonials or client results on this site yet because the studio is new — the work shown is labeled concept demos, built from a business's public info to show how a system would work for them. They are not client sites.
+
+## What we do
+
+Three kinds of work:
+
+1. Websites & booking — a clear website where customers can see services and book a time online, from $249 one-time.
+2. Lead response — missed calls and website forms get a reply in under a minute, day or night, and every lead lands on the owner's phone.
+3. AI tools for shops — a website chat box that answers from the business's own info, a custom chat agent for the business's website, and a voice receptionist that answers calls live.
+
+## Products and prices
+
+- Never-Miss-a-Lead — replies to missed calls and website forms by text in under a minute. $199 setup + $99/month. First month total: $298. Month-to-month.
+  Product site: https://nevermiss.northbeambuilds.com/ · Details: https://northbeambuilds.com/tools/never-miss-a-lead/
+- Website FAQ & Lead Capture Agent — a chat box on the business's own website that answers questions from its own hours, prices, and services, and takes a name and number when it cannot answer. $49 flat (regular price $149). No monthly fee.
+  Product site: https://faqagent.northbeambuilds.com/ · Details: https://northbeambuilds.com/tools/website-lead-capture-agent/
+- Website + Online Booking — a website customers can book on, so the phone is not the only way to get a job. From $249 one-time; the exact price is quoted in writing before work starts.
+  Product site: https://booking.northbeambuilds.com/ · Details: https://northbeambuilds.com/tools/website-online-booking/
+- AI Chatbot — a custom chat agent on the business's website that answers repeat questions from the business's own info and hands real jobs to the owner. $149 setup + $49/month. Month-to-month.
+  Product site: https://chatbot.northbeambuilds.com/ · Details: https://northbeambuilds.com/tools/ai-chatbot/
+- AI Phone Receptionist — a voice that answers calls live, answers basic questions, and books the job or takes a message. It does not dispatch crews. $399 setup + $199/month. Month-to-month. This product starts with a test call, not an online checkout.
+  Product site: https://receptionist.northbeambuilds.com/ · Details: https://northbeambuilds.com/tools/ai-phone-receptionist/
+
+Full price table: https://northbeambuilds.com/pricing/
+
+## How it works
+
+1. The owner emails the studio with their trade and whether missed calls or website forms cost them more jobs.
+2. They get the scope, the exact price, and a live date in writing, usually the same day. No sales call required.
+3. We build it and test it with the owner on their own phone before anything goes live.
+4. It goes live within days of the agreement in most cases. That's guaranteed: miss the agreed live date and the setup fee comes back in full.
+
+## Questions and answers
+
+- Q: What does Never-Miss-a-Lead cost in total?
+  A: $199 to set it up, then $99 a month. The first month is $298 total. There is no per-message bill and no exit fee.
+- Q: How fast is the reply?
+  A: Under a minute, day or night, for a missed call or a website form.
+- Q: What is the difference between Never-Miss-a-Lead and the AI Phone Receptionist?
+  A: Never-Miss-a-Lead follows up by text after a call is missed. The Phone Receptionist answers the call live, by voice.
+- Q: What is the difference between the $49 FAQ Agent and the AI Chatbot?
+  A: The FAQ Agent lives on the business's website only and costs $49 flat. The AI Chatbot is custom-built around the business — a bigger question set, written with the owner, with updates managed for you; it costs $149 setup + $49/month.
+- Q: Can I cancel a monthly service?
+  A: Yes. Monthly services are month-to-month. Email us and it is cancelled at the end of the current month, with no exit fee.
+- Q: Who owns my website and my customer details?
+  A: You do. Your website, content, and customer details stay yours.
+- Q: What happens when a tool cannot answer a customer's question?
+  A: It does not guess. It takes the customer's name and number, tells them the owner will follow up, and sends the conversation to the owner.
+- Q: Are the demos on this site real client work?
+  A: No. They are concept demos built from public info, labeled as such on the site. The businesses shown are not Northbeam Builds clients.
+
+## Links
+
+- Home: https://northbeambuilds.com/
+- Services: https://northbeambuilds.com/services/
+- Work and demos: https://northbeambuilds.com/work/
+- Pricing: https://northbeambuilds.com/pricing/
+- About: https://northbeambuilds.com/about/
+- Contact: https://northbeambuilds.com/contact/
+- Sitemap: https://northbeambuilds.com/sitemap.xml
+
+## Contact
+
+Email: northbeambuilds@gmail.com (a person replies within one business day)
+Location: Austin, Texas. We work with local service businesses in Austin and across the US.

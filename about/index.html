@@ -500,7 +500,7 @@
       <div class="problems">
         <article class="problem">
           <h3>Founder-led</h3>
-          <p>Tim Tubbs scopes every job, talks to every customer, and signs off on everything that ships. There's no sales team and no account manager between you and the person responsible for the work.</p>
+          <p>The founder scopes every job, talks to every customer, and signs off on everything that ships. There's no sales team and no account manager between you and the person responsible for the work.</p>
         </article>
         <article class="problem">
           <h3>Built with AI, checked by a person</h3>
@@ -533,7 +533,7 @@
         <h2 id="founder-h">The founder</h2>
       </div>
       <div class="prose">
-        <p>Tim Tubbs is a registered nurse in Austin. His day job is clinical product and workflow automation at a Texas health system — building the tools that help care teams answer faster and miss less. He started Northbeam Builds because the same failure kept showing up in both worlds: good people, working hard, losing the thread because a message sat too long.</p>
+        <p>The studio's founder comes from clinical product and workflow automation — building the tools that help care teams answer faster and miss less. Northbeam Builds started because the same failure kept showing up in both worlds: good people, working hard, losing the thread because a message sat too long.</p>
         <p>Northbeam is his answer for the businesses around him — the plumber on a roof when the phone rings, the two-truck HVAC shop whose website form waits until Monday. Small tools, honestly priced, that answer in time.</p>
       </div>
     </div>
@@ -544,7 +544,7 @@
     <div class="wrap">
       <div class="final">
         <h2 id="talk-h">Talk to the studio</h2>
-        <p>Questions about a product, a price, or whether we'd be a fit for your shop — one email reaches Tim directly.</p>
+        <p>Questions about a product, a price, or whether we'd be a fit for your shop — one email reaches the founder directly.</p>
         <div class="btn-row">
           <a class="btn btn-light" href="/contact/">Contact us</a>
         </div>
@@ -682,9 +682,9 @@
 
   var PRICES="Here are our prices:\n\u2022 Never-Miss-a-Lead \u2014 $199 setup + $99/month ($298 first month).\n\u2022 Website FAQ & Lead Capture Agent \u2014 $49 flat, one-time.\n\u2022 Website + Online Booking \u2014 from $249 one-time.\n\u2022 AI Chatbot \u2014 $149 setup + $49/month.\n\u2022 AI Phone Receptionist \u2014 $399 setup + $199/month.\nSee the full table on our Pricing page: /pricing/";
   var PRICES_HTML="Here are our prices:<br>\u2022 Never-Miss-a-Lead \u2014 $199 setup + $99/month ($298 first month).<br>\u2022 Website FAQ &amp; Lead Capture Agent \u2014 $49 flat, one-time.<br>\u2022 Website + Online Booking \u2014 from $249 one-time.<br>\u2022 AI Chatbot \u2014 $149 setup + $49/month.<br>\u2022 AI Phone Receptionist \u2014 $399 setup + $199/month.<br>See the full table on our <a href=\"/pricing/\">Pricing page</a>.";
-  var TOOLS_HTML="Here\u2019s what each tool does:<br><br><strong>Never-Miss-a-Lead</strong> catches every inquiry \u2014 missed calls, website form fills, after-hours messages \u2014 replies instantly and routes every lead to one inbox so no lead waits or gets lost.<br><br><strong>Website FAQ &amp; Lead Capture Agent</strong> is a chat agent on a business\u2019s own website (this widget is one) that answers visitor questions from the business\u2019s own content and captures leads.<br><br><strong>Website + Online Booking</strong> is a small-business website with online booking built in.<br><br><strong>AI Chatbot</strong> is an assistant on a business\u2019s site and messages that answers customer questions around the clock.<br><br><strong>AI Phone Receptionist</strong> is an AI voice agent that answers business calls, answers questions, and books appointments, with humans as escalation.";
+  var TOOLS_HTML="Here\u2019s what each tool does:<br><br><strong>Never-Miss-a-Lead</strong> answers one channel to start \u2014 missed calls, website form fills, or after-hours messages \u2014 replies instantly and routes every lead to one inbox so no lead waits or gets lost.<br><br><strong>Website FAQ &amp; Lead Capture Agent</strong> is a chat agent on a business\u2019s own website (this widget is one) that answers visitor questions from the business\u2019s own content and captures leads.<br><br><strong>Website + Online Booking</strong> is a small-business website with online booking built in.<br><br><strong>AI Chatbot</strong> is an assistant on a business\u2019s website that answers customer questions around the clock.<br><br><strong>AI Phone Receptionist</strong> is an AI voice agent that answers business calls, answers questions, and books appointments, with humans as escalation.";
   var HOW_HTML="How it works:<br>1) Tell us about your business (short intake).<br>2) We build and configure your tool \u2014 most go live in 24\u201348 hours; the phone receptionist takes 3\u20137 days including a test call you approve.<br>3) You test it and approve it.<br>4) It goes live; service is month-to-month, cancel anytime.";
-  var GUARANTEE="It\u2019s month-to-month, no long-term contract. If we miss what we promised, we fix it.";
+  var GUARANTEE="It\u2019s month-to-month, no long-term contract. Our guarantee: live by the date we agree, or your setup fee comes back in full.";
   var CONTACT_HTML="You can email <a href=\"mailto:northbeambuilds@gmail.com\">northbeambuilds@gmail.com</a> \u2014 a person replies within one business day. Our studio is in Austin, TX.<br><br>Live concept demos are at <a href=\"/demos/\">/demos/</a> \u2014 each is honestly labeled a concept built from public info, not a real client site.";
   var FALLBACK="I don't have that in Northbeam's information yet \u2014 I only answer from our own site content. You can email northbeambuilds@gmail.com, or leave your name and contact here and we'll reply within one business day.";
   var CORRECTION="I can't confirm that \u2014 the prices I have are the ones on our Pricing page.";
@@ -719,11 +719,11 @@
     if(/(how it works|how does|process|steps|how long|timeline|get started process|what happens)/.test(t)){ addBot(HOW_HTML); return; }
     if(/(demo|demos|example|examples|see it)/.test(t)){ addBot(CONTACT_HTML); return; }
     if(/(contact|email|human|person|talk to someone|austin|where are you|reach you)/.test(t)){ addBot(CONTACT_HTML); return; }
-    if(/(never-miss|never miss|missed call)/.test(t)){ addBot("<strong>Never-Miss-a-Lead</strong> catches every inquiry \u2014 missed calls, website form fills, after-hours messages \u2014 replies instantly and routes every lead to one inbox so no lead waits or gets lost.<br><br>Price: $199 setup + $99/month ($298 first month). See <a href=\"/tools/never-miss-a-lead/\">its tool page</a>."); return; }
+    if(/(never-miss|never miss|missed call)/.test(t)){ addBot("<strong>Never-Miss-a-Lead</strong> answers one channel to start \u2014 missed calls, website form fills, or after-hours messages \u2014 replies instantly and routes every lead to one inbox so no lead waits or gets lost.<br><br>Price: $199 setup + $99/month ($298 first month). See <a href=\"/tools/never-miss-a-lead/\">its tool page</a>."); return; }
     if(/(faq agent|lead capture|website faq)/.test(t)){ addBot("<strong>The FAQ &amp; Lead Capture Agent</strong> is a chat agent on a business\u2019s own website (this widget is one) that answers visitor questions from the business\u2019s own content and captures leads.<br><br>Price: $49 flat, one-time. See <a href=\"/tools/website-lead-capture-agent/\">its tool page</a>."); return; }
     if(/(booking|book online|website \+)/.test(t)){ addBot("<strong>Website + Online Booking</strong> is a small-business website with online booking built in.<br><br>Price: from $249 one-time. See <a href=\"/tools/website-online-booking/\">its tool page</a>."); return; }
     if(/(phone receptionist|receptionist|answer.*call|voice agent)/.test(t)){ addBot("<strong>The AI Phone Receptionist</strong> is an AI voice agent that answers business calls, answers questions, and books appointments, with humans as escalation.<br><br>Price: $399 setup + $199/month. See <a href=\"/tools/ai-phone-receptionist/\">its tool page</a>."); return; }
-    if(/(chatbot|chat bot)/.test(t)){ addBot("<strong>The AI Chatbot</strong> is an assistant on a business\u2019s site and messages that answers customer questions around the clock.<br><br>Price: $149 setup + $49/month. See <a href=\"/tools/ai-chatbot/\">its tool page</a>."); return; }
+    if(/(chatbot|chat bot)/.test(t)){ addBot("<strong>The AI Chatbot</strong> is an assistant on a business\u2019s website that answers customer questions around the clock.<br><br>Price: $149 setup + $49/month. See <a href=\"/tools/ai-chatbot/\">its tool page</a>."); return; }
     if(/(what do|tools|tool do|services|what.*do you|offer)/.test(t)){ addBot(TOOLS_HTML); return; }
     if(/(hi|hello|hey)\b/.test(t)){ addBotText("Hi! Ask me about prices, what the tools do, or how it works \u2014 or tap Get started and I can take your details for a follow-up."); return; }
     // Unknown — do not guess, offer capture

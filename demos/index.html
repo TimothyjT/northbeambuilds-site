@@ -722,9 +722,9 @@
 
         var KB = {
           prices: "Here are our prices:\n• Never-Miss-a-Lead — $199 setup + $99/month ($298 first month)\n• Website FAQ & Lead Capture Agent — $49 flat, one-time\n• Website + Online Booking — from $249, one-time\n• AI Chatbot — $149 setup + $49/month\n• AI Phone Receptionist — $399 setup + $199/month\nThe full table is on our Pricing page: /pricing/",
-          tools: "Here's what each tool does, in plain terms:\n• Never-Miss-a-Lead catches every inquiry — missed calls, form fills, after-hours messages — replies instantly, and routes every lead to one inbox.\n• The Website FAQ & Lead Capture Agent is a chat agent on your own website (this widget is one) that answers from your business's own content and captures leads.\n• Website + Online Booking is a small-business website with online booking built in.\n• The AI Chatbot answers customer questions around the clock on your site and messages.\n• The AI Phone Receptionist answers calls by voice, answers questions, and books appointments, with humans as escalation.",
+          tools: "Here's what each tool does, in plain terms:\n• Never-Miss-a-Lead answers one channel to start — missed calls, form fills, or after-hours messages — replies instantly, and routes every lead to one inbox.\n• The Website FAQ & Lead Capture Agent is a chat agent on your own website (this widget is one) that answers from your business's own content and captures leads.\n• Website + Online Booking is a small-business website with online booking built in.\n• The AI Chatbot answers customer questions around the clock on your website.\n• The AI Phone Receptionist answers calls by voice, answers questions, and books appointments, with humans as escalation.",
           how: "How it works:\n1) A short intake about your business.\n2) We build and configure it — most tools are live in 24–48 hours; the phone receptionist takes 3–7 days, including a test call you approve.\n3) You test and approve it.\n4) Go live — month-to-month, cancel anytime.",
-          terms: "Our terms are simple: month-to-month, no long-term contract. And if we miss what we promised, we fix it.",
+          terms: "Our terms are simple: month-to-month, no long-term contract. Live by the date we agree, or your setup fee comes back in full — guaranteed.",
           contact: "You can reach us at northbeambuilds@gmail.com — a person replies within one business day. Our studio is in Austin, TX. The demos at /demos/ are concepts built from public info, not real client sites.",
           fallback: "I don't have that in Northbeam's information yet — I only answer from our own site content. You can email northbeambuilds@gmail.com, or leave your name and contact here and we'll reply within one business day.",
           discount: "I can't confirm that — the prices I have are the ones on our Pricing page."
@@ -819,13 +819,13 @@
             addMsg(KB.contact, 'bot'); return;
           }
           if (t.indexOf('never-miss') !== -1 || t.indexOf('never miss') !== -1 || t.indexOf('missed call') !== -1) {
-            addMsg("Never-Miss-a-Lead catches every inquiry — missed calls, form fills, after-hours messages — replies instantly, and routes every lead to one inbox. It's $199 setup + $99/month ($298 first month).", 'bot'); return;
+            addMsg("Never-Miss-a-Lead answers one channel to start — missed calls, form fills, or after-hours messages — replies instantly, and routes every lead to one inbox. It's $199 setup + $99/month ($298 first month).", 'bot'); return;
           }
           if (t.indexOf('receptionist') !== -1) {
             addMsg("The AI Phone Receptionist answers calls by voice, answers questions, and books appointments, with humans as escalation. It's $399 setup + $199/month, and takes 3–7 days to go live, including a test call you approve.", 'bot'); return;
           }
           if (t.indexOf('chatbot') !== -1 || t.indexOf('chat bot') !== -1) {
-            addMsg("The AI Chatbot answers customer questions around the clock on your site and messages. It's $149 setup + $49/month. There's also the Website FAQ & Lead Capture Agent — a chat agent on your own website, like this widget — for $49 flat, one-time.", 'bot'); return;
+            addMsg("The AI Chatbot answers customer questions around the clock on your website. It's $149 setup + $49/month. There's also the Website FAQ & Lead Capture Agent — a chat agent on your own website, like this widget — for $49 flat, one-time.", 'bot'); return;
           }
           if (t.indexOf('website') !== -1 || t.indexOf('booking') !== -1 || t.indexOf('site') !== -1) {
             addMsg("Website + Online Booking is a small-business website with online booking built in, from $249 one-time. And the Website FAQ & Lead Capture Agent ($49 flat) adds a chat agent to a website that answers from your own content and captures leads.", 'bot'); return;
