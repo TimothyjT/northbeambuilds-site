@@ -71,7 +71,7 @@
   p{ margin:0; }
   a{ color:var(--amber-strong); }
 
-  /* ---------- Sticky mini-nav ---------- */
+  /* ---------- Site header ---------- */
   .nav{
     position:sticky; top:0; z-index:50;
     background:var(--navy);
@@ -80,7 +80,7 @@
   .nav-inner{
     max-width:960px; margin:0 auto;
     padding:10px 20px;
-    display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+    display:flex; align-items:center; gap:18px;
   }
   .wordmark{
     color:#fff; text-decoration:none;
@@ -89,6 +89,23 @@
     white-space:nowrap;
   }
   .wordmark span{ color:var(--amber); }
+  .nav-toggle{
+    display:none;
+    margin-left:auto;
+    background:transparent;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:8px;
+    width:48px; height:48px;
+    padding:0;
+    cursor:pointer;
+    align-items:center; justify-content:center;
+    flex-direction:column; gap:5px;
+  }
+  .nav-toggle .bar{
+    display:block; width:22px; height:2px;
+    background:#fff; border-radius:2px;
+  }
+  .nav-toggle:focus-visible{ outline:3px solid var(--amber); outline-offset:2px; }
   .nav-links{
     display:flex; gap:4px; flex-wrap:wrap; margin-left:auto;
   }
@@ -100,6 +117,19 @@
     border-radius:8px;
   }
   .nav-links a:hover{ background:rgba(255,255,255,.1); color:#fff; }
+  @media (max-width:720px){
+    .nav-inner{ flex-wrap:wrap; }
+    .nav-toggle{ display:inline-flex; }
+    .nav-links{
+      display:none;
+      flex-direction:column; flex-wrap:nowrap;
+      width:100%; margin-left:0;
+      padding:6px 0 10px;
+      gap:2px;
+    }
+    .nav-links.open{ display:flex; }
+    .nav-links a{ width:100%; padding:12px 10px; font-size:16px; }
+  }
 
   .wrap{ max-width:960px; margin:0 auto; padding:0 20px; }
 
@@ -307,6 +337,10 @@
   footer h3{
     color:#fff; font-size:19px; margin-bottom:16px;
   }
+  .footer-cols{
+    display:grid; grid-template-columns:1fr 1.6fr 1fr; gap:32px;
+  }
+  .footer-col h3{ font-size:17px; margin-bottom:10px; }
   .tool-list{ list-style:none; margin:0; padding:0; display:grid; gap:4px; }
   .tool-list a{
     color:#dbe6f2; text-decoration:none; font-size:16px;
@@ -320,12 +354,133 @@
     margin-left:10px; padding:3px 8px;
     border:1px solid var(--amber); border-radius:999px;
   }
+  .footer-contact p{ font-size:16px; line-height:1.6; margin-bottom:10px; }
+  .footer-contact a{ color:var(--amber); font-weight:600; overflow-wrap:anywhere; }
   .footer-line{
     margin-top:30px; padding-top:20px;
     border-top:1px solid rgba(255,255,255,.15);
     font-size:15px;
   }
   .footer-line a{ color:var(--amber); }
+  .footer-small{ margin-top:8px; font-size:14px; color:#9fb2c8; }
+  @media (max-width:720px){
+    .footer-cols{ grid-template-columns:1fr; gap:24px; }
+  }
+
+  /* ---------- Chatbot widget ---------- */
+  .nb-chat-bubble{
+    position:fixed; right:20px; bottom:20px; z-index:200;
+    width:60px; height:60px; border-radius:50%;
+    background:var(--navy); color:#fff;
+    border:3px solid var(--amber);
+    box-shadow:0 6px 20px rgba(10,29,51,.35);
+    cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    padding:0;
+  }
+  .nb-chat-bubble svg{ width:28px; height:28px; }
+  .nb-chat-bubble:focus-visible{ outline:3px solid var(--amber-strong); outline-offset:3px; }
+  .nb-chat-panel{
+    position:fixed; right:20px; bottom:92px; z-index:200;
+    width:380px; max-width:calc(100vw - 32px);
+    height:540px; max-height:calc(100dvh - 120px);
+    background:var(--surface); color:var(--ink);
+    border:1px solid var(--line); border-radius:16px;
+    box-shadow:0 16px 48px rgba(10,29,51,.3);
+    display:none; flex-direction:column; overflow:hidden;
+  }
+  .nb-chat-panel.open{ display:flex; }
+  .nb-chat-head{
+    background:var(--navy); color:#fff;
+    padding:14px 16px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .nb-chat-head .nb-chat-title{ font-weight:700; font-size:16px; }
+  .nb-chat-head .nb-chat-sub{ font-size:13px; color:#c3d2e4; }
+  .nb-chat-close{
+    margin-left:auto; background:transparent; border:0; color:#fff;
+    width:44px; height:44px; border-radius:8px; cursor:pointer;
+    font-size:22px; line-height:1;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .nb-chat-close:hover{ background:rgba(255,255,255,.12); }
+  .nb-chat-close:focus-visible{ outline:3px solid var(--amber); outline-offset:2px; }
+  .nb-chat-log{
+    flex:1 1 auto; overflow-y:auto;
+    padding:16px; display:flex; flex-direction:column; gap:10px;
+    background:var(--bg);
+  }
+  .nb-msg{
+    max-width:85%; padding:11px 14px; border-radius:14px;
+    font-size:15.5px; line-height:1.5; white-space:pre-wrap; overflow-wrap:anywhere;
+  }
+  .nb-msg.bot{
+    background:var(--surface); color:var(--ink);
+    border:1px solid var(--line); border-bottom-left-radius:4px;
+    align-self:flex-start;
+  }
+  .nb-msg.user{
+    background:var(--navy); color:#fff;
+    border-bottom-right-radius:4px; align-self:flex-end;
+  }
+  @media (prefers-color-scheme: dark){
+    .nb-msg.user{ background:var(--amber); color:#1b1206; }
+  }
+  .nb-msg a{ color:var(--amber-strong); font-weight:600; }
+  .nb-msg.user a{ color:#fff; }
+  .nb-chips{
+    display:flex; flex-wrap:wrap; gap:8px;
+    padding:10px 16px 4px; background:var(--bg);
+  }
+  .nb-chip{
+    background:var(--surface); color:var(--ink);
+    border:1.5px solid var(--navy); border-radius:999px;
+    padding:9px 14px; min-height:44px;
+    font-size:14.5px; font-weight:600; cursor:pointer;
+    display:inline-flex; align-items:center;
+  }
+  @media (prefers-color-scheme: dark){
+    .nb-chip{ border-color:var(--amber); }
+  }
+  .nb-chip:hover{ background:var(--amber-soft); }
+  .nb-chip:focus-visible{ outline:3px solid var(--amber-strong); outline-offset:2px; }
+  .nb-chat-form{
+    display:flex; gap:8px; padding:12px;
+    border-top:1px solid var(--line); background:var(--surface);
+  }
+  .nb-chat-input{
+    flex:1 1 auto; min-width:0;
+    font:inherit; font-size:16px;
+    padding:11px 12px; min-height:48px;
+    border:1.5px solid var(--line); border-radius:10px;
+    background:var(--surface); color:var(--ink);
+  }
+  .nb-chat-input:focus-visible{ outline:3px solid var(--amber-strong); outline-offset:1px; }
+  .nb-chat-send{
+    flex:0 0 auto;
+    background:var(--amber); color:#1b1206;
+    border:0; border-radius:10px;
+    padding:11px 18px; min-height:48px;
+    font-size:16px; font-weight:700; cursor:pointer;
+  }
+  .nb-chat-send:hover{ background:var(--amber-strong); color:#fff; }
+  .nb-chat-send:focus-visible{ outline:3px solid var(--navy); outline-offset:2px; }
+  .nb-mailto-btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    margin-top:10px; min-height:48px; padding:11px 18px;
+    background:var(--amber); color:#1b1206 !important;
+    font-weight:700; text-decoration:none; border-radius:10px;
+  }
+  .nb-mailto-btn:hover{ background:var(--amber-strong); color:#fff !important; }
+  @media (max-width:640px){
+    .nb-chat-panel{
+      right:8px; left:8px; bottom:8px;
+      width:auto; max-width:none;
+      height:calc(100dvh - 16px); max-height:calc(100dvh - 16px);
+      border-radius:14px;
+    }
+    .nb-chat-bubble{ right:16px; bottom:16px; }
+  }
 
   @media (max-width:640px){
     body{ font-size:16.5px; }
@@ -350,12 +505,18 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a class="wordmark" href="https://northbeambuilds.com/">Northbeam <span>Builds</span></a>
-    <nav class="nav-links" aria-label="Main site">
-      <a href="https://northbeambuilds.com/#pricing">Pricing</a>
-      <a href="https://northbeambuilds.com/#demos">Demos</a>
-      <a href="https://northbeambuilds.com/#how-it-works">How It Works</a>
-      <a href="https://northbeambuilds.com/#contact">Contact</a>
+    <a class="wordmark" href="/">Northbeam <span>Builds</span></a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+    </button>
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/tools/never-miss-a-lead/">Tools</a>
+      <a href="/demos/">Demos</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/contact/">Contact</a>
     </nav>
   </div>
 </header>
@@ -489,17 +650,242 @@
 
 <footer>
   <div class="wrap">
-    <h3>Other tools from Northbeam Builds</h3>
-    <ul class="tool-list">
-      <li><a href="https://northbeambuilds.com/tools/never-miss-a-lead/">Never-Miss-a-Lead</a></li>
-      <li><a href="https://northbeambuilds.com/tools/website-lead-capture-agent/">Website FAQ &amp; Lead Capture Agent</a></li>
-      <li><a class="current" href="https://northbeambuilds.com/tools/website-online-booking/" aria-current="page">Website + Online Booking</a></li>
-      <li><a href="https://northbeambuilds.com/tools/ai-chatbot/">AI Chatbot</a></li>
-      <li><a href="https://northbeambuilds.com/tools/ai-phone-receptionist/">AI Phone Receptionist</a></li>
-    </ul>
-    <p class="footer-line">Northbeam Builds · Austin, TX · <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h3>Pages</h3>
+        <ul class="tool-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/demos/">Demos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Tools</h3>
+        <ul class="tool-list">
+          <li><a href="/tools/never-miss-a-lead/">Never-Miss-a-Lead</a></li>
+          <li><a href="/tools/website-lead-capture-agent/">Website FAQ &amp; Lead Capture Agent</a></li>
+          <li><a class="current" href="/tools/website-online-booking/" aria-current="page">Website + Online Booking</a></li>
+          <li><a href="/tools/ai-chatbot/">AI Chatbot</a></li>
+          <li><a href="/tools/ai-phone-receptionist/">AI Phone Receptionist</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h3>Contact</h3>
+        <p><a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+        <p>Northbeam Builds — Austin, TX</p>
+      </div>
+    </div>
+    <p class="footer-line">Northbeam Builds — Austin, TX · <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+    <p class="footer-small">Month-to-month. No long-term contract.</p>
   </div>
 </footer>
+
+<!-- Northbeam chatbot widget -->
+<button class="nb-chat-bubble" id="nbChatBubble" type="button" aria-label="Open chat with Northbeam's automated assistant" aria-expanded="false" aria-controls="nbChatPanel">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.8-.34-4-.98L3 20l1.02-5.5A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="8.5" cy="11.5" r="1.15" fill="currentColor"/><circle cx="12.5" cy="11.5" r="1.15" fill="currentColor"/><circle cx="16.5" cy="11.5" r="1.15" fill="currentColor"/></svg>
+</button>
+
+<section class="nb-chat-panel" id="nbChatPanel" role="dialog" aria-label="Chat with Northbeam's automated assistant" aria-hidden="true">
+  <div class="nb-chat-head">
+    <div>
+      <div class="nb-chat-title">Northbeam Assistant</div>
+      <div class="nb-chat-sub">Automated assistant — not a person</div>
+    </div>
+    <button class="nb-chat-close" id="nbChatClose" type="button" aria-label="Close chat">&times;</button>
+  </div>
+  <div class="nb-chat-log" id="nbChatLog" aria-live="polite" aria-label="Chat messages"></div>
+  <div class="nb-chips" id="nbChatChips" role="group" aria-label="Quick questions">
+    <button class="nb-chip" type="button" data-ask="prices">Prices</button>
+    <button class="nb-chip" type="button" data-ask="tools">What do the tools do?</button>
+    <button class="nb-chip" type="button" data-ask="how">How it works</button>
+    <button class="nb-chip" type="button" data-ask="start">Get started</button>
+  </div>
+  <form class="nb-chat-form" id="nbChatForm">
+    <label class="nb-sr" for="nbChatInput" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">Type your message</label>
+    <input class="nb-chat-input" id="nbChatInput" type="text" autocomplete="off" placeholder="Type a question…" />
+    <button class="nb-chat-send" type="submit" aria-label="Send message">Send</button>
+  </form>
+</section>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ----- Mobile nav toggle ----- */
+  var navToggle = document.getElementById("navToggle");
+  var navLinks = document.getElementById("navLinks");
+  if (navToggle && navLinks) {
+    var setNav = function(open){
+      navLinks.classList.toggle("open", open);
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    };
+    navToggle.addEventListener("click", function(){
+      setNav(!navLinks.classList.contains("open"));
+    });
+    navLinks.addEventListener("click", function(e){
+      if (e.target.closest("a")) setNav(false);
+    });
+  }
+
+  /* ----- Chatbot ----- */
+  var bubble = document.getElementById("nbChatBubble");
+  var panel = document.getElementById("nbChatPanel");
+  var closeBtn = document.getElementById("nbChatClose");
+  var log = document.getElementById("nbChatLog");
+  var form = document.getElementById("nbChatForm");
+  var input = document.getElementById("nbChatInput");
+  var chips = document.getElementById("nbChatChips");
+  var started = false;
+  var capture = null; /* {step:0|1|2, name, contact, need} */
+
+  var GREETING = "Hi! I'm Northbeam's automated assistant — not a person. I answer questions from Northbeam's own site info, and if you'd like to get started I can take your details for a follow-up.";
+  var PRICES = "Here are our prices:\n• Never-Miss-a-Lead — $199 setup + $99/month ($298 first month)\n• Website FAQ & Lead Capture Agent — $49 flat, one-time\n• Website + Online Booking — from $249 one-time\n• AI Chatbot — $149 setup + $49/month\n• AI Phone Receptionist — $399 setup + $199/month\nSee the full table on our Pricing page (/pricing/).";
+  var TOOLS = "Here's what each tool does, in plain terms:\n• Never-Miss-a-Lead catches every inquiry — missed calls, form fills, after-hours messages — replies instantly, and routes every lead to one inbox.\n• The Website FAQ & Lead Capture Agent is a chat agent on a business's own website (this widget is one). It answers from the business's own content and captures leads.\n• Website + Online Booking is a small-business website with online booking built in, so customers book themselves.\n• The AI Chatbot answers customer questions around the clock on a business's site and messages.\n• The AI Phone Receptionist answers calls by voice, answers questions, and books appointments, with humans as escalation.";
+  var HOW = "How it works:\n1) A short intake about your business.\n2) We build and configure it — most tools are live in 24–48 hours; the phone receptionist takes 3–7 days, including a test call you approve.\n3) You test it and approve it.\n4) Go live — month-to-month, cancel anytime.";
+  var TERMS = "Our terms are simple: month-to-month, no long-term contract. If we miss what we promised, we fix it.";
+  var CONTACT = "You can reach us at northbeambuilds@gmail.com — a person replies within one business day. Our studio is in Austin, TX. The demos at /demos/ are concepts built from public info, not real client sites.";
+  var FALLBACK = "I don't have that in Northbeam's information yet — I only answer from our own site content. You can email northbeambuilds@gmail.com, or leave your name and contact here and we'll reply within one business day.";
+  var CORRECTION = "I can't confirm that — the prices I have are the ones on our Pricing page.";
+
+  function addMsg(text, who){
+    var div = document.createElement("div");
+    div.className = "nb-msg " + who;
+    div.textContent = text;
+    log.appendChild(div);
+    log.scrollTop = log.scrollHeight;
+    return div;
+  }
+
+  function openChat(){
+    panel.classList.add("open");
+    panel.setAttribute("aria-hidden", "false");
+    bubble.setAttribute("aria-expanded", "true");
+    if (!started) {
+      started = true;
+      addMsg(GREETING, "bot");
+    }
+    input.focus();
+  }
+  function closeChat(){
+    panel.classList.remove("open");
+    panel.setAttribute("aria-hidden", "true");
+    bubble.setAttribute("aria-expanded", "false");
+    bubble.focus();
+  }
+  bubble.addEventListener("click", function(){
+    if (panel.classList.contains("open")) closeChat(); else openChat();
+  });
+  closeBtn.addEventListener("click", closeChat);
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && panel.classList.contains("open")) closeChat();
+  });
+
+  function startCapture(){
+    capture = { step: 0, name: "", contact: "", need: "" };
+    addMsg("What's your name?", "bot");
+    input.focus();
+  }
+
+  function finishCapture(){
+    var summary = "Here's what I have:\n• Name: " + capture.name + "\n• Best email or phone: " + capture.contact + "\n• Interested in: " + capture.need;
+    addMsg(summary, "bot");
+    addMsg("Requested — we'll reply within one business day.", "bot");
+    var body = "Name: " + capture.name + "\nBest email or phone: " + capture.contact + "\nInterested in / need: " + capture.need;
+    var href = "mailto:northbeambuilds@gmail.com?subject=" + encodeURIComponent("New request from the website") + "&body=" + encodeURIComponent(body);
+    var div = document.createElement("div");
+    div.className = "nb-msg bot";
+    var a = document.createElement("a");
+    a.className = "nb-mailto-btn";
+    a.href = href;
+    a.textContent = "Send this by email";
+    div.appendChild(a);
+    var tail = document.createElement("div");
+    tail.style.marginTop = "10px";
+    tail.textContent = "or email us any time at northbeambuilds@gmail.com.";
+    div.appendChild(tail);
+    log.appendChild(div);
+    log.scrollTop = log.scrollHeight;
+    capture = null;
+  }
+
+  function handleCapture(text){
+    if (capture.step === 0) {
+      capture.name = text;
+      capture.step = 1;
+      addMsg("What's the best email or phone to reach you?", "bot");
+    } else if (capture.step === 1) {
+      capture.contact = text;
+      capture.step = 2;
+      addMsg("Which tool are you interested in, or what do you need?", "bot");
+    } else {
+      capture.need = text;
+      finishCapture();
+    }
+  }
+
+  function answer(raw){
+    var t = " " + raw.toLowerCase() + " ";
+
+    /* Claims of offers/discounts we can't verify */
+    if (/(discount|coupon|promo|sale price|deal|cheaper|free|% off|percent off)/.test(t) &&
+        /(you (said|offered|promised)|i (saw|heard|was told)|someone (said|told)|your (ad|post|email) said)/.test(t)) {
+      addMsg(CORRECTION, "bot");
+      addMsg(PRICES, "bot");
+      return;
+    }
+    if (/(get started|sign me up|sign up|i want|i'm interested|im interested|book|buy|order|start)/.test(t) &&
+        !/(price|cost|what|how|do the|does)/.test(t)) {
+      startCapture();
+      return;
+    }
+    if (/(price|prices|pricing|cost|costs|how much|charge|fee)/.test(t)) { addMsg(PRICES, "bot"); return; }
+    if (/(what do|what does|tools do|each tool|never-miss|never miss|faq agent|lead capture|online booking|chatbot|phone receptionist|receptionist)/.test(t)) { addMsg(TOOLS, "bot"); return; }
+    if (/(how it works|how does it work|process|get set up|setup|set up|timeline|how long)/.test(t)) { addMsg(HOW, "bot"); return; }
+    if (/(contract|terms|cancel|month-to-month|month to month|guarantee|promise)/.test(t)) { addMsg(TERMS, "bot"); return; }
+    if (/(contact|email|phone number|reach|austin|where are you|demo)/.test(t)) { addMsg(CONTACT, "bot"); return; }
+    if (/(hello|hi|hey|thanks|thank you)/.test(t)) {
+      addMsg("Hello! Ask me about prices, what the tools do, or how it works — or tap “Get started” and I'll take your details for a follow-up.", "bot");
+      return;
+    }
+    addMsg(FALLBACK, "bot");
+    startCapturePrompt();
+  }
+
+  function startCapturePrompt(){
+    var note = addMsg("Tap “Get started” above if you'd like to leave your details.", "bot");
+    note.style.fontSize = "14px";
+  }
+
+  function handleUser(text){
+    var trimmed = text.replace(/\s+/g, " ").trim();
+    if (!trimmed) return;
+    addMsg(trimmed, "user");
+    if (capture) { handleCapture(trimmed); return; }
+    answer(trimmed);
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    handleUser(input.value);
+    input.value = "";
+    input.focus();
+  });
+
+  chips.addEventListener("click", function(e){
+    var btn = e.target.closest("button[data-ask]");
+    if (!btn) return;
+    var ask = btn.getAttribute("data-ask");
+    if (capture) return;
+    if (ask === "prices") { addMsg("Prices", "user"); addMsg(PRICES, "bot"); }
+    else if (ask === "tools") { addMsg("What do the tools do?", "user"); addMsg(TOOLS, "bot"); }
+    else if (ask === "how") { addMsg("How it works", "user"); addMsg(HOW, "bot"); }
+    else if (ask === "start") { addMsg("Get started", "user"); startCapture(); }
+    input.focus();
+  });
+})();
+</script>
 
 </body>
 </html>

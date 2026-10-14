@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Concept demos showing how Northbeam Builds tools answer missed calls, after-hours messages, and website inquiries instantly — built from real businesses' public info, not client sites." />
+    <link rel="icon" href="data:," />
+    <title>Demos — Northbeam Builds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #f7f5f0;
+        --surface: #ffffff;
+        --surface-2: #efece4;
+        --ink: #16233a;
+        --ink-soft: #3d4c63;
+        --muted: #5c6a80;
+        --line: #ddd6c8;
+        --navy: #101f38;
+        --navy-deep: #0b1729;
+        --amber: #c47b12;
+        --amber-strong: #9c5f08;
+        --amber-soft: #f6e8cf;
+        --amber-ink: #6e4303;
+        --chip-bg: #fbf3df;
+        --chat-bg: #ffffff;
+        --bot-bubble: #f1eee6;
+        --user-bubble: #101f38;
+        --user-ink: #ffffff;
+        --shadow: 0 18px 44px rgba(16, 31, 56, 0.18);
+        --radius: 10px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0c1424;
+          --surface: #14203a;
+          --surface-2: #182741;
+          --ink: #eef1f6;
+          --ink-soft: #c3ccdb;
+          --muted: #9aa8bf;
+          --line: #2b3c5c;
+          --navy: #0a1425;
+          --navy-deep: #060d1a;
+          --amber: #e8a33d;
+          --amber-strong: #f2b45c;
+          --amber-soft: #3a2c12;
+          --amber-ink: #f6cf8a;
+          --chip-bg: #2e2410;
+          --chat-bg: #111e35;
+          --bot-bubble: #1d2c47;
+          --user-bubble: #e8a33d;
+          --user-ink: #1a1204;
+          --shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--amber-strong); }
+      a:focus-visible, button:focus-visible, input:focus-visible {
+        outline: 3px solid var(--amber);
+        outline-offset: 2px;
+      }
+      .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+      /* ---------- Header ---------- */
+      .site-header {
+        background: var(--navy);
+        color: #f4f1ea;
+        position: sticky;
+        top: 0;
+        z-index: 40;
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+      .brand {
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        white-space: nowrap;
+      }
+      .brand .dot { color: var(--amber); }
+      .nav-toggle {
+        display: none;
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.35);
+        border-radius: 8px;
+        color: #fff;
+        width: 44px;
+        height: 40px;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .nav-toggle span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        border-radius: 2px;
+      }
+      .site-nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 28px;
+      }
+      .site-nav a {
+        color: #e9e4d8;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 15px;
+        padding: 6px 2px;
+      }
+      .site-nav a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+      .site-nav a[aria-current="page"] { color: var(--amber); font-weight: 600; }
+      @media (max-width: 720px) {
+        .nav-toggle { display: flex; }
+        .site-nav {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--navy-deep);
+          border-top: 1px solid rgba(255,255,255,0.12);
+        }
+        .site-nav.open { display: block; }
+        .site-nav ul { flex-direction: column; gap: 0; padding: 8px 20px 16px; }
+        .site-nav li { border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .site-nav li:last-child { border-bottom: none; }
+        .site-nav a { display: block; padding: 12px 2px; font-size: 16px; }
+      }
+
+      /* ---------- Page ---------- */
+      .page-head { padding: 56px 0 8px; }
+      .page-head h1 {
+        font-family: "Newsreader", Georgia, serif;
+        font-size: clamp(34px, 5vw, 48px);
+        line-height: 1.12;
+        margin: 0 0 16px;
+        font-weight: 700;
+        color: var(--ink);
+        max-width: 700px;
+      }
+      .intro {
+        font-size: 18px;
+        color: var(--ink-soft);
+        max-width: 720px;
+        margin: 0;
+      }
+      .how-note {
+        margin: 26px 0 0;
+        padding: 16px 18px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        max-width: 720px;
+        font-size: 15px;
+        color: var(--ink-soft);
+      }
+      .how-note strong { color: var(--ink); }
+
+      .demo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 36px 0 8px;
+      }
+      @media (max-width: 940px) { .demo-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 600px) { .demo-grid { grid-template-columns: 1fr; } }
+      .demo-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .badge {
+        align-self: flex-start;
+        background: var(--chip-bg);
+        color: var(--amber-ink);
+        border: 1px solid var(--amber);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        border-radius: 999px;
+      }
+      .demo-card h2 {
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 22px;
+        line-height: 1.25;
+        margin: 2px 0 0;
+        font-weight: 700;
+      }
+      .trade {
+        margin: 0;
+        font-size: 13.5px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .purpose { margin: 0; color: var(--ink-soft); font-size: 15.5px; flex: 1; }
+      .demo-link {
+        margin-top: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        color: var(--amber-strong);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .demo-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+      .demo-link .arrow { transition: transform 0.15s ease; }
+      .demo-link:hover .arrow { transform: translateX(3px); }
+      @media (prefers-reduced-motion: reduce) {
+        .demo-link .arrow { transition: none; }
+        html { scroll-behavior: auto; }
+      }
+
+      .cta {
+        margin: 44px 0 64px;
+        background: var(--navy);
+        color: #f4f1ea;
+        border-radius: 14px;
+        padding: 36px 32px;
+      }
+      .cta h2 {
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 28px;
+        margin: 0 0 10px;
+        color: #fff;
+      }
+      .cta p { margin: 0 0 20px; color: #d8d2c4; max-width: 620px; }
+      .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 12px 22px;
+        border-radius: 8px;
+        font-size: 15.5px;
+      }
+      .btn-amber { background: var(--amber); color: #1a1204; }
+      .btn-amber:hover { background: var(--amber-strong); color: #fff; }
+      .btn-ghost { border: 1px solid rgba(255,255,255,0.45); color: #fff; }
+      .btn-ghost:hover { border-color: #fff; }
+
+      /* ---------- Footer ---------- */
+      .site-footer {
+        background: var(--navy-deep);
+        color: #cfd6e2;
+        padding: 48px 0 32px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr 1.6fr;
+        gap: 32px;
+      }
+      @media (max-width: 720px) { .footer-grid { grid-template-columns: 1fr; gap: 24px; } }
+      .site-footer h3 {
+        color: #fff;
+        font-size: 14px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin: 0 0 12px;
+      }
+      .footer-brand {
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+        margin: 0 0 8px;
+      }
+      .site-footer p { margin: 0 0 8px; font-size: 15px; }
+      .site-footer ul { list-style: none; margin: 0; padding: 0; }
+      .site-footer li { margin-bottom: 8px; }
+      .site-footer a { color: #cfd6e2; text-decoration: none; font-size: 15px; }
+      .site-footer a:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+      .footer-bottom {
+        border-top: 1px solid rgba(255,255,255,0.12);
+        margin-top: 36px;
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 24px;
+        justify-content: space-between;
+        font-size: 13.5px;
+        color: #9aa8bf;
+      }
+
+      /* ---------- Chat widget ---------- */
+      .chat-launcher {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 60;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        background: var(--amber);
+        color: #1a1204;
+        cursor: pointer;
+        box-shadow: var(--shadow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chat-launcher:hover { background: var(--amber-strong); color: #fff; }
+      .chat-launcher svg { width: 28px; height: 28px; }
+      .chat-panel {
+        position: fixed;
+        right: 20px;
+        bottom: 92px;
+        z-index: 61;
+        width: 380px;
+        max-width: calc(100vw - 24px);
+        height: 560px;
+        max-height: calc(100dvh - 120px);
+        background: var(--chat-bg);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .chat-panel.open { display: flex; }
+      @media (max-width: 560px) {
+        .chat-panel {
+          right: 8px;
+          left: 8px;
+          bottom: 8px;
+          width: auto;
+          max-width: none;
+          height: calc(100dvh - 96px);
+          max-height: none;
+        }
+        .chat-launcher { right: 16px; bottom: 16px; }
+      }
+      .chat-head {
+        background: var(--navy);
+        color: #fff;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .chat-head .who { font-weight: 700; font-size: 15.5px; }
+      .chat-head .sub { font-size: 12.5px; color: #c9cfdb; margin-top: 1px; }
+      .chat-close {
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.4);
+        color: #fff;
+        border-radius: 8px;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        font-size: 18px;
+        line-height: 1;
+        flex-shrink: 0;
+      }
+      .chat-close:hover { border-color: #fff; }
+      .chat-log {
+        flex: 1;
+        overflow-y: auto;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .msg {
+        max-width: 86%;
+        padding: 10px 13px;
+        border-radius: 12px;
+        font-size: 14.5px;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+      }
+      .msg.bot { background: var(--bot-bubble); color: var(--ink); align-self: flex-start; border-bottom-left-radius: 4px; }
+      .msg.user { background: var(--user-bubble); color: var(--user-ink); align-self: flex-end; border-bottom-right-radius: 4px; }
+      .msg a { color: var(--amber-strong); font-weight: 600; }
+      .msg.user a { color: inherit; }
+      .chat-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 0 16px 10px;
+      }
+      .chip {
+        background: var(--surface);
+        border: 1px solid var(--amber);
+        color: var(--amber-strong);
+        border-radius: 999px;
+        padding: 7px 14px;
+        font-size: 13.5px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .chip:hover { background: var(--chip-bg); }
+      .chat-mailto {
+        display: inline-block;
+        margin-top: 10px;
+        background: var(--amber);
+        color: #1a1204 !important;
+        text-decoration: none;
+        padding: 9px 16px;
+        border-radius: 8px;
+        font-weight: 700;
+      }
+      .chat-mailto:hover { background: var(--amber-strong); color: #fff !important; }
+      .chat-form {
+        display: flex;
+        gap: 8px;
+        padding: 12px;
+        border-top: 1px solid var(--line);
+        background: var(--chat-bg);
+      }
+      .chat-form input {
+        flex: 1;
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 11px 12px;
+        font-size: 15px;
+        font-family: inherit;
+        background: var(--surface);
+        color: var(--ink);
+      }
+      .chat-form button {
+        background: var(--navy);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 11px 18px;
+        font-weight: 600;
+        font-size: 15px;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      @media (prefers-color-scheme: dark) {
+        .chat-form button { background: var(--amber); color: #1a1204; }
+      }
+      .chat-form button:hover { opacity: 0.88; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/">Northbeam Builds<span class="dot">.</span></a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/tools/never-miss-a-lead/">Tools</a></li>
+            <li><a href="/demos/" aria-current="page">Demos</a></li>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="page-head">
+        <h1>See the tools working</h1>
+        <p class="intro">Every demo below is a concept we built from a real business&rsquo;s public info to show how the tools work. They are not client sites, and the businesses shown have not endorsed us.</p>
+        <p class="how-note"><strong>How to read these:</strong> each demo replays a real moment for that kind of business &mdash; a missed call, an after-hours message, a website inquiry &mdash; and shows the instant reply the customer would get, with the lead landing in one inbox. Click any card to watch it play out.</p>
+      </section>
+
+      <section class="demo-grid" aria-label="Concept demos">
+        <article class="demo-card">
+          <span class="badge">Concept demo &mdash; not a client</span>
+          <h2>Plumber Dallas</h2>
+          <p class="trade">Plumbing &middot; Dallas, TX</p>
+          <p class="purpose">A missed Saturday call still becomes a captured lead, answered in under a minute.</p>
+          <a class="demo-link" href="/demos/plumber-dallas/" aria-label="View the Plumber Dallas concept demo">View demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="demo-card">
+          <span class="badge">Concept demo &mdash; not a client</span>
+          <h2>Roof Squad</h2>
+          <p class="trade">Roofing &middot; Houston, TX</p>
+          <p class="purpose">A storm-weekend inspection request gets an instant answer instead of silence.</p>
+          <a class="demo-link" href="/demos/roof-squad/" aria-label="View the Roof Squad concept demo">View demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="demo-card">
+          <span class="badge">Concept demo &mdash; not a client</span>
+          <h2>EcoGen Pest Control</h2>
+          <p class="trade">Pest control &middot; Las Vegas, NV</p>
+          <p class="purpose">An after-hours pest emergency is answered instantly and flagged urgent.</p>
+          <a class="demo-link" href="/demos/ecogen/" aria-label="View the EcoGen Pest Control concept demo">View demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="demo-card">
+          <span class="badge">Concept demo &mdash; not a client</span>
+          <h2>Edsel&rsquo;s Heating and Air</h2>
+          <p class="trade">Heating &amp; air &middot; Cedar Park, TX</p>
+          <p class="purpose">A 24/7 emergency promise backed by a response that actually happens at 2 AM.</p>
+          <a class="demo-link" href="/demos/edsels/" aria-label="View the Edsel's Heating and Air concept demo">View demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="demo-card">
+          <span class="badge">Concept demo &mdash; not a client</span>
+          <h2>Texas Pro Build</h2>
+          <p class="trade">Roofing &amp; construction &middot; Fort Worth, TX</p>
+          <p class="purpose">A five-figure roof inquiry on a Sunday gets captured, not lost to voicemail.</p>
+          <a class="demo-link" href="/demos/texas-pro-build/" aria-label="View the Texas Pro Build concept demo">View demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="demo-card">
+          <span class="badge">Concept demo &mdash; not a client</span>
+          <h2>Brooks Garage Doors</h2>
+          <p class="trade">Garage doors &middot; Nashville, TN</p>
+          <p class="purpose">A broken-spring call after closing still lands in the lead inbox.</p>
+          <a class="demo-link" href="/demos/brooks/" aria-label="View the Brooks Garage Doors concept demo">View demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="demo-card">
+          <span class="badge">Concept demo &mdash; not a client</span>
+          <h2>Somers Plumbers</h2>
+          <p class="trade">Plumbing</p>
+          <p class="purpose">After-hours plumbing inquiries answered instantly and routed to one inbox.</p>
+          <a class="demo-link" href="/demos/somers/" aria-label="View the Somers Plumbers concept demo">View demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="demo-card">
+          <span class="badge">Concept demo &mdash; not a client</span>
+          <h2>Tony LaMartina Plumbing</h2>
+          <p class="trade">Plumbing</p>
+          <p class="purpose">Evenings and weekends covered: every inquiry answered and captured.</p>
+          <a class="demo-link" href="/demos/tony-lamartina/" aria-label="View the Tony LaMartina Plumbing concept demo">View demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="demo-card">
+          <span class="badge">Concept demo &mdash; not a client</span>
+          <h2>Magnify Electric</h2>
+          <p class="trade">Electrical &middot; Pflugerville, TX</p>
+          <p class="purpose">A local electrician&rsquo;s website inquiries answered the moment they arrive.</p>
+          <a class="demo-link" href="/demos/magnify/" aria-label="View the Magnify Electric concept demo">View demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="demo-card">
+          <span class="badge">Concept demo &mdash; not a client</span>
+          <h2>DOA Pest Service</h2>
+          <p class="trade">Pest control</p>
+          <p class="purpose">A &ldquo;schedule a service&rdquo; promise with a working instant response behind it.</p>
+          <a class="demo-link" href="/demos/doa/" aria-label="View the DOA Pest Service concept demo">View demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="demo-card">
+          <span class="badge">Concept demo &mdash; not a client</span>
+          <h2>Air Texas</h2>
+          <p class="trade">Heating &amp; air &middot; San Antonio, TX</p>
+          <p class="purpose">A Saturday-evening AC outage call gets a text back in under a minute.</p>
+          <a class="demo-link" href="/demos/air-texas/" aria-label="View the Air Texas concept demo">View demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="demo-card">
+          <span class="badge">Concept demo &mdash; not a client</span>
+          <h2>Muetzel</h2>
+          <p class="trade">Plumbing, heating &amp; cooling &middot; Columbus, OH</p>
+          <p class="purpose">A burst pipe at 6 PM gets an instant acknowledgment and an urgent flag.</p>
+          <a class="demo-link" href="/demos/muetzel/" aria-label="View the Muetzel concept demo">View demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="demo-card">
+          <span class="badge">Concept demo &mdash; not a client</span>
+          <h2>Sixth Gen Roofing</h2>
+          <p class="trade">Roofing &middot; Georgetown, TX</p>
+          <p class="purpose">The &ldquo;schedule online, 24/7&rdquo; promise with a working request form behind it.</p>
+          <a class="demo-link" href="/demos/sixth-gen/" aria-label="View the Sixth Gen Roofing concept demo">View demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </article>
+      </section>
+
+      <section class="cta" aria-labelledby="ctaHeading">
+        <h2 id="ctaHeading">Want one with your name on it?</h2>
+        <p>Pick a tool, we build it around your business, and you test it before it goes live. Month-to-month, no long-term contract.</p>
+        <div class="cta-actions">
+          <a class="btn btn-amber" href="/pricing/">See Pricing</a>
+          <a class="btn btn-ghost" href="/contact/">Contact us</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <p class="footer-brand">Northbeam Builds</p>
+            <p>Northbeam Builds &mdash; Austin, TX</p>
+            <p><a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+          </div>
+          <nav aria-label="Pages">
+            <h3>Pages</h3>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/pricing/">Pricing</a></li>
+              <li><a href="/contact/">Contact</a></li>
+              <li><a href="/demos/">Demos</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Tools">
+            <h3>Tools</h3>
+            <ul>
+              <li><a href="/tools/never-miss-a-lead/">Never-Miss-a-Lead</a></li>
+              <li><a href="/tools/website-lead-capture-agent/">Website FAQ &amp; Lead Capture Agent</a></li>
+              <li><a href="/tools/website-online-booking/">Website + Online Booking</a></li>
+              <li><a href="/tools/ai-chatbot/">AI Chatbot</a></li>
+              <li><a href="/tools/ai-phone-receptionist/">AI Phone Receptionist</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span>Month-to-month. No long-term contract.</span>
+          <span>&copy; Northbeam Builds</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Chat widget -->
+    <button class="chat-launcher" id="chatLauncher" type="button" aria-label="Chat with Northbeam's automated assistant" aria-expanded="false" aria-controls="chatPanel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    </button>
+
+    <section class="chat-panel" id="chatPanel" role="dialog" aria-label="Northbeam automated assistant chat" aria-hidden="true">
+      <div class="chat-head">
+        <div>
+          <div class="who">Northbeam Assistant</div>
+          <div class="sub">Automated &mdash; not a person. Answers from Northbeam&rsquo;s site info.</div>
+        </div>
+        <button class="chat-close" id="chatClose" type="button" aria-label="Close chat">&times;</button>
+      </div>
+      <div class="chat-log" id="chatLog" aria-live="polite"></div>
+      <div class="chat-chips" id="chatChips"></div>
+      <form class="chat-form" id="chatForm">
+        <label class="sr-only" for="chatInput" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Type your message</label>
+        <input id="chatInput" type="text" placeholder="Ask about prices, tools, how it works&hellip;" autocomplete="off" />
+        <button type="submit" aria-label="Send message">Send</button>
+      </form>
+    </section>
+
+    <script>
+      /* ---------- Mobile nav ---------- */
+      (function () {
+        var toggle = document.getElementById('navToggle');
+        var nav = document.getElementById('siteNav');
+        function closeNav() {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'Open menu');
+        }
+        toggle.addEventListener('click', function () {
+          var open = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        });
+        nav.addEventListener('click', function (e) {
+          if (e.target.closest('a')) closeNav();
+        });
+      })();
+
+      /* ---------- Chatbot ---------- */
+      (function () {
+        var launcher = document.getElementById('chatLauncher');
+        var panel = document.getElementById('chatPanel');
+        var closeBtn = document.getElementById('chatClose');
+        var log = document.getElementById('chatLog');
+        var chipsBox = document.getElementById('chatChips');
+        var form = document.getElementById('chatForm');
+        var input = document.getElementById('chatInput');
+        var greeted = false;
+
+        var KB = {
+          prices: "Here are our prices:\n• Never-Miss-a-Lead — $199 setup + $99/month ($298 first month)\n• Website FAQ & Lead Capture Agent — $49 flat, one-time\n• Website + Online Booking — from $249, one-time\n• AI Chatbot — $149 setup + $49/month\n• AI Phone Receptionist — $399 setup + $199/month\nThe full table is on our Pricing page: /pricing/",
+          tools: "Here's what each tool does, in plain terms:\n• Never-Miss-a-Lead catches every inquiry — missed calls, form fills, after-hours messages — replies instantly, and routes every lead to one inbox.\n• The Website FAQ & Lead Capture Agent is a chat agent on your own website (this widget is one) that answers from your business's own content and captures leads.\n• Website + Online Booking is a small-business website with online booking built in.\n• The AI Chatbot answers customer questions around the clock on your site and messages.\n• The AI Phone Receptionist answers calls by voice, answers questions, and books appointments, with humans as escalation.",
+          how: "How it works:\n1) A short intake about your business.\n2) We build and configure it — most tools are live in 24–48 hours; the phone receptionist takes 3–7 days, including a test call you approve.\n3) You test and approve it.\n4) Go live — month-to-month, cancel anytime.",
+          terms: "Our terms are simple: month-to-month, no long-term contract. And if we miss what we promised, we fix it.",
+          contact: "You can reach us at northbeambuilds@gmail.com — a person replies within one business day. Our studio is in Austin, TX. The demos at /demos/ are concepts built from public info, not real client sites.",
+          fallback: "I don't have that in Northbeam's information yet — I only answer from our own site content. You can email northbeambuilds@gmail.com, or leave your name and contact here and we'll reply within one business day.",
+          discount: "I can't confirm that — the prices I have are the ones on our Pricing page."
+        };
+
+        var captureQuestions = [
+          "What's your name?",
+          "What's the best email or phone to reach you?",
+          "Which tool are you interested in, or what do you need?"
+        ];
+        var capture = null; // { step: 0..2, answers: [] }
+
+        function scrollLog() { log.scrollTop = log.scrollHeight; }
+
+        function addMsg(text, who) {
+          var div = document.createElement('div');
+          div.className = 'msg ' + who;
+          div.textContent = text;
+          log.appendChild(div);
+          scrollLog();
+          return div;
+        }
+
+        function setChips(list) {
+          chipsBox.innerHTML = '';
+          list.forEach(function (label) {
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'chip';
+            b.textContent = label;
+            b.addEventListener('click', function () { handleUser(label); });
+            chipsBox.appendChild(b);
+          });
+        }
+        function mainChips() {
+          setChips(['Prices', 'What do the tools do?', 'How it works', 'Get started']);
+        }
+
+        function startCapture() {
+          capture = { step: 0, answers: [] };
+          setChips([]);
+          addMsg("Happy to take your details for a follow-up.", 'bot');
+          addMsg(captureQuestions[0], 'bot');
+          input.focus();
+        }
+
+        function finishCapture() {
+          var name = capture.answers[0];
+          var contact = capture.answers[1];
+          var need = capture.answers[2];
+          capture = null;
+          var summary = "Here's what I have:\nName: " + name + "\nContact: " + contact + "\nInterested in: " + need;
+          var box = addMsg(summary + "\n\nRequested — we'll reply within one business day.", 'bot');
+          var body = "Name: " + name + "\nContact: " + contact + "\nInterested in: " + need;
+          var link = document.createElement('a');
+          link.className = 'chat-mailto';
+          link.textContent = 'Send this by email';
+          link.href = 'mailto:northbeambuilds@gmail.com?subject=' + encodeURIComponent('New request from the website') + '&body=' + encodeURIComponent(body);
+          box.appendChild(document.createElement('br'));
+          box.appendChild(link);
+          addMsg('or email us any time at northbeambuilds@gmail.com.', 'bot');
+          mainChips();
+          scrollLog();
+        }
+
+        function answer(text) {
+          var t = text.toLowerCase();
+          if (/\b(discount|coupon|promo|deal|offer|cheaper|sale price|% off)\b/.test(t)) {
+            addMsg(KB.discount, 'bot');
+            addMsg(KB.prices, 'bot');
+            return;
+          }
+          if (t.indexOf('price') !== -1 || t.indexOf('cost') !== -1 || t.indexOf('how much') !== -1 || t.indexOf('pricing') !== -1) {
+            addMsg(KB.prices, 'bot'); return;
+          }
+          if (t.indexOf('get started') !== -1 || t.indexOf('sign up') !== -1 || t.indexOf('sign me up') !== -1 || t.indexOf('buy') !== -1 || t.indexOf('order') !== -1 || t.indexOf('start') !== -1) {
+            startCapture(); return;
+          }
+          if (t.indexOf('tool') !== -1 || t.indexOf('what do') !== -1 || t.indexOf('what does') !== -1 || t.indexOf('offer') !== -1 || t.indexOf('services') !== -1 || t.indexOf('products') !== -1) {
+            addMsg(KB.tools, 'bot'); return;
+          }
+          if (t.indexOf('how it works') !== -1 || t.indexOf('how does it work') !== -1 || t.indexOf('process') !== -1 || t.indexOf('long') !== -1 || t.indexOf('timeline') !== -1 || t.indexOf('setup') !== -1) {
+            addMsg(KB.how, 'bot'); return;
+          }
+          if (t.indexOf('contract') !== -1 || t.indexOf('cancel') !== -1 || t.indexOf('term') !== -1 || t.indexOf('commit') !== -1 || t.indexOf('guarantee') !== -1) {
+            addMsg(KB.terms, 'bot'); return;
+          }
+          if (t.indexOf('demo') !== -1) {
+            addMsg("You can see all 13 concept demos on our Demos page: /demos/ — each one is built from a real business's public info to show the tools working. They are concepts, not real client sites.", 'bot'); return;
+          }
+          if (t.indexOf('contact') !== -1 || t.indexOf('email') !== -1 || t.indexOf('phone') !== -1 || t.indexOf('reach') !== -1 || t.indexOf('human') !== -1 || t.indexOf('person') !== -1 || t.indexOf('where') !== -1 || t.indexOf('located') !== -1) {
+            addMsg(KB.contact, 'bot'); return;
+          }
+          if (t.indexOf('never-miss') !== -1 || t.indexOf('never miss') !== -1 || t.indexOf('missed call') !== -1) {
+            addMsg("Never-Miss-a-Lead catches every inquiry — missed calls, form fills, after-hours messages — replies instantly, and routes every lead to one inbox. It's $199 setup + $99/month ($298 first month).", 'bot'); return;
+          }
+          if (t.indexOf('receptionist') !== -1) {
+            addMsg("The AI Phone Receptionist answers calls by voice, answers questions, and books appointments, with humans as escalation. It's $399 setup + $199/month, and takes 3–7 days to go live, including a test call you approve.", 'bot'); return;
+          }
+          if (t.indexOf('chatbot') !== -1 || t.indexOf('chat bot') !== -1) {
+            addMsg("The AI Chatbot answers customer questions around the clock on your site and messages. It's $149 setup + $49/month. There's also the Website FAQ & Lead Capture Agent — a chat agent on your own website, like this widget — for $49 flat, one-time.", 'bot'); return;
+          }
+          if (t.indexOf('website') !== -1 || t.indexOf('booking') !== -1 || t.indexOf('site') !== -1) {
+            addMsg("Website + Online Booking is a small-business website with online booking built in, from $249 one-time. And the Website FAQ & Lead Capture Agent ($49 flat) adds a chat agent to a website that answers from your own content and captures leads.", 'bot'); return;
+          }
+          if (/^(hi|hello|hey|yo)\b/.test(t)) {
+            addMsg("Hi! I can answer questions about our prices, what the tools do, and how it works — or take your details for a follow-up. What would you like to know?", 'bot'); return;
+          }
+          if (t.indexOf('thank') !== -1) {
+            addMsg("You're welcome. Anything else about prices, the tools, or getting started?", 'bot'); return;
+          }
+          // Fallback — never guess.
+          addMsg(KB.fallback, 'bot');
+          setChips(['Leave my details', 'Prices', 'What do the tools do?']);
+        }
+
+        function handleUser(text) {
+          var trimmed = text.trim();
+          if (!trimmed) return;
+          if (trimmed === 'Leave my details') {
+            addMsg(trimmed, 'user');
+            startCapture();
+            return;
+          }
+          addMsg(trimmed, 'user');
+          if (capture) {
+            capture.answers.push(trimmed);
+            capture.step += 1;
+            if (capture.step < captureQuestions.length) {
+              addMsg(captureQuestions[capture.step], 'bot');
+            } else {
+              finishCapture();
+            }
+            return;
+          }
+          answer(trimmed);
+        }
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var v = input.value;
+          input.value = '';
+          handleUser(v);
+        });
+
+        function openChat() {
+          panel.classList.add('open');
+          panel.setAttribute('aria-hidden', 'false');
+          launcher.setAttribute('aria-expanded', 'true');
+          if (!greeted) {
+            greeted = true;
+            addMsg("Hi! I'm Northbeam's automated assistant — not a person. I answer questions from Northbeam's own site info, and if you'd like to get started I can take your details for a follow-up.", 'bot');
+            mainChips();
+          }
+          input.focus();
+        }
+        function closeChat() {
+          panel.classList.remove('open');
+          panel.setAttribute('aria-hidden', 'true');
+          launcher.setAttribute('aria-expanded', 'false');
+          launcher.focus();
+        }
+        launcher.addEventListener('click', function () {
+          if (panel.classList.contains('open')) closeChat(); else openChat();
+        });
+        closeBtn.addEventListener('click', closeChat);
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && panel.classList.contains('open')) closeChat();
+        });
+      })();
+    </script>
+  </body>
+</html>
