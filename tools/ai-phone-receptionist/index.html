@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>AI Phone Receptionist | A Voice That Answers When You Can&#8217;t &#8212; Northbeam Builds</title>
+    <meta name="description" content="A voice that answers your phone when you can&#8217;t, answers basic questions, and books appointments &#8212; so callers reach help, not voicemail." />
+    <link rel="canonical" href="https://northbeambuilds.com/tools/ai-phone-receptionist/" />
+    <meta property="og:title" content="AI Phone Receptionist | A Voice That Answers When You Can&#8217;t &#8212; Northbeam Builds" />
+    <meta property="og:description" content="A voice that answers your phone when you can&#8217;t, answers basic questions, and books appointments &#8212; so callers reach help, not voicemail." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://northbeambuilds.com/tools/ai-phone-receptionist/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="AI Phone Receptionist | A Voice That Answers When You Can&#8217;t &#8212; Northbeam Builds" />
+    <meta name="twitter:description" content="A voice that answers your phone when you can&#8217;t, answers basic questions, and books appointments &#8212; so callers reach help, not voicemail." />
+    <meta name="twitter:url" content="https://northbeambuilds.com/tools/ai-phone-receptionist/" />
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Phone Receptionist","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"A voice that answers your phone when you can't, answers basic questions, and books appointments; anything complicated goes straight to a human.","offers":{"@type":"Offer","priceCurrency":"USD","price":"399","priceSpecification":[{"@type":"UnitPriceSpecification","price":"399","priceCurrency":"USD","name":"One-time setup"},{"@type":"UnitPriceSpecification","price":"199","priceCurrency":"USD","name":"Monthly service","unitCode":"MON","billingDuration":"P1M"}]},"provider":{"@type":"Organization","name":"Northbeam Builds","email":"northbeambuilds@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Austin","addressRegion":"TX","addressCountry":"US"}}}
+    </script>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f8f6f1;
+        --surface: #ffffff;
+        --surface-2: #f1ede3;
+        --ink: #17293f;
+        --ink-soft: #45586e;
+        --navy: #0e2a47;
+        --navy-deep: #0a1f36;
+        --on-navy: #f4f7fb;
+        --on-navy-soft: #c3d2e3;
+        --amber: #c97e12;
+        --amber-bright: #e89b27;
+        --amber-soft: #fbeed3;
+        --line: #ddd6c7;
+        --line-dark: #2a4258;
+        --focus: #e89b27;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0b1622;
+          --surface: #122437;
+          --surface-2: #0f2033;
+          --ink: #edf2f7;
+          --ink-soft: #aebfd0;
+          --navy: #0e2a47;
+          --navy-deep: #081a2e;
+          --on-navy: #f4f7fb;
+          --on-navy-soft: #c3d2e3;
+          --amber: #f0aa3c;
+          --amber-bright: #f0aa3c;
+          --amber-soft: #2c2410;
+          --line: #26405a;
+          --line-dark: #26405a;
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 1.0625rem;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--amber); }
+      a:focus-visible, summary:focus-visible {
+        outline: 3px solid var(--focus);
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+
+      .wrap {
+        max-width: 46rem;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+      }
+
+      /* ---------- Sticky mini-nav ---------- */
+      .mini-nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: var(--navy-deep);
+        color: var(--on-navy);
+        border-bottom: 3px solid var(--amber-bright);
+      }
+      .mini-nav .wrap {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        column-gap: 1.25rem;
+        row-gap: 0;
+        padding-top: 0.35rem;
+        padding-bottom: 0.35rem;
+      }
+      .wordmark {
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 700;
+        font-size: 1.05rem;
+        letter-spacing: 0.01em;
+        color: var(--on-navy);
+        text-decoration: none;
+        padding: 0.55rem 0;
+        white-space: nowrap;
+      }
+      .wordmark span { color: var(--amber-bright); }
+      .mini-nav nav {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: auto;
+      }
+      .mini-nav nav a {
+        color: var(--on-navy-soft);
+        text-decoration: none;
+        font-size: 0.92rem;
+        font-weight: 600;
+        padding: 0.55rem 0.6rem;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
+      .mini-nav nav a:hover { color: var(--on-navy); }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        background: var(--navy);
+        color: var(--on-navy);
+        padding: 3rem 0 3.25rem;
+      }
+      .hero h1 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.1rem, 6.5vw, 3.1rem);
+        line-height: 1.12;
+        margin: 0 0 1.1rem;
+        font-weight: 700;
+      }
+      .hero .subhead {
+        font-size: clamp(1.08rem, 3.4vw, 1.28rem);
+        line-height: 1.55;
+        color: var(--on-navy-soft);
+        margin: 0 0 1.75rem;
+        max-width: 40rem;
+      }
+      .price-line {
+        font-size: 1.45rem;
+        font-weight: 800;
+        color: var(--on-navy);
+        margin: 0 0 1.4rem;
+        letter-spacing: 0.01em;
+      }
+      .price-line .per { color: var(--amber-bright); }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 56px;
+        padding: 0.9rem 1.9rem;
+        background: var(--amber-bright);
+        color: #1c1405;
+        font-weight: 800;
+        font-size: 1.08rem;
+        text-decoration: none;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+      }
+      .btn:hover { background: #f2ac44; }
+      @media (prefers-color-scheme: dark) {
+        .btn:hover { background: #f7bc5f; }
+      }
+
+      /* ---------- Sections ---------- */
+      section { padding: 2.75rem 0 0.5rem; }
+      h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.55rem, 4.5vw, 2rem);
+        line-height: 1.2;
+        margin: 0 0 1.25rem;
+        color: var(--ink);
+      }
+      h2 .rule {
+        display: block;
+        width: 3rem;
+        height: 4px;
+        background: var(--amber-bright);
+        border-radius: 2px;
+        margin-bottom: 0.7rem;
+      }
+      p { margin: 0 0 1rem; }
+
+      /* Steps */
+      .steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+      .steps li {
+        display: flex;
+        gap: 1rem;
+        padding: 1.1rem 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .steps li:last-child { border-bottom: none; }
+      .step-num {
+        flex: 0 0 auto;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background: var(--navy);
+        color: var(--on-navy);
+        font-weight: 800;
+        font-size: 1.15rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.15rem;
+      }
+      @media (prefers-color-scheme: dark) {
+        .step-num { background: var(--amber-bright); color: #1c1405; }
+      }
+      .steps p { margin: 0; align-self: center; }
+
+      /* Sample moment */
+      .sample {
+        background: var(--amber-soft);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 1.4rem 1.5rem;
+        margin-top: 1.75rem;
+      }
+      .sample .tag {
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--amber);
+        margin-bottom: 0.6rem;
+      }
+      @media (prefers-color-scheme: dark) {
+        .sample .tag { color: var(--amber-bright); }
+      }
+      .sample p { margin: 0; font-size: 1.05rem; }
+
+      /* For / not for */
+      .fit-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      @media (min-width: 640px) {
+        .fit-grid { grid-template-columns: 1fr 1fr; }
+      }
+      .fit-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 1.4rem 1.5rem;
+      }
+      .fit-card h3 {
+        margin: 0 0 0.8rem;
+        font-size: 1.05rem;
+        font-weight: 800;
+      }
+      .fit-card ul { margin: 0; padding-left: 1.2rem; }
+      .fit-card li { margin-bottom: 0.55rem; }
+      .fit-card li:last-child { margin-bottom: 0; }
+      .boundary {
+        margin-top: 1.5rem;
+        padding: 1.15rem 1.35rem;
+        background: var(--surface-2);
+        border-left: 5px solid var(--amber-bright);
+        border-radius: 0 8px 8px 0;
+        font-weight: 600;
+      }
+      .boundary p { margin: 0; }
+
+      /* Price box */
+      .price-box {
+        background: var(--navy);
+        color: var(--on-navy);
+        border-radius: 12px;
+        padding: 1.9rem 1.75rem;
+        margin-top: 0.5rem;
+      }
+      .price-box .big {
+        font-size: clamp(1.5rem, 5vw, 1.9rem);
+        font-weight: 800;
+        line-height: 1.3;
+        margin: 0 0 0.4rem;
+      }
+      .price-box .first-month {
+        font-size: 1.15rem;
+        color: var(--amber-bright);
+        font-weight: 700;
+        margin: 0 0 1.1rem;
+      }
+      .price-box p { color: var(--on-navy-soft); margin: 0 0 1rem; }
+      .price-box p:last-child { margin-bottom: 0; }
+      .price-box .included-label {
+        color: var(--on-navy);
+        font-weight: 800;
+        margin-bottom: 0.35rem;
+      }
+      .price-box .promise {
+        color: var(--on-navy);
+        font-weight: 700;
+      }
+
+      /* Demo box */
+      .demo-box {
+        background: var(--surface);
+        border: 1px dashed var(--amber);
+        border-radius: 10px;
+        padding: 1.5rem 1.6rem;
+      }
+      .demo-box p { margin: 0; font-size: 1.06rem; }
+
+      /* FAQ */
+      .faq details {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        margin-bottom: 0.85rem;
+        overflow: hidden;
+      }
+      .faq summary {
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 1.05rem;
+        padding: 1.05rem 1.3rem;
+        min-height: 56px;
+        display: flex;
+        align-items: center;
+        list-style: none;
+      }
+      .faq summary::-webkit-details-marker { display: none; }
+      .faq summary::after {
+        content: "+";
+        margin-left: auto;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: var(--amber);
+        line-height: 1;
+        padding-left: 1rem;
+      }
+      .faq details[open ] summary::after { content: "\2212"; }
+      .faq details p {
+        margin: 0;
+        padding: 0 1.3rem 1.2rem;
+        color: var(--ink-soft);
+      }
+
+      /* Final CTA */
+      .final-cta {
+        text-align: center;
+        padding: 3rem 0 3.5rem;
+      }
+      .final-cta .btn { margin-bottom: 1.1rem; }
+      .final-cta p { margin: 0; color: var(--ink-soft); }
+      .final-cta a.mail { font-weight: 700; }
+
+      /* Footer */
+      footer {
+        background: var(--navy-deep);
+        color: var(--on-navy-soft);
+        padding: 2.5rem 0 2.75rem;
+        margin-top: 1rem;
+      }
+      footer h2 {
+        color: var(--on-navy);
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+      footer h2 .rule { margin-bottom: 0.6rem; }
+      .tool-list {
+        list-style: none;
+        margin: 0 0 2rem;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+      @media (min-width: 640px) {
+        .tool-list { grid-template-columns: 1fr 1fr; }
+      }
+      .tool-list a {
+        color: var(--on-navy-soft);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0.35rem 0;
+        font-weight: 600;
+      }
+      .tool-list a:hover { color: var(--amber-bright); }
+      .tool-list a[aria-current="page"] { color: var(--amber-bright); }
+      .tool-list .here {
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-left: 0.55rem;
+        color: var(--on-navy);
+        background: rgba(232, 155, 39, 0.25);
+        border: 1px solid var(--amber-bright);
+        padding: 0.1rem 0.45rem;
+        border-radius: 999px;
+      }
+      .footer-line {
+        border-top: 1px solid var(--line-dark);
+        padding-top: 1.25rem;
+        margin: 0;
+        font-size: 0.95rem;
+      }
+      .footer-line a { color: var(--on-navy-soft); }
+    </style>
+  </head>
+  <body>
+    <header class="mini-nav">
+      <div class="wrap">
+        <a class="wordmark" href="https://northbeambuilds.com/">Northbeam <span>Builds</span></a>
+        <nav aria-label="Main site">
+          <a href="https://northbeambuilds.com/#pricing">Pricing</a>
+          <a href="https://northbeambuilds.com/#demos">Demos</a>
+          <a href="https://northbeambuilds.com/#how-it-works">How It Works</a>
+          <a href="https://northbeambuilds.com/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <div class="hero">
+        <div class="wrap">
+          <h1>AI Phone Receptionist</h1>
+          <p class="subhead">AI Phone Receptionist &#8212; for shop owners who can&#8217;t pick up while they&#8217;re working: it&#8217;s a voice that answers your calls, answers basic questions, and books the appointment or takes a message, so callers reach help instead of voicemail.</p>
+          <p class="price-line">$399 setup <span class="per">+</span> $199/month</p>
+          <a class="btn" href="mailto:northbeambuilds@gmail.com?subject=AI%20Phone%20Receptionist">Get started by email</a>
+        </div>
+      </div>
+
+      <!-- What it does -->
+      <section aria-labelledby="what-heading">
+        <div class="wrap">
+          <h2 id="what-heading"><span class="rule" aria-hidden="true"></span>What it does</h2>
+          <ol class="steps">
+            <li>
+              <span class="step-num" aria-hidden="true">1</span>
+              <p>On one short call, we collect your services, hours, prices, and booking rules &#8212; and what should always go straight to you.</p>
+            </li>
+            <li>
+              <span class="step-num" aria-hidden="true">2</span>
+              <p>We set up the voice on your number. You hear it on a live test call and approve it before it ever answers a real customer.</p>
+            </li>
+            <li>
+              <span class="step-num" aria-hidden="true">3</span>
+              <p>It answers when you can&#8217;t, books the job or takes a clean message &#8212; and anything complicated goes straight to a human: you.</p>
+            </li>
+          </ol>
+          <div class="sample">
+            <span class="tag">A sample moment &#8212; shown with made-up names</span>
+            <p><strong>Sample:</strong> The owner is under a house fixing a pipe. The phone rings twice and the receptionist picks up. The caller asks about a leaking water heater; it books Thursday at 9 AM. The owner gets the booking and a short summary &#8212; and never stopped working.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Who it's for / not for -->
+      <section aria-labelledby="fit-heading">
+        <div class="wrap">
+          <h2 id="fit-heading"><span class="rule" aria-hidden="true"></span>Who it&#8217;s for &#8212; and who it isn&#8217;t</h2>
+          <div class="fit-grid">
+            <div class="fit-card">
+              <h3>This is for you if&#8230;</h3>
+              <ul>
+                <li>You miss calls all day because you&#8217;re out on jobs.</li>
+                <li>After-hours callers reach your voicemail and never call back.</li>
+                <li>You run a one- or two-person shop with no one free to answer the phone.</li>
+              </ul>
+            </div>
+            <div class="fit-card">
+              <h3>This is not for you if&#8230;</h3>
+              <ul>
+                <li>You already have a full-time receptionist answering every call.</li>
+                <li>You need emergency dispatch calls handled with no human involved. Real emergencies and hard calls always go to a person.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="boundary">
+            <p>Never-Miss-a-Lead texts back after a call is missed. This one answers the call live, by voice. Many shops start with the text-back, then add this.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Price -->
+      <section aria-labelledby="price-heading">
+        <div class="wrap">
+          <h2 id="price-heading"><span class="rule" aria-hidden="true"></span>What it costs</h2>
+          <div class="price-box">
+            <p class="big">$399 one-time setup + $199/month.</p>
+            <p class="first-month">First month total: $598.</p>
+            <p>Month-to-month &#8212; cancel anytime, no long contract.</p>
+            <p class="included-label">What&#8217;s included:</p>
+            <p>Your number set up, your services, hours, and prices loaded, appointment booking into your calendar, a message and summary for every call, and a live test call you approve before launch.</p>
+            <p class="promise">If we don&#8217;t get it live and working as described, you don&#8217;t pay the setup fee.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Demo -->
+      <section aria-labelledby="demo-heading">
+        <div class="wrap">
+          <h2 id="demo-heading"><span class="rule" aria-hidden="true"></span>Hear it before you pay</h2>
+          <div class="demo-box">
+            <p>There&#8217;s no recorded demo here on purpose. A voice is something you should hear live, on your own phone, with your own business name and prices. A live test call is arranged before any payment &#8212; if you don&#8217;t like what you hear, you don&#8217;t buy it.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq" aria-labelledby="faq-heading">
+        <div class="wrap">
+          <h2 id="faq-heading"><span class="rule" aria-hidden="true"></span>Common questions</h2>
+          <details>
+            <summary>What if a call is complicated, or an emergency?</summary>
+            <p>It goes straight to you. You set the rules on day one: which calls the voice handles, and which ones ring a human, every time.</p>
+          </details>
+          <details>
+            <summary>Can it book into my calendar?</summary>
+            <p>Yes. It books real open times and you get the booking and a short summary of every call.</p>
+          </details>
+          <details>
+            <summary>Does it answer at night and on weekends?</summary>
+            <p>Yes, whenever you set it to answer. Many owners use it only when they can&#8217;t pick up; it can cover the hours you choose.</p>
+          </details>
+          <details>
+            <summary>Can I hear it first?</summary>
+            <p>That&#8217;s the deal. A live test call happens before any payment.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <div class="final-cta">
+        <div class="wrap">
+          <a class="btn" href="mailto:northbeambuilds@gmail.com?subject=AI%20Phone%20Receptionist">Get started by email</a>
+          <p>Prefer to write directly? <a class="mail" href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <h2><span class="rule" aria-hidden="true"></span>Other tools from Northbeam Builds</h2>
+        <ul class="tool-list">
+          <li><a href="https://northbeambuilds.com/tools/never-miss-a-lead/">Never-Miss-a-Lead</a></li>
+          <li><a href="https://northbeambuilds.com/tools/website-lead-capture-agent/">Website FAQ &amp; Lead Capture Agent</a></li>
+          <li><a href="https://northbeambuilds.com/tools/website-online-booking/">Website + Online Booking</a></li>
+          <li><a href="https://northbeambuilds.com/tools/ai-chatbot/">AI Chatbot</a></li>
+          <li><a href="https://northbeambuilds.com/tools/ai-phone-receptionist/" aria-current="page">AI Phone Receptionist</a><span class="here">You are here</span></li>
+        </ul>
+        <p class="footer-line">Northbeam Builds &#183; Austin, TX &#183; <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

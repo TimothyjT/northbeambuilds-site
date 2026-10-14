@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>AI Chatbot for Service Businesses | More Than a FAQ Box — Northbeam Builds</title>
+    <meta name="description" content="A smarter chat agent for shops flooded with repeat questions: custom answers, more places than your website, a path to booking. $149 + $49/mo." />
+    <link rel="canonical" href="https://northbeambuilds.com/tools/ai-chatbot/" />
+    <meta property="og:title" content="AI Chatbot for Service Businesses | More Than a FAQ Box — Northbeam Builds" />
+    <meta property="og:description" content="A smarter chat agent for shops flooded with repeat questions: custom answers, more places than your website, a path to booking. $149 + $49/mo." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://northbeambuilds.com/tools/ai-chatbot/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="AI Chatbot for Service Businesses | More Than a FAQ Box — Northbeam Builds" />
+    <meta name="twitter:description" content="A smarter chat agent for shops flooded with repeat questions: custom answers, more places than your website, a path to booking. $149 + $49/mo." />
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Chatbot","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"A custom-built chat agent that answers a service business's repeat questions instantly, in more places than its website, and connects toward booking.","offers":{"@type":"Offer","priceCurrency":"USD","price":"149","priceSpecification":[{"@type":"UnitPriceSpecification","price":"149","priceCurrency":"USD","name":"One-time setup"},{"@type":"UnitPriceSpecification","price":"49","priceCurrency":"USD","name":"Monthly service","unitCode":"MON","billingDuration":"P1M"}]},"provider":{"@type":"Organization","name":"Northbeam Builds","email":"northbeambuilds@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Austin","addressRegion":"TX","addressCountry":"US"}}}
+    </script>
+    <style>
+      :root {
+        --bg: #f7f5f1;
+        --surface: #ffffff;
+        --surface-2: #eef1f5;
+        --ink: #16283e;
+        --ink-soft: #44566e;
+        --line: #d9dee6;
+        --navy: #0f2238;
+        --navy-deep: #0a1826;
+        --amber: #d98e1f;
+        --amber-strong: #b96f0e;
+        --amber-soft: #fdf3e0;
+        --on-navy: #f4f7fb;
+        --on-navy-soft: #c3d2e4;
+        --radius: 14px;
+        color-scheme: light;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0c1420;
+          --surface: #142233;
+          --surface-2: #1a2c44;
+          --ink: #eef3f9;
+          --ink-soft: #aebdd0;
+          --line: #2c405c;
+          --navy: #0a1826;
+          --navy-deep: #060f18;
+          --amber: #f0a93b;
+          --amber-strong: #f5bb5c;
+          --amber-soft: #2a2416;
+          --on-navy: #f4f7fb;
+          --on-navy-soft: #c3d2e4;
+          color-scheme: dark;
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--amber-strong); }
+      a:focus-visible, summary:focus-visible {
+        outline: 3px solid var(--amber);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
+      /* ---------- Sticky mini-nav ---------- */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: var(--navy);
+        color: var(--on-navy);
+        border-bottom: 3px solid var(--amber);
+      }
+      .nav-inner {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        column-gap: 8px;
+      }
+      .wordmark {
+        color: var(--on-navy);
+        font-weight: 700;
+        font-size: 17px;
+        letter-spacing: 0.01em;
+        text-decoration: none;
+        padding: 12px 8px 12px 0;
+        margin-right: auto;
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+      }
+      .wordmark .dot { color: var(--amber); }
+      .nav-links { display: flex; flex-wrap: wrap; }
+      .nav-links a {
+        color: var(--on-navy-soft);
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 12px 10px;
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+      }
+      .nav-links a:hover { color: var(--on-navy); }
+
+      main { max-width: 880px; margin: 0 auto; padding: 0 16px 64px; }
+      section { margin-top: 56px; }
+      h2 {
+        font-size: 27px;
+        line-height: 1.25;
+        margin: 0 0 18px;
+        color: var(--ink);
+      }
+      p { margin: 0 0 14px; }
+
+      /* ---------- Hero ---------- */
+      .hero { padding-top: 48px; }
+      .hero h1 {
+        font-size: 44px;
+        line-height: 1.08;
+        margin: 0 0 16px;
+        letter-spacing: -0.01em;
+      }
+      .hero .subhead {
+        font-size: 20px;
+        line-height: 1.55;
+        color: var(--ink-soft);
+        max-width: 640px;
+        margin: 0 0 22px;
+      }
+      .price-line {
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0 0 20px;
+      }
+      .price-line .per { color: var(--ink-soft); font-weight: 600; }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 56px;
+        padding: 14px 28px;
+        background: var(--amber);
+        color: #1c1404;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 10px;
+        border: 2px solid var(--amber-strong);
+      }
+      .btn:hover { background: var(--amber-strong); color: #ffffff; }
+
+      /* ---------- Steps ---------- */
+      .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+      .steps li {
+        display: flex;
+        gap: 16px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 20px;
+      }
+      .step-num {
+        flex: 0 0 auto;
+        width: 40px; height: 40px;
+        border-radius: 50%;
+        background: var(--navy);
+        color: var(--on-navy);
+        font-weight: 700;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2px;
+      }
+      .steps p { margin: 0; }
+
+      .sample {
+        margin-top: 22px;
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+      }
+      .sample .label {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--amber-strong);
+        margin-bottom: 10px;
+      }
+      .sample p { margin: 0; }
+      .sample .cust {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 12px 16px;
+        margin: 12px 0;
+        font-style: italic;
+      }
+
+      /* ---------- For / not for ---------- */
+      .fit-grid { display: grid; gap: 14px; }
+      @media (min-width: 640px) { .fit-grid { grid-template-columns: 1fr 1fr; } }
+      .fit-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+      }
+      .fit-card h3 { margin: 0 0 12px; font-size: 19px; }
+      .fit-card ul { margin: 0; padding: 0; list-style: none; }
+      .fit-card li { padding: 8px 0 8px 26px; position: relative; }
+      .fit-card li::before {
+        position: absolute; left: 0; top: 8px;
+        font-weight: 700;
+      }
+      .fit-for li::before { content: "✓"; color: var(--amber-strong); }
+      .fit-not li::before { content: "✕"; color: var(--ink-soft); }
+
+      .boundary {
+        margin-top: 22px;
+        background: var(--amber-soft);
+        border: 2px solid var(--amber);
+        border-radius: var(--radius);
+        padding: 24px;
+        font-size: 18px;
+        line-height: 1.6;
+      }
+      .boundary strong { display: block; margin-bottom: 8px; font-size: 15px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--amber-strong); }
+      .boundary p { margin: 0; }
+
+      /* ---------- Price box ---------- */
+      .price-box {
+        background: var(--navy);
+        color: var(--on-navy);
+        border-radius: var(--radius);
+        padding: 28px;
+      }
+      .price-box .big {
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 1.3;
+        margin: 0 0 6px;
+      }
+      .price-box .first-month {
+        font-size: 19px;
+        font-weight: 700;
+        color: var(--amber);
+        margin: 0 0 14px;
+      }
+      .price-box p { color: var(--on-navy-soft); }
+      .price-box h3 { color: var(--on-navy); margin: 22px 0 10px; font-size: 18px; }
+      .price-box ul { margin: 0; padding: 0; list-style: none; }
+      .price-box li { padding: 7px 0 7px 26px; position: relative; color: var(--on-navy); }
+      .price-box li::before { content: "✓"; position: absolute; left: 0; color: var(--amber); font-weight: 700; }
+      .price-box .guarantee {
+        margin-top: 20px;
+        border-top: 1px solid #33506f;
+        padding-top: 16px;
+        color: var(--on-navy);
+        margin-bottom: 0;
+      }
+
+      /* ---------- Demo ---------- */
+      .demo-card {
+        display: block;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 24px;
+        text-decoration: none;
+        color: var(--ink);
+      }
+      .demo-card:hover { border-color: var(--amber); }
+      .demo-card .demo-title { font-size: 21px; font-weight: 700; margin: 0 0 6px; }
+      .demo-card .badge {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        background: var(--amber-soft);
+        color: var(--amber-strong);
+        border: 1px solid var(--amber);
+        border-radius: 999px;
+        padding: 4px 12px;
+        margin-bottom: 12px;
+      }
+      .demo-card p { color: var(--ink-soft); margin: 0 0 8px; }
+      .demo-card .go { color: var(--amber-strong); font-weight: 700; }
+
+      /* ---------- FAQ ---------- */
+      .faq details {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        margin-bottom: 12px;
+      }
+      .faq summary {
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 18px;
+        padding: 18px 20px;
+        min-height: 56px;
+        display: flex;
+        align-items: center;
+        list-style: none;
+      }
+      .faq summary::-webkit-details-marker { display: none; }
+      .faq summary::after { content: "+"; margin-left: auto; font-size: 24px; color: var(--amber-strong); }
+      .faq details[open ] summary::after { content: "–"; }
+      .faq details p { padding: 0 20px 20px; margin: 0; color: var(--ink-soft); }
+
+      /* ---------- Final CTA ---------- */
+      .cta {
+        text-align: center;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 36px 24px;
+      }
+      .cta h2 { margin-bottom: 10px; }
+      .cta p { color: var(--ink-soft); }
+      .cta .btn { margin-top: 8px; }
+      .cta .direct { margin: 18px 0 0; font-size: 16px; }
+      .cta .direct a { font-weight: 700; }
+
+      /* ---------- Footer ---------- */
+      footer {
+        margin-top: 64px;
+        background: var(--navy-deep);
+        color: var(--on-navy-soft);
+      }
+      .footer-inner { max-width: 880px; margin: 0 auto; padding: 36px 16px 44px; }
+      footer h2 { color: var(--on-navy); font-size: 19px; margin-bottom: 14px; }
+      .tool-list { list-style: none; margin: 0 0 28px; padding: 0; }
+      .tool-list li { border-bottom: 1px solid #22384f; }
+      .tool-list a {
+        display: flex;
+        align-items: center;
+        min-height: 52px;
+        padding: 10px 4px;
+        color: var(--on-navy);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .tool-list a:hover { color: var(--amber); }
+      .tool-list .here { margin-left: auto; font-size: 13px; font-weight: 700; color: var(--amber); letter-spacing: 0.05em; text-transform: uppercase; }
+      .footer-line { margin: 0; font-size: 15px; }
+      .footer-line a { color: var(--on-navy); }
+
+      @media (max-width: 480px) {
+        body { font-size: 16px; }
+        .hero { padding-top: 36px; }
+        .hero h1 { font-size: 36px; }
+        .hero .subhead { font-size: 18px; }
+        .btn { width: 100%; }
+        .steps li { padding: 16px; }
+        .price-box { padding: 22px; }
+        .nav-links a { padding: 12px 7px; font-size: 14px; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Northbeam Builds">
+      <div class="nav-inner">
+        <a class="wordmark" href="https://northbeambuilds.com/">Northbeam Builds<span class="dot">.</span></a>
+        <div class="nav-links">
+          <a href="https://northbeambuilds.com/#pricing">Pricing</a>
+          <a href="https://northbeambuilds.com/#demos">Demos</a>
+          <a href="https://northbeambuilds.com/#how-it-works">How It Works</a>
+          <a href="https://northbeambuilds.com/#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <header class="hero">
+        <h1>AI Chatbot</h1>
+        <p class="subhead">AI Chatbot — for shop owners who get the same questions in messages all day: it's a chat agent built around your business that answers repeat questions right away, in more places than just your website, so no message sits unanswered while you're on a job.</p>
+        <p class="price-line">$149 setup <span class="per">+ $49/month</span></p>
+        <a class="btn" href="mailto:northbeambuilds@gmail.com?subject=AI%20Chatbot">Get started by email</a>
+      </header>
+
+      <section aria-labelledby="what">
+        <h2 id="what">What it does</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-num" aria-hidden="true">1</span>
+            <p>We sit down with your real questions — the ones customers ask every day — and how you want each one answered.</p>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">2</span>
+            <p>We build the conversations around your services, prices, and rules. You read and approve the answers before it goes live.</p>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">3</span>
+            <p>It answers in chat wherever your customers reach you — and hands real jobs to you, with the whole conversation attached.</p>
+          </li>
+        </ol>
+
+        <div class="sample">
+          <span class="label">A sample moment — shown with made-up names</span>
+          <p>Weekday, 8:15 PM. A customer messages:</p>
+          <p class="cust">"Do you install tankless water heaters? Roughly what does it run?"</p>
+          <p>The agent answers from the shop's real info, offers the next step, and the owner wakes to a booked estimate — not a cold thread.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="fit">
+        <h2 id="fit">Who it's for — and who it's not</h2>
+        <div class="fit-grid">
+          <div class="fit-card fit-for">
+            <h3>It's for you if</h3>
+            <ul>
+              <li>Your shop answers the same questions over and over.</li>
+              <li>Customers message you in more than one place.</li>
+              <li>You want chat that can move a customer toward booking.</li>
+            </ul>
+          </div>
+          <div class="fit-card fit-not">
+            <h3>It's not for you if</h3>
+            <ul>
+              <li>You only need simple questions answered on your website — the cheaper tool below does that.</li>
+              <li>You want a voice answering phone calls — that's the AI Phone Receptionist.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="boundary">
+          <strong>Not sure which one you need?</strong>
+          <p>The Website FAQ &amp; Lead Capture Agent ($49) answers from your existing website pages, on your website only. This Chatbot is custom-built conversations: more questions, more places, and a path toward booking and your customer system. If the simple one covers you, buy the simple one.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="price">
+        <h2 id="price">What it costs</h2>
+        <div class="price-box">
+          <p class="big">$149 one-time setup + $49/month</p>
+          <p class="first-month">First month total: $198</p>
+          <p>Month-to-month — cancel anytime, no long contract.</p>
+          <h3>What's included</h3>
+          <ul>
+            <li>Your custom question-and-answer set, built with you</li>
+            <li>Chat set up where your customers message you</li>
+            <li>Plain-language answers you approve first</li>
+            <li>Hand-off of real jobs to you, with the conversation attached</li>
+            <li>Updates to answers when your prices or services change</li>
+          </ul>
+          <p class="guarantee">If we don't get it live and working as described, you don't pay the setup fee.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="demo">
+        <h2 id="demo">See it working</h2>
+        <a class="demo-card" href="/demos/brooks/">
+          <span class="badge">Concept demo — not a client</span>
+          <p class="demo-title">Garage door shop demo</p>
+          <p>Built from that shop's public info to show how this works. Names and leads in the demo are samples.</p>
+          <span class="go">Try the demo →</span>
+        </a>
+      </section>
+
+      <section class="faq" aria-labelledby="faq">
+        <h2 id="faq">Common questions</h2>
+        <details>
+          <summary>How is this different from the $49 website agent?</summary>
+          <p>That one answers from your website pages, on your site only. This one is built around your business: more questions, more places, and it can walk a customer toward booking.</p>
+        </details>
+        <details>
+          <summary>What happens when it can't answer?</summary>
+          <p>It doesn't guess. It takes the customer's details and hands the conversation to you, with everything they already said attached.</p>
+        </details>
+        <details>
+          <summary>Will it sound like a robot?</summary>
+          <p>It answers in plain words, using the answers you approved. You read every answer before it ever goes live.</p>
+        </details>
+        <details>
+          <summary>Can I cancel?</summary>
+          <p>Yes. Month-to-month. Cancel anytime and you owe nothing further.</p>
+        </details>
+      </section>
+
+      <section class="cta" aria-labelledby="start">
+        <h2 id="start">Ready when you are</h2>
+        <p>Tell us about your shop and the questions you get most. We'll take it from there.</p>
+        <a class="btn" href="mailto:northbeambuilds@gmail.com?subject=AI%20Chatbot">Get started by email</a>
+        <p class="direct">Prefer to write directly? <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <h2>Other tools from Northbeam Builds</h2>
+        <ul class="tool-list">
+          <li><a href="/tools/never-miss-a-lead/">Never-Miss-a-Lead</a></li>
+          <li><a href="/tools/website-lead-capture-agent/">Website FAQ &amp; Lead Capture Agent</a></li>
+          <li><a href="/tools/website-online-booking/">Website + Online Booking</a></li>
+          <li><a href="/tools/ai-chatbot/" aria-current="page">AI Chatbot <span class="here">You are here</span></a></li>
+          <li><a href="/tools/ai-phone-receptionist/">AI Phone Receptionist</a></li>
+        </ul>
+        <p class="footer-line">Northbeam Builds · Austin, TX · <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

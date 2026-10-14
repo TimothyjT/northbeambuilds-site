@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Website + Online Booking | A Website Customers Can Book On — Northbeam Builds</title>
+<meta name="description" content="A clear website where customers see your services and book a time online — no more phone tag. Website + online booking builds from $249." />
+<link rel="canonical" href="https://northbeambuilds.com/tools/website-online-booking/" />
+<meta property="og:title" content="Website + Online Booking | A Website Customers Can Book On — Northbeam Builds" />
+<meta property="og:description" content="A clear website where customers see your services and book a time online — no more phone tag. Website + online booking builds from $249." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://northbeambuilds.com/tools/website-online-booking/" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Website + Online Booking | A Website Customers Can Book On — Northbeam Builds" />
+<meta name="twitter:description" content="A clear website where customers see your services and book a time online — no more phone tag. Website + online booking builds from $249." />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"Website + Online Booking","description":"A clear website for a local service business where customers can see services and book a time online.","offers":{"@type":"Offer","priceCurrency":"USD","price":"249"},"provider":{"@type":"Organization","name":"Northbeam Builds","email":"northbeambuilds@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Austin","addressRegion":"TX","addressCountry":"US"}}}
+</script>
+<style>
+  :root{
+    color-scheme: light dark;
+    --bg:#f7f5f1;
+    --surface:#ffffff;
+    --surface-2:#fdf8ef;
+    --ink:#16283d;
+    --ink-soft:#44586e;
+    --navy:#0e2743;
+    --navy-deep:#0a1d33;
+    --amber:#d98a1f;
+    --amber-strong:#b96f0e;
+    --amber-soft:#f7e3c3;
+    --line:#ddd6c9;
+    --radius:14px;
+    --shadow:0 1px 2px rgba(14,39,67,.06), 0 8px 24px rgba(14,39,67,.07);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0b1522;
+      --surface:#12233a;
+      --surface-2:#152a46;
+      --ink:#edf2f8;
+      --ink-soft:#aebdd0;
+      --navy:#0e2743;
+      --amber:#eaa63f;
+      --amber-strong:#f2b65a;
+      --amber-soft:#3a2c14;
+      --line:#2b405c;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:Georgia, "Iowan Old Style", "Times New Roman", serif;
+    color:var(--ink);
+    line-height:1.2;
+    margin:0;
+    letter-spacing:-.01em;
+  }
+  p{ margin:0; }
+  a{ color:var(--amber-strong); }
+
+  /* ---------- Sticky mini-nav ---------- */
+  .nav{
+    position:sticky; top:0; z-index:50;
+    background:var(--navy);
+    border-bottom:3px solid var(--amber);
+  }
+  .nav-inner{
+    max-width:960px; margin:0 auto;
+    padding:10px 20px;
+    display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+  }
+  .wordmark{
+    color:#fff; text-decoration:none;
+    font-family:Georgia, "Iowan Old Style", serif;
+    font-size:19px; font-weight:700; letter-spacing:.01em;
+    white-space:nowrap;
+  }
+  .wordmark span{ color:var(--amber); }
+  .nav-links{
+    display:flex; gap:4px; flex-wrap:wrap; margin-left:auto;
+  }
+  .nav-links a{
+    color:#dbe6f2; text-decoration:none;
+    font-size:15px; font-weight:600;
+    padding:10px 12px; min-height:44px;
+    display:inline-flex; align-items:center;
+    border-radius:8px;
+  }
+  .nav-links a:hover{ background:rgba(255,255,255,.1); color:#fff; }
+
+  .wrap{ max-width:960px; margin:0 auto; padding:0 20px; }
+
+  /* ---------- Hero ---------- */
+  .hero{ padding:52px 0 44px; }
+  .hero-tag{
+    display:inline-block;
+    font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--amber-strong);
+    background:var(--amber-soft);
+    padding:6px 12px; border-radius:999px;
+    margin-bottom:20px;
+  }
+  .hero h1{ font-size:44px; font-weight:700; }
+  .hero .sub{
+    margin-top:18px;
+    font-size:20px; line-height:1.55;
+    color:var(--ink-soft);
+    max-width:640px;
+  }
+  .hero .price-line{
+    margin-top:24px;
+    font-size:22px; font-weight:700; color:var(--ink);
+  }
+  .hero .price-line strong{ color:var(--amber-strong); }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    min-height:54px; padding:14px 28px;
+    background:var(--amber); color:#1b1206;
+    font-size:18px; font-weight:700; text-decoration:none;
+    border-radius:12px; border:0;
+    box-shadow:0 2px 0 var(--amber-strong);
+    transition:transform .12s ease, background .12s ease;
+  }
+  .btn:hover{ background:var(--amber-strong); color:#fff; }
+  .btn:active{ transform:translateY(1px); }
+  .hero .btn{ margin-top:18px; }
+
+  /* ---------- Sections ---------- */
+  section{ padding:44px 0; }
+  section + section{ border-top:1px solid var(--line); }
+  .sec-label{
+    font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--amber-strong); margin-bottom:10px;
+  }
+  h2{ font-size:30px; font-weight:700; margin-bottom:14px; }
+  .sec-intro{ color:var(--ink-soft); max-width:640px; }
+
+  /* Steps */
+  .steps{ list-style:none; margin:28px 0 0; padding:0; display:grid; gap:16px; }
+  .steps li{
+    display:flex; gap:18px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px;
+    box-shadow:var(--shadow);
+  }
+  .step-num{
+    flex:0 0 auto;
+    width:44px; height:44px;
+    border-radius:50%;
+    background:var(--navy); color:#fff;
+    font-family:Georgia, serif; font-size:20px; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  }
+  @media (prefers-color-scheme: dark){
+    .step-num{ background:var(--amber); color:#1b1206; }
+  }
+  .steps p{ align-self:center; font-size:17px; }
+
+  /* Sample moment */
+  .sample{
+    margin-top:28px;
+    background:var(--surface-2);
+    border:1px dashed var(--amber);
+    border-radius:var(--radius);
+    padding:24px;
+  }
+  .sample .sample-label{
+    font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--amber-strong); margin-bottom:10px;
+  }
+  .sample p{ font-size:17px; }
+
+  /* For / not for */
+  .fit-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:26px; }
+  .fit-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px;
+    box-shadow:var(--shadow);
+  }
+  .fit-card h3{ font-size:20px; margin-bottom:14px; }
+  .fit-card ul{ list-style:none; margin:0; padding:0; display:grid; gap:12px; }
+  .fit-card li{ display:flex; gap:10px; font-size:16px; line-height:1.5; }
+  .fit-card li::before{ flex:0 0 auto; font-weight:700; }
+  .fit-yes li::before{ content:"✓"; color:var(--amber-strong); }
+  .fit-no li::before{ content:"✕"; color:var(--ink-soft); }
+  .boundary{
+    margin-top:20px;
+    background:var(--navy); color:#e8eef6;
+    border-radius:var(--radius);
+    padding:22px 24px;
+    font-size:16.5px; line-height:1.6;
+  }
+  .boundary strong{ color:var(--amber); }
+
+  /* Price box */
+  .price-box{
+    background:var(--surface);
+    border:2px solid var(--navy);
+    border-radius:var(--radius);
+    padding:30px;
+    box-shadow:var(--shadow);
+  }
+  @media (prefers-color-scheme: dark){
+    .price-box{ border-color:var(--amber); }
+  }
+  .price-box .big-price{
+    font-family:Georgia, serif; font-size:34px; font-weight:700; line-height:1.15;
+  }
+  .price-box .big-price span{ color:var(--amber-strong); }
+  .price-box p{ margin-top:14px; color:var(--ink-soft); }
+  .price-box p strong{ color:var(--ink); }
+  .included{
+    margin:22px 0 0; padding:18px 0 0;
+    border-top:1px solid var(--line);
+    list-style:none; display:grid; gap:10px;
+  }
+  .included li{ display:flex; gap:10px; font-size:16px; }
+  .included li::before{ content:"✓"; color:var(--amber-strong); font-weight:700; flex:0 0 auto; }
+
+  /* Demo */
+  .demo-card{
+    display:block; text-decoration:none;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px;
+    box-shadow:var(--shadow);
+    margin-top:24px;
+  }
+  .demo-card:hover{ border-color:var(--amber); }
+  .demo-badge{
+    display:inline-block;
+    font-size:12.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--amber-strong); background:var(--amber-soft);
+    padding:5px 10px; border-radius:999px; margin-bottom:14px;
+  }
+  .demo-card h3{ font-size:24px; color:var(--ink); margin-bottom:8px; }
+  .demo-card p{ color:var(--ink-soft); font-size:16px; }
+  .demo-card .go{
+    display:inline-block; margin-top:16px;
+    color:var(--amber-strong); font-weight:700; font-size:16px;
+  }
+
+  /* FAQ */
+  .faq{ margin-top:24px; display:grid; gap:12px; }
+  .faq details{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+  }
+  .faq summary{
+    cursor:pointer;
+    padding:20px 22px;
+    min-height:56px;
+    font-weight:700; font-size:17px;
+    list-style:none;
+    display:flex; align-items:center; justify-content:space-between; gap:14px;
+  }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq summary::after{
+    content:"+"; flex:0 0 auto;
+    font-size:24px; font-weight:400; color:var(--amber-strong); line-height:1;
+  }
+  .faq details[open ] summary::after{ content:"–"; }
+  .faq .answer{ padding:0 22px 20px; color:var(--ink-soft); }
+
+  /* Final CTA */
+  .final-cta{
+    text-align:center;
+    background:var(--navy);
+    border-radius:var(--radius);
+    padding:44px 28px;
+    margin:44px 0 56px;
+    color:#e8eef6;
+  }
+  .final-cta h2{ color:#fff; }
+  .final-cta p{ margin-top:10px; color:#c3d2e4; }
+  .final-cta .btn{ margin-top:22px; box-shadow:none; }
+  .final-cta .direct{ margin-top:18px; font-size:15.5px; color:#c3d2e4; }
+  .final-cta .direct a{ color:var(--amber); font-weight:600; }
+
+  /* Footer */
+  footer{
+    background:var(--navy-deep);
+    color:#c3d2e4;
+    padding:44px 0 36px;
+  }
+  footer h3{
+    color:#fff; font-size:19px; margin-bottom:16px;
+  }
+  .tool-list{ list-style:none; margin:0; padding:0; display:grid; gap:4px; }
+  .tool-list a{
+    color:#dbe6f2; text-decoration:none; font-size:16px;
+    display:inline-flex; align-items:center; min-height:44px; padding:6px 0;
+  }
+  .tool-list a:hover{ color:var(--amber); }
+  .tool-list a.current{ color:var(--amber); font-weight:700; }
+  .tool-list a.current::after{
+    content:"You are here";
+    font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+    margin-left:10px; padding:3px 8px;
+    border:1px solid var(--amber); border-radius:999px;
+  }
+  .footer-line{
+    margin-top:30px; padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.15);
+    font-size:15px;
+  }
+  .footer-line a{ color:var(--amber); }
+
+  @media (max-width:640px){
+    body{ font-size:16.5px; }
+    .hero{ padding:40px 0 36px; }
+    .hero h1{ font-size:34px; }
+    .hero .sub{ font-size:18.5px; }
+    h2{ font-size:26px; }
+    .fit-grid{ grid-template-columns:1fr; }
+    .nav-inner{ gap:8px; }
+    .nav-links{ margin-left:0; }
+    .nav-links a{ padding:10px 9px; font-size:14.5px; }
+    .price-box{ padding:24px; }
+    .steps li{ padding:18px; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .btn{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="https://northbeambuilds.com/">Northbeam <span>Builds</span></a>
+    <nav class="nav-links" aria-label="Main site">
+      <a href="https://northbeambuilds.com/#pricing">Pricing</a>
+      <a href="https://northbeambuilds.com/#demos">Demos</a>
+      <a href="https://northbeambuilds.com/#how-it-works">How It Works</a>
+      <a href="https://northbeambuilds.com/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- Hero -->
+  <div class="hero">
+    <span class="hero-tag">One of the Northbeam Builds tools</span>
+    <h1>Website + Online Booking</h1>
+    <p class="sub">Website + Online Booking — for shop owners with an old website, or no website at all: it's a clear website where customers can see what you do and book a time online, so the phone isn't the only way to get a job.</p>
+    <p class="price-line">From <strong>$249</strong> one-time</p>
+    <a class="btn" href="mailto:northbeambuilds@gmail.com?subject=Website%20and%20Booking">Get started by email</a>
+  </div>
+
+  <!-- What it does -->
+  <section aria-labelledby="what-heading">
+    <p class="sec-label">What it does</p>
+    <h2 id="what-heading">Three steps, start to finish</h2>
+    <ol class="steps">
+      <li>
+        <span class="step-num" aria-hidden="true">1</span>
+        <p>You tell us about your business on one short call — services, hours, prices, service area.</p>
+      </li>
+      <li>
+        <span class="step-num" aria-hidden="true">2</span>
+        <p>We build the website and the booking calendar. You see it and approve it before it goes live.</p>
+      </li>
+      <li>
+        <span class="step-num" aria-hidden="true">3</span>
+        <p>Customers pick a time and book it themselves. You get a notice for every booking — no phone tag.</p>
+      </li>
+    </ol>
+
+    <div class="sample">
+      <p class="sample-label">A sample moment — shown with made-up names</p>
+      <p>Sample: Lunch break. A homeowner finds the site on her phone, sees the services and prices, and books Saturday at 10 AM in under a minute. The owner gets the booking notice — no call ever made.</p>
+    </div>
+  </section>
+
+  <!-- Who it's for / not for -->
+  <section aria-labelledby="fit-heading">
+    <p class="sec-label">Who it's for</p>
+    <h2 id="fit-heading">A good fit — and when it's not</h2>
+    <div class="fit-grid">
+      <div class="fit-card fit-yes">
+        <h3>This is for you if…</h3>
+        <ul>
+          <li>Your shop has no website yet.</li>
+          <li>Your site is old, slow, or has no way to book.</li>
+          <li>You lose jobs because booking means calling during work hours.</li>
+        </ul>
+      </div>
+      <div class="fit-card fit-no">
+        <h3>This is not for you if…</h3>
+        <ul>
+          <li>Your shop already has a modern website with booking that works.</li>
+          <li>Your business mainly needs a big online store. That's a different, bigger build — ask us and we'll tell you straight.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="boundary">
+      <strong>One thing to know:</strong> This is the website itself, with booking built in. The chat tools — the FAQ Agent and the AI Chatbot — answer questions on a website. They can be added to a site like this later.
+    </div>
+  </section>
+
+  <!-- Price -->
+  <section aria-labelledby="price-heading">
+    <p class="sec-label">Price</p>
+    <h2 id="price-heading">One price, quoted up front</h2>
+    <div class="price-box">
+      <p class="big-price">From <span>$249</span> one-time</p>
+      <p>Most simple sites land at the starting price. What moves the price: more pages, a bigger service list, or extra booking rules.</p>
+      <p><strong>You always get a firm quote in writing before we start — the quote is the price.</strong></p>
+      <ul class="included">
+        <li>A clear multi-page website — home, services, about, contact</li>
+        <li>An online booking calendar</li>
+        <li>Booking notices sent to you</li>
+        <li>Your contact info done right everywhere on the page</li>
+      </ul>
+      <p>It's your website and your content — you own it.</p>
+    </div>
+  </section>
+
+  <!-- Demo -->
+  <section aria-labelledby="demo-heading">
+    <p class="sec-label">Demo</p>
+    <h2 id="demo-heading">See it working</h2>
+    <p class="sec-intro">This is a roofing site we built as a sample, so you can click through it and see how booking works.</p>
+    <a class="demo-card" href="https://northbeambuilds.com/demos/texas-pro-build/">
+      <span class="demo-badge">Concept demo — not a client</span>
+      <h3>Texas Pro Build — roofing</h3>
+      <p>Built from that shop's public info to show how this works. Names and leads in the demo are samples.</p>
+      <span class="go">Open the demo →</span>
+    </a>
+  </section>
+
+  <!-- FAQ -->
+  <section aria-labelledby="faq-heading">
+    <p class="sec-label">Questions</p>
+    <h2 id="faq-heading">Plain answers</h2>
+    <div class="faq">
+      <details>
+        <summary>Do I own my website?</summary>
+        <p class="answer">Yes. Your site, your words, your photos. If you ever leave, it goes with you.</p>
+      </details>
+      <details>
+        <summary>Can customers really book without calling?</summary>
+        <p class="answer">Yes. They pick a real open time from your calendar and get a confirmation. You get a notice right away.</p>
+      </details>
+      <details>
+        <summary>How long does it take?</summary>
+        <p class="answer">We give you a launch date in writing before you pay anything — and the firm quote and the date are the deal.</p>
+      </details>
+      <details>
+        <summary>What if I already have a website?</summary>
+        <p class="answer">We can rebuild it or replace it. If what you have already works, we'll tell you to keep it.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <div class="final-cta">
+    <h2>Ready for a website customers can book on?</h2>
+    <p>Send one email. We'll set up a short call and give you a firm quote in writing.</p>
+    <a class="btn" href="mailto:northbeambuilds@gmail.com?subject=Website%20and%20Booking">Get started by email</a>
+    <p class="direct">Prefer to write directly? <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h3>Other tools from Northbeam Builds</h3>
+    <ul class="tool-list">
+      <li><a href="https://northbeambuilds.com/tools/never-miss-a-lead/">Never-Miss-a-Lead</a></li>
+      <li><a href="https://northbeambuilds.com/tools/website-lead-capture-agent/">Website FAQ &amp; Lead Capture Agent</a></li>
+      <li><a class="current" href="https://northbeambuilds.com/tools/website-online-booking/" aria-current="page">Website + Online Booking</a></li>
+      <li><a href="https://northbeambuilds.com/tools/ai-chatbot/">AI Chatbot</a></li>
+      <li><a href="https://northbeambuilds.com/tools/ai-phone-receptionist/">AI Phone Receptionist</a></li>
+    </ul>
+    <p class="footer-line">Northbeam Builds · Austin, TX · <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+
+    <title>Website FAQ &amp; Lead Capture Agent | Your Site Answers Questions — Northbeam Builds</title>
+    <meta name="description" content="A chat box on your website that answers hours, prices, and service questions from your own info — and takes a name and number. $49 flat." />
+    <link rel="canonical" href="https://northbeambuilds.com/tools/website-lead-capture-agent/" />
+
+    <meta property="og:title" content="Website FAQ &amp; Lead Capture Agent | Your Site Answers Questions — Northbeam Builds" />
+    <meta property="og:description" content="A chat box on your website that answers hours, prices, and service questions from your own info — and takes a name and number. $49 flat." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://northbeambuilds.com/tools/website-lead-capture-agent/" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Website FAQ &amp; Lead Capture Agent | Your Site Answers Questions — Northbeam Builds" />
+    <meta name="twitter:description" content="A chat box on your website that answers hours, prices, and service questions from your own info — and takes a name and number. $49 flat." />
+    <meta name="twitter:url" content="https://northbeambuilds.com/tools/website-lead-capture-agent/" />
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Website FAQ & Lead Capture Agent","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"A chat box on your website that answers common questions from your own business info and captures the visitor's name and number.","offers":{"@type":"Offer","priceCurrency":"USD","price":"49"},"provider":{"@type":"Organization","name":"Northbeam Builds","email":"northbeambuilds@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Austin","addressRegion":"TX","addressCountry":"US"}}}
+    </script>
+
+    <style>
+      :root {
+        --bg: #f7f5f1;
+        --surface: #ffffff;
+        --surface-soft: #efece5;
+        --ink: #16233a;
+        --ink-soft: #42506a;
+        --navy: #14263f;
+        --navy-deep: #0d1b2e;
+        --amber: #e8a33d;
+        --amber-dark: #b87a1e;
+        --amber-soft: #fdf3e1;
+        --line: #ddd6c8;
+        --btn-ink: #1a1405;
+        color-scheme: light;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0c1424;
+          --surface: #142033;
+          --surface-soft: #1a2a45;
+          --ink: #eef1f6;
+          --ink-soft: #b7c2d4;
+          --navy: #14263f;
+          --navy-deep: #081120;
+          --amber: #f0b154;
+          --amber-dark: #f0b154;
+          --amber-soft: #2a2113;
+          --line: #2c3d5c;
+          --btn-ink: #1a1405;
+          color-scheme: dark;
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Avenir Next", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+        font-size: 1.0625rem;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--amber-dark); }
+      :focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
+
+      .wrap { max-width: 44rem; margin: 0 auto; padding: 0 1.25rem; }
+
+      /* ---------- Sticky mini-nav ---------- */
+      .site-nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: var(--navy);
+        color: #f4f6fa;
+        box-shadow: 0 1px 0 rgba(0,0,0,.25);
+      }
+      .site-nav .wrap {
+        max-width: 62rem;
+        display: flex;
+        align-items: center;
+        gap: .5rem 1.25rem;
+        flex-wrap: wrap;
+        padding-top: .45rem;
+        padding-bottom: .45rem;
+      }
+      .wordmark {
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1.05rem;
+        letter-spacing: .01em;
+        text-decoration: none;
+        white-space: nowrap;
+        padding: .35rem 0;
+      }
+      .wordmark .dot { color: var(--amber); }
+      .site-nav nav { margin-left: auto; }
+      .site-nav nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .15rem .35rem;
+      }
+      .site-nav nav a {
+        color: #dfe6f2;
+        text-decoration: none;
+        font-size: .95rem;
+        padding: .55rem .6rem;
+        display: inline-block;
+        border-radius: 6px;
+      }
+      .site-nav nav a:hover { color: #ffffff; text-decoration: underline; text-underline-offset: 3px; }
+
+      /* ---------- Hero ---------- */
+      .hero { padding: 3rem 0 2.75rem; }
+      .hero h1 {
+        font-size: 2.35rem;
+        line-height: 1.15;
+        margin: 0 0 1.1rem;
+        letter-spacing: -0.01em;
+      }
+      .hero .lead {
+        font-size: 1.18rem;
+        line-height: 1.55;
+        color: var(--ink);
+        margin: 0 0 1.6rem;
+      }
+      .price-line {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: .5rem .75rem;
+        margin: 0 0 1.6rem;
+        font-size: 1.05rem;
+        color: var(--ink-soft);
+      }
+      .price-line strong {
+        font-size: 1.55rem;
+        color: var(--ink);
+        font-weight: 700;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 3.25rem;
+        padding: .8rem 1.7rem;
+        background: var(--amber);
+        color: var(--btn-ink);
+        font-weight: 700;
+        font-size: 1.05rem;
+        text-decoration: none;
+        border-radius: 10px;
+        border: 0;
+        cursor: pointer;
+      }
+      .btn:hover { filter: brightness(1.06); }
+      .btn:active { transform: translateY(1px); }
+
+      /* ---------- Sections ---------- */
+      section { padding: 2.4rem 0; }
+      section + section { border-top: 1px solid var(--line); }
+      h2 {
+        font-size: 1.55rem;
+        line-height: 1.25;
+        margin: 0 0 1.2rem;
+        letter-spacing: -0.005em;
+      }
+      p { margin: 0 0 1rem; }
+
+      .steps { list-style: none; margin: 0 0 1.8rem; padding: 0; counter-reset: step; }
+      .steps li {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        padding: .9rem 0;
+      }
+      .steps li + li { border-top: 1px dashed var(--line); }
+      .step-num {
+        flex: 0 0 auto;
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 50%;
+        background: var(--navy);
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: .15rem;
+      }
+      @media (prefers-color-scheme: dark) {
+        .step-num { background: var(--amber); color: var(--btn-ink); }
+      }
+      .steps p { margin: 0; font-size: 1.08rem; }
+
+      .sample {
+        background: var(--amber-soft);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 1.25rem 1.35rem;
+      }
+      .sample .tag {
+        display: inline-block;
+        font-size: .82rem;
+        font-weight: 700;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: var(--amber-dark);
+        margin-bottom: .55rem;
+      }
+      .sample p { margin: 0; }
+
+      .fit-cols { display: grid; gap: 1.25rem; }
+      @media (min-width: 40rem) {
+        .fit-cols { grid-template-columns: 1fr 1fr; }
+      }
+      .fit-box {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 1.3rem 1.4rem;
+      }
+      .fit-box h3 { margin: 0 0 .8rem; font-size: 1.1rem; }
+      .fit-box ul { margin: 0; padding-left: 1.2rem; }
+      .fit-box li { margin-bottom: .55rem; }
+      .fit-box li:last-child { margin-bottom: 0; }
+      .boundary { margin-top: 1.5rem; }
+      .boundary p {
+        background: var(--surface-soft);
+        border-radius: 10px;
+        padding: 1rem 1.2rem;
+        margin: 0 0 .8rem;
+      }
+      .boundary p:last-child { margin-bottom: 0; }
+
+      .price-box {
+        background: var(--navy);
+        color: #eef2f8;
+        border-radius: 14px;
+        padding: 1.9rem 1.6rem;
+      }
+      .price-box .amount { display: flex; align-items: baseline; gap: .8rem; flex-wrap: wrap; margin-bottom: .4rem; }
+      .price-box .now { font-size: 2.5rem; font-weight: 800; line-height: 1; color: #ffffff; }
+      .price-box .was { font-size: 1.35rem; color: #a9b8cf; }
+      .price-box .terms { font-size: 1.08rem; margin: 0 0 1.3rem; }
+      .price-box h3 { margin: 0 0 .7rem; font-size: 1.05rem; color: #ffffff; }
+      .price-box ul { margin: 0 0 1.3rem; padding-left: 1.2rem; }
+      .price-box li { margin-bottom: .5rem; }
+      .price-box .note { margin: 0; color: #c9d5e8; }
+      .price-box .note + .note { margin-top: .6rem; }
+
+      .demo-card {
+        display: block;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 1.4rem 1.5rem;
+        text-decoration: none;
+        color: var(--ink);
+      }
+      .demo-card:hover { border-color: var(--amber); }
+      .demo-card .demo-title { font-size: 1.2rem; font-weight: 700; margin: 0 0 .25rem; }
+      .demo-card .demo-kind { color: var(--ink-soft); margin: 0 0 .9rem; }
+      .demo-card .badge {
+        display: inline-block;
+        background: var(--amber-soft);
+        color: var(--amber-dark);
+        border: 1px solid var(--amber);
+        border-radius: 999px;
+        font-size: .85rem;
+        font-weight: 700;
+        padding: .3rem .8rem;
+        margin-bottom: .9rem;
+      }
+      .demo-card p { margin: 0 0 .8rem; }
+      .demo-card .open { color: var(--amber-dark); font-weight: 700; }
+
+      .faq-item { padding: 1.1rem 0; }
+      .faq-item + .faq-item { border-top: 1px dashed var(--line); }
+      .faq-item h3 { margin: 0 0 .45rem; font-size: 1.12rem; }
+      .faq-item p { margin: 0; color: var(--ink-soft); }
+
+      .final-cta { text-align: left; }
+      .final-cta .direct { margin-top: 1.1rem; color: var(--ink-soft); }
+      .final-cta .direct a { font-weight: 600; }
+
+      /* ---------- Footer ---------- */
+      footer {
+        background: var(--navy-deep);
+        color: #c9d5e8;
+        padding: 2.4rem 0 2.6rem;
+        margin-top: 1rem;
+      }
+      footer h2 { color: #ffffff; font-size: 1.15rem; margin-bottom: 1rem; }
+      footer ul { list-style: none; margin: 0 0 1.8rem; padding: 0; }
+      footer li { margin-bottom: .35rem; }
+      footer a {
+        color: #e8eef7;
+        text-decoration: none;
+        display: inline-block;
+        padding: .45rem 0;
+        font-size: 1.02rem;
+      }
+      footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
+      footer a[aria-current="page"] { color: var(--amber); font-weight: 700; }
+      footer .colophon { margin: 0; font-size: .98rem; color: #9fb0c9; }
+      footer .colophon a { color: #e8eef7; padding: 0; font-size: .98rem; }
+
+      @media (max-width: 34rem) {
+        .hero { padding-top: 2.2rem; }
+        .hero h1 { font-size: 2rem; }
+        .btn { width: 100%; }
+        .site-nav nav { margin-left: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .btn:active { transform: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-nav">
+      <div class="wrap">
+        <a class="wordmark" href="https://northbeambuilds.com/">Northbeam Builds<span class="dot">.</span></a>
+        <nav aria-label="Main site">
+          <ul>
+            <li><a href="https://northbeambuilds.com/#pricing">Pricing</a></li>
+            <li><a href="https://northbeambuilds.com/#demos">Demos</a></li>
+            <li><a href="https://northbeambuilds.com/#how-it-works">How It Works</a></li>
+            <li><a href="https://northbeambuilds.com/#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <!-- Hero -->
+      <div class="hero">
+        <h1>Website FAQ &amp; Lead Capture Agent</h1>
+        <p class="lead">Website FAQ &amp; Lead Capture Agent — for shop owners whose website can&rsquo;t answer a single question: it&rsquo;s a chat box on your site that answers from your own hours, prices, and services, and takes a name and number when it can&rsquo;t answer, so visitors become leads instead of leaving.</p>
+        <p class="price-line"><strong>$49 flat</strong> — one payment, no monthly fee</p>
+        <a class="btn" href="mailto:northbeambuilds@gmail.com?subject=Website%20FAQ%20Agent">Get started by email</a>
+      </div>
+
+      <!-- What it does -->
+      <section aria-labelledby="what-it-does">
+        <h2 id="what-it-does">What it does</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-num" aria-hidden="true">1</span>
+            <p>A visitor lands on your website with a question — hours, prices, what you fix.</p>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">2</span>
+            <p>The chat box answers right away, using your own business info. It never makes answers up.</p>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">3</span>
+            <p>If it can&rsquo;t answer, it asks for a name and number — and that lead lands in your inbox.</p>
+          </li>
+        </ol>
+        <div class="sample">
+          <span class="tag">A sample moment — shown with made-up names</span>
+          <p>Sample: Sunday evening. A visitor asks, &ldquo;Do you service water heaters, and what does a visit cost?&rdquo; The box answers from the shop&rsquo;s own pages, then asks for a name and number. The lead is in the owner&rsquo;s inbox before dinner.</p>
+        </div>
+      </section>
+
+      <!-- Who it's for / not for -->
+      <section aria-labelledby="who-for">
+        <h2 id="who-for">Who it&rsquo;s for — and who it isn&rsquo;t</h2>
+        <div class="fit-cols">
+          <div class="fit-box">
+            <h3>It&rsquo;s for you if&hellip;</h3>
+            <ul>
+              <li>Your shop has a website that just sits there.</li>
+              <li>You&rsquo;re tired of answering the same five questions.</li>
+              <li>You&rsquo;re losing evening and weekend visitors who never call.</li>
+            </ul>
+          </div>
+          <div class="fit-box">
+            <h3>It&rsquo;s not for you if&hellip;</h3>
+            <ul>
+              <li>You don&rsquo;t have a website yet — start with Website + Online Booking.</li>
+              <li>You need chat in lots of places, with conversations built around your business.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="boundary">
+          <p>This agent lives on your website only, and answers from the pages you already have. Need chat in more places, or conversations built around your business? That&rsquo;s the AI Chatbot.</p>
+          <p>This agent answers people who are already on your site. It does not text back missed phone calls — that&rsquo;s Never-Miss-a-Lead.</p>
+        </div>
+      </section>
+
+      <!-- Price -->
+      <section aria-labelledby="price">
+        <h2 id="price">Price</h2>
+        <div class="price-box">
+          <div class="amount">
+            <span class="now">$49</span>
+            <s class="was">$149</s>
+          </div>
+          <p class="terms">$49 flat. One payment. No monthly fee.</p>
+          <h3>What&rsquo;s included</h3>
+          <ul>
+            <li>The chat box set up on your website.</li>
+            <li>Answers built from your own pages and info.</li>
+            <li>Lead capture with name and number.</li>
+            <li>Every lead sent to your inbox.</li>
+          </ul>
+          <p class="note">Most are live within two business days.</p>
+          <p class="note">If we can&rsquo;t get it live on your site as described, you don&rsquo;t pay.</p>
+        </div>
+      </section>
+
+      <!-- Demo -->
+      <section aria-labelledby="demo">
+        <h2 id="demo">See it working</h2>
+        <a class="demo-card" href="/demos/edsels/">
+          <p class="demo-title">Edsel&rsquo;s Heating &amp; Air — demo</p>
+          <p class="demo-kind">Heating and air</p>
+          <span class="badge">Concept demo — not a client</span>
+          <p>Built from that shop&rsquo;s public info to show how this works. Names and leads in the demo are samples.</p>
+          <span class="open">Open the demo &rarr;</span>
+        </a>
+      </section>
+
+      <!-- FAQ -->
+      <section aria-labelledby="faq">
+        <h2 id="faq">Common questions</h2>
+        <div class="faq-item">
+          <h3>Where do the answers come from?</h3>
+          <p>Your own website and the info you give us — your hours, prices, services, and service area. If the answer isn&rsquo;t there, the box says so and takes a message instead of guessing.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What happens when it can&rsquo;t answer?</h3>
+          <p>It asks for a name and number and sends you the lead. Nothing falls through.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does it work on my kind of website?</h3>
+          <p>Almost always. If your site can carry a small chat box, we can set it up. We&rsquo;ll tell you before you pay if yours can&rsquo;t.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is there a monthly fee?</h3>
+          <p>No. $49 once. That&rsquo;s it.</p>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="final-cta" aria-labelledby="get-started">
+        <h2 id="get-started">Ready when you are</h2>
+        <a class="btn" href="mailto:northbeambuilds@gmail.com?subject=Website%20FAQ%20Agent">Get started by email</a>
+        <p class="direct">Prefer to write directly? <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <h2>Other tools from Northbeam Builds</h2>
+        <ul>
+          <li><a href="/tools/never-miss-a-lead/">Never-Miss-a-Lead</a></li>
+          <li><a href="/tools/website-lead-capture-agent/" aria-current="page">Website FAQ &amp; Lead Capture Agent</a></li>
+          <li><a href="/tools/website-online-booking/">Website + Online Booking</a></li>
+          <li><a href="/tools/ai-chatbot/">AI Chatbot</a></li>
+          <li><a href="/tools/ai-phone-receptionist/">AI Phone Receptionist</a></li>
+        </ul>
+        <p class="colophon">Northbeam Builds · Austin, TX · <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
