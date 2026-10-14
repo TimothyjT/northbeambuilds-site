@@ -612,6 +612,14 @@
 
         <article class="demo-card">
           <span class="badge">Concept demo &mdash; not a client</span>
+          <h2>Ashley Pest Control</h2>
+          <p class="trade">Pest control &middot; Leander, TX</p>
+          <p class="purpose">A scorpion request at 4:20 PM, after the 3 PM close, gets an instant answer and an urgent flag.</p>
+          <a class="demo-link" href="/demos/ashley/" aria-label="View the Ashley Pest Control concept demo">View demo <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="demo-card">
+          <span class="badge">Concept demo &mdash; not a client</span>
           <h2>Muetzel</h2>
           <p class="trade">Plumbing, heating &amp; cooling &middot; Columbus, OH</p>
           <p class="purpose">A burst pipe at 6 PM gets an instant acknowledgment and an urgent flag.</p>
@@ -821,7 +829,7 @@
             addMsg(KB.terms, 'bot'); return;
           }
           if (t.indexOf('demo') !== -1) {
-            addMsg("You can see all 14 concept demos on our Demos page: /demos/ — each one is built from a real business's public info to show the tools working. They are concepts, not real client sites.", 'bot'); return;
+            addMsg("You can see all 15 concept demos on our Demos page: /demos/ — each one is built from a real business's public info to show the tools working. They are concepts, not real client sites.", 'bot'); return;
           }
           if (t.indexOf('contact') !== -1 || t.indexOf('email') !== -1 || t.indexOf('phone') !== -1 || t.indexOf('reach') !== -1 || t.indexOf('human') !== -1 || t.indexOf('person') !== -1 || t.indexOf('where') !== -1 || t.indexOf('located') !== -1) {
             addMsg(KB.contact, 'bot'); return;
