@@ -95,6 +95,7 @@
   .btn-accent:hover{background:var(--accent-strong);border-color:var(--accent-strong)}
   @media (prefers-color-scheme: dark){ .btn-accent{background:#9a641f;border-color:#9a641f} .btn-accent:hover{background:#855518;border-color:#855518} }
   .form-note{margin:14px 0 0;font-size:14px;color:var(--ink-3);max-width:58ch}
+  .field-note{margin:8px 0 10px;font-size:.9rem;color:var(--ink-3)}
   /* received state */
   .received{display:none;margin-top:34px;background:var(--bg-elev);border:1px solid var(--ok-line);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px}
   @media (max-width:560px){ .received{padding:24px 20px} }
@@ -224,10 +225,9 @@
           <span class="group-label" id="noticesLabel">Where should booking notices land?</span>
           <div class="radio-row" role="radiogroup" aria-labelledby="noticesLabel">
             <label><input type="radio" name="notice_channel" value="Email" required /> Email</label>
-            <label><input type="radio" name="notice_channel" value="Text to my mobile" /> Text to my mobile</label>
-            <label><input type="radio" name="notice_channel" value="Both email and text" /> Both</label>
           </div>
-          <label for="fMobile">Mobile number for texts <span class="hint">— if you picked text or both</span></label>
+          <p class="field-note">Booking notices go to your email (the address above). If you need them another way, tell us when we set up your site — we&rsquo;ll confirm before go-live whether we can wire it.</p>
+          <label for="fMobile">Mobile number <span class="hint">— optional; only used if we need to reach you about your site. Booking notices don&rsquo;t go out by text</span></label>
           <input id="fMobile" name="mobile_for_texts" type="tel" autocomplete="tel" />
         </div>
         <div class="field">
@@ -313,7 +313,7 @@
       ["Booking rules — how soon can they book?", val("fHowSoon")],
       ["Gap between jobs", val("fGap")],
       ["Where should booking notices land?", radio("notice_channel")],
-      ["Mobile number for texts", val("fMobile")],
+      ["Mobile number", val("fMobile")],
       ["Anything customers must know before they book", val("fBeforeBook")],
       ["Logo and photos", radio("logo_photos")],
       ["Links to logo and photos", val("fAssetLinks")]

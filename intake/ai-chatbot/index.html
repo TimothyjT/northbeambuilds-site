@@ -255,24 +255,28 @@
         </div>
 
         <div class="field">
-          <label for="fLeadEmail">Email address for instant lead alerts</label>
+          <label for="fLeadEmail">Email address for lead alerts <span class="hint">— if you pick email delivery below, this is the inbox it reaches; email runs through your own mail relay, arranged at setup</span></label>
           <input id="fLeadEmail" name="leadEmail" type="email" autocomplete="email" required />
         </div>
 
         <div class="field">
-          <label for="fLeadMobile">Mobile number for lead alerts <span class="hint">— optional; leave blank for email only</span></label>
+          <label for="fLeadMobile">Mobile number <span class="hint">— optional; only used if we need to reach you about your order. This product doesn&rsquo;t send text alerts</span></label>
           <input id="fLeadMobile" name="leadMobile" type="tel" autocomplete="tel" />
         </div>
 
         <fieldset class="field">
-          <legend>Where should captured leads land?</legend>
+          <legend>Where should captured leads land? <span class="hint">Every lead lands in your private lead view — that&rsquo;s always included, and we send you its sign-in link at handover. Pick one push destination on top, if you want one.</span></legend>
           <label class="radio">
-            <input type="radio" name="leadDestination" value="My email inbox" required />
-            <span>My email inbox</span>
+            <input type="radio" name="leadDestination" value="The lead view only" required />
+            <span>Just the lead view — nothing else to set up</span>
           </label>
           <label class="radio">
-            <input type="radio" name="leadDestination" value="A Google Sheet" />
-            <span>A Google Sheet</span>
+            <input type="radio" name="leadDestination" value="A webhook I control" />
+            <span>A webhook I control — each lead sent as it arrives to a web address your tools already listen to; we&rsquo;ll collect the address securely at setup</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="leadDestination" value="My email inbox, through my own mail relay" />
+            <span>My email inbox — through my own mail relay; relay details are collected securely during setup, never by email, and we send a test lead you confirm in your inbox before go-live</span>
           </label>
           <label class="radio">
             <input type="radio" name="leadDestination" value="A CRM" />
@@ -389,7 +393,7 @@
     if (!links) missing.push(['Links to anything not on your site that it must know', document.getElementById('fLinks')]);
     if (!platform) missing.push(['Your website platform', document.getElementById('fPlatform')]);
     if (!install) missing.push(['Install route', document.getElementById('fInstall')]);
-    if (!leadEmail) missing.push(['Email address for instant lead alerts', document.getElementById('fLeadEmail')]);
+    if (!leadEmail) missing.push(['Email address for lead alerts', document.getElementById('fLeadEmail')]);
     if (!leadDestination) missing.push(['Where should captured leads land?', form.querySelector('input[name="leadDestination"]')]);
     if (!hours) missing.push(['Your business hours', document.getElementById('fHours')]);
     if (!area) missing.push(['Your service area', document.getElementById('fArea')]);
@@ -408,8 +412,8 @@
       ['Links to anything not on your site that it must know', links],
       ['Your website platform', platform],
       ['Install route', install],
-      ['Email address for instant lead alerts', leadEmail],
-      ['Mobile number for lead alerts', shown(leadMobile)],
+      ['Email address for lead alerts', leadEmail],
+      ['Mobile number', shown(leadMobile)],
       ['Where should captured leads land?', leadDestination],
       ['Your business hours', hours],
       ['Your service area', area],
