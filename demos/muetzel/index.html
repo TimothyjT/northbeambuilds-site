@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Muetzel — Never-Miss-a-Lead Concept Demo</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f4f2ec;
+        --surface: #ffffff;
+        --surface-2: #eceae2;
+        --ink: #1c2430;
+        --ink-soft: #4a5568;
+        --line: #d8d4c8;
+        --navy: #17304d;
+        --navy-deep: #0f2238;
+        --accent: #b4550a;
+        --accent-ink: #9a4708;
+        --red: #b3261e;
+        --red-bg: #fdeceb;
+        --green: #1d6b3c;
+        --green-bg: #e8f4ec;
+        --amber-bg: #fdf3e0;
+        --amber-ink: #7a5200;
+        --shadow: 0 1px 2px rgba(20, 30, 45, .08), 0 6px 18px rgba(20, 30, 45, .07);
+        --radius: 10px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #12161c;
+          --surface: #1b212b;
+          --surface-2: #232b37;
+          --ink: #eef1f5;
+          --ink-soft: #a9b4c2;
+          --line: #38434f;
+          --navy: #2b4a6e;
+          --navy-deep: #16283e;
+          --accent: #e08a3c;
+          --accent-ink: #f0a55c;
+          --red: #f0958e;
+          --red-bg: #3a2321;
+          --green: #7fd6a0;
+          --green-bg: #1e3528;
+          --amber-bg: #38301c;
+          --amber-ink: #f2cd7e;
+          --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.35);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      h1, h2, h3 { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.2; margin: 0; }
+      p { margin: 0; }
+      a { color: var(--accent-ink); }
+      .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+
+      /* Honesty banner */
+      .honesty {
+        background: var(--navy-deep);
+        color: #f2f5f8;
+        font-size: 14.5px;
+        padding: 10px 0;
+      }
+      .honesty .wrap { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+      .honesty strong { font-weight: 700; }
+
+      /* Business header */
+      .bizhead {
+        background: var(--navy);
+        color: #f4f7fa;
+        padding: 26px 0 22px;
+      }
+      .bizhead .kicker {
+        font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+        color: #b9cddd;
+      }
+      .bizhead h1 { font-size: 30px; font-weight: 800; margin-top: 6px; }
+      .bizhead .sub { color: #cfdce8; margin-top: 4px; font-size: 16px; }
+      .bizfacts {
+        display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px;
+      }
+      .bizfact {
+        background: rgba(255,255,255,.08);
+        border: 1px solid rgba(255,255,255,.22);
+        border-radius: 8px; padding: 10px 14px; min-width: 0;
+      }
+      .bizfact .lbl { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: #a9c2d8; font-weight: 700; }
+      .bizfact .val { font-size: 17px; font-weight: 700; margin-top: 2px; }
+      .bizfact .val a { color: #fff; text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+      .claims {
+        margin-top: 16px; border-left: 4px solid var(--accent);
+        background: rgba(0,0,0,.18); padding: 12px 14px; border-radius: 0 8px 8px 0;
+      }
+      .claims .lbl { font-size: 12.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #e8b07c; }
+      .claims p { margin-top: 4px; font-size: 16.5px; }
+      .claims em { font-style: italic; }
+
+      main { padding: 28px 0 8px; }
+      section { margin-bottom: 30px; }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 22px;
+      }
+      .sec-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 12px; margin-bottom: 14px; }
+      .sec-head h2 { font-size: 23px; font-weight: 800; }
+      .tag-sim {
+        font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+        background: var(--amber-bg); color: var(--amber-ink);
+        border: 1px solid currentColor; border-radius: 999px; padding: 3px 10px;
+      }
+
+      /* The moment */
+      .moment { border-top: 5px solid var(--red); }
+      .clockline { display: flex; flex-wrap: wrap; gap: 14px; align-items: stretch; margin-bottom: 14px; }
+      .clock {
+        background: var(--navy-deep); color: #fff; border-radius: 8px;
+        padding: 12px 18px; text-align: center; min-width: 150px;
+      }
+      .clock .time { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 34px; font-weight: 800; line-height: 1; }
+      .clock .note { font-size: 13px; color: #b9cddd; margin-top: 4px; }
+      .moment-copy { flex: 1 1 260px; font-size: 17.5px; }
+      .moment-copy strong { font-weight: 700; }
+      .gap-note {
+        background: var(--red-bg); color: var(--ink); border: 1px solid var(--red);
+        border-radius: 8px; padding: 12px 14px; font-size: 16px;
+      }
+      .gap-note strong { color: var(--red); }
+
+      /* Form */
+      label { display: block; font-weight: 700; font-size: 15.5px; margin-bottom: 5px; }
+      .field { margin-bottom: 16px; }
+      input[type="text"], input[type="tel"], textarea {
+        width: 100%; font: inherit; font-size: 17px;
+        padding: 12px 12px; min-height: 48px;
+        border: 1.5px solid var(--line); border-radius: 8px;
+        background: var(--surface); color: var(--ink);
+      }
+      textarea { min-height: 96px; resize: vertical; }
+      input:focus, textarea:focus { outline: 3px solid rgba(180, 85, 10, .35); outline-offset: 1px; border-color: var(--accent); }
+      input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: var(--red); }
+      .err {
+        display: none; color: var(--red); font-weight: 600; font-size: 15px; margin-top: 5px;
+      }
+      .err.show { display: block; }
+      .sample-note { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 16px; }
+      .btnrow { display: flex; flex-wrap: wrap; gap: 10px; }
+      button {
+        font: inherit; font-weight: 700; cursor: pointer;
+        min-height: 48px; padding: 12px 20px; border-radius: 8px;
+        border: 1.5px solid transparent;
+      }
+      button:disabled { opacity: .55; cursor: default; }
+      .btn-primary { background: var(--accent); color: #fff; }
+      .btn-primary:hover:not(:disabled) { background: var(--accent-ink); }
+      .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+      .btn-ghost:hover:not(:disabled) { border-color: var(--ink-soft); }
+      .ack {
+        display: none; margin-top: 18px;
+        background: var(--green-bg); border: 1.5px solid var(--green);
+        border-radius: 8px; padding: 16px;
+      }
+      .ack.show { display: block; }
+      .ack .ack-title { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 20px; font-weight: 800; color: var(--green); }
+      .ack p { margin-top: 6px; }
+      .ack .sim-label { font-size: 13px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-soft); }
+
+      /* Missed call */
+      .callsteps { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 10px; }
+      .callsteps li {
+        display: flex; gap: 12px; align-items: flex-start;
+        border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px;
+        background: var(--surface-2); opacity: .45;
+      }
+      .callsteps li.active { opacity: 1; border-color: var(--accent); }
+      .callsteps li.done { opacity: 1; }
+      .stepdot {
+        flex: 0 0 auto; width: 28px; height: 28px; border-radius: 50%;
+        background: var(--navy); color: #fff; font-weight: 800; font-size: 14px;
+        display: flex; align-items: center; justify-content: center; margin-top: 2px;
+      }
+      .callsteps .who { font-size: 12.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-soft); }
+      .callsteps .msg { font-size: 16.5px; margin-top: 2px; }
+
+      /* Inbox */
+      .inbox-head { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+      .lead {
+        border: 1px solid var(--line); border-left: 5px solid var(--ink-soft);
+        border-radius: 8px; padding: 14px 16px; margin-top: 12px; background: var(--surface);
+      }
+      .lead.emergency { border-left-color: var(--red); }
+      .lead .lead-top { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+      .lead .lead-name { font-weight: 800; font-size: 17.5px; }
+      .chip {
+        font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+        border-radius: 999px; padding: 2px 9px; border: 1px solid currentColor;
+      }
+      .chip-src { color: var(--ink-soft); }
+      .chip-flag { background: var(--red-bg); color: var(--red); }
+      .chip-sample { background: var(--amber-bg); color: var(--amber-ink); }
+      .lead .lead-body { margin-top: 6px; color: var(--ink); }
+      .lead .lead-meta { margin-top: 4px; font-size: 14px; color: var(--ink-soft); }
+      .inbox-empty { color: var(--ink-soft); margin-top: 10px; }
+
+      /* Purchase */
+      .buy { background: var(--navy-deep); color: #eef3f8; border: none; }
+      .buy h2 { color: #fff; }
+      .buy .price { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 26px; font-weight: 800; margin: 8px 0 2px; }
+      .buy .price small { font-size: 15px; font-weight: 600; color: #b9cddd; }
+      .buy ul { margin: 14px 0; padding-left: 20px; display: grid; gap: 6px; }
+      .buy li { font-size: 16.5px; }
+      .funnel { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 16px 0; }
+      .funnel .fstep {
+        background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.3);
+        border-radius: 999px; padding: 6px 12px; font-size: 14px; font-weight: 700;
+      }
+      .funnel .farrow { color: #8fb0cf; font-weight: 700; }
+      .buy .reserve-note { font-size: 15.5px; color: #cfdce8; margin-top: 12px; }
+      .buy .status {
+        display: none; margin-top: 14px; background: var(--green-bg); color: var(--green);
+        border: 1.5px solid var(--green); border-radius: 8px; padding: 12px 14px; font-weight: 700;
+      }
+      .buy .status.show { display: block; }
+      .buy .btn-primary { background: var(--accent); }
+      .buy a { color: #f0a55c; display: inline-flex; align-items: center; min-height: 44px; }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 22px 0 34px; color: var(--ink-soft); font-size: 15px;
+      }
+      footer p + p { margin-top: 6px; }
+      footer a { display: inline-flex; align-items: center; min-height: 44px; }
+
+      @media (max-width: 560px) {
+        .bizhead h1 { font-size: 25px; }
+        .card { padding: 18px 16px; }
+        .clock { min-width: 0; flex: 1 1 100%; }
+        .btnrow button { flex: 1 1 100%; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- 1. Honesty banner -->
+    <div class="honesty" role="note">
+      <div class="wrap">
+        <span><strong>Concept demo built from public information — not affiliated with Muetzel.</strong></span>
+        <span>Entries are simulated in your browser only; nothing is sent or stored.</span>
+      </div>
+    </div>
+
+    <!-- 2. Business header -->
+    <header class="bizhead">
+      <div class="wrap">
+        <p class="kicker">Columbus, Ohio · In business since 1967</p>
+        <h1>Muetzel Plumbing, Heating &amp; Cooling</h1>
+        <p class="sub">A concept demo of the Never-Miss-a-Lead system, built around Muetzel's published hours and emergency claims.</p>
+        <div class="bizfacts">
+          <div class="bizfact">
+            <div class="lbl">Phone</div>
+            <div class="val"><a href="tel:+16142997700">614-299-7700</a></div>
+          </div>
+          <div class="bizfact">
+            <div class="lbl">Office hours</div>
+            <div class="val">Mon–Fri · 7:00 AM–4:00 PM</div>
+          </div>
+          <div class="bizfact">
+            <div class="lbl">Location</div>
+            <div class="val">Columbus, OH</div>
+          </div>
+        </div>
+        <div class="claims">
+          <div class="lbl">Muetzel's own published claims</div>
+          <p>Emergency service <em>24 hours</em> — technicians <em>"available 24 hours a day, seven days a week,"</em> <em>"on call 24/7."</em></p>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+
+      <!-- 3. The moment -->
+      <section class="card moment" aria-labelledby="moment-h">
+        <div class="sec-head">
+          <h2 id="moment-h">The moment</h2>
+          <span class="tag-sim">Simulated scenario</span>
+        </div>
+        <div class="clockline">
+          <div class="clock" aria-label="Simulated time: 6:10 PM">
+            <div class="time">6:10 PM</div>
+            <div class="note">Office closed at 4:00 PM</div>
+          </div>
+          <p class="moment-copy">A Columbus homeowner comes home to a <strong>burst pipe</strong> — water spreading across the basement floor. The office has been closed for over two hours. Instead of calling, they do what most people do now: <strong>they submit a request on the website</strong> and wait for someone to see it.</p>
+        </div>
+        <p class="gap-note"><strong>The gap:</strong> a 24/7 emergency promise beside a 7-to-4 office. The only instant response path is phoning in — and only while the office is open. A web request sent tonight waits until tomorrow morning. The two simulations below show what happens instead when every request and every missed call gets an instant response.</p>
+      </section>
+
+      <!-- 4. Form simulation -->
+      <section class="card" aria-labelledby="form-h">
+        <div class="sec-head">
+          <h2 id="form-h">Try it: the web request, answered instantly</h2>
+          <span class="tag-sim">Simulation</span>
+        </div>
+        <p class="sample-note">The form is pre-filled with the burst-pipe scenario. The homeowner and phone number are <strong>sample data</strong> — fictional, used only to run the simulation. Submit it as-is, or clear the form first to see the validation that keeps a bad lead from slipping through.</p>
+        <form id="lead-form" novalidate>
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input type="text" id="f-name" name="name" autocomplete="name" value="Dana Whitaker (sample)" />
+            <p class="err" id="err-name" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone number</label>
+            <input type="tel" id="f-phone" name="phone" autocomplete="tel" value="614-555-0132" />
+            <p class="err" id="err-phone" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="f-msg">What's happening?</label>
+            <textarea id="f-msg" name="message">A pipe burst in our basement — water is pooling fast and I can't find the shutoff valve. We need someone tonight if at all possible.</textarea>
+            <p class="err" id="err-msg" role="alert"></p>
+          </div>
+          <div class="btnrow">
+            <button type="submit" class="btn-primary" id="btn-submit">Submit service request</button>
+            <button type="button" class="btn-ghost" id="btn-clear">Clear form (try an empty submit)</button>
+          </div>
+        </form>
+        <div class="ack" id="ack" aria-live="polite">
+          <p class="sim-label">Simulated instant acknowledgment — shown to the homeowner</p>
+          <p class="ack-title" id="ack-title">We've got it — an on-call tech has been flagged.</p>
+          <p id="ack-body">Your request is in, Dana. It's flagged as an emergency (water shutoff needed) and routed straight to the on-call technician — no waiting for the office to open at 7:00 AM. If it's safe to do so, turn off your home's main water valve while you wait.</p>
+          <p style="margin-top:8px; font-size:14.5px; color: var(--ink-soft);">In this demo the acknowledgment appears instantly and the lead lands in the owner inbox below. Nothing was actually sent anywhere.</p>
+        </div>
+      </section>
+
+      <!-- 5. Missed-call simulation -->
+      <section class="card" aria-labelledby="call-h">
+        <div class="sec-head">
+          <h2 id="call-h">Or: the call nobody answered</h2>
+          <span class="tag-sim">Simulation</span>
+        </div>
+        <p style="margin-bottom:16px;">Same evening, different homeowner. They call <strong>614-299-7700</strong> after hours and the phone rings out. Run the simulation to watch the automatic text-back recover the lead.</p>
+        <ol class="callsteps" id="callsteps">
+          <li id="cs-1">
+            <span class="stepdot">1</span>
+            <div>
+              <div class="who">6:24 PM · Incoming call (sample)</div>
+              <p class="msg">A Columbus homeowner calls about a furnace that quit. The office is closed — the call rings out and goes unanswered.</p>
+            </div>
+          </li>
+          <li id="cs-2">
+            <span class="stepdot">2</span>
+            <div>
+              <div class="who">Within a minute · Automatic text-back (simulated)</div>
+              <p class="msg">"Sorry we missed you — reply with what's happening and we'll get you on the board."</p>
+            </div>
+          </li>
+          <li id="cs-3">
+            <span class="stepdot">3</span>
+            <div>
+              <div class="who">Sample reply from the caller</div>
+              <p class="msg">"Furnace stopped running and the house is down to 58 degrees. Two kids here — can someone come tonight?"</p>
+            </div>
+          </li>
+          <li id="cs-4">
+            <span class="stepdot">4</span>
+            <div>
+              <div class="who">Result</div>
+              <p class="msg">The reply becomes a lead in the owner inbox below, flagged as an emergency — instead of a missed call the office never hears about.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="btnrow">
+          <button type="button" class="btn-primary" id="btn-call">Simulate a missed call</button>
+        </div>
+      </section>
+
+      <!-- 6. Owner inbox -->
+      <section class="card" aria-labelledby="inbox-h">
+        <div class="inbox-head">
+          <div class="sec-head" style="margin-bottom:0;">
+            <h2 id="inbox-h">Owner inbox</h2>
+            <span class="tag-sim">Simulated view</span>
+          </div>
+          <button type="button" class="btn-ghost" id="btn-reset">Reset demo</button>
+        </div>
+        <p style="margin-top:10px; color: var(--ink-soft); font-size:15.5px;">Every web request and recovered missed call lands in one place. Leads from the simulations above appear here, newest first.</p>
+        <div id="inbox" aria-live="polite"></div>
+      </section>
+
+      <!-- 7. Purchase panel -->
+      <section class="card buy" aria-labelledby="buy-h">
+        <h2 id="buy-h">Never-Miss-a-Lead</h2>
+        <p class="price">$199 setup + $99/month <small>· month-to-month, no long-term contract</small></p>
+        <p>What's included:</p>
+        <ul>
+          <li>One intake flow covering your web requests and missed calls</li>
+          <li>Instant acknowledgment on every web request and every missed call — nights, weekends, holidays</li>
+          <li>Every lead routed to one inbox, emergencies flagged</li>
+          <li>Failure alerts if a message ever fails to go out</li>
+          <li>A monthly report: requests received, response times, emergencies flagged</li>
+        </ul>
+        <p style="font-weight:700;">How getting started works:</p>
+        <div class="funnel" aria-label="Funnel states: Acceptance, Funding, Access, Verification, Activation">
+          <span class="fstep">Acceptance</span><span class="farrow" aria-hidden="true">→</span>
+          <span class="fstep">Funding</span><span class="farrow" aria-hidden="true">→</span>
+          <span class="fstep">Access</span><span class="farrow" aria-hidden="true">→</span>
+          <span class="fstep">Verification</span><span class="farrow" aria-hidden="true">→</span>
+          <span class="fstep">Activation</span>
+        </div>
+        <div class="btnrow">
+          <button type="button" class="btn-primary" id="btn-reserve">Reserve Never-Miss-a-Lead</button>
+        </div>
+        <div class="status" id="reserve-status" aria-live="polite">Requested — pending acceptance. We'll confirm by email before anything is set up or billed.</div>
+        <p class="reserve-note"><strong>No payment is taken on this page — this demo runs in reserve mode.</strong> Reserving only records your interest. Questions: <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
+      </section>
+
+    </main>
+
+    <!-- Footer honesty repeat -->
+    <footer>
+      <div class="wrap">
+        <p><strong>Concept demo built from public information — not affiliated with Muetzel.</strong></p>
+        <p>Entries are simulated in your browser only; nothing is sent or stored. All people and messages in the simulations are sample data. Business facts shown (name, phone, office hours, 24/7 emergency claims, since 1967) are Muetzel's own published information.</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        "use strict";
+
+        var SAMPLE_LEAD = {
+          name: "Renee Alvarez",
+          sample: true,
+          source: "Web request",
+          flag: null,
+          body: "Water heater question — asking about replacement options and pricing.",
+          meta: "SAMPLE lead · Columbus, OH · Shown so the inbox isn't empty; reset restores exactly this state."
+        };
+
+        var leads = [SAMPLE_LEAD];
+        var inboxEl = document.getElementById("inbox");
+
+        function renderInbox() {
+          inboxEl.innerHTML = "";
+          leads.forEach(function (lead) {
+            var div = document.createElement("div");
+            div.className = "lead" + (lead.flag ? " emergency" : "");
+
+            var top = document.createElement("div");
+            top.className = "lead-top";
+            var name = document.createElement("span");
+            name.className = "lead-name";
+            name.textContent = (lead.sample ? "SAMPLE — " : "") + lead.name;
+            top.appendChild(name);
+            var src = document.createElement("span");
+            src.className = "chip chip-src";
+            src.textContent = lead.source;
+            top.appendChild(src);
+            if (lead.flag) {
+              var flag = document.createElement("span");
+              flag.className = "chip chip-flag";
+              flag.textContent = lead.flag;
+              top.appendChild(flag);
+            }
+            if (lead.sample) {
+              var s = document.createElement("span");
+              s.className = "chip chip-sample";
+              s.textContent = "Sample data";
+              top.appendChild(s);
+            }
+            div.appendChild(top);
+
+            var body = document.createElement("p");
+            body.className = "lead-body";
+            body.textContent = lead.body;
+            div.appendChild(body);
+
+            var meta = document.createElement("p");
+            meta.className = "lead-meta";
+            meta.textContent = lead.meta;
+            div.appendChild(meta);
+
+            inboxEl.appendChild(div);
+          });
+        }
+        renderInbox();
+
+        /* ---------- Form simulation ---------- */
+        var form = document.getElementById("lead-form");
+        var nameInput = document.getElementById("f-name");
+        var phoneInput = document.getElementById("f-phone");
+        var msgInput = document.getElementById("f-msg");
+        var ack = document.getElementById("ack");
+        var ackTitle = document.getElementById("ack-title");
+        var ackBody = document.getElementById("ack-body");
+        var formLead = null;
+
+        function classifyEmergency(msg) {
+          var m = msg.toLowerCase();
+          if (/no heat|no heating|furnace|heater (is )?(out|down|dead)|heat (is )?(out|off)/.test(m)) return "noheat";
+          if (/burst|leak|flood|shutoff|shut-off|shut off|pooling/.test(m)) return "water";
+          return null;
+        }
+
+        function showAck(kind, cleanName, phone) {
+          var first = cleanName.split(/\s+/)[0] || "there";
+          if (kind === "water") {
+            ackTitle.textContent = "We've got it — an on-call tech has been flagged.";
+            ackBody.textContent = "Your request is in, " + first + ". It's flagged as an emergency (water shutoff needed) and routed straight to the on-call technician — no waiting for the office to open at 7:00 AM. If it's safe to do so, turn off your home's main water valve while you wait.";
+          } else if (kind === "noheat") {
+            ackTitle.textContent = "We've got it — an on-call tech has been flagged.";
+            ackBody.textContent = "Your request is in, " + first + ". It's flagged as an emergency (no heat) and routed straight to the on-call technician — no waiting for the office to open at 7:00 AM. We'll call you back at " + phone + " as soon as the tech picks it up.";
+          } else {
+            ackTitle.textContent = "We've got it — your request is in.";
+            ackBody.textContent = "Thanks, " + first + " — your request is in and on the board. This isn't an emergency, so the team will pick it up during office hours (Mon–Fri, 7:00 AM–4:00 PM) and call you back at " + phone + ". If it turns into an emergency, call 614-299-7700 any time.";
+          }
+        }
+
+        function setError(input, errId, message) {
+          var err = document.getElementById(errId);
+          if (message) {
+            err.textContent = message;
+            err.classList.add("show");
+            input.setAttribute("aria-invalid", "true");
+          } else {
+            err.textContent = "";
+            err.classList.remove("show");
+            input.removeAttribute("aria-invalid");
+          }
+          return !message;
+        }
+
+        function validPhone(raw) {
+          var digits = raw.replace(/\D/g, "");
+          if (digits.length === 11 && digits.charAt(0) === "1") digits = digits.slice(1);
+          return digits.length === 10;
+        }
+
+        form.addEventListener("submit", function (ev) {
+          ev.preventDefault();
+          var name = nameInput.value.trim();
+          var phone = phoneInput.value.trim();
+          var msg = msgInput.value.trim();
+
+          var okName = setError(nameInput, "err-name",
+            name ? null : "Please enter your name so the on-call tech knows who they're calling back.");
+          var okPhone = setError(phoneInput, "err-phone",
+            !phone ? "Please enter a phone number — the on-call tech needs a number to reach you."
+            : !validPhone(phone) ? "That phone number doesn't look complete. Enter a valid 10-digit number, e.g. 614-555-0132."
+            : null);
+          var okMsg = setError(msgInput, "err-msg",
+            !msg ? "Please describe what's happening — even a sentence helps the tech bring the right parts."
+            : msg.length < 10 ? "A little more detail, please — what's happening and where?"
+            : null);
+
+          if (!(okName && okPhone && okMsg)) {
+            ack.classList.remove("show");
+            return;
+          }
+
+          var kind = classifyEmergency(msg);
+          var cleanName = name.replace(/\s*\(sample\)\s*/i, "").trim();
+          var flagText = kind === "water" ? "Emergency — water shutoff needed"
+            : kind === "noheat" ? "Emergency — no heat"
+            : null;
+          var metaText = "Sample simulation · Submitted 6:10 PM (after hours) · Acknowledged instantly · " + phone;
+          if (formLead) {
+            formLead.name = cleanName;
+            formLead.flag = flagText;
+            formLead.body = msg;
+            formLead.meta = metaText;
+          } else {
+            formLead = {
+              name: cleanName,
+              sample: true,
+              source: "Web request",
+              flag: flagText,
+              body: msg,
+              meta: metaText
+            };
+            leads.unshift(formLead);
+          }
+          renderInbox();
+          showAck(kind, cleanName, phone);
+          ack.classList.add("show");
+          ack.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        });
+
+        [nameInput, phoneInput, msgInput].forEach(function (input) {
+          input.addEventListener("input", function () {
+            var errId = input === nameInput ? "err-name" : input === phoneInput ? "err-phone" : "err-msg";
+            setError(input, errId, null);
+          });
+        });
+
+        document.getElementById("btn-clear").addEventListener("click", function () {
+          nameInput.value = "";
+          phoneInput.value = "";
+          msgInput.value = "";
+          ack.classList.remove("show");
+          nameInput.focus();
+        });
+
+        /* ---------- Missed-call simulation ---------- */
+        var callBtn = document.getElementById("btn-call");
+        var steps = [
+          document.getElementById("cs-1"),
+          document.getElementById("cs-2"),
+          document.getElementById("cs-3"),
+          document.getElementById("cs-4")
+        ];
+        var callRunning = false;
+        var callLead = null;
+
+        callBtn.addEventListener("click", function () {
+          if (callRunning) return;
+          callRunning = true;
+          callBtn.disabled = true;
+          callBtn.textContent = "Simulating…";
+          steps.forEach(function (s) { s.classList.remove("active", "done"); });
+          steps[0].scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+          var delays = [300, 1400, 2600, 3800];
+          steps.forEach(function (step, i) {
+            setTimeout(function () {
+              steps.forEach(function (s, j) {
+                s.classList.toggle("active", j === i);
+                if (j < i) s.classList.add("done");
+              });
+              if (i === steps.length - 1) {
+                setTimeout(function () {
+                  step.classList.remove("active");
+                  step.classList.add("done");
+                  if (callLead) {
+                    var idx = leads.indexOf(callLead);
+                    if (idx > 0) {
+                      leads.splice(idx, 1);
+                      leads.unshift(callLead);
+                    }
+                  } else {
+                    callLead = {
+                      name: "Marcus Bell",
+                      sample: true,
+                      source: "Missed call → text",
+                      flag: "Emergency — no heat, kids in the house",
+                      body: "Furnace stopped running and the house is down to 58 degrees. Two kids here — can someone come tonight?",
+                      meta: "Sample simulation · Called 6:24 PM (after hours) · Text-back sent within a minute · Reply converted to a lead"
+                    };
+                    leads.unshift(callLead);
+                  }
+                  renderInbox();
+                  document.getElementById("inbox-h").scrollIntoView({ behavior: "smooth", block: "nearest" });
+                  callRunning = false;
+                  callBtn.disabled = false;
+                  callBtn.textContent = "Simulate a missed call";
+                }, 900);
+              }
+            }, delays[i]);
+          });
+        });
+
+        /* ---------- Reset ---------- */
+        document.getElementById("btn-reset").addEventListener("click", function () {
+          leads = [SAMPLE_LEAD];
+          formLead = null;
+          callLead = null;
+          reserveStatus.classList.remove("show");
+          reserveStatus.textContent = "Requested — pending acceptance. We'll confirm by email before anything is set up or billed.";
+          reserveBtn.disabled = false;
+          reserveBtn.textContent = "Reserve Never-Miss-a-Lead";
+          ack.classList.remove("show");
+          steps.forEach(function (s) { s.classList.remove("active", "done"); });
+          nameInput.value = "Dana Whitaker (sample)";
+          phoneInput.value = "614-555-0132";
+          msgInput.value = "A pipe burst in our basement — water is pooling fast and I can't find the shutoff valve. We need someone tonight if at all possible.";
+          renderInbox();
+        });
+
+        /* ---------- Reserve ---------- */
+        var reserveBtn = document.getElementById("btn-reserve");
+        var reserveStatus = document.getElementById("reserve-status");
+        reserveBtn.addEventListener("click", function () {
+          reserveStatus.classList.add("show");
+          reserveStatus.textContent = "Requested — pending acceptance. We'll confirm by email before anything is set up or billed.";
+          reserveBtn.disabled = true;
+          reserveBtn.textContent = "Request sent (reserve mode)";
+        });
+      })();
+    </script>
+  </body>
+</html>

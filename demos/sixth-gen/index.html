@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Sixth Gen Roofing — Never-Miss-a-Lead Concept Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #f4f2ee;
+        --surface: #ffffff;
+        --surface-2: #eceae4;
+        --ink: #1c2321;
+        --ink-2: #4a5550;
+        --line: #d8d4cc;
+        --brand: #7a3b1e;        /* terracotta / shingle brown */
+        --brand-strong: #5f2d15;
+        --accent: #b96a1b;       /* amber */
+        --ok: #1e6b3c;
+        --ok-bg: #e3f1e7;
+        --err: #b3261e;
+        --err-bg: #fbeae8;
+        --banner-bg: #22302c;
+        --banner-ink: #f2efe8;
+        --chip-bg: #efe9df;
+        --shadow: 0 1px 2px rgba(28,35,33,.06), 0 8px 24px rgba(28,35,33,.07);
+        --radius: 14px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14181a;
+          --surface: #1e2426;
+          --surface-2: #272e30;
+          --ink: #ece9e2;
+          --ink-2: #a9b2ad;
+          --line: #3a4345;
+          --brand: #d98a5f;
+          --brand-strong: #eda87c;
+          --accent: #e09a3e;
+          --ok: #7fc98f;
+          --ok-bg: #1d3325;
+          --err: #f08a84;
+          --err-bg: #3d2220;
+          --banner-bg: #0e1412;
+          --banner-ink: #e8e4da;
+          --chip-bg: #2c3335;
+          --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.55;
+      }
+      h1, h2, h3 { font-family: "Archivo", "Public Sans", sans-serif; line-height: 1.15; margin: 0; }
+      p { margin: 0; }
+      a { color: var(--brand); }
+      .wrap { max-width: 1020px; margin: 0 auto; padding: 0 16px; }
+
+      /* ---- honesty banner ---- */
+      .banner {
+        background: var(--banner-bg);
+        color: var(--banner-ink);
+        padding: 12px 0;
+        font-size: 14px;
+      }
+      .banner .wrap { display: flex; flex-wrap: wrap; gap: 4px 24px; }
+      .banner strong { font-weight: 700; }
+      .banner .sim-note { opacity: .85; }
+
+      /* ---- business header ---- */
+      .biz {
+        background: var(--surface);
+        border-bottom: 1px solid var(--line);
+        padding: 28px 0 24px;
+      }
+      .biz-top { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 16px 32px; }
+      .biz-name h1 { font-size: 30px; font-weight: 800; letter-spacing: -.01em; }
+      .biz-name .loc { color: var(--ink-2); font-size: 16px; margin-top: 4px; }
+      .biz-facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+      .fact {
+        background: var(--chip-bg);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 7px 14px;
+        font-size: 14px;
+        font-weight: 600;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
+      .fact a { color: inherit; text-decoration: none; }
+      .sitewords {
+        margin-top: 20px;
+        border-left: 4px solid var(--accent);
+        background: var(--surface-2);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        padding: 14px 18px;
+        max-width: 640px;
+      }
+      .sitewords .label {
+        font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2);
+      }
+      .sitewords blockquote { margin: 6px 0 0; font-size: 18px; font-weight: 600; font-style: italic; }
+      .sitewords .cont { font-size: 14px; color: var(--ink-2); margin-top: 4px; }
+
+      /* ---- sections ---- */
+      section.block { padding: 36px 0 8px; }
+      .sec-head { max-width: 680px; }
+      .sec-head h2 { font-size: 24px; font-weight: 700; }
+      .sec-head p { color: var(--ink-2); margin-top: 8px; }
+      .tag {
+        display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .06em;
+        text-transform: uppercase; color: var(--brand); margin-bottom: 8px;
+      }
+
+      /* ---- the moment ---- */
+      .moment {
+        margin-top: 20px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 22px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      @media (min-width: 760px) { .moment { grid-template-columns: 1.15fr .85fr; } }
+      .clock {
+        display: inline-flex; align-items: baseline; gap: 10px;
+        background: var(--banner-bg); color: var(--banner-ink);
+        border-radius: 10px; padding: 10px 16px;
+      }
+      .clock .time { font-family: "Archivo", sans-serif; font-size: 26px; font-weight: 800; white-space: nowrap; }
+      .clock .when { font-size: 13px; opacity: .8; }
+      .moment-copy p { margin-top: 12px; color: var(--ink-2); }
+      .moment-copy p strong { color: var(--ink); }
+      .phone {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--surface-2);
+        padding: 16px;
+      }
+      .phone .phone-head { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 10px; }
+      .phone .promise {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+        padding: 12px 14px; font-size: 15px;
+      }
+      .phone .promise em { font-weight: 600; }
+      .phone .tap-note { font-size: 13px; color: var(--ink-2); margin-top: 10px; }
+
+      /* ---- buttons ---- */
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        min-height: 48px; padding: 12px 22px;
+        border-radius: 10px; border: 1px solid transparent;
+        font-family: inherit; font-size: 16px; font-weight: 700;
+        cursor: pointer; text-decoration: none;
+      }
+      .btn-primary { background: var(--brand); color: #fff; }
+      .btn-primary:hover { background: var(--brand-strong); }
+      @media (prefers-color-scheme: dark) { .btn-primary { color: #1c130c; } .btn-primary:hover { background: var(--brand); } }
+      .btn-ghost { background: transparent; color: var(--brand); border-color: var(--brand); }
+      .btn-quiet { background: var(--surface-2); color: var(--ink); border-color: var(--line); font-weight: 600; }
+      .btn[disabled] { opacity: .55; cursor: default; }
+      .btn:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+      /* ---- form ---- */
+      .card {
+        margin-top: 20px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 22px;
+      }
+      .form-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 16px; }
+      @media (min-width: 640px) { .form-grid { grid-template-columns: 1fr 1fr; } .field.full { grid-column: 1 / -1; } }
+      .field label { display: block; font-weight: 600; font-size: 15px; margin-bottom: 6px; }
+      .field input, .field textarea {
+        width: 100%; min-height: 48px; padding: 11px 13px;
+        border: 1.5px solid var(--line); border-radius: 10px;
+        background: var(--surface); color: var(--ink);
+        font-family: inherit; font-size: 16px;
+      }
+      .field textarea { min-height: 84px; resize: vertical; }
+      .field.invalid input, .field.invalid textarea { border-color: var(--err); background: var(--err-bg); }
+      .err-msg { display: none; color: var(--err); font-size: 14px; font-weight: 600; margin-top: 6px; }
+      .field.invalid .err-msg { display: block; }
+      .form-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+      .sample-note { font-size: 13px; color: var(--ink-2); margin-top: 12px; }
+      .confirm {
+        display: none; margin-top: 20px;
+        background: var(--ok-bg); border: 1.5px solid var(--ok); border-radius: var(--radius);
+        padding: 18px 20px;
+      }
+      .confirm.show { display: block; }
+      .confirm h3 { font-size: 18px; color: var(--ok); }
+      .confirm p { margin-top: 6px; font-size: 15px; }
+      .confirm .sim-label { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+
+      /* ---- missed call ---- */
+      .chat { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+      .chat-step {
+        max-width: 520px; padding: 12px 16px; border-radius: 14px; font-size: 15px;
+        border: 1px solid var(--line); background: var(--surface-2);
+      }
+      .chat-step .meta { display: block; font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 4px; }
+      .chat-step.from-biz { align-self: flex-start; border-bottom-left-radius: 4px; }
+      .chat-step.from-caller { align-self: flex-end; background: var(--chip-bg); border-bottom-right-radius: 4px; }
+      .chat-step.system { align-self: center; background: transparent; border-style: dashed; text-align: center; font-size: 14px; color: var(--ink-2); }
+      .hidden-step { display: none; }
+
+      /* ---- inbox ---- */
+      .inbox-list { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+      .lead {
+        border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px;
+        display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline;
+        background: var(--surface);
+      }
+      .lead .who { font-weight: 700; }
+      .lead .what { color: var(--ink-2); }
+      .lead .src {
+        margin-left: auto; font-size: 12px; font-weight: 700; letter-spacing: .04em;
+        text-transform: uppercase; background: var(--chip-bg); border: 1px solid var(--line);
+        border-radius: 999px; padding: 3px 10px; white-space: nowrap;
+      }
+      .lead.new-lead { border-color: var(--ok); background: var(--ok-bg); }
+      .inbox-head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; justify-content: space-between; }
+      .empty-note { color: var(--ink-2); font-size: 14px; margin-top: 10px; }
+
+      /* ---- purchase ---- */
+      .buy { border: 2px solid var(--brand); }
+      .price { font-family: "Archivo", sans-serif; font-size: 30px; font-weight: 800; margin-top: 6px; }
+      .price small { font-size: 15px; font-weight: 600; color: var(--ink-2); }
+      .included { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; }
+      @media (min-width: 640px) { .included { grid-template-columns: 1fr 1fr; } }
+      .included li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
+      .included .tick { color: var(--ok); font-weight: 800; flex: 0 0 auto; }
+      .funnel { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 20px; }
+      .funnel .state {
+        background: var(--chip-bg); border: 1px solid var(--line); border-radius: 999px;
+        padding: 8px 14px; font-size: 14px; font-weight: 700;
+      }
+      .funnel .state.current { background: var(--brand); color: #fff; border-color: var(--brand); }
+      @media (prefers-color-scheme: dark) { .funnel .state.current { color: #1c130c; } }
+      .funnel .arrow { color: var(--ink-2); font-weight: 700; }
+      .funnel-note { font-size: 13px; color: var(--ink-2); margin-top: 8px; }
+      .buy-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 20px; }
+      .reserve-status { font-weight: 700; font-size: 15px; }
+      .reserve-status.requested { color: var(--ok); }
+      .no-pay { margin-top: 14px; font-size: 14px; font-weight: 600; }
+      .contact-line { margin-top: 6px; font-size: 14px; color: var(--ink-2); }
+
+      footer {
+        margin-top: 44px;
+        background: var(--banner-bg); color: var(--banner-ink);
+        padding: 22px 0 30px; font-size: 14px;
+      }
+      footer p + p { margin-top: 6px; }
+      footer .sim-note { opacity: .85; }
+    </style>
+  </head>
+  <body>
+
+    <!-- 1. Honesty banner -->
+    <div class="banner" role="note">
+      <div class="wrap">
+        <span><strong>Concept demo built from public information — not affiliated with Sixth Gen Roofing.</strong></span>
+        <span class="sim-note">Entries are simulated in your browser only; nothing is sent or stored.</span>
+      </div>
+    </div>
+
+    <!-- 2. Business header -->
+    <header class="biz">
+      <div class="wrap">
+        <div class="biz-top">
+          <div class="biz-name">
+            <h1>Sixth Gen Roofing</h1>
+            <p class="loc">Roofing contractor · Georgetown, TX</p>
+          </div>
+        </div>
+        <div class="biz-facts">
+          <span class="fact"><a href="tel:+15126452416">Call 512-645-2416</a></span>
+          <span class="fact">Hours: Mon–Fri, 8:00 AM – 5:00 PM</span>
+          <span class="fact">Free roof inspections</span>
+        </div>
+        <div class="sitewords">
+          <span class="label">In the site's own words</span>
+          <blockquote>&ldquo;Call us at 512-645-2416 or schedule online&rdquo;</blockquote>
+          <p class="cont">— and on other pages, continuing: &ldquo;any day and time 24-7.&rdquo;</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+
+      <!-- 3. The moment -->
+      <section class="block" aria-labelledby="moment-h">
+        <div class="sec-head">
+          <span class="tag">The moment</span>
+          <h2 id="moment-h">9:05 PM. The promise is there — tonight, something answers it.</h2>
+        </div>
+        <div class="moment">
+          <div class="moment-copy">
+            <div class="clock"><span class="time">9:05 PM</span><span class="when">Tuesday night · after office hours</span></div>
+            <p>A Georgetown homeowner finds shingles in the yard after an evening storm. They open the Sixth Gen Roofing site and tap the <strong>&ldquo;schedule online&rdquo;</strong> promise — the one the site says works <strong>&ldquo;any day and time 24-7.&rdquo;</strong></p>
+            <p>On the real site, that line is plain text: no calendar, no form, no chat sits behind it, so the night visit circles back to the phone number. In this concept demo, the same tap lands on a working free-inspection request — try it below.</p>
+            <p style="margin-top:18px;"><a class="btn btn-primary" href="#request-form">Try the inspection request</a></p>
+          </div>
+          <div class="phone" aria-hidden="true">
+            <p class="phone-head">What the homeowner sees today</p>
+            <div class="promise">
+              <p><em>&ldquo;Call us at 512-645-2416 or schedule online — any day and time 24-7.&rdquo;</em></p>
+            </div>
+            <p class="tap-note">Tapping &ldquo;schedule online&rdquo; leads nowhere — there is no scheduling tool behind the words. This demo shows what could be.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Form simulation -->
+      <section class="block" id="request-form" aria-labelledby="form-h">
+        <div class="sec-head">
+          <span class="tag">Simulation 1 · Online request</span>
+          <h2 id="form-h">Free roof inspection request</h2>
+          <p>The form is pre-filled with the 9:05 PM scenario so you can submit it as-is — or clear it and try an empty or invalid submit to see the validation work. All people and details are sample data.</p>
+        </div>
+        <div class="card">
+          <form id="lead-form" novalidate>
+            <div class="form-grid">
+              <div class="field" id="f-name">
+                <label for="in-name">Full name</label>
+                <input id="in-name" name="name" type="text" autocomplete="name" value="Dana Whitfield" />
+                <p class="err-msg" role="alert">Please enter your name.</p>
+              </div>
+              <div class="field" id="f-phone">
+                <label for="in-phone">Mobile phone</label>
+                <input id="in-phone" name="phone" type="tel" autocomplete="tel" value="(512) 555-0147" />
+                <p class="err-msg" role="alert">Enter a valid phone number — 10 digits, e.g. (512) 555-0147.</p>
+              </div>
+              <div class="field full" id="f-address">
+                <label for="in-address">Property address</label>
+                <input id="in-address" name="address" type="text" autocomplete="street-address" value="1204 Sample Oak Dr, Georgetown, TX 78628" />
+                <p class="err-msg" role="alert">Please enter the property address.</p>
+              </div>
+              <div class="field full" id="f-need">
+                <label for="in-need">What's going on with the roof?</label>
+                <textarea id="in-need" name="need">Shingles in the yard after tonight's storm — would like a free inspection this week.</textarea>
+                <p class="err-msg" role="alert">Tell us briefly what's needed so the crew can prepare.</p>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="form-submit">Request my free inspection</button>
+              <button type="button" class="btn btn-quiet" id="form-clear">Clear fields (test validation)</button>
+            </div>
+            <p class="sample-note">Sample scenario data — &ldquo;Dana Whitfield&rdquo; is a fictional homeowner. Submitting simulates the request in this page only.</p>
+          </form>
+          <div class="confirm" id="confirm-panel" role="status">
+            <p class="sim-label">Simulated instant confirmation</p>
+            <h3>Request received — you're on the board.</h3>
+            <p id="confirm-text">Thanks, Dana — your free roof inspection request came through at 9:05 PM. Sixth Gen Roofing would get this lead in their inbox instantly, and you'd get a confirmation text right away instead of waiting until morning.</p>
+            <p>This confirmation is simulated in your browser. Scroll down to the owner inbox to see the lead arrive.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Missed-call simulation -->
+      <section class="block" aria-labelledby="call-h">
+        <div class="sec-head">
+          <span class="tag">Simulation 2 · Missed call</span>
+          <h2 id="call-h">The 9:12 PM call that doesn't get lost</h2>
+          <p>Not everyone taps a form — some people just call. After hours, a call can ring out. In this demo, the caller gets a text back within a minute, and their reply becomes a lead in the same inbox.</p>
+        </div>
+        <div class="card">
+          <button type="button" class="btn btn-primary" id="call-sim-btn">Simulate a missed call</button>
+          <div class="chat" id="call-chat" aria-live="polite">
+            <div class="chat-step system hidden-step" id="call-step-1">
+              <span class="meta">9:12 PM · Sample call</span>
+              Sample caller Marcus Bell dials 512-645-2416. In this sample scenario, it's after office hours and the call rings out — no answer.
+            </div>
+            <div class="chat-step from-biz hidden-step" id="call-step-2">
+              <span class="meta">9:13 PM · Automatic text back (simulated)</span>
+              &ldquo;Sorry we missed you — reply with what's happening and we'll get you on the board&rdquo;
+            </div>
+            <div class="chat-step from-caller hidden-step" id="call-step-3">
+              <span class="meta">9:14 PM · Sample reply</span>
+              &ldquo;Water stain spreading on the living-room ceiling after today's rain. Marcus Bell, Georgetown.&rdquo;
+            </div>
+            <div class="chat-step system hidden-step" id="call-step-4">
+              <span class="meta">Lead captured</span>
+              The reply lands in the owner inbox below — no voicemail to check in the morning, no lead lost.
+            </div>
+          </div>
+          <p class="sample-note">Sample scenario — &ldquo;Marcus Bell&rdquo; is fictional, and the text exchange is simulated in this page only.</p>
+        </div>
+      </section>
+
+      <!-- 6. Owner inbox -->
+      <section class="block" aria-labelledby="inbox-h">
+        <div class="sec-head">
+          <span class="tag">Owner view</span>
+          <h2 id="inbox-h">Owner inbox — every lead, one place</h2>
+          <p>What the owner sees. Requests from the form and text-back replies from missed calls land in the same list, newest first.</p>
+        </div>
+        <div class="card">
+          <div class="inbox-head">
+            <h3 style="font-size:18px;">Tonight's leads <span id="lead-count" style="color:var(--ink-2); font-weight:600; font-size:14px;">(1 sample)</span></h3>
+            <button type="button" class="btn btn-quiet" id="reset-btn">Reset demo</button>
+          </div>
+          <ul class="inbox-list" id="inbox-list">
+            <li class="lead" id="sample-lead">
+              <span class="who">SAMPLE — Jordan Reyes</span>
+              <span class="what">Georgetown — shingles in the yard after a storm</span>
+              <span class="src">Sample data</span>
+            </li>
+          </ul>
+          <p class="empty-note" id="inbox-note">Run either simulation above and the new lead appears here, on top of the sample.</p>
+        </div>
+      </section>
+
+      <!-- 7. Purchase panel -->
+      <section class="block" aria-labelledby="buy-h" style="padding-bottom:36px;">
+        <div class="sec-head">
+          <span class="tag">For the business owner</span>
+          <h2 id="buy-h">Put this behind your &ldquo;schedule online&rdquo; promise</h2>
+        </div>
+        <div class="card buy">
+          <h3 style="font-size:20px;">Never-Miss-a-Lead</h3>
+          <p class="price">$199 setup + $99/month <small>· month-to-month, cancel anytime</small></p>
+          <ul class="included">
+            <li><span class="tick">✓</span><span><strong>One intake flow</strong> — a working free-inspection request behind your existing &ldquo;schedule online&rdquo; wording.</span></li>
+            <li><span class="tick">✓</span><span><strong>Instant acknowledgment</strong> on every request and every missed call, day or night.</span></li>
+            <li><span class="tick">✓</span><span><strong>One inbox</strong> — form requests and text-back replies routed to a single lead list.</span></li>
+            <li><span class="tick">✓</span><span><strong>Failure alerts</strong> — if a notification ever fails, you're told instead of finding out from a lost customer.</span></li>
+            <li><span class="tick">✓</span><span><strong>Monthly report</strong> — how many leads came in after hours and where they came from.</span></li>
+          </ul>
+          <div class="funnel" aria-label="How a reserve request moves forward">
+            <span class="state current">1 · Acceptance</span><span class="arrow">→</span>
+            <span class="state">2 · Funding</span><span class="arrow">→</span>
+            <span class="state">3 · Access</span><span class="arrow">→</span>
+            <span class="state">4 · Verification</span><span class="arrow">→</span>
+            <span class="state">5 · Activation</span>
+          </div>
+          <p class="funnel-note">Every engagement moves through these five states in order. Your reserve request starts at Acceptance.</p>
+          <div class="buy-actions">
+            <button type="button" class="btn btn-primary" id="reserve-btn">Reserve Never-Miss-a-Lead</button>
+            <span class="reserve-status" id="reserve-status">Status: Not requested yet</span>
+          </div>
+          <p class="no-pay">No payment is taken on this page — this demo runs in reserve mode.</p>
+          <p class="contact-line">Questions? Email <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a>.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer: honesty banner repeated -->
+    <footer>
+      <div class="wrap">
+        <p><strong>Concept demo built from public information — not affiliated with Sixth Gen Roofing.</strong></p>
+        <p class="sim-note">Entries are simulated in your browser only; nothing is sent or stored.</p>
+        <p class="sim-note">Business facts (name, phone, hours, free inspections, and the quoted wording) come from Sixth Gen Roofing's own public pages. All homeowners, leads, and message exchanges on this page are sample data.</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        "use strict";
+
+        var inboxList = document.getElementById("inbox-list");
+        var leadCount = document.getElementById("lead-count");
+        var inboxNote = document.getElementById("inbox-note");
+        var sampleLead = document.getElementById("sample-lead");
+
+        function refreshCount() {
+          var sims = inboxList.querySelectorAll(".lead.sim-lead").length;
+          leadCount.textContent = sims === 0 ? "(1 sample)" : "(" + sims + " new · 1 sample)";
+          inboxNote.style.display = sims === 0 ? "" : "none";
+        }
+
+        function addLead(who, what, src) {
+          var li = document.createElement("li");
+          li.className = "lead sim-lead new-lead";
+          var w = document.createElement("span"); w.className = "who"; w.textContent = who;
+          var t = document.createElement("span"); t.className = "what"; t.textContent = what;
+          var s = document.createElement("span"); s.className = "src"; s.textContent = src;
+          li.appendChild(w); li.appendChild(t); li.appendChild(s);
+          inboxList.insertBefore(li, inboxList.firstChild);
+          refreshCount();
+          return li;
+        }
+
+        /* ---------- Form simulation ---------- */
+        var form = document.getElementById("lead-form");
+        var confirmPanel = document.getElementById("confirm-panel");
+        var confirmText = document.getElementById("confirm-text");
+        var formSubmitted = false;
+        var formLead = null;
+
+        var FORM_DEFAULTS = {
+          name: "Dana Whitfield",
+          phone: "(512) 555-0147",
+          address: "1204 Sample Oak Dr, Georgetown, TX 78628",
+          need: "Shingles in the yard after tonight's storm — would like a free inspection this week."
+        };
+
+        var fields = {
+          name:    { wrap: document.getElementById("f-name"),    input: document.getElementById("in-name") },
+          phone:   { wrap: document.getElementById("f-phone"),   input: document.getElementById("in-phone") },
+          address: { wrap: document.getElementById("f-address"), input: document.getElementById("in-address") },
+          need:    { wrap: document.getElementById("f-need"),    input: document.getElementById("in-need") }
+        };
+
+        function validPhone(v) {
+          var digits = v.replace(/\D/g, "");
+          if (digits.length === 11 && digits.charAt(0) === "1") digits = digits.slice(1);
+          if (digits.length !== 10) return false;
+          if (/^(\d)\1{9}$/.test(digits)) return false;
+          return true;
+        }
+
+        function validate() {
+          var ok = true;
+          if (fields.name.input.value.trim() === "") { fields.name.wrap.classList.add("invalid"); ok = false; }
+          else fields.name.wrap.classList.remove("invalid");
+
+          if (!validPhone(fields.phone.input.value)) { fields.phone.wrap.classList.add("invalid"); ok = false; }
+          else fields.phone.wrap.classList.remove("invalid");
+
+          if (fields.address.input.value.trim() === "") { fields.address.wrap.classList.add("invalid"); ok = false; }
+          else fields.address.wrap.classList.remove("invalid");
+
+          if (fields.need.input.value.trim() === "") { fields.need.wrap.classList.add("invalid"); ok = false; }
+          else fields.need.wrap.classList.remove("invalid");
+
+          return ok;
+        }
+
+        Object.keys(fields).forEach(function (k) {
+          fields[k].input.addEventListener("input", function () {
+            fields[k].wrap.classList.remove("invalid");
+          });
+        });
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          if (!validate()) {
+            confirmPanel.classList.remove("show");
+            var firstBad = form.querySelector(".field.invalid input, .field.invalid textarea");
+            if (firstBad) firstBad.focus();
+            return;
+          }
+          var name = fields.name.input.value.trim();
+          var first = name.split(" ")[0];
+          confirmText.textContent = "Thanks, " + first + " — your free roof inspection request came through at 9:05 PM. Sixth Gen Roofing would get this lead in their inbox instantly, and you'd get a confirmation text right away instead of waiting until morning.";
+          confirmPanel.classList.add("show");
+          var leadWho = "SAMPLE — " + name;
+          var leadWhat = "Georgetown — free roof inspection requested: " + fields.need.input.value.trim();
+          if (!formSubmitted || !formLead || !inboxList.contains(formLead)) {
+            formSubmitted = true;
+            formLead = addLead(leadWho, leadWhat, "Online request · 9:05 PM");
+          } else {
+            formLead.querySelector(".who").textContent = leadWho;
+            formLead.querySelector(".what").textContent = leadWhat;
+          }
+          confirmPanel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        });
+
+        document.getElementById("form-clear").addEventListener("click", function () {
+          Object.keys(fields).forEach(function (k) {
+            fields[k].input.value = "";
+            fields[k].wrap.classList.remove("invalid");
+          });
+          confirmPanel.classList.remove("show");
+          fields.name.input.focus();
+        });
+
+        /* ---------- Missed-call simulation ---------- */
+        var callBtn = document.getElementById("call-sim-btn");
+        var callSteps = [
+          document.getElementById("call-step-1"),
+          document.getElementById("call-step-2"),
+          document.getElementById("call-step-3"),
+          document.getElementById("call-step-4")
+        ];
+        var callTimers = [];
+        var callDone = false;
+
+        function resetCallSim() {
+          callTimers.forEach(function (t) { clearTimeout(t); });
+          callTimers = [];
+          callSteps.forEach(function (s) { s.classList.add("hidden-step"); });
+          callDone = false;
+          callBtn.disabled = false;
+          callBtn.textContent = "Simulate a missed call";
+        }
+
+        callBtn.addEventListener("click", function () {
+          if (callBtn.disabled) return;
+          callTimers.forEach(function (t) { clearTimeout(t); });
+          callTimers = [];
+          callSteps.forEach(function (s) { s.classList.add("hidden-step"); });
+          callBtn.disabled = true;
+          callBtn.textContent = "Simulating…";
+          callSteps.forEach(function (step, i) {
+            var t = setTimeout(function () {
+              step.classList.remove("hidden-step");
+              if (i === callSteps.length - 1) {
+                if (!callDone) {
+                  callDone = true;
+                  addLead("SAMPLE — Marcus Bell", "Georgetown — water stain on ceiling after rain (replied to missed-call text)", "Missed call · text-back · 9:12 PM");
+                }
+                callBtn.disabled = false;
+                callBtn.textContent = "Run the missed-call simulation again";
+              }
+            }, 700 * (i + 1));
+            callTimers.push(t);
+          });
+        });
+
+        /* ---------- Reserve ---------- */
+        var reserveBtn = document.getElementById("reserve-btn");
+        var reserveStatus = document.getElementById("reserve-status");
+        reserveBtn.addEventListener("click", function () {
+          reserveStatus.textContent = "Requested — pending acceptance";
+          reserveStatus.classList.add("requested");
+          reserveBtn.disabled = true;
+          reserveBtn.textContent = "Reserve requested";
+        });
+
+        /* ---------- Reset ---------- */
+        document.getElementById("reset-btn").addEventListener("click", function () {
+          var sims = inboxList.querySelectorAll(".lead.sim-lead");
+          for (var i = 0; i < sims.length; i++) sims[i].remove();
+          if (!inboxList.contains(sampleLead)) inboxList.appendChild(sampleLead);
+          formSubmitted = false;
+          formLead = null;
+          Object.keys(fields).forEach(function (k) {
+            fields[k].input.value = FORM_DEFAULTS[k];
+            fields[k].wrap.classList.remove("invalid");
+          });
+          confirmPanel.classList.remove("show");
+          resetCallSim();
+          reserveBtn.disabled = false;
+          reserveBtn.textContent = "Reserve Never-Miss-a-Lead";
+          reserveStatus.textContent = "Status: Not requested yet";
+          reserveStatus.classList.remove("requested");
+          refreshCount();
+        });
+
+        refreshCount();
+      })();
+    </script>
+  </body>
+</html>
