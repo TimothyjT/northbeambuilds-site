@@ -120,6 +120,15 @@
         border-radius: 6px;
       }
       .site-nav-menu a:hover { color: #ffffff; text-decoration: underline; text-underline-offset: 3px; }
+      .site-nav-menu ul { align-items: center; }
+      .site-nav-menu a.nav-cta {
+        background: var(--amber);
+        color: var(--btn-ink);
+        font-weight: 700;
+        padding: .55rem 1.05rem;
+        border-radius: 8px;
+      }
+      .site-nav-menu a.nav-cta:hover { color: var(--btn-ink); text-decoration: none; filter: brightness(1.06); }
       .nav-toggle {
         display: none;
         margin-left: auto;
@@ -151,8 +160,9 @@
           padding-bottom: .5rem;
         }
         .site-nav-menu.open { display: block; }
-        .site-nav-menu ul { flex-direction: column; gap: 0; }
+        .site-nav-menu ul { flex-direction: column; gap: 0; align-items: stretch; }
         .site-nav-menu a { display: block; padding: .7rem .6rem; font-size: 1rem; }
+        .site-nav-menu a.nav-cta { margin-top: .45rem; text-align: center; padding: .7rem .6rem; }
       }
 
       /* ---------- Hero ---------- */
@@ -364,6 +374,7 @@
       footer .footer-grid h2 { margin-bottom: .6rem; }
       footer .footer-grid ul { margin-bottom: 0; }
       footer .smallprint { margin: .5rem 0 0; font-size: .9rem; color: #9fb0c9; }
+      footer .brand-blurb { margin: 0 0 1.6rem; max-width: 34rem; font-size: 1rem; line-height: 1.55; color: #c9d5e8; }
 
       @media (max-width: 34rem) {
         .hero { padding-top: 2.2rem; }
@@ -549,10 +560,11 @@
         <nav class="site-nav-menu" id="siteNav" aria-label="Main site">
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/tools/never-miss-a-lead/">Tools</a></li>
-            <li><a href="/demos/">Demos</a></li>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/work/">Work</a></li>
             <li><a href="/pricing/">Pricing</a></li>
-            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a class="nav-cta" href="/contact/">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -681,12 +693,16 @@
 
     <footer>
       <div class="wrap">
+        <p class="brand-blurb">A small Austin studio building websites and AI tools for local service companies.</p>
         <div class="footer-grid">
           <div>
             <h2>Pages</h2>
             <ul>
               <li><a href="/">Home</a></li>
+              <li><a href="/services/">Services</a></li>
+              <li><a href="/work/">Work</a></li>
               <li><a href="/pricing/">Pricing</a></li>
+              <li><a href="/about/">About</a></li>
               <li><a href="/contact/">Contact</a></li>
               <li><a href="/demos/">Demos</a></li>
             </ul>

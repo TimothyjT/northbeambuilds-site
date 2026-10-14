@@ -146,6 +146,22 @@
         border-radius: 6px;
       }
       .topnav a:hover { color: #ffffff; background: rgba(255,255,255,0.08); }
+      .topnav a.nav-cta {
+        background: var(--amber);
+        color: #1c1503;
+        font-weight: 700;
+        border-radius: 8px;
+        margin-left: 6px;
+      }
+      .topnav a.nav-cta:hover { background: var(--amber-strong); color: #ffffff; }
+      @media (prefers-color-scheme: dark) {
+        .topnav a.nav-cta { color: #1a1204; }
+        .topnav a.nav-cta:hover { color: #14100a; }
+      }
+      @media (max-width: 719px) {
+        .topnav a.nav-cta { margin-left: 0; justify-content: center; }
+      }
+      .footer-blurb { color: var(--ink-soft); font-size: 0.98rem; line-height: 1.55; max-width: 36rem; margin-bottom: 22px; }
       @media (max-width: 719px) {
         .nav-toggle { display: inline-flex; }
         .topnav {
@@ -549,10 +565,11 @@
         </button>
         <nav class="topnav" id="main-nav" aria-label="Main site">
           <a href="/">Home</a>
-          <a href="/tools/never-miss-a-lead/">Tools</a>
-          <a href="/demos/">Demos</a>
+          <a href="/services/">Services</a>
+          <a href="/work/">Work</a>
           <a href="/pricing/">Pricing</a>
-          <a href="/contact/">Contact</a>
+          <a href="/about/">About</a>
+          <a href="/contact/" class="nav-cta">Contact</a>
         </nav>
       </div>
     </header>
@@ -705,12 +722,16 @@
 
     <footer>
       <div class="wrap">
+        <p class="footer-blurb">A small Austin studio building websites and AI tools for local service companies.</p>
         <div class="footer-grid">
           <nav aria-label="Site pages">
             <h3>Pages</h3>
             <ul class="sitemap-list">
               <li><a href="/">Home</a></li>
+              <li><a href="/services/">Services</a></li>
+              <li><a href="/work/">Work</a></li>
               <li><a href="/pricing/">Pricing</a></li>
+              <li><a href="/about/">About</a></li>
               <li><a href="/contact/">Contact</a></li>
               <li><a href="/demos/">Demos</a></li>
             </ul>

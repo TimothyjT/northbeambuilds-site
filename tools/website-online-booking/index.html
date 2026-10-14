@@ -117,6 +117,11 @@
     border-radius:8px;
   }
   .nav-links a:hover{ background:rgba(255,255,255,.1); color:#fff; }
+  .nav-links a.nav-cta{
+    background:var(--amber); color:#1b1206;
+    box-shadow:0 2px 0 var(--amber-strong);
+  }
+  .nav-links a.nav-cta:hover{ background:var(--amber-strong); color:#fff; }
   @media (max-width:720px){
     .nav-inner{ flex-wrap:wrap; }
     .nav-toggle{ display:inline-flex; }
@@ -356,6 +361,7 @@
     margin-left:10px; padding:3px 8px;
     border:1px solid var(--amber); border-radius:999px;
   }
+  .footer-blurb{ font-size:16px; line-height:1.6; color:#dbe6f2; max-width:560px; margin-bottom:28px; }
   .footer-contact p{ font-size:16px; line-height:1.6; margin-bottom:10px; }
   .footer-contact a{ color:var(--amber); font-weight:600; overflow-wrap:anywhere; }
   .footer-line{
@@ -515,10 +521,11 @@
     </button>
     <nav class="nav-links" id="navLinks" aria-label="Main">
       <a href="/">Home</a>
-      <a href="/tools/never-miss-a-lead/">Tools</a>
-      <a href="/demos/">Demos</a>
+      <a href="/services/">Services</a>
+      <a href="/work/">Work</a>
       <a href="/pricing/">Pricing</a>
-      <a href="/contact/">Contact</a>
+      <a href="/about/">About</a>
+      <a class="nav-cta" href="/contact/">Contact</a>
     </nav>
   </div>
 </header>
@@ -653,12 +660,16 @@
 
 <footer>
   <div class="wrap">
+    <p class="footer-blurb">A small Austin studio building websites and AI tools for local service companies.</p>
     <div class="footer-cols">
       <div class="footer-col">
         <h3>Pages</h3>
         <ul class="tool-list">
           <li><a href="/">Home</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/work/">Work</a></li>
           <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/about/">About</a></li>
           <li><a href="/contact/">Contact</a></li>
           <li><a href="/demos/">Demos</a></li>
         </ul>

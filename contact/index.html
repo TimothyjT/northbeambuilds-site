@@ -99,6 +99,9 @@
   }
   .site-nav a:hover{background:var(--navy-2);color:#fff}
   .site-nav a[aria-current="page"]{color:#fff;background:var(--navy-2);box-shadow:inset 0 -3px 0 var(--amber)}
+  .site-nav a.nav-cta{background:var(--amber);color:#1c1405;font-weight:700;margin-left:6px}
+  .site-nav a.nav-cta:hover{background:var(--amber-strong);color:#fff}
+  .site-nav a.nav-cta[aria-current="page"]{background:var(--amber);color:#1c1405;box-shadow:inset 0 -3px 0 var(--navy)}
   @media (max-width:760px){
     .nav-toggle{display:flex}
     .site-nav{
@@ -109,6 +112,7 @@
     .site-nav.open{display:block}
     .site-nav ul{flex-direction:column;gap:2px}
     .site-nav a{padding:12px 10px;font-size:1.05rem}
+    .site-nav a.nav-cta{margin-left:0;margin-top:6px;text-align:center}
   }
 
   /* ---------- Main ---------- */
@@ -314,10 +318,11 @@
     <nav class="site-nav" id="siteNav" aria-label="Main navigation">
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/tools/never-miss-a-lead/">Tools</a></li>
-        <li><a href="/demos/">Demos</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/work/">Work</a></li>
         <li><a href="/pricing/">Pricing</a></li>
-        <li><a href="/contact/" aria-current="page">Contact</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/" class="nav-cta" aria-current="page">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -395,14 +400,17 @@
     <div class="foot-grid">
       <div>
         <p class="foot-brand"><span class="mark" aria-hidden="true"></span>Northbeam Builds</p>
-        <p style="margin:0 0 10px">Northbeam Builds — Austin, TX</p>
+        <p style="margin:0 0 10px">A small Austin studio building websites and AI tools for local service companies.</p>
         <p style="margin:0">Contact: <a href="mailto:northbeambuilds@gmail.com">northbeambuilds@gmail.com</a></p>
       </div>
       <nav aria-label="Footer — pages">
         <h3>Pages</h3>
         <ul>
           <li><a href="/">Home</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/work/">Work</a></li>
           <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/about/">About</a></li>
           <li><a href="/contact/">Contact</a></li>
           <li><a href="/demos/">Demos</a></li>
         </ul>

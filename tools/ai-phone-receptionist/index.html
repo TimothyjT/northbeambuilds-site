@@ -129,6 +129,19 @@
         align-items: center;
       }
       .site-nav a:hover { color: var(--on-navy); }
+      .site-nav a.nav-cta {
+        background: var(--amber-bright);
+        color: #1c1405;
+        font-weight: 800;
+        border-radius: 8px;
+        margin-left: 0.4rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .site-nav a.nav-cta:hover { background: #f2ac44; color: #1c1405; }
+      @media (prefers-color-scheme: dark) {
+        .site-nav a.nav-cta:hover { background: #f7bc5f; }
+      }
       .nav-toggle {
         display: none;
         margin-left: auto;
@@ -169,6 +182,13 @@
           width: 100%;
           padding: 0.7rem 0.25rem;
           border-top: 1px solid var(--line-dark);
+        }
+        .site-nav a.nav-cta {
+          margin-left: 0;
+          margin-top: 0.5rem;
+          margin-bottom: 0.35rem;
+          justify-content: center;
+          border-top: none;
         }
       }
 
@@ -455,6 +475,13 @@
         padding: 0.1rem 0.45rem;
         border-radius: 999px;
       }
+      .footer-blurb {
+        color: var(--on-navy-soft);
+        font-size: 0.98rem;
+        line-height: 1.55;
+        max-width: 36rem;
+        margin: 0 0 1.75rem;
+      }
       .footer-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -708,10 +735,11 @@
         </button>
         <nav class="site-nav" id="site-nav" aria-label="Main site">
           <a href="/">Home</a>
-          <a href="/tools/never-miss-a-lead/">Tools</a>
-          <a href="/demos/">Demos</a>
+          <a href="/services/">Services</a>
+          <a href="/work/">Work</a>
           <a href="/pricing/">Pricing</a>
-          <a href="/contact/">Contact</a>
+          <a href="/about/">About</a>
+          <a href="/contact/" class="nav-cta">Contact</a>
         </nav>
       </div>
     </header>
@@ -838,12 +866,16 @@
 
     <footer>
       <div class="wrap">
+        <p class="footer-blurb">A small Austin studio building websites and AI tools for local service companies.</p>
         <div class="footer-grid">
           <nav aria-label="Site pages">
             <h2><span class="rule" aria-hidden="true"></span>Pages</h2>
             <ul class="footer-list">
               <li><a href="/">Home</a></li>
+              <li><a href="/services/">Services</a></li>
+              <li><a href="/work/">Work</a></li>
               <li><a href="/pricing/">Pricing</a></li>
+              <li><a href="/about/">About</a></li>
               <li><a href="/contact/">Contact</a></li>
               <li><a href="/demos/">Demos</a></li>
             </ul>
