@@ -952,14 +952,18 @@
           "<li><strong>Website FAQ &amp; Lead Capture Agent</strong> \u2014 $49 flat, one-time.</li>" +
           "<li><strong>Website + Online Booking</strong> \u2014 from $249, one-time.</li>" +
           "<li><strong>AI Chatbot</strong> \u2014 $149 setup + $49/month.</li>" +
-          "<li><strong>AI Phone Receptionist</strong> \u2014 $399 setup + $199/month.</li></ul>" +
+          "<li><strong>AI Phone Receptionist</strong> \u2014 $399 setup + $199/month.</li>" +
+          "<li><strong>Review Autopilot</strong> \u2014 $149 flat, one-time.</li>" +
+          "<li><strong>No-Show Guard</strong> \u2014 $99 setup + $29/month.</li></ul>" +
           "<p>Full table on the <a href=\"/pricing/\">Pricing page</a>.</p>";
         var TOOLS = "<p>Here\u2019s what each tool does:</p><ul>" +
           "<li><strong>Never-Miss-a-Lead</strong> answers one channel to start \u2014 missed calls, form fills, or after-hours messages \u2014 replies instantly, and routes every lead to one inbox.</li>" +
           "<li><strong>The Website FAQ &amp; Lead Capture Agent</strong> is a chat agent on a business\u2019s own website (this widget is one) that answers from the business\u2019s own content and captures leads.</li>" +
           "<li><strong>Website + Online Booking</strong> is a small-business website with online booking built in.</li>" +
           "<li><strong>The AI Chatbot</strong> answers customer questions around the clock on a business\u2019s website.</li>" +
-          "<li><strong>The AI Phone Receptionist</strong> answers calls by voice, answers questions, and books appointments \u2014 anything complicated goes to a human.</li></ul>";
+          "<li><strong>The AI Phone Receptionist</strong> answers calls by voice, answers questions, and books appointments \u2014 anything complicated goes to a human.</li>" +
+          "<li><strong>Review Autopilot</strong> audits a business\u2019s public reviews, sorts unhappy reviewers for recovery, and drafts replies the owner approves before anything is sent.</li>" +
+          "<li><strong>No-Show Guard</strong> takes a card deposit through the business\u2019s own Stripe link when someone books, and sends a confirmation email at booking and a reminder two days before.</li></ul>";
         var HOW = "<p>How it works:</p><ul>" +
           "<li>1) A short intake about your business.</li>" +
           "<li>2) We build and configure it. How long that takes depends on the tool, and the clock starts only when your payment, your content, and the access the tool needs are all in \u2014 whichever comes last starts the clock. Each tool\u2019s window is in our <a href=\"/terms/\">Terms</a>.</li>" +
@@ -1098,7 +1102,7 @@
             addMsg(CONTACT, "bot");
             return;
           }
-          if (/(what (do|does|are)|tools|services|offer|never.miss|faq|lead capture|booking|chatbot|receptionist|missed call)/.test(t)) {
+          if (/(what (do|does|are)|tools|services|offer|never.miss|faq|lead capture|booking|chatbot|receptionist|missed call|review|no.?show)/.test(t)) {
             addMsg(TOOLS, "bot");
             return;
           }
