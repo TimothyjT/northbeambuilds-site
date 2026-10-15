@@ -71,6 +71,7 @@ Full price table: https://northbeambuilds.com/pricing/
 - Work and demos: https://northbeambuilds.com/work/
 - Pricing: https://northbeambuilds.com/pricing/
 - About: https://northbeambuilds.com/about/
+- Partners: https://northbeambuilds.com/partners/
 - Contact: https://northbeambuilds.com/contact/
 - Sitemap: https://northbeambuilds.com/sitemap.xml
 
