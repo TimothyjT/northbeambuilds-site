@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:,">
+<title>Will&#x27;s Plumbing &amp; Testing Service — SiteSays Configured Sample (Northbeam Builds)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --surface2:#eef2f5; --ink:#16222e; --muted:#5b6b7a; --line:#dde3e8;
+  --navy:#0f2a44; --accent:#1e6fb8; --accent-soft:#e8f1fa; --green:#137a4a; --green-soft:#e6f4ec;
+  --bubble-in:#e9eef2; --bubble-out:#0f2a44; --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0d151d; --surface:#16222e; --surface2:#1c2e3f; --ink:#eef3f7; --muted:#a8b8c6; --line:#2a3f52; --accent-soft:#241a10; --green-soft:#132a1e; --bubble-in:#243747; --bubble-out:#1f4a75; }
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Barlow",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.disclaimer-bar{background:#111827;color:#fde68a;font-size:13.5px;line-height:1.45;padding:10px 0;text-align:center}
+.disclaimer-bar strong{color:#fff}
+.topbar{background:var(--navy);color:#fff;padding:18px 0 16px}
+.topbar-inner{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:14px}
+.mark{width:48px;height:48px;background:var(--accent);display:grid;place-items:center;border-radius:10px;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:24px;letter-spacing:.02em;flex-shrink:0;color:#fff}
+.brand h1{font-family:"Barlow Condensed",sans-serif;font-size:32px;line-height:1;margin:0;letter-spacing:.02em;text-transform:uppercase}
+.brand p{margin:2px 0 0;font-size:13px;color:#cbd8e6;letter-spacing:.06em;text-transform:uppercase}
+.contact-strip{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:14px;color:#dbe6f0}
+.contact-strip b{color:#fff}
+.hero{padding:34px 0 8px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.hero h2{font-family:"Barlow Condensed",sans-serif;font-size:48px;line-height:.98;margin:8px 0 12px;letter-spacing:.01em;text-transform:uppercase}
+@media(max-width:600px){.hero h2{font-size:38px}}
+.hero h2 span{color:var(--accent)}
+.hero p.lead{font-size:18px;color:var(--muted);max-width:62ch;margin:0}
+.sample-note{margin-top:20px;background:var(--accent-soft);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;font-size:15px}
+.sample-note b{color:var(--ink)}
+.section{padding:28px 0}
+.section-head{margin-bottom:16px}
+.section-head h3{font-family:"Barlow Condensed",sans-serif;font-size:30px;line-height:1;margin:0;text-transform:uppercase}
+.section-head p{margin:4px 0 0;color:var(--muted);max-width:66ch}
+.thread{display:grid;gap:18px;max-width:760px}
+.exchange{display:grid;gap:8px}
+.msg{max-width:88%;padding:11px 14px;border-radius:16px;font-size:15px;line-height:1.5}
+.msg small.sim{display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.65;margin-bottom:4px}
+.msg.visitor{background:var(--surface);border:1px solid var(--line);justify-self:start;border-bottom-left-radius:4px;font-weight:600}
+.msg.agent{background:var(--bubble-out);color:#fff;justify-self:end;border-bottom-right-radius:4px}
+.msg.agent.greeting{justify-self:start;max-width:100%}
+.cat{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.fallback{background:var(--surface);border:1px dashed var(--line);border-radius:var(--radius);padding:18px;max-width:760px}
+.fallback h4{margin:0 0 6px;font-size:16px}
+.fallback p{margin:0;color:var(--muted);font-size:15px}
+.fallback .quote{margin-top:10px;background:var(--bubble-in);border-radius:12px;padding:11px 14px;color:var(--ink);font-size:15px}
+.purchase{background:var(--navy);color:#fff;border-radius:18px;padding:28px}
+.purchase h3{font-family:"Barlow Condensed",sans-serif;font-size:34px;margin:0;line-height:1;text-transform:uppercase}
+.price{font-size:42px;font-weight:700;line-height:1;margin:14px 0 4px}
+.price span{font-size:16px;font-weight:500;color:#cbd8e6}
+.purchase p{color:#dbe6f0;font-size:15px}
+.disclosure{margin-top:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:12px 14px;border-radius:9px;font-size:14px;color:#e2e8f0}
+footer{border-top:1px solid var(--line);padding:28px 0 36px;margin-top:12px;color:var(--muted);font-size:14px}
+footer p{margin:6px 0}
+</style>
+</head>
+<body>
+<div class="disclaimer-bar"><div class="wrap"><strong>Configured sample built from public information — not affiliated with Will&#x27;s Plumbing &amp; Testing Service.</strong><br>This page shows drafted questions and answers only. It is not a live chat, and nothing here is sent or stored.</div></div>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand"><div class="mark">W</div><div><h1>Will&#x27;s Plumbing &amp; Testing Service</h1><p>San Antonio, TX, USA &nbsp;&bull;&nbsp; SiteSays configured sample</p></div></div>
+    <div class="contact-strip">
+      <span>Phone (theirs): <b>(210) 721-6171</b></span>
+      <span>Hours (theirs): <b>Mon–Fri 7:30 AM–5:00 PM · Sat 8:00 AM–4:00 PM · Sun closed</b></span>
+      <span>Sample built by <b>Northbeam Builds</b></span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">A free sample we built for Will&#x27;s Plumbing &amp; Testing Service</div>
+    <h2>Their questions.<br><span>Answered instantly.</span></h2>
+    <p class="lead">Will&#x27;s Plumbing &amp; Testing Service already answers a long list of plumbing questions on its FAQ page — as static text a visitor has to go and find. A question that lands on a Sunday, in the evening, or beyond what that page covers waits on a phone call during business hours. Below is the question set we drafted from their own pages, with the exact answers the agent would give.</p>
+    <div class="sample-note"><b>What this page is:</b> a configured sample, built from Will&#x27;s Plumbing &amp; Testing Service&#x27;s own public pages. The answers below are drafted from their site — the live version runs on their site once hosting is stood up. This page is a static sample: there is no live chat here, and the agent is not running on it.</div>
+  </section>
+
+  <section class="section" aria-labelledby="walk-h">
+    <div class="section-head">
+      <div><h3 id="walk-h">The sample walkthrough</h3><p>This is how the assistant would open, and the exact questions and answers we configured for Will&#x27;s Plumbing &amp; Testing Service — word for word from the draft. The agent only ever says what is in this content; it cannot invent prices, offers, or policies.</p></div>
+    </div>
+    <div class="thread">
+      <div class="exchange">
+        <div class="msg agent greeting"><small class="sim">Sample &bull; How the assistant opens</small>Hi — I&#x27;m Will&#x27;s Plumbing &amp; Testing Service&#x27;s website assistant. Ask me about our services — emergency plumbing, water heaters and tankless, drain cleaning, sewer lines, gas lines — the areas we serve around San Antonio, our hours, or how booking works, or leave your details and your request will be passed along.</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>What plumbing services do you offer?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>Full-service plumbing for homes and businesses: emergency plumbing, drain cleaning and hydro jetting, water heater repair and replacement — tank and tankless — leak detection, sewer line repair and replacement, slab leak repair and tunneling, gas line services, water softeners and filtration, plumbing testing and inspection, and residential repairs and upgrades, plus commercial plumbing.</div>
+        <div class="cat">Services</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>What are your hours?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>Monday to Friday, 7:30 AM to 5:00 PM; Saturday, 8:00 AM to 4:00 PM; Sunday closed. For after-hours emergencies, call (210) 721-6171 to check availability.</div>
+        <div class="cat">Hours</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>What areas do you serve?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>San Antonio and the surrounding Hill Country — including Alamo Heights, Castle Hills, Hollywood Park, Shavano Park, Hill Country Village, Stone Oak, Helotes, Boerne, Bulverde, Spring Branch, Fair Oaks Ranch, New Braunfels, Schertz, Cibolo, Selma, Universal City, Live Oak, Converse, and Canyon Lake. Call us to confirm coverage for your address.</div>
+        <div class="cat">Service Area</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>How much does it cost?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>Will&#x27;s Plumbing &amp; Testing Service doesn&#x27;t publish prices on its website — every job is priced on its specifics. What they do publish is how pricing works: straightforward, upfront pricing, and you approve the work before it starts, with no surprises. For larger projects, financing is available through GreenSky. Call (210) 721-6171 for a price on your job.</div>
+        <div class="cat">Pricing</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>What counts as a plumbing emergency — and what should I do?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>An active leak, a burst pipe, an overflowing fixture, a sewer or drain backup, no hot water when urgently needed, or a suspected gas issue are commonly treated as urgent. If water is actively leaking or flooding, shutting off the nearest fixture valve — or the main shutoff, if you know where it is and it is safe — can limit damage. If you smell gas: leave the area immediately, avoid anything that could create a spark, and once you are safely away, call 911 and the gas utility before calling for plumbing service.</div>
+        <div class="cat">Emergency</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>My drains keep clogging. What should I do?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>Recurring clogs can be caused by grease, sludge, hair, scale, roots, pipe condition, or a deeper sewer line issue — if the same drain keeps clogging or several fixtures are affected, the line may need a camera inspection to find the cause. Hydro jetting may be recommended where heavy buildup justifies it. One thing not to do: avoid chemical drain cleaners before service — they can create safety concerns for technicians and may damage certain piping materials.</div>
+        <div class="cat">Drain Cleaning</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>Do you repair and install water heaters, including tankless?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>Yes — repair, replacement, installation, and maintenance for tank and tankless water heaters, including flushing and descaling. Brands they install and service include Rinnai, Navien, Noritz, Rheem, Ruud, A. O. Smith, Bradford White, State, Lochinvar, and Takagi. The team holds Rinnai ACE certification and Navien certification, and is an A. O. Smith and Rinnai National Service Provider for commercial equipment.</div>
+        <div class="cat">Water Heaters</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>How do I book a plumber?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>Call (210) 721-6171 during business hours, use the Book Online link on our website, or email info@willsplumbing.com. Our licensed plumbers can answer your plumbing questions by any of those routes — call, email, or the contact form on our site.</div>
+        <div class="cat">Booking</div>
+      </div>
+      <div class="exchange">
+        <div class="msg visitor"><small class="sim">Sample &bull; Visitor asks</small>Are you licensed and insured?</div>
+        <div class="msg agent"><small class="sim">Sample &bull; The agent answers</small>Yes. Will&#x27;s Plumbing &amp; Testing Service is licensed and insured, led by a Responsible Master Plumber — Texas License # RMP-18587 — and has been a Texas family-owned business since 1999.</div>
+        <div class="cat">Trust</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="fb-h">
+    <div class="section-head"><div><h3 id="fb-h">And when it doesn&#x27;t know</h3><p>The agent is not allowed to guess. A question outside the configured content gets this answer instead — and the visitor&#x27;s details are captured as a lead for the business.</p></div></div>
+    <div class="fallback">
+      <h4>The fallback answer, as configured</h4>
+      <div class="quote">I don&#x27;t have that in Will&#x27;s Plumbing &amp; Testing Service&#x27;s information yet — I only answer from the business&#x27;s own help content, so I won&#x27;t guess. A real person can help: call (210) 721-6171 (Mon–Fri 7:30 AM–5:00 PM, Sat 8:00 AM–4:00 PM, Sun closed) or email info@willsplumbing.com, or leave your number below and we&#x27;ll pass it along for a callback within one business day.</div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="buy-h">
+    <div class="purchase">
+      <div class="eyebrow" style="color:#fdaa74">For the business owner</div>
+      <h3 id="buy-h">SiteSays — Website FAQ &amp; Lead Capture Agent</h3>
+      <div class="price">$49 <span>flat</span></div>
+      <p style="margin:0">One flat price to put this agent on your site, configured from your own content. It is live 1 business day after payment, content, and site access are all in — whichever comes last starts the clock.</p>
+      <div class="disclosure"><strong style="color:#fff">Before you pay:</strong> this agent runs on hosting we are still standing up, so it cannot go live yet and the go-live clock has not started. Once the hosting is in place, the clock runs exactly as stated above.</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong style="color:var(--ink)">Configured sample built from public information — not affiliated with Will&#x27;s Plumbing &amp; Testing Service.</strong></p>
+    <p>Static sample page by Northbeam Builds, Austin TX. Every question and answer above was drafted from Will&#x27;s Plumbing &amp; Testing Service&#x27;s own public website on 2026-10-14; no prices, offers, or policies were invented — where the business publishes none, the answers say so.</p>
+    <p>Will&#x27;s Plumbing &amp; Testing Service &bull; San Antonio, TX &bull; (210) 721-6171 &bull; info@willsplumbing.com</p>
+  </div>
+</footer>
+</body>
+</html>
