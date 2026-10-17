@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:,">
+<title>Edsel's Heating &amp; Air — Website FAQ &amp; Lead Capture Agent Concept Demo</title>
+<meta name="description" content="Concept demo by Northbeam Builds — not a client: a working FAQ chat box for Edsel's Heating &amp; Air, Cedar Park, TX, answering from the shop's own public info.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --surface2:#eef2f5; --ink:#16222e; --muted:#5b6b7a; --line:#dde3e8;
+  --navy:#0f2a44; --accent:#b4550a; --accent-soft:#fdf0e4; --green:#137a4a; --green-soft:#e6f4ec;
+  --bubble-in:#e9eef2; --bubble-out:#0f2a44; --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0d151d; --surface:#16222e; --surface2:#1c2e3f; --ink:#eef3f7; --muted:#a8b8c6; --line:#2a3f52; --accent-soft:#2d1f14; --green-soft:#132a1e; --bubble-in:#243747; --bubble-out:#1f4a75; }
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Barlow",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.disclaimer-bar{background:#111827;color:#fde68a;font-size:13.5px;line-height:1.45;padding:10px 0;text-align:center}
+.disclaimer-bar strong{color:#fff}
+.topbar{background:var(--navy);color:#fff;padding:18px 0 16px}
+.topbar-inner{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:14px}
+.mark{width:48px;height:48px;background:var(--accent);display:grid;place-items:center;border-radius:10px;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:24px;letter-spacing:.02em;flex-shrink:0;color:#fff}
+.brand h1{font-family:"Barlow Condensed",sans-serif;font-size:32px;line-height:1;margin:0;letter-spacing:.02em;text-transform:uppercase}
+.brand p{margin:2px 0 0;font-size:13px;color:#cbd8e6;letter-spacing:.06em;text-transform:uppercase}
+.contact-strip{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:14px;color:#dbe6f0}
+.contact-strip b{color:#fff}
+.hero{padding:34px 0 8px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.hero h2{font-family:"Barlow Condensed",sans-serif;font-size:48px;line-height:.98;margin:8px 0 12px;letter-spacing:.01em;text-transform:uppercase}
+@media(max-width:600px){.hero h2{font-size:38px}}
+.hero h2 span{color:var(--accent)}
+.hero p.lead{font-size:18px;color:var(--muted);max-width:62ch;margin:0}
+.sample-note{margin-top:20px;background:var(--accent-soft);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;font-size:15px}
+.sample-note b{color:var(--ink)}
+.section{padding:28px 0}
+.section-head{margin-bottom:16px}
+.section-head h3{font-family:"Barlow Condensed",sans-serif;font-size:30px;line-height:1;margin:0;text-transform:uppercase}
+.section-head p{margin:4px 0 0;color:var(--muted);max-width:66ch}
+.chat-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;max-width:760px}
+.chat-head{background:var(--navy);color:#fff;padding:14px 18px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between}
+.chat-head b{font-size:16px}
+.chat-head span{font-size:13px;color:#cbd8e6}
+.chat-log{padding:18px;display:grid;gap:10px;min-height:220px;max-height:430px;overflow-y:auto}
+.msg{max-width:88%;padding:11px 14px;border-radius:16px;font-size:15px;line-height:1.5;overflow-wrap:anywhere}
+.msg small.sim{display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.65;margin-bottom:4px}
+.msg.visitor{background:var(--surface2);border:1px solid var(--line);justify-self:end;border-bottom-right-radius:4px;font-weight:600}
+.msg.agent{background:var(--bubble-out);color:#fff;justify-self:start;border-bottom-left-radius:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 14px}
+.chip{appearance:none;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:999px;padding:10px 14px;min-height:44px;font:inherit;font-size:14px;cursor:pointer;text-align:left}
+.chip:hover{border-color:var(--accent)}
+.chat-form{display:flex;gap:8px;padding:14px 18px 18px;border-top:1px solid var(--line)}
+.chat-form input{flex:1;min-width:0;min-height:48px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:16px;background:var(--surface);color:var(--ink)}
+.chat-form button{appearance:none;border:0;border-radius:10px;background:var(--accent);color:#fff;font:inherit;font-weight:700;font-size:16px;padding:10px 20px;min-height:48px;min-width:76px;cursor:pointer}
+.lead-card{margin-top:18px;background:var(--surface);border:1px dashed var(--line);border-radius:var(--radius);padding:18px;max-width:760px}
+.lead-card h4{margin:0 0 6px;font-size:16px}
+.lead-card p{margin:0 0 12px;color:var(--muted);font-size:15px}
+.lead-form{display:grid;gap:10px}
+.lead-form label{font-size:14px;font-weight:600;display:grid;gap:4px}
+.lead-form input,.lead-form textarea{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:16px;min-height:48px;background:var(--surface);color:var(--ink);width:100%}
+.lead-form textarea{min-height:64px;resize:vertical}
+.lead-form button{appearance:none;border:0;border-radius:10px;background:var(--navy);color:#fff;font:inherit;font-weight:700;font-size:16px;padding:12px 20px;min-height:48px;cursor:pointer;justify-self:start}
+.lead-view{margin-top:14px;display:none}
+.lead-view.show{display:block}
+.lead-view h5{margin:0 0 8px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lead-item{background:var(--green-soft);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:15px;margin-bottom:8px}
+.kb-list{display:grid;gap:10px;max-width:760px;margin:0;padding:0;list-style:none}
+.kb-list li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:15px}
+.kb-list b{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.purchase{background:var(--navy);color:#fff;border-radius:18px;padding:28px;max-width:760px}
+.purchase h3{font-family:"Barlow Condensed",sans-serif;font-size:34px;margin:0;line-height:1;text-transform:uppercase}
+.price{font-size:42px;font-weight:700;line-height:1;margin:14px 0 4px}
+.price span{font-size:16px;font-weight:500;color:#cbd8e6}
+.purchase p{color:#dbe6f0;font-size:15px}
+.disclosure{margin-top:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:12px 14px;border-radius:9px;font-size:14px;color:#e2e8f0}
+.buy-btn{display:inline-block;margin-top:16px;background:#b3540a;color:#fff;font-weight:700;font-size:16px;padding:12px 22px;min-height:48px;border-radius:10px;text-decoration:none}
+footer{border-top:1px solid var(--line);padding:28px 0 36px;margin-top:12px;color:var(--muted);font-size:14px}
+footer p{margin:6px 0;max-width:78ch}
+</style>
+</head>
+<body>
+<div class="disclaimer-bar"><div class="wrap"><strong>Concept demo — not a client.</strong> Built by Northbeam Builds from Edsel's Heating &amp; Air's public website info. The chat box below works: it answers from that info only. Leads here are samples — nothing you type is sent or stored.</div></div>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand"><div class="mark">E</div><div><h1>Edsel's Heating &amp; Air</h1><p>Cedar Park, Texas &nbsp;&bull;&nbsp; FAQ Agent concept demo</p></div></div>
+    <div class="contact-strip">
+      <span>Phone (theirs): <b>(512) 762-9665</b></span>
+      <span>Email (theirs): <b>info@edselsheatingandair.com</b></span>
+      <span>Demo built by <b>Northbeam Builds</b></span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">Website FAQ &amp; Lead Capture Agent — working concept demo</div>
+    <h2>Ask the shop's site.<br><span>Get the shop's answer.</span></h2>
+    <p class="lead">This is a working demo of Website FAQ &amp; Lead Capture Agent, set up for Edsel's Heating &amp; Air from their own public website info. Type a question below, or tap a sample question. The box answers from Edsel's hours, services, service area, and policies — and when the answer is not in their info, it says so and offers to take a name and number instead of guessing.</p>
+    <div class="sample-note"><b>What this page is:</b> a concept demo, not a client site. Edsel's is a real Cedar Park HVAC shop; Northbeam Builds is not affiliated with them, and this page is not on their website. Everything the box can say was checked against edselsheatingandair.com on October 17, 2026 — the source pages are listed at the bottom of this page. The demo runs entirely in your browser: no question you type leaves this page.</div>
+  </section>
+
+  <section class="section" aria-labelledby="chat-h">
+    <div class="section-head">
+      <div><h3 id="chat-h">Try the chat box</h3><p>Ask it the way a customer would. It knows Edsel's hours (including Saturdays and Sundays), their services, where they work, how booking and payment work, and their cancellation policy. Ask it something it should not know — a discount, a price for a specific job — and watch what it does instead of making something up.</p></div>
+    </div>
+
+    <div class="chat-card">
+      <div class="chat-head"><b>Edsel's Heating &amp; Air — website assistant</b><span>Demo — answers from the shop's public info only</span></div>
+      <div class="chat-log" id="chat-log" aria-live="polite"></div>
+      <div class="chips" id="chips" aria-label="Sample questions"></div>
+      <form class="chat-form" id="chat-form">
+        <input id="chat-input" type="text" autocomplete="off" placeholder="Type a question — try &quot;Are you open on Saturday?&quot;" aria-label="Type your question">
+        <button type="submit">Ask</button>
+      </form>
+    </div>
+
+    <div class="lead-card" id="lead-card">
+      <h4>Leave a name and number</h4>
+      <p>This is the lead capture half of the agent. On a live site, a lead like this lands in the shop's private lead view right away. <b>On this demo it is a sample:</b> submitting shows the lead below, on this page only. Nothing is sent anywhere, and nothing is stored — close the tab and it is gone.</p>
+      <form class="lead-form" id="lead-form">
+        <label>Your name (sample) <input id="lead-name" type="text" autocomplete="off" placeholder="e.g. Sam Sample"></label>
+        <label>Your number (sample) <input id="lead-phone" type="tel" autocomplete="off" placeholder="e.g. (512) 555-0100"></label>
+        <label>What do you need? (optional) <textarea id="lead-note" placeholder="e.g. AC stopped cooling last night"></textarea></label>
+        <button type="submit">Send sample lead</button>
+      </form>
+      <div class="lead-view" id="lead-view">
+        <h5>Sample leads — this demo only, visible only on this page</h5>
+        <div id="lead-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="kb-h">
+    <div class="section-head"><div><h3 id="kb-h">What the box answers from</h3><p>Every answer comes from this list and nothing else. If a topic is not here — a price list, financing, warranty terms — it is because Edsel's website does not publish it, so the box declines the question rather than inventing an answer.</p></div></div>
+    <ul class="kb-list">
+      <li><b>Hours</b>Regular hours, weekend hours, and the 24/7 emergency service, from the hours block on their homepage.</li>
+      <li><b>Services</b>AC repair and diagnostics, maintenance, installation and replacement, and the commercial list (rooftop units, preventive maintenance, property management support), from their homepage.</li>
+      <li><b>Service area</b>Cedar Park, Leander, Round Rock, Austin, and surrounding Central Texas communities, from their homepage.</li>
+      <li><b>Booking and contact</b>Their phone, their email, and the Request Appointment page on their own site.</li>
+      <li><b>How pricing works</b>No published price list; the Fix First Promise from their homepage, and estimates valid 15 days, from their policies page.</li>
+      <li><b>Policies</b>Cancellation and no-show terms, payment terms, home access, and sensory-friendly visits, from their policies page.</li>
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="buy-h">
+    <div class="purchase">
+      <div class="eyebrow" style="color:#fdaa74">For the business owner</div>
+      <h3 id="buy-h">Website FAQ &amp; Lead Capture Agent</h3>
+      <div class="price">$49 <span>flat</span></div>
+      <p style="margin:0">One flat price to put this agent on your site, configured from your own content. Live 1 business day after payment, your content, site access, and the hosting in place are all in — whichever comes last starts the clock. Live on your site as described, or your $49 comes back in full — guaranteed.</p>
+      <div class="disclosure"><strong style="color:#fff">Before you pay:</strong> this agent runs on hosting we are still standing up, so it cannot go live yet and the go-live clock has not started. Once the hosting is in place, the clock runs exactly as stated on this page.</div>
+      <a class="buy-btn" href="https://buy.stripe.com/aFa4gz04s19ifIS3J4gYU01" target="_blank" rel="noopener">Get started — $49 flat</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong style="color:var(--ink)">Concept demo built from public information — not a client, not affiliated with Edsel's Heating &amp; Air.</strong></p>
+    <p>Demo page by Northbeam Builds, Austin TX. Facts the chat box can state were checked first-hand against Edsel's own public website on October 17, 2026: the homepage at edselsheatingandair.com (services, commercial services, service area, the Fix First Promise, and the footer hours and contact block), their policies page at edselsheatingandair.com/faqs-2 (cancellation and no-show terms, payment terms, estimate validity, home access, sensory-friendly visits), and edselsheatingandair.com/request-appointment (how appointment requests work). Their site publishes no price list, no financing terms, and no warranty terms, so the box has none to give — it says so instead.</p>
+    <p>Edsel's Heating and Air, LLC &bull; Cedar Park, TX &bull; (512) 762-9665 &bull; info@edselsheatingandair.com</p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+/* Grounded FAQ matcher — original client-side implementation in the deploy-kit
+   pattern: intent detection + light stemming/prefix word overlap against a
+   fixed knowledge base, a minimum score, and an honest fallback below it.
+   Nothing is generated and nothing leaves the browser. */
+var KB = [
+  { id:"hours", intent:"hours",
+    keys:["hours","open","close","closed","when","saturday","sundays","sunday","weekend","monday","tuesday","wednesday","thursday","friday","schedule","day"],
+    answer:"Our regular hours are Monday to Friday, 8:00am to 5:00pm. Saturday and Sunday we're open 7am to 11pm — and emergency HVAC service is available 24/7, around the clock." },
+  { id:"emergency", intent:"emergency",
+    keys:["emergency","urgent","night","2am","midnight","after hours","no cooling","stopped working","broken","leak"],
+    answer:"Yes — we offer 24/7 emergency HVAC service, so a system that stops at night or on a weekend is still covered. Call (512) 762-9665. Regular weekend hours are Saturday and Sunday, 7am to 11pm; emergencies run around the clock." },
+  { id:"services", intent:"services",
+    keys:["services","service","repair","repairs","ac","air conditioning","install","installation","replace","replacement","maintenance","tune","diagnostic","diagnostics","heating","cooling","hvac","system","noise","bills"],
+    answer:"We handle AC repair and diagnostics, seasonal maintenance, HVAC installation and replacement, and complete system replacements for homes and businesses. No cooling, strange noises, or high energy bills — we diagnose the problem, explain your options, and help you decide what makes sense." },
+  { id:"commercial", intent:"commercial",
+    keys:["commercial","business","rooftop","property","restaurant","office","retail","building","facility","multi"],
+    answer:"Yes, we do commercial HVAC: rooftop unit repair and replacement, preventive maintenance, commercial diagnostics, filter and maintenance programs, HVAC installation and replacement, multi-location service, and property management support. We work with restaurants, fitness facilities, medical and dental offices, hotels, retail, and schools and daycares across Central Texas." },
+  { id:"area", intent:"area",
+    keys:["area","serve","location","located","cedar","leander","round rock","austin","georgetown","texas","where","come to","travel"],
+    answer:"We're based in Cedar Park, TX, and serve Cedar Park, Leander, Round Rock, Austin, and surrounding Central Texas communities, for homes and businesses." },
+  { id:"contact", intent:"contact",
+    keys:["phone","call","number","email","contact","reach","talk"],
+    answer:"You can call us at (512) 762-9665 or email info@edselsheatingandair.com. There's also a Request Appointment page on edselsheatingandair.com where you can describe what you need." },
+  { id:"booking", intent:"booking",
+    keys:["book","appointment","schedule","request","visit","come out","set up","arrange"],
+    answer:"You can request an appointment on the Request Appointment page of edselsheatingandair.com — tell us what you need help with, plus anything we should know, like pets, gate codes, or sensory-friendly requests. Or call (512) 762-9665. We ask for at least 24 hours' notice if you need to cancel or reschedule." },
+  { id:"pricing", intent:"price",
+    keys:["price","pricing","cost","charge","fee","much","quote","estimate","expensive","rate"],
+    answer:"We don't publish a price list on our website, so I can't quote a figure here. How it works instead: the Fix First Promise — if your system can be repaired safely and reasonably, we'll tell you; if replacement makes more sense, we'll explain why and show you your options. Written estimates are valid for 15 days. Call (512) 762-9665 and the team can price your job." },
+  { id:"fixfirst", intent:"fixfirst",
+    keys:["upsell","sell","scare","honest","trust","push","replace or repair","need a new","can be fixed","fix first","fixed"],
+    answer:"That's the Fix First Promise, stated on our homepage: if your system can be repaired safely and reasonably, we'll tell you. If replacement makes more sense, we'll explain why and show you your options. No scare tactics, no unnecessary replacements, and no salesperson disguised as a technician." },
+  { id:"cancellation", intent:"policy",
+    keys:["cancel","cancellation","reschedule","no-show","no show","miss","policy","notice"],
+    answer:"We ask for at least 24 hours' notice for cancellations or rescheduling. Same-day cancellations or no-shows may be subject to a $79 fee. One exception: families in our Hearts for Autism program get one last-minute cancellation waived per year." },
+  { id:"payment", intent:"payment",
+    keys:["pay","payment","card","credit","cash","check","checks","digital","due","financing"],
+    answer:"Payment is due at the time of service unless we've agreed otherwise in writing. We accept cash, major credit and debit cards, checks, and digital payments. Our website doesn't list financing terms, so for anything beyond that, call (512) 762-9665." },
+  { id:"about", intent:"about",
+    keys:["about","who","company","family","owned","licensed","insured","reviews","guaranteed","long"],
+    answer:"Edsel's Heating and Air, LLC is a family-owned heating and air conditioning company in Cedar Park, TX. We're licensed and insured and Google Guaranteed, with 150+ Google reviews, and we work on the Fix First Promise: straight answers and no unnecessary upsells." },
+  { id:"pets", intent:"policy",
+    keys:["pet","pets","dog","dogs","gate","access","home"],
+    answer:"Two things from our policies page: please make sure pets are secured during the visit, and that we have safe, clear access to the work area. You can note pets and gate codes right on the appointment request." },
+  { id:"sensory", intent:"policy",
+    keys:["sensory","autism","special needs","noise","fragrance","quiet"],
+    answer:"Yes — we offer sensory-friendly appointment options. If you'd like us to limit noise or fragrances, or adjust how we communicate during the visit, tell us when you book; the appointment request form has room for requests like that. Families in our Hearts for Autism program also get one last-minute cancellation waived per year." }
+];
+
+var INTENTS = [
+  { name:"hours",    re:/\b(hour|open|close|closed|closing|saturday|sundays|sunday|weekend|monday|tuesday|wednesday|thursday|friday|weekday)s?\b/ },
+  { name:"price",    re:/\b(price|pricing|cost|costs|charge|fee|fees|quote|estimate|expensive|much)\b/ },
+  { name:"emergency",re:/\b(emergency|urgent|midnight|tonight|right now)\b/ },
+  { name:"commercial",re:/\b(commercial|business|businesses|rooftop|property manager|retail|restaurant)s?\b/ },
+  { name:"booking",  re:/\b(book|booking|appointment|schedule|reschedule|request|visit|come out)\b/ },
+  { name:"policy",   re:/\b(cancel|cancellation|reschedule|no-show|policy|policies|notice|pet|pets|sensory|autism)\b/ },
+  { name:"payment",  re:/\b(pay|payment|card|cards|cash|check|financing|finance)\b/ },
+  { name:"area",     re:/\b(area|serve|serving|location|located|cedar park|leander|round rock|austin|georgetown)\b/ },
+  { name:"contact",  re:/\b(phone|call|email|contact|number|reach)\b/ },
+  { name:"services", re:/\b(service|services|repair|repairs|install|installation|replace|replacement|maintenance|diagnostic|diagnostics|tune-up|tune up|ac|hvac|heating|cooling|system)s?\b/ },
+  { name:"about",    re:/\b(who|about|company|family-owned|licensed|insured|reviews|guaranteed)\b/ }
+];
+
+function stem(w){
+  w = w.toLowerCase().replace(/[^a-z0-9]/g,"");
+  if (w.length > 4 && w.endsWith("ing")) w = w.slice(0,-3);
+  else if (w.length > 3 && w.endsWith("es")) w = w.slice(0,-2);
+  else if (w.length > 3 && w.endsWith("s")) w = w.slice(0,-1);
+  return w;
+}
+function wordMatch(a,b){
+  if (!a || !b) return false;
+  if (a === b) return true;
+  var sa = stem(a), sb = stem(b);
+  if (sa === sb) return true;
+  if (sa.length >= 4 && sb.indexOf(sa) === 0) return true;
+  if (sb.length >= 4 && sa.indexOf(sb) === 0) return true;
+  return false;
+}
+function detectIntents(q){
+  var found = [];
+  for (var i=0;i<INTENTS.length;i++){ if (INTENTS[i].re.test(q)) found.push(INTENTS[i].name); }
+  return found;
+}
+function scoreFact(fact, q, qWords, intents){
+  var score = 0;
+  for (var i=0;i<fact.keys.length;i++){
+    var k = fact.keys[i];
+    if (k.indexOf(" ") > -1){ if (q.indexOf(k) > -1) score += 6; continue; }
+    for (var j=0;j<qWords.length;j++){ if (wordMatch(k, qWords[j])) { score += 3; break; } }
+  }
+  if (intents.indexOf(fact.intent) > -1) score += 5;
+  /* policy facts share one intent tag; give the specific one its day */
+  return score;
+}
+var FALLBACK = "I don't have that in Edsel's info — I only answer from the shop's own published information, so I won't guess. A real person can help: call (512) 762-9665 or email info@edselsheatingandair.com. Or leave your name and number in the form below — on a live site it lands in the shop's lead view right away; on this demo it's a sample and nothing is sent.";
+var DISCOUNT_CORRECTION = "I should correct that: Edsel's website doesn't list any discounts, coupons, or specials, so I can't confirm one. What I can tell you from their site: written estimates are valid for 15 days, and the shop works on the Fix First Promise — repair first when it's safe and reasonable, no unnecessary upsells. For pricing on a specific job, call (512) 762-9665.";
+var FREE_CORRECTION = "I can't confirm that — nothing on Edsel's website says that is free, and I won't guess. What their site does say: written estimates are valid for 15 days from the date issued. For the price of a specific job, call (512) 762-9665.";
+
+function answerFor(raw){
+  var q = " " + raw.toLowerCase().trim() + " ";
+  if (/\b(discounts?|coupons?|specials?|promos?|promotions?|deals?)\b/.test(q) || /% off|percent off|sale price/.test(q)) return DISCOUNT_CORRECTION;
+  if (/\bfree\b/.test(q) && /\b(estimate|quote|diagnostic|service call|inspection|tune)/.test(q)) return FREE_CORRECTION;
+  if (/gift cards?/.test(q)) return FALLBACK;
+  if (/\bhow much\b/.test(q) && /\b(cost|charge|run|is)\b/.test(q)) return KB[7].answer;
+  if (/^\s*(hi|hello|hey|good morning|good afternoon)\b/.test(q) && q.trim().split(/\s+/).length <= 4)
+    return "Hi — I'm the website assistant for Edsel's Heating & Air, set up for this demo from the shop's public info. Ask me about their hours, services, service area, or policies, or tap one of the sample questions.";
+  var qWords = q.trim().split(/\s+/);
+  var intents = detectIntents(q);
+  var best = null, bestScore = 0, second = 0;
+  for (var i=0;i<KB.length;i++){
+    var s = scoreFact(KB[i], q, qWords, intents);
+    if (s > bestScore){ second = bestScore; bestScore = s; best = KB[i]; }
+    else if (s > second){ second = s; }
+  }
+  if (!best || bestScore < 6) return FALLBACK;
+  return best.answer;
+}
+
+/* ---- page wiring (browser only) ---- */
+var CHIPS = [
+  "What are your hours?",
+  "Are you open on Saturdays?",
+  "What services do you offer?",
+  "How much does an AC repair cost?",
+  "Do you serve Round Rock?",
+  "My AC stopped working at night — can you help?",
+  "How do I book a visit?",
+  "What's your cancellation policy?",
+  "Do you have any discounts?"
+];
+(function(){
+  var log = document.getElementById("chat-log");
+  var chipsBox = document.getElementById("chips");
+  var form = document.getElementById("chat-form");
+  var input = document.getElementById("chat-input");
+  function addMsg(text, who, sim){
+    var d = document.createElement("div");
+    d.className = "msg " + who;
+    if (sim){ var s = document.createElement("small"); s.className = "sim"; s.textContent = sim; d.appendChild(s); }
+    d.appendChild(document.createTextNode(text));
+    log.appendChild(d);
+    log.scrollTop = log.scrollHeight;
+  }
+  function ask(text){
+    var t = (text || "").trim();
+    if (!t) return;
+    addMsg(t, "visitor", "You ask");
+    addMsg(answerFor(t), "agent", "The agent answers");
+    input.value = "";
+    input.focus();
+  }
+  CHIPS.forEach(function(c){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.textContent = c;
+    b.addEventListener("click", function(){ ask(c); });
+    chipsBox.appendChild(b);
+  });
+  form.addEventListener("submit", function(e){ e.preventDefault(); ask(input.value); });
+  addMsg("Hi — I'm Edsel's Heating & Air's website assistant, running here as a concept demo. Ask me about our hours, services, service area, booking, or policies — or leave your details below and the team will get back to you.", "agent", "Demo — how the assistant opens");
+
+  var leads = [];
+  var leadForm = document.getElementById("lead-form");
+  var leadView = document.getElementById("lead-view");
+  var leadList = document.getElementById("lead-list");
+  leadForm.addEventListener("submit", function(e){
+    e.preventDefault();
+    var name = document.getElementById("lead-name").value.trim();
+    var phone = document.getElementById("lead-phone").value.trim();
+    var note = document.getElementById("lead-note").value.trim();
+    if (!name || !phone){
+      addMsg("The sample lead form needs both a name and a number — on a live site, that's what the shop calls back.", "agent", "Demo — lead form");
+      return;
+    }
+    leads.push({name:name, phone:phone, note:note});
+    leadView.classList.add("show");
+    var item = document.createElement("div");
+    item.className = "lead-item";
+    item.textContent = "Sample lead: " + name + " — " + phone + (note ? " — " + note : "");
+    leadList.appendChild(item);
+    addMsg("Thanks, " + name.split(" ")[0] + " — that's in the sample lead list below. On a live site it would land in the shop's private lead view right away. Here it's a sample only: nothing was sent or stored.", "agent", "Demo — lead captured");
+    leadForm.reset();
+  });
+})();
+</script>
+</body>
+</html>
